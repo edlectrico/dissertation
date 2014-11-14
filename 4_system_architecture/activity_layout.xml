@@ -4,6 +4,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
  
+    <!--Elements to be shown in the layout-->
     <Button
         android:id="@+id/button_example"
         android:layout_width="wrap_content"

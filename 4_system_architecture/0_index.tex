@@ -280,12 +280,17 @@ persistence framework for developers to save and retrieve key-value pairs of
 primitive data types. After this temporary storage in the device, the Semantic 
 Modeller is the module which deals with the task of the semantic representation 
 of the model. Listing~\ref{lst:shared_preferences} shows how developers deal 
-with the SharedPreferences to store and retrieve data in Android.
+with the SharedPreferences to store and retrieve data in Android. If complex
+objects need to be stored, the process is different (see Listing~\ref{lst:shared_preferences_complex}).
 
 \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/shared_preferences.java}
 \captionof{listing}{Using Android SharedPreferences. By default SharedPreferences allows 
 to store and retrieve primitive data. Implementing Parcelable allows complex 
 objects to be persistent.\label{lst:shared_preferences}}
+
+\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/shared_preferences_complex.java}
+\captionof{listing}{Using Android SharedPreferences to store non primitive
+objects.\label{lst:shared_preferences_complex}}
 
 Figure~\ref{fig:context_activity} shows how the brightness and the volume of
 the application is configured by an user which is aware of the light and noise
