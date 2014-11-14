@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:ccpp="http://www.w3.org/2002/11/08-ccpp-schema#"
+         xmlns:prf="http://example.com/Schema#">
+
+  <rdf:Description rdf:about="http://example.com/MyProfile">
+    <ccpp:component>
+      <rdf:Description rdf:about="http://example.com/TerminalHardware">
+        <rdf:type rdf:resource="http://example.com/Schema#HardwarePlatform"/>
+        <ccpp:defaults>
+          <rdf:Description rdf:about="http://example.com/HWDefault">
+            <rdf:type rdf:resource="http://example.com/Schema#HardwarePlatform"/>
+            <prf:cpu>PPC</prf:cpu>
+            <prf:displayWidth>320</prf:displayWidth>
+            <prf:displayHeight>200</prf:displayHeight>
+          </rdf:Description>
+        </ccpp:defaults>
+        <prf:displayHeight>640</prf:displayHeight>
+        <prf:displayWidth>400</prf:displayWidth>
+      </rdf:Description>
+    </ccpp:component>
+
+    <ccpp:component>
+      <rdf:Description rdf:about="http://example.com/TerminalSoftware">
+        <rdf:type rdf:resource="http://example.com/Schema#SoftwarePlatform" />
+        <ccpp:defaults>
+          <rdf:Description rdf:about="http://example.com/SWDefault">
+            <rdf:type rdf:resource="http://example.com/Schema#SoftwarePlatform"/>
+            <prf:name>EPOC</prf:name>
+            <prf:vendor>Symbian</prf:vendor>
+            <prf:version>2.0</prf:version>
+          </rdf:Description>
+        </ccpp:defaults>
+      </rdf:Description>
+    </ccpp:component>
+
+    <ccpp:component>
+      <rdf:Description rdf:about="http://example.com/Browser">
+        <rdf:type rdf:resource="http://example.com/Schema#BrowserUA" />
+        <ccpp:defaults>
+          <rdf:Description rdf:about="http://example.com/UADefault">
+            <rdf:type rdf:resource="http://example.com/Schema#BrowserUA"/>
+            <prf:name>Mozilla</prf:name>
+            <prf:vendor>Symbian</prf:vendor>
+            <prf:version>5.0</prf:version>
+            <prf:htmlVersionsSupported>
+              <rdf:Bag>
+                <rdf:li>3.2</rdf:li>
+                <rdf:li>4.0</rdf:li>
+              </rdf:Bag>
+            </prf:htmlVersionsSupported>
+          </rdf:Description>
+        </ccpp:defaults>
+        <prf:htmlVersionsSupported>
+          <rdf:Bag>
+            <rdf:li>2.0</rdf:li>
+            <rdf:li>3.2</rdf:li>
+            <rdf:li>4.0</rdf:li>
+          </rdf:Bag>
+        </prf:htmlVersionsSupported>
+      </rdf:Description>
+    </ccpp:component>
+  </rdf:Description>
+</rdf:RDF>

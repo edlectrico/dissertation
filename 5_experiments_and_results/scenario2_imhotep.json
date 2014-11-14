@@ -1,0 +1,20 @@
+{
+  "piramide.devices.screen.height": 1024,
+  "piramide.devices.screen.width": 600,
+  "piramide.devices.modelname": "Samsung Galaxy Tab 2 7.0",
+  "piramide.devices.os": "Android",
+  "piramide.devices.os.version": "4.0",
+  "piramide.devices.capabilities.video": true,
+  "piramide.devices.capabilities.audio": true,
+  "piramide.devices.capabilities.gps": true,
+  "piramide.devices.capabilities.flash": true,
+  
+  "piramide.user.capabilities.problems": true,
+  "piramide.user.capabilities.problems.sight": true,
+  "piramide.user.capabilities.problems.sight.colour.blindness": 
+					"red_green",
+  "piramide.user.capabilities.problems.hearing": true,
+  "piramide.user.capabilities.problems.hearing.loss": "hearing",
+  "piramide.user.capabilities.problems.smell": false,
+  "piramide.user.capabilities.problems.touch": false
+}

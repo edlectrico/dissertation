@@ -1,0 +1,490 @@
+
+\section{Device Models}
+\label{sec:devices}
+
+There are many and different approaches in the literature for devices modelling.
+Devices capabilities might determine the boundaries of an adaptation process or
+the consumable resources.~\citet{lemlouma_context_aware_2004} considered that
+an independent device model would probably reduce adaptation process efforts for
+different context situations. In fact, the \ac{w3c} reinforces this perspective
+by warning about the wide range of device capabilities and 
+sizes~\citep{device_independence} which define the boundaries of the content
+that each device can handle. Several techniques, like Device Descriptors, content
+transformation guides, devices \acp{api} and \ac{ccpp} systems help developers 
+to optimize the user experience. These modelling techniques are analysed in the 
+following section. 
+
+\subsubsection{Composite Capabilities/Preference Profiles}
+\label{sec:ccpp}
+\ac{ccpp}~\citep{ccpp_status} is a \ac{w3c} standard system to express user and 
+device capabilities. Using \ac{ccpp} a user will be able to show a specific 
+preference or disability. For example, even though a user's device can display 
+millions of colours, perhaps the user can just distinguish between a small set 
+of colours. The necessity of this system stems from the wide range of web and 
+ubiquitous devices available in the market. These devices have more and more 
+multimedia and Web capabilities. This makes troublesome to Web content providers 
+to service their content to these devices keeping usability and user 
+satisfaction~\citep{lemlouma_context_aware_2004}. 
+
+However, managing a large number of devices is not a new problem. Many approaches 
+have been proposed in the literature to tackle this situation. Most of them are 
+based on content management. This approach considers different presentation 
+alternatives. Depending on the client device, a presentation configuration is 
+served. Hence, in the content serving process there are two options: the 
+server chooses which is the best configuration for the device, and the client 
+decides what to do with the content. This approach is very easy to be performed 
+since every device identifies itself against the server.
+
+\ac{ccpp} is based on profiles. A profile contains components and attributes.
+Each component has, at least, one attribute, and each profile has at least one
+component. The main components are: the hardware platform, the software platform
+and single applications (e.g., a browser). Attributes can contain one or many 
+values. For example, in case of the hardware platform component we can find the 
+attributes \textit{displayWidth} and \textit{displayHeight}. These attributes 
+have a single value. \ac{ccpp} uses \ac{rdf} as formal language to build these 
+profiles. Table~\ref{tbl:ccpp} shows several advantages and drawbacks of this 
+approach.
+
+
+
+\begin{table}
+\caption{\ac{ccpp}: several advantages and drawbacks}
+\label{tbl:ccpp}
+\footnotesize
+\centering
+\begin{tabular}{l l}
+  \hline
+  \textbf{Advantages}				& \textbf{Drawbacks}			\\
+  \hline
+  A good infrastructure for modelling devices 	& Device dependent 			\\
+  Content negotiation flexibility 		& It requires a more mature user 	\\
+						& preferences definition 		\\
+  Using \ac{ccpp}, Web based device developers	& 					\\
+  and user agents can define accurate profiles 	&					\\
+  for their products. Web servers and server 	&					\\
+  proxies can use these profiles to perform the &					\\
+  adaptation					&					\\
+  Open to new protocol proposals for profile 	&					\\
+  exchanging					&					\\
+  \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{\ac{uaprof}}
+\label{sec:uaprof}
+\ac{uaprof}~\citep{uaprof} is concerned with collecting wireless devices 
+capabilities and preferences. This information is provided to content servers 
+to easy the content format selection process. 
+
+\ac{uaprof} is directly related to the \ac{w3c} \ac{ccpp} specification and it 
+is also based on \ac{rdf}. Hence, the document schema is 
+extensible~\citep{butler_implementing_2001}~\citep{butler_ccpp_2002}. These 
+files, usually served as application/xml mimetype, describe several mobile 
+devices capabilities (e.g., vendor, model, screen size, multimedia capabilities, 
+and so forth). Most recent versions have also information about \ac{mms}, video streaming 
+and more multimedia features. \ac{uaprof} profiles are voluntarily built by the 
+vendors (e.g., Samsung and LG for \acs{gsm} devices), or by several 
+telecommunications company for \acs{cdmabrew} devices.
+
+The system works as follows:
+
+\begin{enumerate}
+  \item The device sends a header containing a URL and its \ac{uaprof} within an 
+  HTTP request.
+  \item The server side analyses the received \ac{uaprof} to adapt the content 
+  to the device's display size.
+  \item Finally, the server takes the decision and serves the corresponding items
+  to the device.
+\end{enumerate}
+
+
+However, this approach has several drawbacks:
+
+\begin{itemize}
+ \item Not every device have a \ac{uaprof}.
+ \item Not every \ac{uaprof} are available.
+ \item \ac{uaprof} data can contain schema or data errors.
+ \item There is no industry-wide data quality standard for the data within each
+ field in an \ac{uaprof}.
+\end{itemize}
+
+% Figure~\ref{fig:uaprof_profile} shows an example of a \ac{uaprof} profile.
+
+\lstset {
+%   language=xml,
+  basicstyle={\footnotesize\ttfamily},
+  numbers=none,
+%   backgroundcolour=\colour{lightgray},
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  keywordstyle={\bfseries\colour{Blue}},
+  commentstyle={\colour{Red}\textit},
+  stringstyle=\colour{Magenta},
+  frame=single,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4,
+  morekeywords={rdf,rdfs,owl},  % <-- adding custom keywords
+  caption={\ac{uaprof} example (source: \url{http://www.w3.org/wiki/UAProfIndex})},
+  label=fig:uaprof_profile
+}
+% \lstinputlisting[language=XML, frame=single]{2_state_of_the_art/device/uaprof_example.xml}
+
+\subsubsection{Device Description Repository}
+\label{sec:ddr}
+\ac{ddr} is a concept proposed by the \ac{ddwg}, an organization within the 
+\ac{w3c}. The \ac{ddr} is supported by a standard interface and an initial 
+vocabulary core about devices' properties. Web content authors will use these 
+repositories to adapt their content to these devices. Thus, the Web content 
+interaction with different devices will be easier. Screen size, input mechanisms, 
+supported colour sets, known limitations, special features, and so forth are 
+stored in these repositories.
+
+Here we present three of the most popular \ac{ddr} systems:
+
+\myparagraph{\ac{wurfl}} 
+
+\ac{wurfl} is an \ac{xml} based
+open source database which contains the characteristics and capabilities of a 
+wide range of devices. These capabilities are classified into several groups. 
+These groups are just a simple way to understand \ac{wurfl} and its data. Its 
+\ac{api} is very easy to use and it has the advantage of providing a hierarchy 
+able to \textit{infer} several capabilities for devices which are still not 
+present in the file.
+
+The following are several capabilities used by~\citet{almeida_imhotep_2011} for
+Imhotep, a framework which aims to ease the development of accessible and adaptable
+user interfaces:
+
+\begin{itemize}
+ \item display: It contains information about the device screen, as the resolution,
+ number of columns, orientation, and so on.
+ \item image\_format: Supported image formats.
+ \item playback: Supported video codec.
+ \item streaming: Available streaming capabilities.
+ \item sound\_format: Supported audio formats.
+\end{itemize}
+
+\ac{wurfl} has become the de-facto standard for mobile capabilities. Nevertheless,
+there are several free and open source alternatives that are growing within the
+community very fast.
+
+\myparagraph{OpenDDR}
+
+One of the previously cited open alternatives is OpenDDR\footnote{http://www.openddr.org/}.
+This \ac{ddr} also provides an \ac{api} to access \ac{ddr}s about devices
+capabilities. It has two main advantages:
+
+\begin{itemize}
+ \item The conviction that the application will work with any \ac{w3c} \ac{ddr} 
+ \ac{api} implementation.
+ \item Adopting the \ac{w3c} standard the Copyright of the interfaces is 
+ protected by the \ac{w3c} against any intellectual property and patent claims.
+\end{itemize}
+
+Nevertheless, the OpenDDR \ac{api} is complex. It does not provide an architecture
+approach like \ac{wurfl}. Thus, it assumes default values for unknown parameters
+(e.g., \textit{displayWidth} $= 800$ pixels).
+
+\myparagraph{51Degrees.mobi}
+
+It works similar to OpenDDR, with the difference that 51Degrees.mobi~\citep{51degrees}
+has two versions. The first one (Lite) is free to use and it gathers several 
+devices capabilities. The second one (Premium) is not free, but it has more data 
+about devices and automatic updates for the stored information. 
+
+
+\subsubsection{\ac{ddr} Solution Comparison}
+\label{sec:ddr_comparison}
+
+The main problem with these solutions is their inability to provide all the
+information developers usually need. Many fields are empty (which means that
+default values are used) or with error data. Another disadvantage is that, for
+the interface adaptation domain, sometimes we may need dynamic information about
+the device. For example, the battery levels, or the available memory, can be
+crucial pieces of information before making any adaptation process. Table~\ref{tbl:ddr_comparison}
+depicts each solution's drawbacks and advantages.
+
+
+\begin{table}
+\caption{Analysed \ac{ddr}s comparison~\citep{ddr_comparison}.}
+\label{tbl:ddr_comparison}
+\footnotesize
+\centering
+\begin{tabular}{l l l}
+\hline
+ \textbf{\ac{ddr}} 	& \textbf{Advantages} 			& \textbf{Drawbacks}  	\\
+\hline
+  \ac{wurfl} 	& Upgradeable to new versions 			& Errors in data 	\\
+		& A hierarchy which allows to infer values 	& Many empty values	\\
+		& Many capabilities modelled 			& 			\\
+		& Very easy to configure 			& 			\\
+		& Powerful \ac{api} 				&			\\
+  OpenDDR 	& Free to use, even commercially 		& Limited number of 	\\
+		&		 				& capabilities		\\
+		& Growing community 				& Default values for 	\\
+		& 						& unknown data 		\\
+  51Degrees.mobi& A Lite version, free to use 			& Limited number of 	\\
+		& even commercially 				& capabilities		\\
+		& Easy to install and use 			&			\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Ontologies}
+
+There are other alternatives for modelling devices. As occurs with users and 
+context ontologies allow us to give some meaning to the modelled concepts and 
+the collected information. From the reviewed ontologies we remark the \ac{soupa} 
+ontology which, in addition to consider context information, it models many 
+different aspects of static mobile capabilities and characteristics~\citep{chen_soupa_2004}. 
+Another significant ontology is the one presented by~\citet{hervas_context_2010} 
+as part of the \ac{pivon} ontology. The Device Model Ontology describes not only 
+the device's capabilities but its relationships with the service and user ontologies, 
+dependencies and other features.
+
+\subsubsection{Device Discussion}
+\label{sec:device_discussion}
+
+Apart from all the cited techniques for considering devices and their capabilities,
+we need to remark how technology evolves in a way that makes difficult to predict
+how we will work with smart devices in the near future. A few years ago context 
+was understood as the result of the mixture of every physical sensor deployed in 
+the environment. Temperature, light, noise and so forth all these context variables have 
+been historically collected through several sensors located strategically. Now 
+these sensors (and more) are also embedded in these smart devices. They have 
+become wearable, and using their capabilities of the devices they area embedded 
+in they have improved their performance. Touchable screens, network capabilities,
+parallel computing resources and high storage space embedded in small devices 
+have changed the way context and smart devices interact. This situation makes 
+us contemplate how this interaction channel would be in the near future. Smart 
+watches, glasses and other wearable devices are, undoubtedly, changing the way 
+smart environments will sense, behave and react.
+
+% 
+% \subsection{Related Standardization Work}
+% ANEXO!!!!
+% 
+% 
+% Regarding the standardization, there are several initiatives (dealing with HCI)
+% that, considering users and devices, are now presented. 
+% 
+% \myparagraph{The Web Accessibility Initiative}
+% 
+% The Web Accessibility Initiative (WAI)~\citep{wai} is focused
+% on enabling people with disabilities to equally participate in the Web, e.g.,
+% including social inclusion, regarding not only their disabilities but the location
+% and available infrastructure. On the other hand, there are also different approaches
+% to standardise the content~\citep{wcag} and the presentation of the user interface, i.e.,
+% the Pennsylvania State University~\citep{accessibility}
+% studies how to deal with \ac{w3c}'s standards, accessibility and usability issues. Besides,
+% several workshops are proposed to keep investigating under this issue (see~\citep{wfsmbui}).
+% 
+% \myparagraph{The Uncertainty Reasoning for the World Wide Web Incubator Group}
+% 
+% Considering the uncertainty of the collected context information, the \ac{w3c}'s 
+% Uncertainty Reasoning for the World Wide Web Incubator Group (URW3-XG)~\citep{wwwig}
+% aims to define the challenge of reasoning with and representing uncertain information
+% through related WWW technologies. In 2008 the \ac{w3c} Incubator Group released a report
+% where there are many recommendations through different analysis to identify and describe
+% not only potential uncertain situations but applicable methodologies and the fundamentals
+% of a standardized representation to effectively use them.
+% 
+% Table~\ref{tbl:standards} shows several \ac{w3c} standards and different specifications
+% considering users and devices. Besides, there are also many guidelines and discussion
+% groups working on these issues.
+% 
+% The \ac{w3c} remarks the lack of definition that makes the interoperability of user models
+% difficult. In this context, they propose the following areas to work on:
+% 
+% \begin{itemize}
+%   \item A standard interoperability model providing \ac{api}'s for differnt purposes and applications
+%   \item Common data storage format for user profiles
+%   \item Common calibration/validation technique
+%   \item Collaboration on ethical issues
+%   \item Ensuring sustainability by making them available within a standard
+%   \item Mechanisms for exchanging user profile data between sources
+%   \item Protection mechanisms for privacy issues
+%   \item Control mechanisms for user profile data exposure
+% \end{itemize}
+% 
+% \begin{table}
+%   \caption{\ac{w3c} standards and specifications for user and device modelling}
+%  \label{tbl:standards}
+% \footnotesize
+% \centering
+%  \begin{tabular}{l l c c }
+%   \hline 
+%   \textbf{Entity} & \textbf{Contribution} & \multicolumn{2}{c}{\textbf{Type}} \\
+%     & & \textbf{Standard} & \textbf{Specification}\\
+%   \hline
+%   
+% User	&	UAProf	& $\checkmark$ & \\
+%  &	Multimodal Architecture and Interfaces	& $\checkmark$  & \\
+%  &	Extensible MultiModal Annotation markup language & $\checkmark$  &	\\
+%  &	Ink Markup Language (InkML) & $\checkmark$ & 	\\
+% 
+%  & Accessibility (All) &  & $\checkmark$ \\
+%  & Web Content Accessibility Guidelines (WCAG) &  & $\checkmark$ \\
+%  & Accessible Rich Internet Applications (WAI-ARIA) &  & $\checkmark$ \\
+%  & User Agent Accessibility Guidelines (UAAG) &  & $\checkmark$ \\
+%  & Authoring Tool Accessibility Guidelines (ATAG) &  & $\checkmark$ \\
+%  & Evaluation and Report Language (EARL) &  & $\checkmark$ \\
+%  & IndieUI &  & $\checkmark$ \\
+%  
+%  
+% % Context	&			\\
+% Device	&	\ac{ccpp}	& $\checkmark$ & 	\\
+% % 	&	Device Description Working Group & & $\checkmark$ &   & \\
+% 	& Introduction to Model-Based User Interfaces &  & $\checkmark$ \\
+% 	& Model-Based User Interfaces Glossary &  & $\checkmark$ \\
+% 	& Guidelines for writing device independent tests &  & $\checkmark$ \\
+% 	& Delivery Context Overview for Device Independence &  & $\checkmark$ \\
+% 	& Authoring Techniques for Device Independence &  & $\checkmark$ \\
+% 	& Device Independence Principles &  & $\checkmark$ \\
+% 	& Authoring Challenges for Device Independence &  & $\checkmark$ \\
+% 	& Delivery Context Ontology & & $\checkmark$\\
+% 	& Delivery Context: Client Interfaces (DCCI) &  & $\checkmark$\\
+%   \hline
+% 
+% \end{tabular}
+% \end{table}
+% 
+% \myparagraph{The Video in the Web Activity}
+% 
+% Promoting the use of the video in the Web, the Video in the Web Activity \citep{wva}
+% aims to build a solid architecture to enable users to create, navigate, search,
+% link and distribute video, effectively making video part of the Web. This activity
+% group is formed by three different working groups:
+% 
+% \begin{itemize}
+%   \item The Timed Text Working Group \citep{ttml}, which mission is to provide a language that represents
+%   textual information that is associated with timing information. This group has
+%   released two versions of the Timed Text Markup Language (TTML). The first one was
+%   released in 2010. The last one during 2013.
+%   \item The Media Annotations Working Group \citep{mawg}, which main purpose is to provide an
+%   ontology and \ac{api} to facilitate cross-community data integration of multimedia
+%   information in the Web. The group has published the following documents:
+%     \begin{itemize}
+%       \item A second version of Use Cases and Requirements for Ontology and \ac{api}
+%       for Media Resource 1.0 on January 2010, as an input for the development of
+%       ``the Ontology and the \ac{api} for Media Resource 1.0'' Specification.
+%       \item A \ac{w3c} Recommendation version of the Ontology for Media Resource on February 2012.
+%       \item The group is now about to publish a Proposed Recommendation of the
+%       \ac{api} for Media Resources.
+%     \end{itemize}
+%   \item The Media Fragments Working Group \citep{mfwg}, which successfully aimed to address temporal and
+%   spatial media fragments in the Web using URIs. The group was closed on December 2013
+%   having successfully published two versions (basic and advanced) of the Media
+%   Fragments URI 1.0 specification as a Recommendation.
+% \end{itemize}
+% 
+% The Video in the Web Activity members are still working over the issue of the
+% video codec to be used in the \ac{w3c} specifications (in particular HTML5).
+% 
+% \myparagraph{The Provenance Working Group}
+% 
+% Provenance is defined as the information about the involved entities in producing
+% data which can be used to form assessments about its trustworthiness.
+% In order to allow users to mark up web pages using the terms provided or by
+% making available provenance information expressed as linked data the PROV specification \citep{prov}
+% provides a vocabulary to interchange this provenance information. This specification
+% consists of 11 documents that define various necessary aspects to achieve the
+% vision of inter-operable interchange of provenance information in heterogeneous
+% environments such as the Web (we do not consider the Overview document). Table~\ref{tbl:prov} shows the cited
+% documents and their details. After the publication of the PROV
+% Ontology ~\citep{provo} the PROV group was closed on June, 2013. 
+% 
+% \begin{table}
+%   \caption{PROV documents description. Document type (Recommendation or Note) is also shown}
+%  \label{tbl:prov}
+% \footnotesize
+% \centering
+%  \begin{tabular}{l l l}
+%   \hline 
+%   \textbf{Document} 	& \textbf{Type} & \textbf{Details} \\
+%   \hline 
+% %   PROV-OVERVIEW \citep{PROV-OVERVIEW}	& Note 		& An overview of the PROV family of documents\\
+%   PROV-PRIMER \citep{PROV-PRIMER}		& Note		& The entry point to PROV offering an introduction to the provenance data model\\
+% %   & & provenance data model\\
+%   PROV-XML \citep{PROV-XML}			& Note		&  Defines an XML schema for the provenance data model PROV data model\\ 
+% %   & & This is intended for developers who need a native XML serialization of the \\
+% %   & & PROV data model\\
+%   PROV-O \citep{PROV-O}				& Rec. 		& PROV-O defines a light-weight OWL2 ontology for the provenance data model \\
+% %   & & This is intended for the Linked Data and Semantic Web community\\
+%   PROV-DM \citep{PROV-DM}			& Rec. 		& Defines a conceptual data model for provenance including UML diagrams. \\
+%   & & PROV-O, PROV-XML and PROV-N are serializations of this conceptual model
+%   \\
+%   PROV-N \citep{PROV-N}				& Rec. 		& Defines a human-readable notation for the provenance model. \\
+% %   & & This is used to provide examples within the conceptual model as well as used in \\
+% %   & & the definition of PROV-CONSTRAINTS\\
+%   PROV-CONSTRAINTS \citep{PROV-CONSTRAINTS}	& Rec. 		& Defines a set of constraints on the PROV data model that specifies a notion of\\
+%   & & valid provenance\\
+% %   It is specifically aimed at the implementors of validators\\
+%   PROV-AQ \citep{PROV-AQ} 			& Note		&  Defines how to use Web-based mechanisms to locate and retrieve provenance \\
+%   & & information\\
+%   PROV-DC \citep{PROV-DC} 			& Note		&  Defines a mapping between Dublin Core and PROV-O\\
+%   PROV-DICTIONARY \citep{PROV-DICTIONARY}	& Note		&  Defines constructs for expressing the provenance of dictionary style data structures\\
+%   PROV-SEM \citep{PROV-SEM}			& Note		&  Defines a declarative specification in terms of first-order logic of the PROV data \\
+%   & & model\\
+%   PROV-LINKS \citep{PROV-LINKS}			& Note		&  Defines extensions to PROV to enable linking provenance information across  \\
+%   & & bundles of provenance descriptions\\
+%   \hline
+% %   \hline
+% 
+% \end{tabular}
+% \end{table}
+% 
+% \myparagraph{The Moving Picture Experts Group}
+% 
+% The Moving Picture Experts Group (MPEG) is a working group of ISO/IEC with the
+% mission to develop standards, e.g., MPEG-ACC, MPEG-H, MPEG-DASH, MPEG-4\dots for coded
+% representation of digital audio and video. The group has produced several
+% standards that help the industry offer end users an ever more enjoyable digital
+% media experience. As this group keeps working on the cited objectives the 108
+% meeting is scheduled March 2014 in Valencia, Spain ~\citep{mpeg_valencia}. 
+% 
+% \myparagraph{The Internet Engineering Task Force}
+% 
+% The mission of the Internet Engineering Task Force (IETF) is to produce high
+% quality and relevant technical documents that influence people to design, use,
+% and manage the Internet. IETF's standards development work is organized into 8
+% areas. Within each area there are multiple Working Groups. Each Working Group
+% has one or more chairs who manage the work, and a written charter defining what
+% the work is and when it is due. Table~\ref{tbl:ietf} shows the current active
+% IETF Working Groups. The next meeting is scheduled for March, 2014 in London, England.
+% % Tabla con las publicaciones y timelines de cada subgrupo
+% 
+% 
+% \begin{table}
+%   \caption{Active IETF Working Groups}
+%  \label{tbl:ietf}
+% \footnotesize
+% \centering
+%  \begin{tabular}{l}
+%   \hline 
+%   \textbf{Working Group} 	 \\
+%   \hline 
+%     Applications Area Working Group \\
+%     Constrained RESTful Environments \\
+%     Extensible Provisioning Protocol Extensions \\
+%     Hypertext Transfer Protocol Bis \\
+%     BiDirectional or Server-Initiated HTTP \\
+%     JSON data formats for vCard and iCalendar \\
+%     JavaScript Object Notation \\
+%     Protocol to Access WS database \\
+%     Preparation and Comparison of Internationalized Strings \\
+%     IMAP QRESYNC Extension \\
+%     System for Cross-domain Identity Management \\
+%     SPF Update \\
+%     Uniform Resource Names, Revised \\
+%     Using TLS in Applications \\
+%     Web Security \\
+%     Web Extensible Internet Registration Data Service \\
+%   \hline
+% 
+% 
+% \end{tabular}
+% \end{table}

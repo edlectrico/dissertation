@@ -1,0 +1,105 @@
+
+\subsubsection{Generic User Modelling Systems}
+\label{sec:generic_users}
+
+Apart from the analysed models there is another generic approach for modelling 
+users known as Shell Systems. More focused in the field of \ac{ai}, these 
+solutions consider the user model as a source of information which are built on 
+assumptions about relevant user aspects or 
+behaviour~\citep{pohl_logic_based_1999}.
+
+\citet{heckmann_ubiquitous_2005} differentiates between the model, which is where 
+the user data is collected, and the modelling system, which is the module that
+manages the model. Besides, he remarks the following two definitions
+from~\citet{wahlster_user_1989} previous work:
+
+\begin{description}
+  \item[\Defi{User Model (I), by~\citet{heckmann_ubiquitous_2005}}] \hfill \\
+  \begin{mdframed}[hidealllines=true,backgroundcolor=gray!20]
+  \textit{``A user model is a knowledge source in a system which contains explicit
+  assumptions on all aspects of the user that may be relevant to the behaviour
+  of the system. These assumptions must be separable by the system from the
+  rest of the system's knowledge''}~\citep{wahlster_user_1989}.
+  \end{mdframed}
+
+  \item[\Defi{User Model (II), by~\citet{heckmann_ubiquitous_2005}}] \hfill \\
+  \begin{mdframed}[hidealllines=true,backgroundcolor=gray!20]
+  \textit{``A user modelling component is that part of a system whose function is to
+  incrementally construct a user model; to store, update and delete entries;
+  to maintain the consistency of the model; and to supply other components of
+  the system with assumptions about the user''}~\citep{wahlster_user_1989}.
+  \end{mdframed}
+  
+\end{description}
+
+
+% % \begin{framed}
+%   \begin{mydef}
+%     {A user model is a knowledge source in a system which contains explicit
+%     assumptions on all aspects of the user that may be relevant to the behaviour
+%     of the system. These assumptions must be separable by the system from the
+%     rest of the system's knowledge.~\citep{wahlster_user_1989}}
+%   \end{mydef} 
+% % \end{framed}
+% 
+% % \begin{framed}
+%   \begin{mydef}
+%     {A user modelling component is that part of a system whose function is to
+%     incrementally construct a user model; to store, update and delete entries;
+%     to maintain the consistency of the model; and to supply other components of
+%     the system with assumptions about the user.~\citep{wahlster_user_1989}}
+%   \end{mydef} 
+% % \end{framed}
+
+Assumptions are deeply studied and depicted in~\citep{pohl_logic_based_1999}. 
+In this section, a quick overview of how these systems behave is performed to 
+just take into account the difference between generic user modelling approach 
+(user modelling shells) and the approach followed in this dissertation, which 
+is related to Human-Computer Interaction.
+
+In 1986 \ac{gums} is presented. This software allowed developers to make 
+user-adaptive applications by defining several stereotypes, facts and rules to 
+reason with~\citep{finin_gums_1986}. \acs{gums} supports the addition of new 
+facts in runtime, manages facts inconsistencies and answers the application 
+about assumptions about the user~\citep{kobsa_generic_2001}. The following 
+systems are several examples of generic user systems developed in the following 
+years (chronological ordered):
+
+\begin{itemize}
+  \item DOPPELGÄNGER, which uses several learning techniques for generalizing
+  and extrapolating sensor data for the development of the user model
+  \citep{orwant_doppelgangeruser_1991}.
+  \item \ac{umt}, which supports the definition of hierarchically ordered 
+  stereotypes about the user, rules for user model inferences and contradiction 
+  detection~\citep{brajnik1994shell}.
+  \item TAGUS, which uses first-order formulas to represent assumptions about
+  the user~\citep{paiva1994tagus}.
+  \item The um toolkit, which models not only assumptions but beliefs, preferences and other
+  user characteristics in attribute-value pairs~\citep{kay1994toolkit}.
+  \item BGP-MS, which permits user and groups of users assumptions~\citep{kobsa1994user}.
+\end{itemize}
+
+% MÁS SISTEMAS? SOLO LLEGAMOS A 1995\dots ESTOS SISTEMAS SON MUY ANTIGUOS, SI NO PONEMOS A
+% PARTIR DEL 2000 MEJOR NI PONERLOS IGUAL\dots
+
+
+% A significant aspect of these systems is that they are required to be usable in
+% as many applications as possible. This is, domain independent. Therefore, they
+% are expected to provide as many services as possible. On the contrary, in Human-Interaction
+% user modelling approaches this is, in fact, an issue \citep{cita_falta_modelos_usuarios_comparar}.
+% This problem is addressed in Chapter~\ref{cha:el_que_sea}.
+
+% Domain independence
+% 
+% Known systems: 
+% 
+% GroupLens
+% LikeMinds
+% Personalization Server
+% Frontmind
+% Learn Sesame
+
+% \InsertFig{heckmann_model}{fig:heckmann_model}{Several user model property dimensions \citep{heckmann_user_2007}}{}{0.70}{}
+
+% ----------------------------------------------------------------------
+

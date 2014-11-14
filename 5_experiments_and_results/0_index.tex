@@ -1,0 +1,101 @@
+%: ----------------------- introduction file header -----------------------
+\begin{savequote}[50mm]
+The logic of validation allows us to move between the two limits of dogmatism and skepticism. 
+\qauthor{Paul Ricoeur}
+\end{savequote}
+
+% the code below specifies where the figures are stored
+\ifpdf
+\graphicspath{{5_experiments_and_results/figures/PNG/}
+{5_experiments_and_results/figures/PDF/}{5_experiments_and_results/figures/}}
+\fi
+
+\chapter{Evaluation}
+\label{cha:evaluation}
+%------------------------------------------------------------------------- 
+
+% INTRODUCTION OF THE CHAPTER
+
+In the previous chapters several contributions have been presented. All these
+contributions together define AdaptUI, a mobile platform which regards adaptive 
+and dynamic user interfacing for mobile devices. AdaptUI combines mobile 
+semantics and reasoning, supported by an ontology which models user's 
+characteristics, context current conditions and device's hardware and software 
+characteristics. In this chapter an evaluation of the designed ontology and the 
+semantic based platform which manages it is performed. This evaluation is 
+addressed through several experiments, regarding cycle time responsiveness, 
+system performance with specific operations (e.g., reasoning over a controlled 
+set of rules), other alternatives and, finally, analysing users' acceptance and 
+feedback.
+
+Consequently, this chapter is divided in two different parts considering the 
+experiments' goals. On the one hand, an evaluation of the technical performance
+of the AdaptUI system is presented. Including quantitative and qualitative 
+experiments, this technical evaluation has been developed as follows:
+
+\begin{enumerate}[label=\alph*)]
+  \item First, the developed mobile adaptation of the Pellet reasoning engine 
+  is tested through several scenarios. In these scenarios different   
+  modifications of the AdaptUIOnt ontology are presented in order to evaluate 
+  the performance differences of \textit{Pellet4Android} and Pellet.
+  
+  \item Next, as the system goal is to adapt the user interface, a comparison 
+  with another user interface adaptation solution has been performed: the 
+  Imhotep framework. Imhotep is a user interface adaptation framework which 
+  aims to ease the development of adaptable and more accessible user 
+  interfaces.
+  
+  \item Finally, several scenarios are presented in which the adaptation process
+  of the AdaptUI system is described step by step, from the scenario conditions
+  to the adaptation results. These scenarios have been divided into three 
+  different groups, each group aiming to cover different types of adaptation 
+  and environments. This classification includes:
+  \begin{itemize}
+    \item A scenario in which the limitations suffered by the user are caused
+    by the current context conditions. 
+    
+    \item A second scenario introducing several limitations due to the  
+    activities the user performs.
+    
+    \item A final case in which several disabilities impedes the user to 
+    interact properly with the user interface.
+  \end{itemize}
+\end{enumerate}
+
+On the other hand, an evaluation regarding users, without technical knowledge
+requisites, is performed. This part of the evaluation is based on the user
+satisfaction when using AdaptUI. The scenario for this experiment includes the
+user and an Android based tutorial through which the user indicates several 
+interaction parameters. Taking into account different context situations, 
+several applications are adapted consequently. After the adaptation, the user 
+is asked to complete a questionnaire of usability. More concretely, the \ac{sus} 
+questionnaire is presented (among several extra questions to classify the 
+results).
+
+Hence, the the reminder of this chapter has been structured as follows: 
+
+\begin{itemize}
+  \item A technical evaluation, which experiments are detailed in 
+  Section~\ref{sec:technical_evaluation}. These experiments regard the 
+  reasoning performance comparing Pellet for desktop versus Pellet for mobile 
+  devices. 
+  
+  \item A usability evaluation of the system, which details are accordingly 
+  described in Section~\ref{sec:user_evaluation}. This evaluation includes 
+  users interacting with the AdaptUI system. In order to evaluate the usability 
+  of AdaptUI a usability questionnaire is presented to the users.
+
+  \item Finally, Section~\ref{sec:evaluation_discussion} and 
+  Section~\ref{sec:evaluation_conclusions} summarize and analyse the results
+  obtained and detailed in the previous sections, regarding both technical and
+  usability aspects.
+\end{itemize}
+
+\input{5_experiments_and_results/11_technical_evaluation}
+\input{5_experiments_and_results/112_imhotep_comparison}
+\input{5_experiments_and_results/113_scenarios}
+%
+\input{5_experiments_and_results/12_user_evaluation}
+% 
+\input{5_experiments_and_results/13_evaluation_discussion}
+\input{5_experiments_and_results/14_evaluation_conclusions}

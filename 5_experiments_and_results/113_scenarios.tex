@@ -1,0 +1,786 @@
+\subsection{Scenarios}
+\label{sec:scenarios}
+
+In the previous section several quantitative experiments have been presented.
+These experiments illustrate the performance differences considering the 
+required time to manage the AdaptUIOnt ontology and Imhotep. Regarding the 
+ontology itself, AdaptUI takes into account many context situations, user's 
+capabilities and device's characteristics. This makes difficult to evaluate 
+every one of these settings in real environments. In this section, several 
+hypothetical scenarios are presented simulating the behaviour of the analysed 
+adaptive systems in more complex situations.
+
+The scenarios are included in the evaluation of AdaptUI compared to Imhotep.
+Consequently, both adaptation processes are taking into account for the 
+resulting adaptation and the presented scenario conditions. Hence, the scenarios
+represent three different situations which might require a user interface 
+adaptation:
+
+\begin{itemize}
+  \item First, in the first scenario the situation is characterized by several
+  context parameters that limit certain user capabilities. Consequently, 
+  AdaptUI would have to consider the user as an updated version of 
+  himself/herself, taking into account the new set of capabilities that 
+  he/she has due to the context situation.
+  
+  \item In the second scenario, a situation in which the user capabilities are 
+  delimited by a set of tasks that form an activity is presented. The user is 
+  impeded to act normally. Therefore, the AdaptUI platform would have to be 
+  aware of this limitation. 
+  
+  \item The last scenario simulates a situation where the user suffers from a 
+  certain disability, so the platform should adapt the user interface 
+  accordingly.
+\end{itemize}
+
+Each scenario is presented as follows:
+
+\begin{itemize}
+  \item First, an introduction of the problem to be evaluated is described.
+  
+  \item Next, the scenario situation is presented. It is also summarized with
+  a table indicating the main characteristics of the three main entities.
+  
+  \item Third, the adaptation process by Imhotep and AdaptUI is detailed.
+  
+  \item Finally, each scenario presents several conclusions after a brief 
+  discussion.
+\end{itemize}
+
+\subsubsection{Scenario 1: Limitations caused by context conditions}
+\label{sec:scenario1}
+
+This scenario introduces several limitations that context might induce to 
+certain user capabilities. As context is considered as a significant entity in 
+AdaptUI, this scenario aim to solve a situation in which it impedes the user 
+interact properly. On the contrary, Imhotep does not include the context 
+situation for adapting the user interface. Thus, it would not be possible to 
+have a coherent result regarding the proposed scenario. The following 
+lines introduce the cited scenario:
+
+John is going home after work. He lives and works in Rovaniemi, one of the
+northernmost and coldest regions of Finland. As can be seen in see
+Table~\ref{tbl:scenario1}, John does not suffer from any disability. He removes
+his gloves and then he proceeds to send a \ac{sms} to his wife. The current 
+temperature is $-10$~ºC.
+
+\begin{table}
+ \caption{Scenario 1 situation summary.}
+ \label{tbl:scenario1}
+ \footnotesize
+ \centering
+\begin{tabular}{l l}
+  \hline 
+				& \textbf{Scenario 1} 		\\
+  \hline
+  User \\
+  \qquad - Personal data 	& John, $36$ years old, Finnish 	\\
+  \qquad - Activity	 	& Sending a \ac{sms}		 	\\
+  \qquad - Known disabilities 	& None			 	\\
+%   \hline
+  Context \\
+  \qquad - Location 		& Relative: Rovaniemi, Finland	\\
+				& Absolute: $66.497109$, $25.724977$\\
+  \qquad - Time			& $18$:$35$				\\
+  \qquad - Brightness		& $600$ \ac{lx}			\\
+  \qquad - Temperature		& $-10$ ºC			\\
+%   \hline
+  Device 			& Samsung Galaxy SIII		\\
+				& Battery: $85$\%			\\
+  \hline
+\end{tabular}
+\end{table}
+
+AdaptUI covers this situation through the following steps. First, the platform
+considers through the user model that John does not suffer from any 
+disabilities. Analysed by the Capabilities Collector, AdaptUI does not find 
+disabilities that would limit future adaptations. 
+Table~\ref{tbl:user_profile_scenario1} shows the semantic representation of the 
+model, carried out by the Semantic Modeller, that fits John’s profile. 
+
+\begin{table}
+ \caption{User profile for Scenario 1.}
+ \label{tbl:user_profile_scenario1}
+ \footnotesize
+ \centering
+\begin{tabular}{l l l }
+  \hline 
+  \textbf{Class}  & \multicolumn{2}{c}{\textbf{Scenario 1}}		\\
+		  & \textbf{Data property} & \textbf{value} 		\\
+  \hline
+  \textit{Display}& \textit{userDisplayBrightnessIsStatic*} & true	\\
+		  & \textit{userDisplayIsApplicable}	    & true	\\
+  \textit{Audio}  & \textit{userDisplayApplicableIsStatic}  & false	\\
+		  & \textit{userAudioHasApplicable} 	    & true 	\\
+		  & \textit{userAudioApplicableIsStatic}    & false 	\\
+		  & \textit{userAudioHasVolume}  	    & $4$ 	\\
+  \textit{Interface}& \textit{userInterfaceInput}	    & haptic	\\
+		  & \textit{userInterfaceOutput} 	    & default	\\
+  \textit{Experience}& \textit{userHasExperience} 	    & high	\\
+  \textit{View}	  & \textit{userViewIsStatic}		    & false	\\
+  \textit{Other}  & \textit{userHasLanguage}		    & Finnish	\\
+		  & \textit{vibration} 			    & true 	\\
+  \hline
+\end{tabular}
+\end{table}
+
+Regarding John’s model, it can be seen how it is configured as an open model for
+future adaptations. Besides, most of the preferences are configured as default. 
+The only property that is limited from the model is the brightness, which John
+has established as a static property. This means that AdaptUI understands that
+this property should not be adapted no matter what the context situation is.
+As the contrast and the volume are not static, the modelled integer values are
+considered as preference values and not a limitation for the rules. This means
+that John prefers a volume level of 4, but he allows the system to manage it if
+certain conditions are met. These integer values are different depending on the
+used platform. In this case, as these experiments run over the Android platform,
+they refer to Android values \citep{android_volume}. 
+
+Table~\ref{tbl:user_profile_scenario1} shows the semantic representation of 
+this model which fits John’s profile, using the AdaptUI ontology detailed in 
+Chapter~\ref{cha:ontology_model}. The asterisk marks a property that is marked by the 
+user in a way that limits the adaptation. In this case, the 
+\textit{userDisplayBrightnessIsStatic*} is configured as \textit{true} during 
+the interaction between the user and the Capabilities Collector. Thus, although 
+the context light might affect the sight capability of the user, the display 
+brightness will not be adapted. Combining the user model from 
+Table~\ref{tbl:user_profile_scenario1} with the current context situation
+depicted in Table~\ref{tbl:scenario1}, the pre-adaptation rules generate the
+\textit{UserAux} profile for John, which is shown in 
+Table~\ref{tbl:userAux_scenario1}. In this case, there is a temporary 
+restriction for the user due to the current context conditions (freezing 
+temperature) that is modelled through the \textit{hasRestriction} datatype 
+property (with the value \textit{hands\_restriction}). 
+
+\begin{table}
+ \caption{UserAux class generated by the pre-adaptation rules set and resulting
+ user interface first adaptation for both scenarios.}
+ \label{tbl:userAux_scenario1}
+ \footnotesize
+ \centering
+\begin{tabular}{l l}
+  \hline 
+  \multicolumn{2}{c}{\textbf{Scenario 1}}	\\
+  \textbf{UserAux} 	& \textbf{Value}	\\
+  \hline
+  hasDisplayApplicable 	& true			\\
+  hasDisplayBrightness	& false			\\
+  hasRestriction	& hands\_restriction	\\
+  \hline
+\end{tabular}
+\end{table}
+
+The final adaptation for this situation is driven by the adaptation rules set.
+The brightness is not adapted because the property 
+\textit{userDisplayBrightnessIsStatic} from the Brightness class is configured 
+as \textit{true} (see Table~\ref{tbl:user_profile_scenario1}). Besides, an 
+increase of 10 pixels of the View size is needed to cover the situation in 
+which the user makes more errors on the touch screen because of the freezing
+temperature. An extra interaction feedback is added (vibration). The final 
+adaptation is shown in Table~\ref{tbl:final_adaptation_scenario1}:
+
+\begin{table}
+ \caption{Final adaptation for the Scenario 1.}
+ \label{tbl:final_adaptation_scenario1}
+ \footnotesize
+ \centering
+\begin{tabular}{l l}
+  \hline 
+  \multicolumn{2}{c}{\textbf{Scenario 1}}\\	
+  \textbf{Adaptation} 	& \textbf{Value}\\ 
+  \hline
+  \textit{hasBrightness}& -		\\
+  \textit{hasColourSet}	& -		\\
+  \textit{hasViewSize}	& $10$		\\
+  \textit{hasResponse}	& vibration	\\
+  \hline
+\end{tabular}
+\end{table}
+
+Finally, the system should provide the user a chance to evaluate, provide 
+feedback, on whether the interaction with the presented adaptation is good 
+enough or if another adaptation should be triggered. There are also a few rules 
+which take into account the device’s dynamic capabilities. The remaining 
+memory, available processor and battery are monitored in order to avoid 
+adaptations that could freeze the device or consume the remaining power. As is 
+shown in Table~\ref{tbl:battery}, battery levels under $10$\% are considered too 
+low to perform an adaptation.
+
+\begin{table}
+ \caption{Battery percentage and corresponding ontology values.}
+ \label{tbl:battery}
+ \footnotesize
+ \centering
+\begin{tabular}{l l}
+  \hline 
+  \textbf{Battery (\%)} & \textbf{Ontology values}	\\
+  \hline
+  $ x \leq 10 $		& \textit{not\_sufficient}	\\
+  $ x 10 < x \leq 50 $	& \textit{sufficient} 		\\
+  $ x 50 < x \leq 100 $	& \textit{optimal}		\\
+  \hline
+\end{tabular}
+\end{table}
+
+\myparagraph{Discussion}
+\label{sec:scenario1_discussion}
+
+This first scenario presents a situation in which the user capabilities are
+limited by certain context characteristics. More specifically, the current
+temperature (-10~ºC) might make difficult to John to use his hands and properly
+interact with his device. In this case, thanks to the context modelling 
+availability in AdaptUIOnt and due to the configuration of the user profile, 
+several sets of rules lead to the results of Table~\ref{tbl:userAux_scenario1},
+in which we can see how the pre-adaptation rules evaluate several 
+characteristics of the user conditions, and the results of 
+Table~\ref{tbl:final_adaptation_scenario1}, in which the final adaptation is 
+shown.
+
+On the contrary, Imhotep does not take context conditions into account. The only
+way to indicate a disability would be if the user configures the Imhotep user
+profile with a concrete disability. This would lead to a series of 
+configurations each time the user is within a different environment.
+
+\myparagraph{Conclusions}
+\label{sec:scenario1_conclusions}
+
+John is perfectly healthy and he usually does not need complex adaptations. 
+However, in this case the current freezing temperature makes difficult for him
+to use his fingers with the usual precision. Considering these premises,
+any adaptive system would just ignore the current situation (including Imhotep).
+Nevertheless, with these weather conditions, John is partially disabled. The
+weather, more concretely the temperature, might affect several physiological
+capabilities of the user. Therefore, the interaction between John and the \ac{sms}
+application might experience several difficulties.
+
+Imhotep does not take into account the context situation, but we can consider 
+the new set of capabilities shown in Table~\ref{tbl:user_profile_scenario1} as 
+the starting user capabilities. Besides, regarding
+Table~\ref{tbl:final_adaptation_scenario1} where the adaptation from AdaptUI is 
+shown, Imhotep would not make an adequate adaptation. This is not just because 
+the user has not a permanent disability. Imhotep considers through the user 
+profile sight problems and hearing problems. Considering that the profile is 
+correctly configured, an adaptation in such ways will not cover the user needs, 
+which deals with mobility and precision using fingers on  the screen. 
+Table~\ref{tbl:adaptui_vs_imhotep_scenario1} shows several significant 
+differences between those characteristics that Imhotep is able to take into 
+account in this scenario and the ones that AdaptUI considers. It is shown how 
+any context characteristic lacks Imhotep of accuracy when adapting the user 
+interface to the current situation. Besides, it is not able to model not only 
+an activity, but the consequences of it (as AdaptUI, which takes into account 
+that the user is performing an activity that, due to the context conditions,
+cannot carry out properly).
+
+\begin{table}
+ \caption{AdaptUI and Imhotep comparison of the final reached adaptation for 
+the Scenario 1.}
+ \label{tbl:adaptui_vs_imhotep_scenario1}
+ \footnotesize
+ \centering
+\begin{tabular}{l l c c}
+\hline
+\textbf{Entity} & \textbf{Capability or}&\multicolumn{2}{c}{\textbf{Solution}}\\
+		& \textbf{characteristic}& \textbf{Imhotep} & \textbf{AdaptUI}\\
+\hline
+User		& Sight			 & 		    & 		      \\
+		& Hearing 		 & 		    & 		      \\
+		& Other   		 & 		    & \checkmark      \\
+		& Activity		 & 		    & 		      \\
+
+Context		& Light			 & 		    &		      \\
+		& Noise			 & 		    &		      \\
+		& Temperature		 & 		    & \checkmark      \\
+	
+Device		& Resolution		 & \checkmark	    & \checkmark      \\
+		& Battery		 & 		    & \checkmark      \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Scenario 2: Limitations caused by activities}
+\label{sec:scenario2}
+
+In this case, the scenario 2 presents a situation in which the user cannot act
+properly due to the activity or activities that he/she is doing. Again, Imhotep
+cannot characterize activities. Nevertheless, in this scenario user disabilities
+and device characteristics are going to be used in Imhotep to follow the 
+corresponding user interface adaptation. The scenario 2 is described now in the 
+following lines:
+
+Karen is a 60 years woman with several disabilities due to her ageing. She is
+colour blind, which means she has problems distinguishing several colours. In
+addition, she suffers from a light hearing loss, which is not severe. She is
+driving to the down town using a \ac{gps} mobile application. For this scenario, the
+most significant information to infer is the impossibility to use the hands and
+the impossibility to distract her, as Karen is driving. Besides, the user model
+should consider the capabilities cited in Table~\ref{tbl:scenario2}, as she is
+colour blind. Therefore, with this information a first user model is 
+semantically represented by AdaptUI in Table~\ref{tbl:user_profile_scenario2}. 
+The following lines analyse the adaptation process due to the situation 
+summarized in Table~\ref{tbl:scenario2}.
+
+\begin{table}
+ \caption{Scenario 2 situation summary.}
+ \label{tbl:scenario2}
+ \footnotesize
+ \centering
+\begin{tabular}{l l}
+  \hline 
+				& \textbf{Scenario 2}		\\
+  \hline
+  User \\
+  \qquad - Personal data 	& Karen, $60$ years old, German \\
+  \qquad - Activity	 	& Driving 			\\
+  \qquad - Known disabilities 	& Colour blindness 		\\
+				& Hearing loss 			\\
+%   \hline
+  Context \\
+  \qquad - Location 		& Relative: Berlin, Germany  	\\
+				& 				\\
+  \qquad - Time			& $11$:$10$ 			\\
+  \qquad - Brightness		& $1,100$ \ac{lx} 		\\
+  \qquad - Temperature		& $15$ ºC 			\\
+%   \hline
+  Device 			& Samsung Galaxy Tab 	 	\\
+% 				& 				\\	
+  \hline
+\end{tabular}
+\end{table}
+
+Karen suffers from two different disabilities: colour blindness and hearing 
+loss. As AdaptUIOnt is focused on the user’s preferences rather than on the 
+disabilities, the user model configures her capabilities as it is shown in 
+Table~\ref{tbl:user_profile_scenario2}. 
+
+\begin{table}
+ \caption{User profile for Scenario 2.}
+ \label{tbl:user_profile_scenario2}
+ \footnotesize
+ \centering
+\begin{tabular}{l l l}
+  \hline 
+  \textbf{Class} & \multicolumn{2}{c}{\textbf{Scenario 2}}		\\
+	  & \textbf{Data property} 		   & \textbf{value}	\\
+  \hline
+  Display & \textit{userDisplayBrightnessIsStatic} & false		\\
+	  & \textit{userDisplayIsApplicable} 	   & true		\\
+  Audio   & \textit{userDisplayApplicableIsStatic}& true		\\
+	  & \textit{userAudioHasApplicable} 	   & true		\\
+	  & \textit{userAudioApplicableIsStatic}   & false		\\
+	  & \textit{userAudioHasVolume}  	   & $4$ 		\\
+ Interface& \textit{userInterfaceInput}		   & default		\\
+	  & \textit{userInterfaceOutput} 	   & default		\\
+Experience& \textit{userHasExperience} 		   & low		\\
+  View	  & \textit{userViewIsStatic}		   & false		\\
+  Other   & \textit{userHasLanguage}		   & German		\\
+	  & \textit{vibration} 			   & true 		\\
+  \hline
+\end{tabular}
+\end{table}
+
+Table~\ref{tbl:user_profile_scenario2} presents several important user 
+parameters regarding the final adaptation. The volume of the device is allowed
+to be adapted by the platform. In addition, Karen uses the default 
+input/output interaction channels. In this case, there is a temporary 
+restriction for the user due to the current activity (i.e., driving) that is 
+modelled through the \textit{hasRestriction} datatype property (with the value 
+\textit{hands\_restriction} and \textit{attention\_restriction}). This is shown
+in Table~\ref{tbl:userAux_scenario2}.
+
+\begin{table}
+ \caption{UserAux class generated by the pre-adaptation rules set and resulting
+ UI first adaptation for both scenarios.}
+ \label{tbl:userAux_scenario2}
+ \footnotesize
+ \centering
+\begin{tabular}{l l}
+  \hline 
+  \multicolumn{2}{c}{\textbf{Scenario 2}}			\\
+  \textbf{UserAux} 		& \textbf{Value} 		\\
+  \hline
+  \textit{hasDisplayApplicable}	& \textit{true}			\\
+  \textit{hasAudioApplicable}	& \textit{true} 		\\
+  \textit{hasRestriction}	& \textit{hands\_restriction}	\\
+  ~				& \textit{attention\_restriction}\\
+  \hline
+\end{tabular}
+\end{table}
+
+The final adaptation for this situation is modelled by the adaptation rules.
+As the limitations in this case come from the special situation generated by 
+the activities performed by the user, AdaptUI has to change the interaction 
+channels considering that the user has several restrictions. Thus, the size of 
+the corresponding views is increased, the interaction channel allows voice 
+interaction, and the volume is also increased due to the possible noise while
+driving a car or traffic. These adaptations are shown in 
+Table~\ref{tbl:final_adaptation_scenario2}:
+
+\begin{table}
+ \caption{Final adaptation for the Scenario 2.}
+ \label{tbl:final_adaptation_scenario2}
+ \footnotesize
+ \centering
+\begin{tabular}{l l}
+  \hline 
+    \multicolumn{2}{c}{\textbf{Scenario 2}}		\\
+    \textbf{Adaptation} 	& \textbf{Value} 	\\
+    \hline
+    \textit{hasColourSet}	& Colour blindness 	\\
+    \textit{hasViewSize}	& $20$ 			\\
+    \textit{hasInput}		& Voice and haptic	\\
+    \textit{hasOutput}		& Visual and audio	\\
+    \textit{hasVolume}		& $7$ (max) 		\\
+  \hline
+\end{tabular}
+\end{table}
+
+As said before, Imhotep does not consider activities in its user and device 
+profile. However, we can assume a possible user configuration profile under the 
+presented circumstances in Table~\ref{tbl:scenario2}. Thus, a possible profile
+is illustrated through Listing~\ref{lst:scenario2_imhotep}.
+
+
+\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{json}{5_experiments_and_results/scenario2_imhotep.json}
+\captionof{listing}{The variables file, in which device characteristics and user 
+capabilities are described for the scenario 2.\label{lst:scenario2_imhotep}}
+
+
+Regarding Listing~\ref{lst:scenario2_imhotep} the Imhotep framework will avoid
+combining red/green colours, but no magnification of the screen or the size
+of the text would be added. Voice control would also be provided, and volume
+levels would be increased by indicating a hearing disability.
+
+
+\myparagraph{Discussion}
+\label{sec:scenario2_discussion}
+
+In this scenario a situation in which the user capabilities are limited by the
+current activity is presented. Karen is driving in this scenario, and this 
+activity makes her unable to use the usual interaction channel with the device. 
+This activity normally requires a full attention to the road and the 
+use of both hands. Therefore, we find two different limitations that 
+this scenario combine. Considering this situation AdaptUI models several 
+restrictions through the pre-adaptation rules. These restrictions and their 
+representation in the AdaptUIOnt ontology are shown in 
+Table~\ref{tbl:userAux_scenario2}. The final adaptation for this situation is 
+shown in Table~\ref{tbl:final_adaptation_scenario2}. In this case the main 
+adaptations are centred in the interaction channel, as the user is driving and 
+suffers from several restrictions due to the current activity. Hence, audio 
+control and bigger views are presented.
+
+As happens in Scenario 1, Imhotep does not cover the circumstances described 
+for this scenario through Table~\ref{tbl:scenario2}. However, it is possible to
+somehow represent this through the variables user profile. 
+Listing~\ref{lst:scenario2_imhotep} shows an example of a modified user profile
+representing several limitations that, although they might not be true, they
+represent a practical situation in which the user is limited by external agents 
+(which would be the activity of driving). Thus, Imhotep considers that the user 
+is blind and suffers hearing loss. Consequently, the resulting user interface
+also increases the volume levels, uses \ac{tts} for reading the displayed
+information and changes the colour set.
+
+\myparagraph{Conclusions}
+\label{sec:scenario2_conclusions}
+
+Karen suffers from two disabilities which, combined with the current activity
+makes the interaction with her mobile device troublesome. In this scenario, 
+Karen is driving her car and intends to use a \ac{gps} guiding application to go to
+a certain location. AdaptUI covers this situation adapting the interaction 
+channel and through a few modifications in the displayed views. As this 
+interaction might be difficult, the Adaptation Polisher module explained in
+Section~\ref{sec:adaptation_polisher} takes great importance in this situation.
+
+On the contrary, to be able to represent a similar situation with Imhotep, the
+user variables profile has to be modified.
+
+The main differences between both solutions is shown when Karen interacts with
+the application and the results are not satisfactory. This means that, although
+the application's user interface has been adapted, it might not be close to what
+the user needs. In AdaptUI the Adaptation Polisher dynamically monitors this 
+interaction and performs several changes under the post-adaptation rules set. On
+the contrary, Imhotep would require a whole new specification of the user 
+profile, with the corresponding consequences.
+
+Table~\ref{tbl:adaptui_vs_imhotep_scenario2_user} and 
+Table~\ref{tbl:adaptui_vs_imhotep_scenario2_context_device} show the main 
+difference of these two solutions in the modelling of the user, the context and
+the device. Through them we can see how both solutions model the user 
+disabilities, but only AdaptUI is aware of the activity of the user and the 
+restrictions it implies.
+
+
+\begin{table}
+ \caption{AdaptUI and Imhotep comparison of the final reached adaptation for the
+ Scenario 2 regarding the user.}
+ \label{tbl:adaptui_vs_imhotep_scenario2_user}
+ \footnotesize
+ \centering
+\begin{tabular}{l l l l l }
+  \hline 
+  \textbf{Solution} & \multicolumn{4}{c}{\textbf{User capabilities}}\\
+      & \textbf{Sight} & \textbf{Hearing} & \textbf{Other} & \textbf{Activity}\\
+  \hline
+  Imhotep & \checkmark & \checkmark 	  & \checkmark 		   & ~ 	\\
+  AdaptUI & \checkmark & \checkmark       & colour blind & ``driving''\\
+  \hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+ \caption{AdaptUI and Imhotep comparison of the final reached adaptation for the
+ Scenario 2 regarding the context and the device.}
+ \label{tbl:adaptui_vs_imhotep_scenario2_context_device}
+ \footnotesize
+ \centering
+\begin{tabular}{l l l l l l l l}
+\hline 
+\textbf{Solution} & \multicolumn{3}{c}{\textbf{Context characteristics}} 
+& \multicolumn{2}{c}{\textbf{Device characteristics}}\\
+& \textbf{Light} & \textbf{Noise} & \textbf{Temperature} & \textbf{Resolution} 
+& 
+\textbf{Battery} \\
+  \hline
+	Imhotep		& ~ & ~ & ~ & \checkmark & ~\\
+	AdaptUI		& ~ & ~ & \checkmark & \checkmark & \checkmark \\
+  \hline
+\end{tabular}
+\end{table}
+
+
+\subsubsection{Scenario 3: Limitations caused by disabilities}
+\label{sec:scenario3}
+
+The last scenario introduces a situation in which the user suffers from a 
+disability that impedes a proper interaction with the device. The scenario and 
+its main characteristics are described in the following lines.
+
+Patrick is a 25 years old boy who lives in London. He lost his eyesight when he
+was 10. He uses accessibility tools when he interacts with computers and home
+devices. His PC is equipped with an utility which reads from the screen so he
+can navigate and use it. The problem is that a similar feature in his mobile
+device usually is not enough depending on the context situation. Mostly traffic
+and street noise usually makes difficult to Patrick to hear the messages read by
+the device.
+
+Table~\ref{tbl:scenario3} shows the configuration of the first model for this
+scenario. As it can be seen in this table, Patrick needs from some adaptation to
+interact with his mobile device. Common accessibility tools cover this issue by
+reading the text in the screen. However, they do not consider context. This
+entails several obstacles during the interaction, as problems to hear the text
+read by the mobile device.
+
+\begin{table}
+ \caption{Scenario 3 situation summary.}
+ \label{tbl:scenario3}
+ \footnotesize
+ \centering
+\begin{tabular}{l l}
+  \hline 
+				& \textbf{Scenario 3}		\\
+  \hline
+  User \\
+  \qquad - Personal data 	& Patrick, $25$ years old, British\\
+  \qquad - Activity	 	& 				\\
+  \qquad - Known disabilities 	& Sight disability		\\
+%   \hline
+  Context \\
+  \qquad - Location 		& Relative: London, United Kingdom\\
+  \qquad - Time			& $12$:$00$			\\
+  \qquad - Brightness		& $20,000$ \ac{lx}		\\
+  \qquad - Temperature		& $14$ ºC			\\
+%   \hline
+  Device 			& Samsung Galaxy Ace		\\
+				&  Battery: $55$\%		\\	
+  \hline
+\end{tabular}
+\end{table}
+
+To reach the final adaptation the following steps are performed by the AdaptUI
+platform. As Patrick configures his profile indicating that the preferred input
+interaction should be \textit{``voice\_control''} (see 
+Table~\ref{tbl:userAux_scenario3} the system becomes aware of the fact that 
+Patrick suffers from a sight disability. Besides, the profile is configured 
+indicating that the Display is not applicable, and that its configuration 
+should not be adapted (because in this case it is not necessary, as Patrick is 
+blind). Therefore, the adaptation should result into a promotion of an 
+alternative channel, so the user would be able of interacting alternatively and 
+perform the same tasks. The volume value configured by Patrick is defined as $4$. 
+This is because the user considers that this value is enough to clearly hear 
+the device's voice. Nevertheless, Patrick knows that this should not be an 
+static value, as when he is in the street sometimes that value does not allow 
+him to hear properly. As a consequence, the \textit{userAudioApplicableIsStatic}
+property is modelled as false.
+
+\begin{table}
+ \caption{User profile for Scenario 3.}
+ \label{tbl:user_profile_scenario3}
+ \footnotesize
+ \centering
+\begin{tabular}{l l l}
+  \hline 
+  \textbf{Class}		& \multicolumn{2}{c}{\textbf{Scenario 3}}\\
+		& \textbf{Data property} & \textbf{value}\\
+  \hline
+  Display 	& \textit{userDisplayBrightnessIsStatic}& true	\\
+		& \textit{userDisplayIsApplicable} 	& false	\\
+  Audio 	& \textit{userDisplayApplicableIsStatic}& true	\\
+		& \textit{userAudioHasApplicable} 	& true	\\
+		& \textit{userAudioApplicableIsStatic} 	& false	\\
+		& \textit{userAudioHasVolume}  		& $4$ 	\\
+  Interface 	& \textit{userInterfaceInput}		& voice\_control\\
+		& \textit{userInterfaceOutput} 		& audio \\
+  Experience	& \textit{userHasExperience} 		& default\\
+  View		& \textit{userViewIsStatic}		& true	\\
+  Other 	& \textit{userHasLanguage}		& English\\
+		& \textit{vibration} 			& true 	\\
+  \hline
+\end{tabular}
+\end{table}
+
+Taking into account the input shown in Table~\ref{tbl:scenario3} and
+Table~\ref{tbl:user_profile_scenario3}, AdaptUI begins the process filling
+the auxiliary classes and properties as is shown in
+Table~\ref{tbl:userAux_scenario3}
+
+
+\begin{table}
+ \caption{UserAux class generated by the pre-adaptation rules set and resulting
+ \ac{ui} first adaptation for both scenarios.}
+ \label{tbl:userAux_scenario3}
+ \footnotesize
+ \centering
+\begin{tabular}{l l}
+  \hline 
+	\multicolumn{2}{c}{\textbf{Scenario 3}}	\\
+	\textbf{UserAux} 	& \textbf{Value}\\
+  \hline
+  \textit{hasDisplayApplicable} & false		\\
+  \textit{hasDisplayBrightness}	& false		\\
+  \textit{hasAudioApplicable}	& true		\\
+%   \textit{hasRestriction}	& true???	\\
+  \hline
+\end{tabular}
+\end{table}
+
+In the final adaptation is shown how due to Patrick's sight disability the 
+AdaptUI platform adapts the interface channel with the user. Thus, the voice
+becomes the best choice for interacting with the device.
+
+\begin{table}
+ \caption{Final adaptation for the scenarios 3.}
+ \label{tbl:final_adaptation_scenario3}
+ \footnotesize
+ \centering
+\begin{tabular}{l l}
+  \hline 
+	\multicolumn{2}{c}{\textbf{Scenario 3}}	\\
+	\textbf{Adaptation} & \textbf{Value}\\
+  \hline
+  \textit{hasBrightness}& false		\\
+  \textit{hasInput}	& voice 	\\
+  \textit{hasResponse}	& vibration	\\
+  \textit{hasVolume}	& $7$ (max) 	\\
+  \hline
+\end{tabular}
+\end{table}
+
+Imhotep models user visual disabilities in its variables profile under the
+\textit{problems.sight} variable. The problem comes when the user has to fill 
+the profile. In AdaptUI the Capabilities Collector allows blind users to 
+configure the interaction channels thanks to voice control. In any case, 
+considering that the user profile is configured, it is shown in 
+Listing~\ref{lst:scenario3_imhotep}.
+
+% As said before, Imhotep does not consider activities in its user and device 
+% profile. However, we can assume a possible user configuration profile under 
+% the 
+% presented circumstances in Table~\ref{tbl:scenario2}. Thus, a possible profile
+% is illustrated through Listing~\ref{lst:scenario2_imhotep}.
+
+\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{json}{5_experiments_and_results/scenario3_imhotep.json}
+\captionof{listing}{The variables file, in which device characteristics and user 
+capabilities are described for the scenario 3.\label{lst:scenario3_imhotep}}
+
+Regarding the variables profile it is very difficult for Imhotep to make the 
+proper decisions. The input file lacks of practical information about the user
+disability. In fact, the Imhotep's adapted user interface is the same as in the
+scenario 2.
+
+
+\myparagraph{Discussion}
+\label{sec:scenario3_discussion}
+
+In this scenario we present a situation in which the adaptation should be lead
+regarding a concrete user disability. Here, context or activities are not as
+important as in the other scenarios. Thus, the efforts of the AdaptUI platform
+are focused on avoiding any visual interface. 
+
+In the case of AdaptUI this is carried out based on the user model filled 
+during the interaction with the Capabilities Collector. This module allows 
+blind users to interact with it using their voice. On the contrary, in the case 
+of Imhotep this is not possible. Filling the user profile (represented by the 
+variables file) is impossible for a blind user.
+
+Nevertheless, considering that the user is able to fill it, Imhotep cannot 
+react to the specific disability of the user. It is true that it will present 
+an alternative user interface, with audio instructions and a different colour 
+configuration set, but it will not take the specific problem of the user into 
+account. On the contrary, the AdaptUI platform does not consider any specific
+disability. As it is centred in the preferences of the user, the resulting 
+adapted user interface will be more practical.
+
+\myparagraph{Conclusions}
+\label{sec:scenario3_conclusions}
+
+As is shown in Table~\ref{tbl:user_profile_scenario3} Patrick has a sight
+disability. Imhotep takes sight and hearing disabilities into account for the
+adaptation process. Therefore, depending on the network range and on the server
+side programmed adaptations different UI would be available. The main setback is
+that Patrick has to indicate the concrete physiological problem. For example, he
+would have to configure a figure detailing the dioptres he has. Then, the 
+Imhotep server would act consequently. According to this, if the concrete 
+figure has not been considered in the adaptation process, the resulting UI 
+might not be adequate. Another issue is that, the network dependency would make 
+the adaptation process too long. AdaptUI covers this problem as it runs 100 \% 
+in the mobile device.
+
+The main differences when dealing with the user, context and device models in
+this scenario is shown in Table~\ref{tbl:adaptui_vs_imhotep_scenario3_user} and 
+Table~\ref{tbl:adaptui_vs_imhotep_scenario3_context_device}. 
+
+
+\begin{table}
+ \caption{AdaptUI and Imhotep comparison of the final reached adaptation for the
+ Scenario 3 regarding the user.}
+ \label{tbl:adaptui_vs_imhotep_scenario3_user}
+ \footnotesize
+ \centering
+\begin{tabular}{l l l l l}
+  \hline 
+  \textbf{Solution}& \multicolumn{4}{c}{\textbf{User capabilities}} \\
+  & \textbf{Sight} & \textbf{Hearing} & \textbf{Other} & \textbf{Activity}\\
+  \hline
+  Imhotep	& \checkmark & ~ & ~ & ~ \\
+  AdaptUI	& \checkmark & ~ & \checkmark & \checkmark\\
+  \hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+ \caption{AdaptUI and Imhotep comparison of the final reached adaptation for the
+ Scenario 3 regarding the context and the device.}
+ \label{tbl:adaptui_vs_imhotep_scenario3_context_device}
+ \footnotesize
+ \centering
+\begin{tabular}{l l l l l l l l}
+  \hline 
+  \textbf{Solution} &  \multicolumn{3}{c}{\textbf{Context characteristics}} & 
+  \multicolumn{2}{c}{\textbf{Device characteristics}}\\
+  & \textbf{Light} & \textbf{Noise} & \textbf{Temperature} & 
+  \textbf{Resolution} & \textbf{Battery} \\
+  \hline
+  Imhotep	& ~ & ~ & ~ & \checkmark & ~\\
+  AdaptUI	& ~ & \checkmark & ~ & \checkmark & \checkmark \\
+  \hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,18 @@
+{
+  "piramide.devices.screen.height": 480,
+  "piramide.devices.screen.width": 320,
+  "piramide.devices.modelname": "Samsung Galaxy Ace",
+  "piramide.devices.os": "Android",
+  "piramide.devices.os.version": "2.3.6",
+  "piramide.devices.capabilities.video": true,
+  "piramide.devices.capabilities.audio": true,
+  "piramide.devices.capabilities.gps": true,
+  "piramide.devices.capabilities.flash": true,
+  
+  "piramide.user.capabilities.problems": true,
+  "piramide.user.capabilities.problems.sight": true,
+  "piramide.user.capabilities.problems.sight.dioptres": "blindness",
+  "piramide.user.capabilities.problems.hearing": false,
+  "piramide.user.capabilities.problems.smell": false,
+  "piramide.user.capabilities.problems.touch": false
+}

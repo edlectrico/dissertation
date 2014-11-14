@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:prf="http://www.wapforum.org/UAPROF/ccppschema-20010430#">
+	<rdf:Description ID="Profile">
+		<prf:component>
+			<rdf:Description ID="HardwarePlatform">
+				<prf:ScreenSize>208x320</prf:ScreenSize>
+				<prf:Model>P800R101</prf:Model>
+				<prf:InputCharSet>
+					<rdf:Bag>
+
+						<rdf:li>ISO-8859-1</rdf:li>
+						<rdf:li>ISO-8859-2</rdf:li>
+						<rdf:li>ISO-8859-4</rdf:li>
+						<rdf:li>ISO-8859-5</rdf:li>
+						<rdf:li>ISO-8859-7</rdf:li>
+						<rdf:li>ISO-8859-9</rdf:li>
+
+						<rdf:li>WINDOWS-1252</rdf:li>
+						<rdf:li>US-ASCII</rdf:li>
+						<rdf:li>UTF-8</rdf:li>
+						<rdf:li>ISO-10646-UCS-2</rdf:li>
+						<rdf:li>UTF-16</rdf:li>
+						<rdf:li>UTF-16be</rdf:li>
+
+						<rdf:li>UTF-16le</rdf:li>
+						<rdf:li>UTF-7</rdf:li>
+					</rdf:Bag>
+				</prf:InputCharSet>
+				<prf:ScreenSizeChar>20x15</prf:ScreenSizeChar>
+				<prf:BitsPerPixel>12</prf:BitsPerPixel>
+				<prf:ColorCapable>Yes</prf:ColorCapable>
+
+				<prf:TextInputCapable>Yes</prf:TextInputCapable>
+				<prf:ImageCapable>Yes</prf:ImageCapable>
+				<prf:Keyboard>OnScreenQwerty</prf:Keyboard>
+				<prf:NumberOfSoftKeys>0</prf:NumberOfSoftKeys>
+				<prf:Vendor>Sony Ericsson Mobile Communications</prf:Vendor>
+				<prf:OutputCharSet>
+
+					<rdf:Bag>
+						<rdf:li>ISO-8859-1</rdf:li>
+						<rdf:li>ISO-8859-2</rdf:li>
+						<rdf:li>ISO-8859-4</rdf:li>
+						<rdf:li>ISO-8859-5</rdf:li>
+						<rdf:li>ISO-8859-7</rdf:li>
+
+						<rdf:li>ISO-8859-9</rdf:li>
+						<rdf:li>WINDOWS-1252</rdf:li>
+						<rdf:li>US-ASCII</rdf:li>
+						<rdf:li>UTF-8</rdf:li>
+						<rdf:li>ISO-10646-UCS-2</rdf:li>
+						<rdf:li>UTF-16</rdf:li>
+
+						<rdf:li>UTF-16be</rdf:li>
+						<rdf:li>UTF-16le</rdf:li>
+						<rdf:li>UTF-7</rdf:li>
+					</rdf:Bag>
+				</prf:OutputCharSet>
+				<prf:SoundOutputCapable>Yes</prf:SoundOutputCapable>
+				<prf:StandardFontProportional>Yes</prf:StandardFontProportional>
+
+				<prf:PixelsAspectRatio>1x1</prf:PixelsAspectRatio>
+				<prf:PointingResolution>Pixel</prf:PointingResolution>
+			</rdf:Description>
+		</prf:component>
+		<prf:component>
+			<rdf:Description ID="SoftwarePlatform">
+				<prf:AcceptDownloadableSoftware>Yes</prf:AcceptDownloadableSoftware>
+
+			</rdf:Description>
+		</prf:component>
+		<prf:component>
+			<rdf:Description ID="NetworkCharacteristics">
+				<prf:SecuritySupport>WTLS class 1/2/3/signText</prf:SecuritySupport>
+				<prf:SupportedBearers>
+					<rdf:Bag>
+						<rdf:li>GPRS</rdf:li>
+
+						<rdf:li>CSD</rdf:li>
+					</rdf:Bag>
+				</prf:SupportedBearers>
+			</rdf:Description>
+		</prf:component>
+		<prf:component>
+			<rdf:Description ID="BrowserUA">
+				<prf:BrowserName>Sony Ericsson</prf:BrowserName>
+
+				<prf:CcppAccept>
+					<rdf:Bag>
+						<rdf:li>application/vnd.wap.wmlc</rdf:li>
+						<rdf:li>application/vnd.wap.wbxml</rdf:li>
+						<rdf:li>application/vnd.wap.wmlscriptc</rdf:li>
+						<rdf:li>application/vnd.wap.multipart.mixed</rdf:li>
+						<rdf:li>text/x-vCard</rdf:li>
+
+						<rdf:li>text/x-vCalendar</rdf:li>
+						<rdf:li>text/x-vMel</rdf:li>
+						<rdf:li>text/x-eMelody</rdf:li>
+						<rdf:li>image/vnd.wap.wbmp</rdf:li>
+						<rdf:li>text/x-iMelody</rdf:li>
+						<rdf:li>image/gif</rdf:li>
+
+						<rdf:li>image/jpeg</rdf:li>
+						<rdf:li>application/vnd.wap.sic</rdf:li>
+						<rdf:li>application/vnd.wap.slc</rdf:li>
+						<rdf:li>application/vnd.wap.coc</rdf:li>
+						<rdf:li>application/vnd.wap.sia</rdf:li>
+						<rdf:li>application/vnd.wap.wtls-ca-certificate</rdf:li>
+
+						<rdf:li>application/vnd.wap.xhtml+xml</rdf:li>
+						<rdf:li>application/vnd.eri.thm</rdf:li>
+						<rdf:li>application/xhtml+xml</rdf:li>
+					</rdf:Bag>
+				</prf:CcppAccept>
+				<prf:CcppAccept-Charset>
+					<rdf:Bag>
+
+						<rdf:li>US-ASCII</rdf:li>
+						<rdf:li>ISO-8859-1</rdf:li>
+						<rdf:li>ISO-8859-2</rdf:li>
+						<rdf:li>ISO-8859-4</rdf:li>
+						<rdf:li>ISO-8859-5</rdf:li>
+						<rdf:li>ISO-8859-7</rdf:li>
+
+						<rdf:li>ISO-8859-9</rdf:li>
+						<rdf:li>WINDOWS-1252</rdf:li>
+						<rdf:li>UTF-8</rdf:li>
+						<rdf:li>ISO-10646-UCS-2</rdf:li>
+						<rdf:li>UTF-16</rdf:li>
+						<rdf:li>UTF-16be</rdf:li>
+
+						<rdf:li>UTF-16le</rdf:li>
+						<rdf:li>UTF-7</rdf:li>
+					</rdf:Bag>
+				</prf:CcppAccept-Charset>
+				<prf:CcppAccept-Encoding>
+					<rdf:Bag>
+						<rdf:li>base64</rdf:li>
+
+					</rdf:Bag>
+				</prf:CcppAccept-Encoding>
+				<prf:FramesCapable>No</prf:FramesCapable>
+				<prf:TablesCapable>Yes</prf:TablesCapable>
+			</rdf:Description>
+		</prf:component>
+		<prf:component>
+			<rdf:Description ID="WapCharacteristics">
+
+				<prf:WapDeviceClass>C</prf:WapDeviceClass>
+				<prf:WapPushMsgSize>3000</prf:WapPushMsgSize>
+				<prf:WapVersion>2.0</prf:WapVersion>
+				<prf:WmlVersion>
+					<rdf:Bag>
+						<rdf:li>1.2.1/June 2000</rdf:li>
+						<rdf:li>1.1</rdf:li>
+
+					</rdf:Bag>
+				</prf:WmlVersion>
+				<prf:WmlDeckSize>3000</prf:WmlDeckSize>
+				<prf:WmlScriptVersion>
+					<rdf:Bag>
+						<rdf:li>1.2.1/June 2000</rdf:li>
+						<rdf:li>1.1</rdf:li>
+
+					</rdf:Bag>
+				</prf:WmlScriptVersion>
+				<prf:WmlScriptLibraries>
+					<rdf:Bag>
+						<rdf:li>Lang</rdf:li>
+						<rdf:li>Float</rdf:li>
+						<rdf:li>String</rdf:li>
+
+						<rdf:li>URL</rdf:li>
+						<rdf:li>WMLBrowser</rdf:li>
+						<rdf:li>Dialogs</rdf:li>
+					</rdf:Bag>
+				</prf:WmlScriptLibraries>
+				<prf:WtaiLibraries>
+					<rdf:Bag>
+
+						<rdf:li>WTA.Public.makeCall</rdf:li>
+						<rdf:li>WTA.Public.sendDTMF</rdf:li>
+						<rdf:li>WTA.Public.addPBEntry</rdf:li>
+					</rdf:Bag>
+				</prf:WtaiLibraries>
+			</rdf:Description>
+		</prf:component>
+
+		<prf:component>
+			<rdf:Description ID="MMSCharacteristics">
+				<prf:MmsMaxMessageSize>204800</prf:MmsMaxMessageSize>
+				<prf:MmsMaxImageResolution>640x480</prf:MmsMaxImageResolution>	
+				<prf:MmsCcppAccept>
+					<rdf:Bag>
+						<rdf:li>image/jpeg</rdf:li>
+						<rdf:li>image/jpg</rdf:li>
+
+						<rdf:li>image/gif</rdf:li>
+						<rdf:li>image/png</rdf:li>
+						<rdf:li>image/bmp</rdf:li>
+						<rdf:li>image/x-bmp</rdf:li>
+						<rdf:li>image/vnd.wap.wbmp</rdf:li>
+						<rdf:li>application/smil</rdf:li>
+
+						<rdf:li>application/x-sms</rdf:li>
+						<rdf:li>audio/amr</rdf:li>
+						<rdf:li>audio/wav</rdf:li>
+						<rdf:li>audio/mid</rdf:li>
+						<rdf:li>audio/x-wav</rdf:li> 
+						<rdf:li>audio/x-mid</rdf:li> 
+						<rdf:li>audio/midi</rdf:li> 
+						<rdf:li>audio/x-midi</rdf:li> 
+						<rdf:li>audio/basic</rdf:li> 
+						<rdf:li>audio/rmf</rdf:li> 
+						<rdf:li>audio/x-rmf</rdf:li> 
+						<rdf:li>text/plain</rdf:li>
+
+						<rdf:li>text/x-iMelody</rdf:li>
+						<rdf:li>text/x-eMelody</rdf:li>
+						<rdf:li>text/x-vCard</rdf:li>
+						<rdf:li>text/x-vCalendar</rdf:li>
+						<rdf:li>text/x-vNote</rdf:li>
+					</rdf:Bag>
+
+				</prf:MmsCcppAccept>
+				<prf:MmsVersion>1.0</prf:MmsVersion>		
+			</rdf:Description>
+		</prf:component>
+	</rdf:Description>
+</RDF>
+

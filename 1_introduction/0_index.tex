@@ -1,0 +1,112 @@
+\begin{savequote}[50mm]
+The beginning is the most important part of the work. 
+\qauthor{Plato}
+\end{savequote}
+
+\chapter{Introduction}
+\label{cha:introduction}
+
+% the code below specifies where the figures are stored
+\ifpdf
+    \graphicspath{{1_introduction/figures/PNG/}{1_introduction/figures/PDF/}{1_introduction/figures/}}
+\else
+    \graphicspath{{1_introduction/figures/EPS/}{1_introduction/figures/}}
+\fi
+
+%------------------------------------------------------------------------- 
+
+Over the years we are witnessing the growth of new and heterogeneous mobile and
+smart devices and services with a wider range of possibilities. Faster processors,
+larger memories and more accessible sensor capabilities allow the community to
+develop context-aware applications which, taking into account the user preferences
+and the context situation, can be customized for the final user. This usually
+results into the same application having different behaviours, aspects and 
+available features depending on the specific target user. Besides, the spread 
+of intelligent environments provides relevant information about the current 
+context of the agents and involved entities. As a consequence, local 
+governments and public administrations have discovered the importance of 
+working with context data~\citep{caragliu_smart_2009}. Thus, they try to 
+improve cities infrastructures and citizens satisfaction.
+
+This situation enhances the appearance of new research domains. This 
+dissertation focuses on one of these domains: the adaptive user interfaces. 
+Adaptive user interfaces arise from the need of covering a wider range of users 
+and environment conditions. This area is related to different research domains 
+or trends. For instance, universal or inclusive design. Universal design refers 
+to a set of guidelines for producing different kind of environments (i.e., 
+buildings, software applications and any kind of product) accessible and usable 
+to both people with and without disabilities and dependant people (as the 
+elderly).
+
+During this dissertation we have studied how each user has his own preferences,
+even those who suffer from similar disabilities. We have also found that usual 
+market applications and devices are usually unable to guarantee a comfortable 
+interaction in many situations for these users. Although several accessibility 
+tools are provided (related to smart devices), these users prefer non smart 
+devices due to the physical interaction they provide (as physical touch 
+buttons, not touchable screens). This kind of devices are easy to use and the 
+feedback they provide is also easy to understand. Hence, this situation 
+revealed a lack of efforts in adaptive user interfaces domain. This makes this 
+group of users suffer from interface inattention.
+
+Hardware advances have brought haptic displays, high definition and curved 
+screens and cameras, accelerometers and different kind of sensors, faster 
+connectivity capabilities, and so forth. On the other hand, software development
+allow us to use Internet services as we did with a computer. Nevertheless,
+this progress do not reflect the current society requirements (including
+inclusive design). While these advances keep reaching the ubiquitous future
+there are several groups of people that suffer from inattention: the elderly and
+people with disabilities. These users have special needs. The elderly usually
+have mobility, sight and hearing problems, while the disabled suffer from more
+specific and usually severe impairments. There are several accessibility tools
+that try to reduce the existing interaction boundaries between disabled users
+and devices~\citep{gregor_designing_2002}~\citep{burgstahler_designing_2002}.
+For example, Android operating system allows developers to build more accessible 
+applications by using custom controls and interaction alternatives (e.g.,
+gestures)~\citep{android_accessibility}. Apple's iOS uses zoom, larger text,
+colours inversions, dictation and voice control to avoid interaction
+issues~\citep{ios_accessibility}. Regrettably, these tools are too static. For
+example, they do not take the user context into account and they do not understand
+and learn from the users' experiences. Besides, they are more adaptable than 
+adaptive. Adaptive systems have the ability to dynamically adapt themselves to 
+the current task and user. On the other hand, adaptable systems' functionalities 
+are changed with user intervention~\citep{fischer_user_2001}.
+
+The fact is that user interface adaptation has evolved in the latests 20 years.
+From the simplest preferences (e.g., modifying the resolution of a screen or
+monitor) to more sophisticated solutions (e.g., smartphones' brightness automatic
+controls), the community has attempted to customize applications as far as 
+possible. These adaptations have grown in complexity, covering a wider range of 
+users, as well as taking into account the current context situation. Therefore, 
+context and user modelling has become a real challenge in this domain. This is 
+because of the context variability and the set of different capabilities that 
+users can have.
+
+However, current mobile devices enhance new possibilities due to their 
+computational capabilities. Hence, during the following chapters we present 
+AdaptUI, a user interface adaptation framework which has a twofold purpose: to 
+reduce the usability problems when users interact with their devices, and to 
+encourage developers to include adaptive engines in their applications to be 
+more inclusive.
+
+
+
+% However, regarding the real users, who still prefer older devices with physical
+% interfaces (like physical buttons) we believe that new, smarter and more dynamic
+% accessibility tools are needed to avoid the inattention of these users. Hence,
+% during the following chapters we present AdaptUI, a twofold framework for users
+% to have their user interfaces dynamically adapted 
+% developing
+% adaptive user interfaces for Android devices. 
+
+% ----------------------------------------------------------------------
+
+\input{1_introduction/1_motivation}
+\input{1_introduction/2_hypothesis_and_goals}
+\input{1_introduction/3_context}
+\input{1_introduction/4_methodology}
+\input{1_introduction/5_outline}
+
+
+% ----------------------------------------------------------------------
+

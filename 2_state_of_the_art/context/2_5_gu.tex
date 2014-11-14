@@ -1,0 +1,43 @@
+\subsubsection{2004: Gu et al.: The \ac{socam} Ontology}
+\label{sec:gu}
+
+In 2004~\citet{gu_toward_2004} design \ac{socam} architecture for designing and 
+prototyping applications in an \ac{ie}. Built on top of the 
+\ac{osgi}\footnote{www.osgi.org} architecture, such middleware consisted of the 
+following components:
+
+\begin{itemize}
+  \item Context providers, which abstract context information from heterogeneous
+  sources and semantically annotate it according to the defined ontology.
+  \item The context interpreter, which provides logic reasoning to process
+  information about the context.
+  \item The context database, which stores current and past context instance data.
+  \item Context-aware applications, which adapt their behaviour according to the
+  current context situation.
+  \item The service-locating service, which allows context providers and 
+  interpreters to advertise their presence for users and applications to locate 
+  them.
+\end{itemize}
+
+\citeauthor{gu_toward_2004} use \ac{owl} to describe their context ontologies 
+in order to support several tasks in \ac{socam}. As the pervasive computing 
+domain can be divided into smaller sub-domains, the authors also divided the 
+designed ontology into two categories: 
+
+\begin{itemize}
+  \item An \textit{upper ontology}, which captures high-level and general 
+  context knowledge about the physical environment.
+  \item A \textit{low-level} ontology, which is related to each sub-domain and 
+  can be plugged and unplugged from the upper ontology when the context changes.
+\end{itemize}
+
+As a result, the upper ontology considers person, location, computational entity
+and activity as context concepts.
+
+\citet{gu_ontology_based_2004} also present an \ac{owl} based model to represent, 
+manipulate and access context information in smart environments. The model 
+represents contexts and their classification, dependency and quality of
+information using \ac{owl} to support semantic interoperability, contextual 
+information sharing, and context reasoning. The ontology allows to associate 
+entities' properties with quality restrictions that indicate the contextual 
+information quality. 

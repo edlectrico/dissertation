@@ -1,0 +1,75 @@
+\subsubsection{1991: Jon Orwan and the Doppelgänger system}
+\label{sec:orwant_doppelganger}
+
+Doppelgänger is a user modelling system that performs inferences upon user data
+and makes this information available to applications. The system allows users to
+modify their models, it makes implicit generalizations about the data (which is
+gathered through different channels) and provides an extensible architecture~\citep{orwant_doppelgangeruser_1991}. 
+
+% ``Figure 1 The DOPPELGÄNGER user modelling system gathers data about users from sensors, makes inferences on
+% those data, and makes the results available to applications'' cogido de http://www.cs.ucf.edu/~dcm/Teaching/COT4810-Spring2011/Presentations/FrankHines-CheapUserModelingForAdaptiveSystems.pdf
+
+Users' data is gathered through a continuously operative sensor network which
+senses users' everyday activities (see Listing~\ref{lst:orwant_sensor_1}). Hence,
+both long-term and short-term information about the user are stored. Sensors are
+integrated in users' activities. However, Doppelgänger acknowledges the imperfection
+of real world data. Data streams are usually incomplete or erroneous. The main
+objective of the Doppelgänger system is to recover from these imperfections through
+several learning techniques:
+
+\begin{itemize}
+  \item The Beta distribution~\citep{drake_fundamentals_1967}, which is used to
+  determine the preference strength, probability of accuracy and the confidence
+  of an estimation.
+  \item Linear prediction, to predict a possible next event.
+  \item Markov models, which represents user's behaviour through several states and
+  all possible transitions between them with the corresponding probability.
+\end{itemize}
+
+
+The system maintains an accuracy estimation for each sensor, which helps the
+system to decide a confidence metric for the gathered data.
+
+\begin{minted}[linenos=true, fontsize=\footnotesize, frame=lines]{json}
+(object orwant location (place 344) (time 779562701) 
+(id active-badge))
+\end{minted}
+\captionof{listing}{Message from a sensor to the server~\citep{orwant_heterogeneous_1994}.\label{lst:orwant_sensor_1}}
+
+
+The user models are represented in SPONGE, a LISP based data structure manipulated with
+C and Pearl programs \citep{orwant_heterogeneous_1994} (see Listing~\ref{lst:orwant_sensor_2}). 
+Models are stored as Unix directories consisting of domain submodels and conditional 
+submodels. The first one contains information about the user behaviour (i.e., 
+location, preferences, and so forth); the second group contains triggering information 
+for deciding actions when certain situations are met. Besides, each user model 
+is conceptually represented as a point in a high dimensional space in which the 
+dimensions are determined by the number of sensors in the network.
+
+
+% \InsertFig{orwant}{fig:orwant}{Orwant user model \citep{orwant_heterogeneous_1994}}{}{0.70}{}
+% 
+% \InsertFig{orwant}{fig:orwant_sensors_apps}{The DOPPELGÄNGER user modelling system gathers data about users from sensors, makes inferences on
+% those data, and makes the results available to applications. \citep{orwant_for_1996}}{}{0.70}{}
+
+\begin{minted}[linenos=true, fontsize=\footnotesize, frame=lines]{json}
+(object orwant primary
+  (object biographical_data
+    (string_binding "true name" "Jon Orwant")
+    (string_binding "e-mail address" orwant@media.mit.edu)
+  ...)
+  (object control
+    (int_binding "doppelganger ID" 4))
+...)
+\end{minted}
+\captionof{listing}{Orwant user model~\citep{orwant_heterogeneous_1994}.\label{lst:orwant_sensor_2}}
+
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.7\textwidth]{orwant_sensors_apps.pdf}
+% \caption{The DOPPELGÄNGER user modelling system gathers data about users from sensors, makes inferences on
+% those data, and makes the results available to applications~\citep{orwant_for_1996}.}
+% \label{fig:orwant_sensors_apps}
+% \end{figure}
+% ----------------------------------------------------------------------
+

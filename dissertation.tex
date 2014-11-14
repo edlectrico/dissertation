@@ -1,0 +1,387 @@
+% ----------------------------------------------------------------------
+%              Latex PhD template for the University of Deusto
+% ----------------------------------------------------------------------
+
+
+%: Style file for Latex
+% Most style definitions are in the external file PhDthesisPSnPDF.
+% In this template package, it can be found in ./Latex/Classes/
+\documentclass[twoside,12pt,fleqn]{Latex/Classes/PhDthesisPSnPDF}
+
+%: Macro file for Latex
+% Macros help you summarise frequently repeated Latex commands.
+% Here, they are placed in an external file /Latex/Macros/MacroFile1.tex
+% An macro that you may use frequently is the figuremacro (see introduction.tex)
+\include{Latex/Macros/Macros}
+
+% \usepackage[toc,page]{appendix}
+
+\usepackage[numbers]{natbib}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref,wasysym}
+\usepackage{siunitx}
+\usepackage{listings}
+\usepackage{varwidth}
+\usepackage{minted}
+\usepackage{etoolbox}
+\usepackage{framed}
+\usepackage{enumerate}
+\usepackage{lscape}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage[printonlyused,withpage]{acronym}
+% colored paragraphs for definitions
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{lipsum}
+%For timelines
+\usepackage[margin=3cm]{geometry}
+\usepackage{ragged2e}
+% \usepackage{fourier}
+\usepackage{tikz} 
+\usetikzlibrary{chains,shapes.arrows,fit}
+
+\definecolor{arrowcolor}{RGB}{201,216,232}% color for the arrow filling
+\definecolor{circlecolor}{RGB}{79,129,189}% color for the inner circles filling
+\colorlet{textcolor}{white}% color for the text inside the circles
+\colorlet{bordercolor}{white}% color for the outer border of circles
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\newcounter{task}
+
+\newlength\taskwidth% width of the box for the task description
+\newlength\taskvsep% vertical distance between the task description and arrow
+
+\setlength\taskwidth{2.5cm}
+\setlength\taskvsep{17pt}
+
+\def\taskpos{}
+\def\taskanchor{}
+
+\newcommand\task[1]{%
+  {\parbox[t]{\taskwidth}{\scriptsize\Centering#1}}}
+
+\tikzset{
+inner/.style={
+  on chain,
+  circle,
+  inner sep=4pt,
+  fill=circlecolor,
+  line width=1.5pt,
+  draw=bordercolor,
+  text width=1.2em,
+  align=center,
+  text height=1.25ex,
+  text depth=0ex
+},
+on grid
+}
+
+\newcommand\Task[2][]{%
+\node[inner xsep=0pt] (c1) {\phantom{A}};
+\stepcounter{task}
+\ifodd\thetask\relax
+  \renewcommand\taskpos{\taskvsep}\renewcommand\taskanchor{south}
+\else
+  \renewcommand\taskpos{-\taskvsep}\renewcommand\taskanchor{north}
+\fi
+\node[inner]
+% ,font=\footnotesize]    
+  (c\the\numexpr\value{task}+1\relax) {#1};
+\node[anchor=\taskanchor,yshift=\taskpos] 
+  at (c\the\numexpr\value{task}+1\relax) {\task{#2}};
+}
+
+\newcommand\drawarrow{% the arrow is placed in the background layer 
+% after the node for the tasks have been placed
+\ifnum\thetask=0\relax
+  \node[on chain] (c1) {}; % if no \Task command is used, the arrow will be 
+% drawn
+\fi
+\node[on chain] (f) {};
+\begin{pgfonlayer}{background}
+\node[
+  inner sep=10pt,
+  single arrow,
+  single arrow head extend=0.8cm,
+  draw=none,
+  fill=arrowcolor,
+  fit= (c1) (f)
+] (arrow) {};
+\fill[white] % the decoration at the tail of the arrow
+  (arrow.before tail) -- (c1|-arrow.west) -- (arrow.after tail) -- cycle;
+\end{pgfonlayer}
+}
+
+\newenvironment{timeline}[1][node distance=.75\taskwidth]
+  {\par\noindent\begin{tikzpicture}[start chain,#1]}
+  {\drawarrow\end{tikzpicture}\par}
+%End of timelines
+
+% List of definitions
+\makeatletter
+\newcommand\Defi[2]{%
+  \noindent
+  \makebox[\ListOfDefAbbrevLength][l]{\textbf{#1}}%
+    \csname phantomsection\endcsname
+    \addcontentsline{def}{figure}{#1}%
+  {#2}\par
+}
+\newdimen\ListOfDefAbbrevLength
+\ListOfDefAbbrevLength=1.5cm
+% \newcommand\ListOfDefName{List of Definitions}
+\newcommand\ListOfDefinitions{%
+%   \section*{\ListOfDefName}%
+  \@starttoc{def}%
+}
+% End of definitions
+
+% \usepackage{bibentry} % http://gking.harvard.edu/files/bibentry2.pdf
+% % \nobibliography* throws an error
+% \nobibliography{9_backmatter/self} % http://stefaanlippens.net/bibentry
+% %split the bibliography
+% \usepackage{multibib} % split bibliography in two. Requires texlive-bibtex-extra package
+% \newcites{web}{Secondary Web Resources}
+
+
+% List of equations
+% \makeatletter
+% \newcommand\DefiEqu[2]{%
+%   \noindent
+%   \makebox[\ListOfDefAbbrevLength][l]{\textbf{#1}}%
+%     \csname phantomsection\endcsname
+%     \addcontentsline{equ}{figure}{#1}%
+%   {#2}\par
+% }
+% \newdimen\ListOfDefAbbrevLength
+% \ListOfDefAbbrevLength=1.5cm
+% % \newcommand\ListOfDefName{List of Definitions}
+% \newcommand\ListOfEquations{%
+% %   \section*{\ListOfDefName}%
+%   \@starttoc{equ}%
+% }
+
+% End of equations
+
+
+\setlength{\mathindent}{0pt}
+
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+% \theoremstyle{plain}
+% \theoremstyle{definition}
+% \newtheorem{mydef}{Definition}
+
+% \usepackage{pgfplots}
+% \usepackage[pdftex,active,tightpage]{preview}
+
+%: ----------------------------------------------------------------------
+%:                  TITLE PAGE: name, degree,..
+% ----------------------------------------------------------------------
+% below is to generate the title page with crest and author name
+
+% if output to PDF then put the following in PDF header
+\ifpdf  
+    \pdfinfo { /Title  (PhD)
+               /Creator (TeX)
+               /Producer (pdfTeX)
+               /Author (Name surname)
+               /CreationDate (D:YYYYMMDDhhmmss)  %format D:YYYYMMDDhhmmss
+               /ModDate (D:YYYYMMDDhhmm)
+               /Subject (xyz)
+               /Keywords (keyword1, keyword2, keyword3) }
+    \pdfcatalog { /PageMode (/UseOutlines)
+                  /OpenAction (fitbh)  }
+\fi
+
+
+% Title of the dissertation
+\title{Dynamic User Interfaces Adaptation Engine Through Semantic Modelling And
+Reasoning In Mobile Devices.}
+
+
+% ----------------------------------------------------------------------
+% This section below defines front covert (external and internal)
+% Shield logo
+\crest{\includegraphics[width=2cm]{Deusto_Shield}}
+% Full logo
+%\crest{\includegraphics[width=6cm]{UDeusto}}
+\university{Universidad de Deusto}
+\degree{Tesis doctoral presentada por }
+\author{Eduardo Castillejo} 
+\collegeordept{dentro del Programa de Doctorado en Doctorado en Informática y Telecomunicaciones}
+\textadvisor{Dirigida por }
+\advisor{Dr. Diego López-de-Ipiña }
+\advisortwo{y Dr. Aitor Almeida}
+\textsignaturecandidate{El doctorando}
+\textsignatureadvisor{El director}
+\cityofbirth{Bilbao}
+%\degreedate{\monthname \ \the\year}
+\degreedate{Month de \the\year}
+
+
+% ----------------------------------------------------------------------
+       
+% turn of those nasty overfull and underfull hboxes
+\hbadness=10000
+\hfuzz=50pt
+
+
+%: --------------------------------------------------------------
+%:                  FRONT MATTER: dedications, abstract,..
+% --------------------------------------------------------------
+
+\begin{document}
+
+\selectlanguage{british}
+
+% sets line spacing
+\renewcommand\baselinestretch{1.2}
+\baselineskip=18pt plus1pt
+
+% Watermark
+%\watermark{DRAFT	DRAFT	DRAFT	DRAFT	DRAFT	DRAFT	DRAFT	DRAFT	DRAFT}
+
+
+%: ----------------------- generate cover page ------------------------
+
+\maketitle  % command to print the title page with above variables
+\restylefloat{table} 
+
+% Title back
+\include{0_frontmatter/title_back}
+
+
+%: ----------------------- abstract ------------------------
+
+% Your institution may have specific regulations if you need an abstract and where it is to be placed in the document. The default here is just after title.
+
+
+% The original template provides and abstractseparate environment, if your institution requires them to be separate. I think it's easier to print the abstract from the complete thesis by restricting printing to the relevant page.
+% \begin{abstractseparate}
+%   \input{Abstract/abstract}
+% \end{abstractseparate}
+
+
+%: ----------------------- tie in front matter ------------------------
+
+% The frontmatter text starts here
+\frontmatter
+
+\include{0_frontmatter/dedication}
+
+\include{0_frontmatter/abstract}
+
+\include{0_frontmatter/acknowledgement}
+
+% As abstract contains various languages we set the main language again
+\selectlanguage{british}
+
+
+%: ----------------------- contents ------------------------
+
+\setcounter{secnumdepth}{5} % organisational level that receives a numbers
+\setcounter{tocdepth}{5}    % print table of contents for level 3
+
+
+%%You can also add extra lines to the ToC or to force extra unnumbered section headings to be included. For example, if you wanted to add an entry called Preface, and you didn't want the Preface to be numbered, you'd use these commands:
+%\ subsection*{Preface}
+%\addcontentsline{toc}{subsection}{Preface} 
+
+\tableofcontents            % print the table of contents
+% levels are: 0 - chapter, 1 - section, 2 - subsection, 3 - subsection
+
+%: ----------------------- list of figures/tables ------------------------
+
+\listoffigures	% print list of figures
+\listoftables   % print list of tables
+\listoflistings % print list of listings
+
+%\begin{multicols}{2} % \begin{multicols}{#columns}[header text][space]
+%\begin{footnotesize} % scriptsize(7) < footnotesize(8) < small (9) < normal (10)
+
+%\printnomenclature[1.5cm] % [] = distance between entry and description
+
+\printnomenclature % [] = distance between entry and description
+
+\label{sec:glossary} % target name for links to glossary
+
+\include{0_frontmatter/definitions}
+
+% \include{0_frontmatter/equations}
+
+%: ----------------------- glossary ------------------------
+
+% Tie in external source file for definitions: /0_frontmatter/glossary.tex
+% Glossary entries can also be defined in the main text. See glossary.tex
+\include{0_frontmatter/acronyms}
+
+\include{0_frontmatter/tag_cloud}
+
+%\end{footnotesize}
+%\end{multicols}
+
+
+
+
+%: --------------------------------------------------------------
+%:                  MAIN DOCUMENT SECTION
+% --------------------------------------------------------------
+
+% the main text starts here with the introduction, 1st chapter,...
+\mainmatter
+
+%\renewcommand{\chaptername}{} % uncomment to print only "1" not "Chapter 1"
+\pagestyle{fancy}
+
+% Do not split the following words
+\hyphenation{AdaptUI}
+\hyphenation{AdaptUIOnt}
+\hyphenation{Imhotep}
+
+%: ----------------------- subdocuments ------------------------
+
+% Parts of the thesis are included below. Rename the files as required.
+% But take care that the paths match. You can also change the order of appearance by moving the include commands.
+
+\include{1_introduction/0_index}
+\include{2_state_of_the_art/0_index}	
+\include{3_ontology_model/0_index}
+\include{4_system_architecture/0_index}
+\include{5_experiments_and_results/0_index}	
+\include{6_conclusion/0_index}	
+	
+
+% --------------------------------------------------------------
+%:                  BACK MATTER: appendices, refs,..
+% --------------------------------------------------------------
+
+% the back matter: appendix and references close the thesis
+\backmatter
+
+
+%: ----------------------- appendix ------------------------
+
+\appendix
+\include{9_backmatter/appendix_a}
+\include{9_backmatter/appendix_b}
+\include{9_backmatter/appendix_c}
+
+
+%: ----------------------- bibliography ------------------------
+% HOWTO Citar páginas concretas o comentarios (blogs):
+% http://tex.stackexchange.com/questions/89143/citation-with-some-text-inside-square-brackets
+\bibliographystyle{plainnat}
+% \bibliography{9_backmatter/references, 9_backmatter/self, 9_backmatter/webresources} % adjust this to fit your BibTex file
+\bibliography{9_backmatter/references}
+% \bibliographystyleweb{plainurl}
+% \bibliographyweb{9_backmatter/webresources}
+
+\include{9_backmatter/declaration}
+
+\end{document}

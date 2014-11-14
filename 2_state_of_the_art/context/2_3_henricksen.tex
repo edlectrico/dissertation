@@ -1,0 +1,68 @@
+\subsubsection{2002: Henricksen et al.}
+\label{sec:henricksen}
+% MENCIONAR TAMBIÉN SU TRABAJO EN 2003.
+
+The approach followed by~\citet{henricksen_modeling_2002} makes the following
+notes about context in pervasive environments:
+
+\begin{itemize}
+  \item Context information exhibits temporal characteristics. Context can be 
+  static (e.g., birthday) or dynamic (e.g., user location). Besides, the 
+  persistence of the dynamic information can easily change. Thus, it is justified 
+  that the static context should be provided by the user, while the dynamic 
+  one should be gathered by sensors. Past historic and a possible forecasting 
+  of future context are also taken into account as part of the description of 
+  the whole context description.
+  
+  \item A second property of the context information is its imperfection. 
+  Information can be useless if it cannot reflect a real world state. It also 
+  can be inconsistent if it contains contradictions, or incomplete if some 
+  context aspect are unknown. There are many causes to these situations. For 
+  example, information can change so fast that it may be invalid once it is 
+  collected. This is obviously because the dynamic nature of the environment. 
+  Besides, there is a strong dependency on software and hardware infrastructures, 
+  which can fail any time.
+  
+  \item Context has multiple alternative representations. Context information
+  usually comes from sensors which speak different languages. For example,
+  a location sensor can use latitude and longitude physical magnitudes while 
+  the involved application works with a logical representation of location. 
+  
+  \item Context information is highly disassociated. There are obvious 
+  connections between some context aspects (e.g., users and devices). However, 
+  other connections need to be computed with the available information.
+\end{itemize}
+
+% \The Figure~\ref{fig:henricksen} shows the annotated context model designed by Henricksen et al.
+This work also indicates the dependency between context models, the scenarios 
+and use cases of the application domains. Authors extract several context 
+parameters to consider:
+
+\begin{itemize}
+  \item User activity, distinguishing between the current one and the planned one.
+  \item Device that is being used by the user.
+  \item Available devices and resources.
+  \item Current relationships between people.
+  \item Available communication channels.
+\end{itemize}
+
+% \InsertFig{henricksen}{fig:henricksen}{Context model annotated with quality parameters and metrics \cite{henricksen_modeling_2002}}{}{0.70}{}
+
+% 
+% \subsubsection{2003, Henricksen et al.}
+% %\citep{henricksen_generating_2003}
+% \label{sec:henricksen}
+% 
+% Henricksen et al. discuss about the difficulties of constructing context-aware
+% applications. Besides, they remark the lack of formality and expressiveness of
+% previous context-aware solutions and models. For example, several specific context
+% information, as histories, uncertainty, incompleteness, sensor-derived information
+% and different kind of dependencies between the information are barely conceptually 
+% modeled with ER or UML approaches, which are not well suited for this task \citep{henricksen_generating_2003}.
+% Therefore, they present a context modeling approach which allows developers to describe high level context
+% information. In addition, a mapping process for transforming high-level context
+% models to management systems is also described. This way, they characterize the
+% Object-Role Modeling approach to support specific context information based
+% on abstraction concepts and quality annotations. 
+% 
+% Authors classify context into static or dynamic facts\dots

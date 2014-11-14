@@ -1,0 +1,16 @@
+\ifpdf
+    \graphicspath{{0_frontmatter/figures/PNG/}{0_frontmatter/figures/PDF/}{0_frontmatter/figures/}}
+\else
+    \graphicspath{{0_frontmatter/figures/EPS/}{0_frontmatter/figures/}}
+\fi
+
+\chapter*{Tag Cloud}
+\addcontentsline{toc}{chapter}{Tag Cloud} % Despite \chapter*, add it to the table of contents
+\markboth{Tag Cloud}{Tag Cloud} % Despite \chapter*, show "Acronyms" in the left and right-hand side headers
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.70\textwidth]{tagcloud.pdf}
+% \caption{AdaptUI's three-layered global architecture.}
+\label{fig:tagcloud}
+\end{figure}

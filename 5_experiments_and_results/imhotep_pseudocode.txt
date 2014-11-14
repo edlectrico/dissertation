@@ -1,0 +1,4 @@
+IF screensize IS big AND resolution IS normal 
+THEN video IS high; 
+IF screensize IS big AND RESOLUTION IS big
+THEN video IS very_high;

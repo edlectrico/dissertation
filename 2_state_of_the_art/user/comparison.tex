@@ -1,0 +1,164 @@
+
+\subsection{Users Models Comparison}
+\label{sec:user_model_comparison}
+
+In this section we describe our user modelling requirements nurtured by the 
+earlier works described. As mentioned before, there are several perspectives 
+regarding the user modelling requirements. In this dissertation the \ac{hci} 
+perspective is taken. This means, as~\citet{pohl_logic_based_1999} states, 
+that the user model refers to user characteristics using a certain system (see 
+Section~\ref{sec:chronological_review}). In Chapter~\ref{cha:ontology_model}
+the AdaptUI models for user, context and device are described. These models
+have been designed considering each of these entities as a set of characteristics
+that define them. Hence, the adaptation platform is able to evaluate the
+combination of these characteristics and perform the corresponding adaptation.
+Thus, the \ac{hci} interpretation of user modelling suits the goal pursued
+by AdaptUI.
+
+% Now that the \ac{hci} viewpoint has been remarked, we emphasize the amount of 
+% different domains that are addressed in the literature considering user 
+% modelling. 
+
+In the following lines the amount of different domains addressing user modelling 
+are highlighted. From product design to multimedia and user interfaces adaptation, 
+every approach follows the same purpose: to consider several user characteristics 
+to improve the system and user's satisfaction and product or service usability. 
+However, although these solutions share the same objectives, the considered 
+characteristics differ a lot. For ubiquitous and more context-aware domains, 
+activities are taken into account. For example,
+~\citet{razmerita_ontology_based_2003} discuss an ontology based architecture, 
+which aims to be generic by collecting user data through two different ways 
+(explicitly and implicitly).~\citet{golemati_creating_2007} also take an 
+ontological point of view to avoid the problem of domain dependency (among 
+others) by designing a more general, comprehensive and extensible ontology. 
+
+\citet{gauch_ontology_based_2003} remark in the presented ontology the 
+importance of time. Regarding the studied domain (web browsing) time is 
+significant because it might help characterizing the user considering the spent 
+time reading an article or visiting a website. Well known and popular 
+recommendation systems, as YouTube, utilise this information combined with 
+different explicit and implicit sources from the user interaction to make proper
+recommendations~\citep{davidson_youtube_2010}.
+
+User activities have also been considered as relevant for many authors in the 
+literature. The first example is the Doppelgänger 
+system~\citep{orwant_doppelgangeruser_1991} (1991), which uses activities for 
+sharing relevant user information to different applications. In the same 
+way,~\citet{persad_characterising_2007},~\citet{heckmann_gumogeneral_2005}
+and~\citet{skillen2012ontological} modelled activities to take user's behaviour
+and interaction into account for the proposed classifications and systems. For
+~\citet{hatala_ontology_based_2005} activities are also vital within 
+context-aware environments.
+
+As occurs with context modelling (see Section~\ref{sec:context_model_comparison})
+many different techniques are available for the model representation. This usually
+depends either on the developer, because of his/her experience, or in the system's
+technical characteristics. For example, if the system is able to performs inference
+with the user data an ontology based representation could be more helpful than
+an object based one.~\citet{strang_context_2004} demonstrated that ontological
+modelling is more appropriate for ubiquitous computing environments.
+
+It is also common to model physiological related characteristics of the user.
+For example, the works by~\citet{gregor_designing_2002} 
+and~\citet{persad_characterising_2007} consider physical, cognitive an sensory 
+capabilities.~\citet{skillen2012ontological} also model several user abilities 
+for performing different tasks and activities. The problem is that being aware 
+of these capabilities is difficult and, in some cases, poorly practical. For 
+example, measuring the sight capability of one individual requires physiological 
+experience or advice. Besides, people with the same affection do not respond in 
+the same way. A person who was born blind would interact differently with the 
+environment than another who has been losing sight during his/her life. The 
+precise same disability (e.g., tunnel vision) might affect different people 
+in many different ways depending on their personal skills (e.g., adaptability,
+orientation, and so forth). This might lead to an idea. What if, instead of 
+modelling physiological skills (disabilities), we were able to model user's 
+capabilities? The first approximation for this is found 
+in~\citet{casas_user_2008} work. \citeauthor{casas_user_2008} present a user 
+profile which abstracts from physiological aspects and lets users manage and 
+configure their own profile. On the contrary, \citet{skillen2012ontological} 
+model user capabilities as a set of abilities which allow users to perform some 
+task or activities. Although this perspective covers many user capabilities, it
+still needs a deeper understanding of physiological user capabilities.
+
+On the other hand,~\citet{fischer_user_2001} comments that it not only is 
+difficult to model users because of the wide range of different types of people 
+that exist. He also considers that each individual changes with experience and 
+through time. For example, old people's capabilities decrease with ageing. This
+idea is shared with~\citet{gregor_designing_2002}, whose work is centred around
+the elderly. \citet{heckmann_ubiquitous_2005} not only considers that users 
+might evolve (from an \ac{ai} perspective), but he also takes new context 
+information from the inference process. This also opens a new point of view 
+that we address in Section~\ref{sec:context_disabilities} and it is about taking 
+context as a significant user's environment entity that might directly influence 
+the user's capabilities. In other words, users change through experience, time 
+and, in concrete situations, due to the current context characteristics. For 
+example, an individual might not suffer from any mobility disability, but in a 
+crowded street would be difficult to perform several daily activities (just 
+walking could be difficult).~\citet{razmerita_ontology_based_2003} also address 
+this issue when they talk about the implicit user information collecting 
+process. This, of course, deals with the concept of dynamism.
+
+\citet{evers_achieving_2012} consider that respecting user's interactive 
+behaviour with applications needs to be taken into account. On the other hand,
+~\citet{pereira_triple_2005} analyses the differences between emotional and
+perceptional user characteristics. 
+
+% Several authors have also noticed the importance of tolerating the management of
+% non-trustworthy data. Ambiguity and uncertainty mean working with data which might
+% not reflect the current situation. Beynon et al. considered uncertainty as an actual
+% problem to deal with \citep{beynon2000dempster}.
+
+Table~\ref{tbl:user_comparison} summarizes the analysed approaches for user
+modelling, emphasizing the modelled user characteristics and domains. 
+
+
+% Besides, 
+% although in a first version every used technique was remarked, in this 
+% dissertation we focus on remarking just those which follow an ontology-based 
+% approach. This is because many of the cited works are more theoretical or 
+% surveys, or they just give some advices about important context data when 
+% facing a context modelling task. Besides, \citet{strang_context_2004} 
+% demonstrate that using ontologies is more appropriate for modelling 
+% context-aware systems.
+
+\begin{table}
+  \caption{Related work for the user modelling approaches. Under the user
+ characteristics heading \underline{A}ctivities or behaviour, \underline{C}apabilities,
+ \underline{Ex}perience,  \underline{I}nterests, \underline{E}motions,
+ \underline{P}ersonal, \underline{S}tress and \underline{L}ocation information
+ are presented.}
+ \label{tbl:user_comparison}
+\footnotesize
+\centering
+ \begin{tabular}{l c c c c c c c c c}
+  \hline 
+  \textbf{Solution} & \textbf{Ontologies} & \multicolumn{8}{c}{\textbf{User characteristics}}\\
+  \textbf{(Domain)} & & \textbf{A} & \textbf{C} & \textbf{Ex} & \textbf{I} & \textbf{E} & \textbf{P} & \textbf{S} & \textbf{L} \\
+  \hline
+  
+  2002,~\citet{gregor_designing_2002}		&  		& & $\checkmark$ & $\checkmark$ & & & & & \\
+  (Inclusive design)\\
+  2003,~\citet{gauch_ontology_based_2003}	& $\checkmark$	& & & & $\checkmark$ & & & &\\
+  (Automatic profiling)\\ 
+  2003,~\citet{razmerita_ontology_based_2003}	& $\checkmark$	& $\checkmark$ & & & $\checkmark$ & & $\checkmark$ & & \\
+  (KMS)\\				
+  2005,~\citet{hatala_ontology_based_2005} 	& $\checkmark$ 	& & & & $\checkmark$ & & $\checkmark$ & & $\checkmark$ \\
+  (Tangible interfaces)\\		
+  2005,~\citet{pereira_triple_2005} 		& 		& & & & & $\checkmark$ & & &  \\
+  (Multimedia adaptation)\\
+  2007,~\citet{persad_characterising_2007} 	&   		& $\checkmark$ & $\checkmark$ & & & & & & \\
+  (Product design demands)\\
+  2007,~\citet{golemati_creating_2007} 		&  $\checkmark$   	& $\checkmark$ & & $\checkmark$ & $\checkmark$ & & $\checkmark$ & & \\
+  (User profiling)\\
+  2007,~\citet{heckmann_gumogeneral_2005} 	& $\checkmark$   	& $\checkmark$ & & & & $\checkmark$ & $\checkmark$ & $\checkmark$ & \\
+  (Ubiquitous applications)\\
+  2008,~\citet{casas_user_2008} 		&  		& & $\checkmark$ & $\checkmark$ & & & & & \\
+  (Adaptive user interfaces)\\
+  2012,~\citet{evers_achieving_2012} 		&  		& & & & & & & $\checkmark$ & \\
+  (Adaptive applications)\\
+  2012,~\citet{skillen2012ontological} 		&  $\checkmark$	& $\checkmark$ & $\checkmark$ & & $\checkmark$ & & & & $\checkmark$ \\
+  (Mobile environments)\\
+  \hline
+
+\end{tabular}
+\end{table}

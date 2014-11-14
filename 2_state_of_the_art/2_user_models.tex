@@ -1,0 +1,111 @@
+
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+%: ----------------------- introduction file header -----------------------
+\begin{savequote}[50mm]
+Personally, I think it does help, that it makes a beneficial difference, but the scientific literature on the subject is very messy.
+\qauthor{Jeanne Petrek}
+%“And upon the top of the pillars was lily work: so was the work of the pillars finished.”
+%
+% Bible quotes
+\end{savequote}
+
+
+\section{User Modelling}
+\label{sec:user}
+
+% the code below specifies where the figures are stored
+\ifpdf
+    \graphicspath{{2_state_of_the_art/figures/PNG/}{2_state_of_the_art/figures/PDF/}{2_state_of_the_art/figures/}}
+\else
+    \graphicspath{{2_state_of_the_art/figures/EPS/}{2_state_of_the_art/figures/}}
+\fi
+
+
+%------------------------------------------------------------------------- 
+
+\subsection{A Chronological Review of the Evolution of User Models}
+\label{sec:chronological_review}
+
+The following figure illustrates the evolution and different solutions by 
+chronological order for the last 15 years. During these years different user
+characteristics have been taken into account considering the final purpose of
+the designed system. 
+
+\vspace{1cm}
+
+\definecolor{arrowcolor}{RGB}{144,168,65}
+\colorlet{circlecolor}{white}
+\definecolor{bordercolor}{RGB}{168,89,65}
+\colorlet{textcolor}{bordercolor}
+\setlength\taskwidth{1.7cm}
+
+\begin{timeline}
+  \label{chr:users}
+  \Task[1991]{\citet{orwant_doppelgangeruser_1991}}
+  \Task[1994]{\citet{brajnik1994shell}, \citet{paiva1994tagus}, \citet{kay1994toolkit}}
+  \Task[1999]{\citet{pohl_logic_based_1999}}
+  \Task[2001]{\citet{fischer_user_2001}, \citet{kobsa_generic_2001}.}
+  \Task[2002]{\citet{gregor_designing_2002}}
+  \Task[2003]{\citet{gauch_ontology_based_2003}, \citet{razmerita_ontology_based_2003}}
+  \Task[2005]{\citet{hatala_ontology_based_2005}, \citet{pereira_triple_2005}, \citet{heckmann_gumogeneral_2005}}
+  \Task[2007]{\citet{persad_characterising_2007}, \citet{golemati_creating_2007}}
+  \Task[2008]{\citet{casas_user_2008}}
+  \Task[2012]{\citet{evers_achieving_2012}, \citet{skillen2012ontological}}
+\end{timeline}
+
+
+First user modelling systems started in the late eighties. 
+\citet{allen_plan_based_1979},~\citet{cohen_elements_1979}, 
+~\citet{perrault_speech_1978},~\citet{rich_building_1979} 
+and~\citep{rich_user_1979} are examples of researchers whose works inspired next 
+user modelling approaches. From there several authors started collecting 
+different types of information about the users and exhibiting, for example, 
+different kinds of adaptations to them~\citep{kobsa_generic_2001}.
+
+Before overview the evolution, a definition of user modelling is needed. There 
+are at least two different perspectives which might answer this question. One of 
+these is related to the \ac{ai} research area, and it considers user modelling 
+as the process through which systems gather information and knowledge about 
+users and their individual characteristics. Therefore, a user model is considered 
+a source of information about the user of the system which contains several
+assumptions about several relevant behaviour or adaptation data. However, in
+this thesis the \ac{hci} research perspective is taken, which is defined by
+\citet{pohl_logic_based_1999} as follows:
+
+\begin{description}
+  \item[\Defi{User Model, by \citet{pohl_logic_based_1999}}] \hfill \\
+  \begin{mdframed}[hidealllines=true,backgroundcolor=gray!20]
+  \textit{``It refers to an a-priori model of the users of a computer system that the system
+  designer has in mind, or to the assumed models that users will probably develop
+  of the system and the tasks they can perform using the system''}~\citep{pohl_logic_based_1999}.
+  \end{mdframed}
+\end{description}
+
+Nevertheless, this definition and the \ac{ai} perspective coincide in the idea that 
+every system must use information about the user to be able to see and react to 
+their different problems and needs and improve the system purpose. This section 
+analyses the most significant user models in the past 15 years.
+
+\subsection{User models}
+\label{sec:user_models}
+
+%sota user models
+\input{2_state_of_the_art/user/2_1_orwant}
+\input{2_state_of_the_art/user/2_2_fischer}
+\input{2_state_of_the_art/user/2_3_gregor}
+\input{2_state_of_the_art/user/2_3_II_gauch}
+\input{2_state_of_the_art/user/2_4_razmerita}
+\input{2_state_of_the_art/user/2_4_hatala}
+\input{2_state_of_the_art/user/2_5_pereira}
+\input{2_state_of_the_art/user/2_7_heckmann}
+\input{2_state_of_the_art/user/2_6_persad}
+\input{2_state_of_the_art/user/2_8_golemati}
+\input{2_state_of_the_art/user/2_8_casas}
+\input{2_state_of_the_art/user/2_9_evers}
+\input{2_state_of_the_art/user/2_12_skillen}
+\input{2_state_of_the_art/user/2_x_generic_systems}
+\input{2_state_of_the_art/user/comparison}
+
+

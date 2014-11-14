@@ -1,0 +1,33 @@
+\begin{table}[H]
+ \caption{TBox and ABox components purposes~\citep{abox_tbox}.}
+ \label{tbl:dl_terminology}
+ \footnotesize
+ \centering
+\begin{tabular}{l l l}
+  \hline 
+  \textbf{ABox} 				&  \textbf{TBox} \\
+  \hline 
+  Membership assertions, either as concepts or  & Definitions of the concepts and properties of the 	\\
+  as roles. 					& controlled vocabulary.				\\
+  Attributes assertions. 			& Declarations of concept axioms or roles.		\\
+  Linkages assertions that capture the above	& Inferencing of relationships, be they transitive, 	\\
+  but also assert the external sources for 	& symmetric, functional or inverse to another 		\\
+  these assignments. 				& property.						\\
+  Consistency checking of instances.		& Equivalence testing as to whether two classes or 	\\
+  Satisfiability checks, which are that the	& properties are equivalent to one another.		\\
+  conditions of instance membership are met.	& Subsumption, which is checking whether one 		\\
+						& concept is more general than another.			\\
+						& Satisfiability, which is the problem of checking 	\\
+						& whether a concept has been defined (is not an 	\\
+						& empty concept).					\\
+						& Classification, which places a new concept in  	\\
+						& the proper place in a taxonomic hierarchy of 		\\
+						& concepts.						\\
+						& Logical implication, which is whether a generic 	\\
+						& relationship is a logical consequence of the		\\ 
+						& declarations in the TBox.				\\
+						& Infer property assertions implicit through the 	\\
+						& transitive property.					\\	
+\hline
+\end{tabular}
+\end{table}

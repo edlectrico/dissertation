@@ -6,6 +6,9 @@
 *.fls
 *.out
 *.toc
+*.def
+
+dissertation.pdf
 
 ## Intermediate documents:
 *.dvi

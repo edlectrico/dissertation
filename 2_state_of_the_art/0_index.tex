@@ -1,0 +1,54 @@
+
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+%: ----------------------- introduction file header -----------------------
+\begin{savequote}[50mm]
+Personally, I think it does help, that it makes a beneficial difference, but the scientific literature on the subject is very messy.
+\qauthor{Jeanne Petrek}
+%“And upon the top of the pillars was lily work: so was the work of the pillars finished.”
+%
+% Bible quotes
+\end{savequote}
+
+
+\chapter{State of the Art}
+\label{cha:state_of_the_art}
+
+% the code below specifies where the figures are stored
+\ifpdf
+    \graphicspath{{2_state_of_the_art/figures/PNG/}{2_state_of_the_art/figures/PDF/}{2_state_of_the_art/figures/}}
+\else
+    \graphicspath{{2_state_of_the_art/figures/EPS/}{2_state_of_the_art/figures/}}
+\fi
+
+%------------------------------------------------------------------------- 
+
+This chapter introduces several significant models and techniques related to 
+adaptive user interfaces and systems during the past 20 years. Besides, user-oriented,
+context-aware and device models and solutions are reviewed. Once the general
+domain in which this dissertation lies has been analysed during this chapter,
+the specific approaches that are close to this proposal are examined. Thus, 
+the way previous proposals have addressed this dissertation's aspects will be 
+analysed, highlighting their goodness and weaknesses.  
+
+First, in Section~\ref{sec:adaptation_models} several important adaptation models
+are introduced. The performed methodology and modelled parameters are analysed in
+detail. Next, Section~\ref{sec:user} focuses its attention in the models
+that have been used during the past 20 years for characterizing the user and his/her
+capabilities. Section~\ref{sec:context} analyses the most significant
+context-aware systems and the way these approaches model the context and its
+characteristics. Devices are also one of the main entities that are taken into
+account in this dissertation for the adaptation process. Therefore, Section~\ref{sec:devices}
+examines several modelling techniques and the devices' capabilities in different
+domains.
+
+Besides, a chronological review of the evolution of the presented models will be
+depicted in each section.
+
+\input{2_state_of_the_art/1_adaptation_models}
+\input{2_state_of_the_art/2_user_models}
+\input{2_state_of_the_art/3_context_models}
+\input{2_state_of_the_art/4_device_models}
+% ----------------------------------------------------------------------
+

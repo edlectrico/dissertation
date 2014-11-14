@@ -1,0 +1,117 @@
+\section{Hypothesis, Goals and Limitations}
+\label{sec:hypothesis}
+Based on the current state of Adaptive User Interfaces, the following hypothesis
+is developed:
+ 
+\begin{framed}
+\textit{User interaction limitations with user interfaces in mobile devices due 
+to users' context disabilities are reduced by dynamically adapting the 
+corresponding applications' user interfaces through a semantic reasoning process 
+which includes: their capabilities as users, the set of characteristics which 
+defines the current environment where they actually are, and the devices they 
+use. }
+\end{framed}
+
+This hypothesis is validated undertaking the following main goal:
+
+\begin{framed}
+ To design and implement an adaptive user interface system which runs 100\% in
+ the user's device, includes current context situation, and considers several
+ possible temporary or enduring user disabilities, using different sets of rules
+ which makes the adaptation transparent for the user.
+\end{framed}
+
+
+This objective is achieved through the attainment of the following more specific
+steps:
+
+\begin{enumerate}
+  \item To study the current state of the art on user interface adaptation 
+  systems; user, context and device modelling; and mobile reasoning engines.
+
+  \item To design an ontology which models user capabilities through an abstract
+  perspective, context several situations and several device static and non 
+  static characteristics. The ontology must consider possible interactions 
+  between each entity.
+
+  \item To design a set of rules which allow the interaction between the cited
+  entities and the final adaptation of the user interface.
+
+  \item To design and implement a reasoning mobile engine which allows reasoning
+  in Android based devices.
+
+  \item To provide an \ac{api}for developers to make available the design of 
+  adaptive user interfaces and the edition of existing rules sets, as the 
+  knowledge represented through the ontology.
+
+  \item To validate the obtained results both qualitatively and quantitatively.
+  
+%   \item To model this evolution through a process which will be able
+% to dynamically adapt the best and most suitable user interface for each 
+% precise 
+% context situation.
+  
+%   \item To demonstrate that it is possible to develop dynamic 
+% adaptive applications which are able to reduce the impact of users' 
+% disabilities taking into account their own capabilities, the devices' 
+% characteristics and those which belong to the current context.
+\end{enumerate}
+
+
+% These general objectives are achieved by fulfilling the following more 
+% specific
+% steps:
+% 
+% \begin{itemize}
+%   \item To study the current state of the art on adaptive user interfaces and 
+% on
+%   users, context and device modelling techniques and solutions.
+%   
+%   \item To design a model, focused on adaptive user interfaces domain, which 
+% will allow developers and researchers to model several user capabilities, 
+% context situation and device characteristics, their evolution and their 
+% influences within the current environment.
+%   
+%   \item To design an interaction model which will gather several aspects of 
+% the user current status and satisfaction with the presented and adapted user 
+% interface.
+% \end{itemize}
+
+
+The resulting methodology should also satisfy the following requirements:
+
+\begin{itemize}
+  \item The designed model should be descriptive, complete and robust enough to
+  be able to represent any possible context-aware situation with the users and
+  their devices.
+  
+  \item The model should represent several user capabilities through an abstract 
+  perspective, considering that designers, developers and users might lack of 
+  physiological background of capabilities.
+  
+  \item The designed model should be fully domain independent. Consequently, it
+  should be exportable and reusable to external user interface adaptation 
+  environments.
+  
+  \item The model should represent physiological capabilities transparently for
+  the user and the developer of the adaptive user interface.
+  
+  \item The designed and implemented reasoning engine should be compatible with
+  Android based devices, allowing the use of rules and reasoning features.
+  
+  \item The designed \ac{api} should allow developers to design automatically
+  adaptive user interfaces and also the modification of the knowledge 
+  represented by the ontology.
+\end{itemize}
+
+The following features will be considered beyond the scope of this research:
+
+\begin{itemize}
+  \item Only capabilities related to visual and hearing are taken into account
+  for the dynamic adaptation and the user context disability approach. 
+  
+  \item No cognitive problems have been faced.
+  
+  \item In the adaptation process the device battery level is not taken under
+  consideration.
+\end{itemize}
