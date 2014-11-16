@@ -19,44 +19,45 @@ Table~\ref{tbl:post_adaptation_rules}.
   \textbf{Pre-adaptation rule} 			& \textbf{Involved ontologies} 	& \textbf{Description} 	\\
 						& \textbf{and classes} 		& 			\\
   \hline
-  \textit{checkBatteryLevelIsSufficient}& \textit{soupa:Battery}	& Considering Table~\ref{tbl:batteries} this rule evaluates\\ 
-					& \textit{adaptui:Device}	& if the current battery level is enough to		\\
-					& \textit{adaptui:DeviceAux}	& perform any adaptation.				\\
+  \textit{checkBatteryLevelIsSufficient}& \textit{soupa:Battery}	& Considering Table~\ref{tbl:batteries} this rule 	\\
+					& \textit{adaptui:Device}	& evaluates if the current battery 			\\
+					& \textit{adaptui:DeviceAux}	& level is enough to perform any 			\\
+					&				& adaptation. 						\\
   \hline
   
-  \textit{checkLightLevelDarkOvercast}	& \textit{adaptui:Context}	& These rules evaluate the context light input  	\\
-  \textit{checkLightLevelTwilight}	& \textit{adaptui:ContextAux}	& through sensors by using the classification 		\\
-  \textit{checkLightLevelSunrise}	& \textit{umo:Light}		& shown in Table~\ref{tbl:luminance}. The result of  this\\
-  \textit{checkLightLevelOvercast}	& 				& evaluation would be a verbose concept (e.g.,		\\
-  \textit{checkLightLevelOfficeLightning}&				& \textit{sunrise}) which is stored in the ontology	\\
-  \textit{checkLightLevelOfficeHallway}	&				& using the \textit{contextAuxHasLightLevel} datatype 	\\
-  \textit{checkLightLevelMoonlessClear}	&				& property.						\\
-  \textit{checkLightLevelDayLight}	& \\
-  \textit{checkLightLevelDirectSunlight}& \\
+  \textit{checkLightLevelDarkOvercast}	& \textit{adaptui:Context}	& These rules evaluate the context   			\\
+  \textit{checkLightLevelTwilight}	& \textit{adaptui:ContextAux}	& light input through sensors by  			\\
+  \textit{checkLightLevelSunrise}	& \textit{umo:Light}		& using the classification shown in 			\\
+  \textit{checkLightLevelOvercast}	& 				& Table~\ref{tbl:luminance}. The result of this 	\\
+  \textit{checkLightLevelOfficeLightning}&				& evaluation would be a verbose  			\\
+  \textit{checkLightLevelOfficeHallway}	&				& concept (e.g., \textit{sunrise}) which is   		\\
+  \textit{checkLightLevelMoonlessClear}	&				& stored in the ontology using the  			\\
+  \textit{checkLightLevelDayLight}	& 				& \textit{contextAuxHasLightLevel} datatype		\\
+  \textit{checkLightLevelDirectSunlight}& 				&  property.						\\
   \textit{checkLightLevelFullMoon}	& \\
   \textit{checkLightLevelLivingRoom}	& \\
   \hline
   
-  \textit{checkNoiseLevelBreathing}	& \textit{adaptui:Context}	& These rules evaluate the context noise input 		\\
-  \textit{checkNoiseLevelTruck}		& \textit{adaptui:ContextAux}	& through sensors by using the classification 		\\
-  \textit{checkNoiseLevelTrain}		& \textit{umo:Noise}		& shown in Table~\ref{tbl:sounds}. The result of this	\\
-  \textit{checkNoiseLevelTraffic}	& 				& evaluation would be a verbose concept (e.g.,	 	\\
-  \textit{checkNoiseLevelOffice}	&				& \textit{sunrise}) which is stored in the ontology  	\\
-  \textit{checkNoiseLevelLibrary}	&				& using the \textit{contextAuxHasNoiseLevel} datatype  	\\
-  \textit{checkNoiseLevelLeavesMurmuring}&				& property.						\\
-  \textit{checkNoiseLevelBreathing}	&\\
-  \textit{checkNoiseLevelBuildingWork}	&\\
+  \textit{checkNoiseLevelBreathing}	& \textit{adaptui:Context}	& These rules evaluate the context 	 		\\
+  \textit{checkNoiseLevelTruck}		& \textit{adaptui:ContextAux}	& noise input through sensors by  			\\
+  \textit{checkNoiseLevelTrain}		& \textit{umo:Noise}		& using the classification  shown in 		 	\\
+  \textit{checkNoiseLevelTraffic}	& 				& Table~\ref{tbl:sounds}. The result of this 	 	\\
+  \textit{checkNoiseLevelOffice}	&				& evaluation would be a verbose 		 	\\
+  \textit{checkNoiseLevelLibrary}	&				& concept (e.g., \textit{sunrise}) which is  		\\
+  \textit{checkNoiseLevelLeavesMurmuring}&				& stored in the ontology using the 			\\
+  \textit{checkNoiseLevelBreathing}	&				& \textit{contextAuxHasNoiseLevel} datatype		\\
+  \textit{checkNoiseLevelBuildingWork}	&				& property.						\\
   \textit{checkNoiseLevelConversation}	&\\
   \textit{checkNoiseLevelFactory}	&\\
   \textit{checkNoiseLevelGig}		&\\
   \textit{checkNoiseLevelJackhammer}	&\\
   \hline
   
-  \textit{checkUserHasAttentionRestriction}& \textit{adaptui:Activity}	& If the current activity impedes the user, these 	\\
-  \textit{checkUserHasNoRestriction}	& \textit{adaptui:UserAux}	& rules would store the corresponding boolean 		\\
-  \textit{checkUserHasSightRestriction}	&				& value in the \textit{userAuxHasRestriction} datatype 	\\
-  \textit{checkUserHasMovementRestriction}&				& property.						\\
-  \textit{checkUserHasHandsRestriction}	&\\
+  \textit{checkUserHasAttentionRestriction}& \textit{adaptui:Activity}	& If the current activity impedes the 		 	\\
+  \textit{checkUserHasNoRestriction}	& \textit{adaptui:UserAux}	& user, these rules would store the 			\\
+  \textit{checkUserHasSightRestriction}	&				& corresponding boolean value in the 			\\
+  \textit{checkUserHasMovementRestriction}&				& \textit{userAuxHasRestriction} datatype 		\\
+  \textit{checkUserHasHandsRestriction}	&				& property.						\\
   \textit{checkUserHasHearingRestriction}&\\
 %   Usability \\
 %   Polishing\\
