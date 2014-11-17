@@ -76,13 +76,94 @@ key-value representation each interaction is stored in a SharedPreferences based
 model. This allows Molly to specify the needed interaction preferences rapidly.
 The process ends with the translation of this model into a semantic one, represented
 by the AdaptUIOnt ontology. This takes several seconds, and it is performed by
-the Semantic Modeller. Taking into account the characteristics of the scenario 
-presented in Table~\ref{tbl:example_scenario}, Molly specifies the following
-interaction features:
+the Semantic Modeller. 
+
+The Capabilities Collector represents the device's characteristics as Table~\ref{tbl:device}
+shows.
+
+\begin{table}
+ \caption{The device's characteristics represented by the Capabilities Collector.}
+ \label{tbl:device}
+ \footnotesize
+ \centering
+\begin{tabular}{l l l}
+  \hline 
+  \textbf{Class(*)}& \textbf{Key} & \textbf{Value}		\\
+  \hline
+  \ac{os}	& \textit{osVersion}		& $4.1.2$	\\
+  Battery	& \textit{battery}		& $55$		\\
+  Volume	& \textit{maxVolume}		& $12$		\\
+  Brightness	& \textit{maxBrightness}	& $15$		\\
+  DeviceScreenResolution & \textit{resolution}	& $480×800$	\\	
+  \hline
+\end{tabular}
+\end{table}
+
+The most significant characteristics collected by the Capabilities Collector
+are the battery level and the maximum brightness and volume available levels.
+The first one might determine if the adaptation can lead to an excessive power
+consumption, while the last two determine the adaptation boundaries for brightness
+and volume.
+
+Next, the activities which collect the interaction capabilities of the user
+represent the gathered information as shown in Table~\ref{tbl:user}.
+
+\begin{table}
+ \caption{The user's characteristics represented by the Capabilities Collector.}
+ \label{tbl:user}
+ \footnotesize
+ \centering
+\begin{tabular}{l l l}
+  \hline 
+  \textbf{Class(*)}& \textbf{Key} & \textbf{Value}		\\
+  \hline
+  Interface 	& \textit{input}		& default	\\
+		& \textit{output} 		& default	\\
+  View		& \textit{colourSet(*)}		& default	\\
+  Display 	& \textit{minBrightness}	& $9$		\\ 
+ 		& \textit{maxBrightness}	& max		\\
+  Audio 	& \textit{minVolume}		& $4$		\\
+ 		& \textit{maxVolume} 		& max		\\
+  Other 	& \textit{language}		& English	\\
+ 		& \textit{vibration} 		& true 		\\	
+  \hline
+\end{tabular}
+\end{table}
+
+Due to the context situation Molly specifies a minimum brightness value of $9$.
+Taking into account that the maximum available value is $15$, it represents a
+high value within the brightness range. This is due to the context brightness that
+she is suffering, which impedes a proper use of the display. The context situation
+is detailed in Table~\ref{tbl:context}.
+
+\begin{table}
+ \caption{The context's characteristics represented by the Capabilities Collector.}
+ \label{tbl:context}
+ \footnotesize
+ \centering
+\begin{tabular}{l l l}
+  \hline 
+  \textbf{Class(*)}& \textbf{Key} & \textbf{Value}		\\
+  \hline
+  Brightness	& \textit{brightness}		& $30,000$	\\
+  Noise		& \textit{noise}		& $80$		\\
+  Time		& \textit{time}			& $14$:$35$	\\
+  Location	& \textit{city}			& Plentzia	\\
+		& \textit{country}		& Spain		\\
+		& \textit{longitude}		& $43.414353$	\\
+		& \textit{latitude} 		& $-2.944183$	\\	
+  \hline
+\end{tabular}
+\end{table}
+
+
+% Taking into account the characteristics of the scenario 
+% presented in Table~\ref{tbl:example_scenario}, Molly specifies the following
+% interaction features:
 % 
 % \begin{itemize}
-%   \item From the interface point of view, Molly does not change the interaction
-%   input or output system.
+%   \item From the interface point of view, Molly does not need any change in the 
+%   interaction input or output system.
 %   \item 
 % \end{itemize}
 
