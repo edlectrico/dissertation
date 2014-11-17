@@ -3,10 +3,15 @@
 
 The modules described in the previous sections of this chapter work together to
 provide an adapted user interface for the sensed user's context disabilities. 
-In the following lines an example of how this process is carried out is 
-presented. The definition of the scenario is shown in Table~\ref{tbl:example_scenario}.
-% , and the corresponding non adapted user 
-% interface is illustrated by Figure~\ref{fig:example_scenario_default}.
+The following section presents an example which details the whole process aiming
+to demonstrate the adaptation process for a concrete user interface. This 
+demonstration is carried out through the introduction of particular scenario. 
+This scenario introduces Molly, a user who is trying to make a phone call from 
+the beach with her Android mobile device. The characteristics of Molly's context 
+cause her problems to interact with the phone and achieve her goal. The main 
+identified context issue is the amount of luxes in the current situation, which 
+might induce temporary sight disabilities. The details of this scenario are shown
+in Table~\ref{tbl:example_scenario}.
 
 \begin{table}[H]
  \caption{Scenario summary.}
@@ -15,31 +20,36 @@ presented. The definition of the scenario is shown in Table~\ref{tbl:example_sce
  \centering
 \begin{tabular}{l l}
   \hline 
-				& \textbf{Scenario}		\\
+				& \textbf{Scenario}	\\
   \hline
   User \\
   \qquad - Personal data 	& Molly, $39$ years old, United States\\
-  \qquad - Activity	 	& Phone call			\\
-  \qquad - Known disabilities 	& - 				\\
-% 				& Hearing loss 			\\
+  \qquad - Activity	 	& Phone call		\\
+  \qquad - Known disabilities 	& - 			\\
+% 				& Hearing loss 		\\
 %   \hline
   Context \\
-  \qquad - Location 		& Relative: Plentzia, Spain  	\\
-				& 				\\
-  \qquad - Time			& $14$:$35$ 			\\
-  \qquad - Brightness		& $30,000$ \ac{lx}		\\
-  \qquad - Noise		& $80$ \acp{db}			\\
-  \qquad - Temperature		& $28$ ºC 			\\
+  \qquad - Location 		& Relative: Plentzia, Spain\\
+				& 			\\
+  \qquad - Time			& $14$:$35$ 		\\
+  \qquad - Brightness		& $30,000$ \ac{lx}	\\
+  \qquad - Noise		& $80$ \acp{db}		\\
+  \qquad - Temperature		& $28$ ºC 		\\
 %   \hline
-  Device 			& Samsung Galaxy SII 	 	\\
-				& Battery: $55$\%		\\
+  Device 			& Samsung Galaxy SII 	\\
+				& Battery: $55$\%	\\
   \hline
 \end{tabular}
 \end{table}
 
-The following lines detail the adaptation process, highlighting each layer's and
-module's goal and behaviour. As the user is trying to perform a phone call, the 
-corresponding default user interface is shown in Figure~\ref{fig:example_scenario_default}.
+% The following lines detail the adaptation process, highlighting each layer's and
+% module's goal and behaviour. As the user is trying to perform a phone call, the 
+% corresponding default user interface is shown in Figure~\ref{fig:example_scenario_default}.
+
+To make the phone call, Molly is using the application whose user interface is
+shown in Figure~\ref{fig:example_scenario_default}. Thus, the shown user interface
+should be adapted by AdaptUI if the scenario presents characteristics that might
+trouble Molly during the phone call process.
 
 \begin{figure}[H]
 \centering
@@ -47,6 +57,35 @@ corresponding default user interface is shown in Figure~\ref{fig:example_scenari
 \caption{A simple phone call application user interface.}
 \label{fig:example_scenario_default}
 \end{figure}
+
+First, the proper functioning of the AdaptUI platform highly depends on the
+interaction capabilities represented in the AdaptUIOnt ontology. These capabilities
+are first gathered by the Capabilities Collector. This module also collects context
+and device characteristics to build the corresponding semantic model. Hence,
+the Capabilities Collector has to be run by Molly in her device. The first task
+this module performs is collecting several characteristics of the used device.
+This is made by calling several Android system methods which allow developers
+know the current capabilities of the device (e.g., available memory and battery).
+Next, several activities are presented through which Molly is asked to calibrate
+and configure different visual elements, such as buttons, edit texts and text
+views. This has to be performed considering the current context situation. 
+Otherwise, it would not be useful for future adaptations within a similar context. 
+As the context might vary during the capabilities collecting process, the module
+uses a native pre-semantic representation of the gathered knowledge. Using a simple
+key-value representation each interaction is stored in a SharedPreferences based
+model. This allows Molly to specify the needed interaction preferences rapidly.
+The process ends with the translation of this model into a semantic one, represented
+by the AdaptUIOnt ontology. This takes several seconds, and it is performed by
+the Semantic Modeller. Taking into account the characteristics of the scenario 
+presented in Table~\ref{tbl:example_scenario}, Molly specifies the following
+interaction features:
+% 
+% \begin{itemize}
+%   \item From the interface point of view, Molly does not change the interaction
+%   input or output system.
+%   \item 
+% \end{itemize}
+
 
 \begin{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
