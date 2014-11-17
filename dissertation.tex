@@ -44,10 +44,10 @@
 \usepackage{tikz} 
 \usetikzlibrary{chains,shapes.arrows,fit}
 
-\definecolor{arrowcolor}{RGB}{201,216,232}% color for the arrow filling
-\definecolor{circlecolor}{RGB}{79,129,189}% color for the inner circles filling
-\colorlet{textcolor}{white}% color for the text inside the circles
-\colorlet{bordercolor}{white}% color for the outer border of circles
+\definecolor{arrowcolor}{RGB}{224,224,224}
+\colorlet{circlecolor}{white}
+\definecolor{bordercolor}{RGB}{168,89,65}
+\colorlet{textcolor}{bordercolor}
 
 \pgfdeclarelayer{background}
 \pgfsetlayers{background,main}
@@ -66,19 +66,9 @@
 \newcommand\task[1]{%
   {\parbox[t]{\taskwidth}{\scriptsize\Centering#1}}}
 
-\tikzset{
-inner/.style={
-  on chain,
-  circle,
-  inner sep=4pt,
-  fill=circlecolor,
-  line width=1.5pt,
-  draw=bordercolor,
-  text width=1.2em,
-  align=center,
-  text height=1.25ex,
-  text depth=0ex
-},
+\tikzset{inner/.style={on chain, circle, inner sep=4pt, fill=circlecolor, 
+line width=1.5pt, draw=bordercolor, text width=1.65em, align=left, 
+text height=1.25ex, text depth=0ex},
 on grid
 }
 
