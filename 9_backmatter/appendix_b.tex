@@ -19,51 +19,64 @@ Table~\ref{tbl:post_adaptation_rules}.
   \textbf{Pre-adaptation rule} 			& \textbf{Involved ontologies} 	& \textbf{Description} 	\\
 						& \textbf{and classes} 		& 			\\
   \hline
-  \textit{checkBatteryLevelIsSufficient}& \textit{soupa:Battery}	& Considering Table~\ref{tbl:batteries} this rule 	\\
-					& \textit{adaptui:Device}	& evaluates if the current battery 			\\
-					& \textit{adaptui:DeviceAux}	& level is enough to perform any 			\\
-					&				& adaptation. 						\\
+  \textit{checkBatteryLevelIsSufficient}& \textit{soupa:Battery}	& Considering Table~\ref{tbl:batteries} this rule\\
+					& \textit{adaptui:Device}	& evaluates if the current battery 		\\
+					& \textit{adaptui:DeviceAux}	& level is enough to perform any 		\\
+					&				& adaptation. 					\\
   \hline
   
-  \textit{checkLightLevelDarkOvercast}	& \textit{adaptui:Context}	& These rules evaluate the context   			\\
-  \textit{checkLightLevelTwilight}	& \textit{adaptui:ContextAux}	& light input through sensors by  			\\
-  \textit{checkLightLevelSunrise}	& \textit{umo:Light}		& using the classification shown in 			\\
-  \textit{checkLightLevelOvercast}	& 				& Table~\ref{tbl:luminance}. The result of this 	\\
-  \textit{checkLightLevelOfficeLightning}&				& evaluation would be a verbose  			\\
-  \textit{checkLightLevelOfficeHallway}	&				& concept (e.g., \textit{sunrise}) which is   		\\
-  \textit{checkLightLevelMoonlessClear}	&				& stored in the ontology using the  			\\
-  \textit{checkLightLevelDayLight}	& 				& \textit{contextAuxHasLightLevel} datatype		\\
-  \textit{checkLightLevelDirectSunlight}& 				&  property.						\\
-  \textit{checkLightLevelFullMoon}	& \\
-  \textit{checkLightLevelLivingRoom}	& \\
+  \textit{checkLightLevelDarkOvercast}	& \textit{adaptui:Context}	& These rules evaluate the context   		\\
+  \textit{checkLightLevelTwilight}	& \textit{adaptui:ContextAux}	& light input through sensors by  		\\
+  \textit{checkLightLevelSunrise}	& \textit{umo:Light}		& using the classification shown in 		\\
+  \textit{checkLightLevelOvercast}	& 				& Table~\ref{tbl:luminance}. The result of this \\
+  \textit{checkLightLevelOfficeLightning}&				& evaluation would be a verbose  		\\
+  \textit{checkLightLevelOfficeHallway}	&				& concept (e.g., \textit{sunrise}) which is   	\\
+  \textit{checkLightLevelMoonlessClear}	&				& stored in the ontology using the  		\\
+  \textit{checkLightLevelDayLight}	& 				& \textit{contextAuxHasLightLevel} datatype	\\
+  \textit{checkLightLevelDirectSunlight}& 				&  property.					\\
+  \textit{checkLightLevelFullMoon}	& 				& 						\\
+  \textit{checkLightLevelLivingRoom}	& 				& 						\\
   \hline
   
-  \textit{checkNoiseLevelBreathing}	& \textit{adaptui:Context}	& These rules evaluate the context 	 		\\
-  \textit{checkNoiseLevelTruck}		& \textit{adaptui:ContextAux}	& noise input through sensors by  			\\
-  \textit{checkNoiseLevelTrain}		& \textit{umo:Noise}		& using the classification  shown in 		 	\\
-  \textit{checkNoiseLevelTraffic}	& 				& Table~\ref{tbl:sounds}. The result of this 	 	\\
-  \textit{checkNoiseLevelOffice}	&				& evaluation would be a verbose 		 	\\
-  \textit{checkNoiseLevelLibrary}	&				& concept (e.g., \textit{sunrise}) which is  		\\
-  \textit{checkNoiseLevelLeavesMurmuring}&				& stored in the ontology using the 			\\
-  \textit{checkNoiseLevelBreathing}	&				& \textit{contextAuxHasNoiseLevel} datatype		\\
-  \textit{checkNoiseLevelBuildingWork}	&				& property.						\\
-  \textit{checkNoiseLevelConversation}	&\\
-  \textit{checkNoiseLevelFactory}	&\\
-  \textit{checkNoiseLevelGig}		&\\
-  \textit{checkNoiseLevelJackhammer}	&\\
+  \textit{checkNoiseLevelBreathing}	& \textit{adaptui:Context}	& These rules evaluate the context 	 	\\
+  \textit{checkNoiseLevelTruck}		& \textit{adaptui:ContextAux}	& noise input through sensors by  		\\
+  \textit{checkNoiseLevelTrain}		& \textit{umo:Noise}		& using the classification  shown in 		\\
+  \textit{checkNoiseLevelTraffic}	& 				& Table~\ref{tbl:sounds}. The result of this 	\\
+  \textit{checkNoiseLevelOffice}	&				& evaluation would be a verbose 		\\
+  \textit{checkNoiseLevelLibrary}	&				& concept (e.g., \textit{sunrise}) which is  	\\
+  \textit{checkNoiseLevelLeavesMurmuring}&				& stored in the ontology using the 		\\
+  \textit{checkNoiseLevelBreathing}	&				& \textit{contextAuxHasNoiseLevel} datatype	\\
+  \textit{checkNoiseLevelBuildingWork}	&				& property.					\\
+  \textit{checkNoiseLevelConversation}	&				& 						\\
+  \textit{checkNoiseLevelFactory}	&				& 						\\
+  \textit{checkNoiseLevelGig}		&				& 						\\
+  \textit{checkNoiseLevelJackhammer}	&				& 						\\
   \hline
   
-  \textit{checkUserHasAttentionRestriction}& \textit{adaptui:Activity}	& If the current activity impedes the 		 	\\
-  \textit{checkUserHasNoRestriction}	& \textit{adaptui:UserAux}	& user, these rules would store the 			\\
-  \textit{checkUserHasSightRestriction}	&				& corresponding boolean value in the 			\\
-  \textit{checkUserHasMovementRestriction}&				& \textit{userAuxHasRestriction} datatype 		\\
-  \textit{checkUserHasHandsRestriction}	&				& property.						\\
-  \textit{checkUserHasHearingRestriction}&\\
-%   Usability \\
-%   Polishing\\
+  \textit{checkUserHasAttentionRestriction}& \textit{adaptui:Activity}	& If the current activity impedes the 		\\
+  \textit{checkUserHasNoRestriction}	& \textit{adaptui:UserAux}	& user, these rules would store the 		\\
+  \textit{checkUserHasSightRestriction}	&				& corresponding boolean value in the 		\\
+  \textit{checkUserHasMovementRestriction}&				& \textit{userAuxHasRestriction} datatype 	\\
+  \textit{checkUserHasHandsRestriction}	&				& property.					\\
+  \textit{checkUserHasHearingRestriction}&				& 						\\
   \hline
 \end{tabular}
 \end{table}
+
+Equation~\ref{ec:pre_adaptation_rule} shows an example of the 
+\textit{checkNoiseLevelTraffic} pre-adaptation rule.
+
+\footnotesize
+\begin{equation} \label{ec:pre_adaptation_rule}
+  \begin{align*} 
+  Context(?context) ∧ Noise(?noise) ∧ ContextAux(?caux) ∧ \\
+  contextHasNoise(?noise, ?value) ∧ lessThanOrEqual(?value, 70) ∧ \\
+  greaterThan(?value, 60) \\
+  \Rightarrow \\
+  contextAuxHasNoiseLevel(?caux, "traffic")
+  \end{align*}
+\end{equation}
+\normalsize
 
 
 \begin{table}
@@ -76,31 +89,122 @@ Table~\ref{tbl:post_adaptation_rules}.
   \textbf{Adaptation rule} 	& \textbf{Involved ontologies} 	& \textbf{Description} 	\\
 				& \textbf{and classes} 		& 			\\
   \hline
-  \textit{Adapt*}		& 				& The adaptation rules are triggered once the 	\\
-				&				& checking rules and the user, context and	\\
-				&				& device characteristics are stored.		\\
+  \textit{adaptBrightness}	& \textit{adaptui:Adaptation}	& The adaptation rules are  	\\
+				& \textit{adaptui:DeviceAux}	& triggered once the checking  	\\
+				& \textit{adaptui:UserAux}	& rules and the user, context 	\\
+  \textit{adaptVolume}		& \textit{adaptui:Adaptation}	& and device characteristics 	\\
+				& \textit{adaptui:DeviceAux}	& are stored.			\\
+				& \textit{adaptui:UserAux}	& 				\\
+  \hline 
+  \textit{adaptButtonSize}	& \textit{adaptui:Adaptation}	& 				\\
+				& \textit{adaptui:DeviceAux}	& 				\\
+				& \textit{adaptui:UserAux}	& 				\\
+  \textit{adaptButtonColor}	& \textit{adaptui:Adaptation}	& 				\\
+				& \textit{adaptui:DeviceAux}	& 				\\
+				& \textit{adaptui:UserAux}	& 				\\
+  \textit{adaptButtonBackgroundColor}& \textit{adaptui:Adaptation}& 				\\
+				& \textit{adaptui:DeviceAux}	& 				\\
+				& \textit{adaptui:UserAux}	& 				\\
+  \textit{adaptButtonTextColor}	& \textit{adaptui:Adaptation}	& 				\\
+				& \textit{adaptui:DeviceAux}	& 				\\
+				& \textit{adaptui:UserAux}	& 				\\
   \hline
+  \textit{adaptEditTextSize}	& \textit{adaptui:Adaptation}	& 				\\
+				& \textit{adaptui:DeviceAux}	& 				\\
+				& \textit{adaptui:UserAux}	& 				\\
+  \textit{adaptEditTextBackgroundColor}	& \textit{adaptui:Adaptation}	& 			\\
+				& \textit{adaptui:DeviceAux}	& 				\\
+				& \textit{adaptui:UserAux}	& 				\\
+  \textit{adaptEditTextTextSize}& \textit{adaptui:Adaptation}	& 				\\
+				& \textit{adaptui:DeviceAux}	& 				\\
+				& \textit{adaptui:UserAux}	& 				\\
+  \textit{adaptEditTextTextColor}& \textit{adaptui:Adaptation}	& 				\\
+				& \textit{adaptui:DeviceAux}	& 				\\
+				& \textit{adaptui:UserAux}	& 				\\
+  \hline 
+  \textit{adaptTextViewtSize}	& \textit{adaptui:Adaptation}	& 				\\
+				& \textit{adaptui:DeviceAux}	& 				\\
+				& \textit{adaptui:UserAux}	& 				\\
+  \textit{adaptTextViewtBackgroundColor}& \textit{adaptui:Adaptation}	& 			\\
+				& \textit{adaptui:DeviceAux}	& 				\\
+				& \textit{adaptui:UserAux}	& 				\\
+  \textit{adaptTextViewtTextSize}& \textit{adaptui:Adaptation}	& 				\\
+				& \textit{adaptui:DeviceAux}	& 				\\
+				& \textit{adaptui:UserAux}	& 				\\
+  \textit{adaptTextViewtTextColor}& \textit{adaptui:Adaptation}	& 				\\
+				& \textit{adaptui:DeviceAux}	& 				\\
+				& \textit{adaptui:UserAux}	& 				\\
+  \hline 
 \end{tabular}
 \end{table}
 
+Equation~\ref{ec:adaptation_rule} shows an example of the \textit{adaptBrightness} 
+adaptation rule.
+
+\footnotesize
+\begin{equation} \label{ec:adaptation_rule}
+  \begin{align*} 
+  Adaptation(?adaptation) ∧ DeviceAux(?device) ∧ UserAux(?user) ∧ \\
+  deviceAuxBatteryIsSufficient(?device, ?battery) ∧ equal(?battery, true) ∧ \\
+  userAuxHasDisplayBrightness(?user, ?brightness) ∧ equal(?brightness, 255)\\ 
+  \Rightarrow \\
+  adaptationBrightnessHasValue(?adaptation, ?brightness)\\
+  \end{align*}
+\end{equation}
+\normalsize
+
+
 
 \begin{table}
-  \caption{The AdaptUIOnt usability rules.}
+  \caption{The AdaptUIOnt usability rules. The metrics mentioned in this table
+  are detailed in Table~\ref{tbl:effectiveness_metrics} and Table~\ref{tbl:productivity_metrics}.}
  \label{tbl:usability_rules}
 \footnotesize
 \centering
  \begin{tabular}{l l l}
   \hline 
-  \textbf{Adaptation rule} 	& \textbf{Involved ontologies} 	& \textbf{Description} 	\\
-				& \textbf{and classes} 		& 			\\
+  \textbf{Usability rule} 	& \textbf{Involved ontologies} 	& \textbf{Description} 		\\
+				& \textbf{and classes} 		& 				\\
   \hline
-  \textit{CheckEffectivityMetric*}&				& These set of rules check the cited usability metrics 		\\
-				&				& shown in Table~\ref{tbl:effectiveness_metrics}.		\\
-  \textit{CheckProductivityMetric*}&				& These set of rules check the cited usability metrics 		\\
-				 &				& shown in Table~\ref{tbl:productivity_metrics}.		\\
+  \textit{checkTaskEffectiveness}&\textit{adaptui:UserAux}	& It measures the proportion of \\
+				& \textit{adaptui:Effectiveness}& goals of the task achieved	\\
+				& \textit{adaptui:Polisher}	& correctly. 			\\
+  \textit{checkTaskCompletion}	& 				& It measures the proportion of	\\
+				& 				& the task that is completed.	\\
+  \textit{checkErrorFrequency}	& 				& It measures the frequency of 	\\
+				& 				& errors.			\\
+  \hline
+  \textit{checkTaskTime}	& \textit{adaptui:UserAux}	& It measures the required time	\\
+				& \textit{adaptui:Productivity}	& to complete the current task.	\\
+  \textit{checkTaskEfficiency}	& \textit{adaptui:Polisher}	& It measures the efficiency of	\\
+				& 				& the user.			\\
+  \textit{checkEconomicProductivity} &				& It measures the cost-effectiveness\\
+				&				& of the user.			\\
+  \textit{checkProductiveProportion} & 				& It measures the proportion of \\
+				& 				& the time the user is performing\\
+				&				& productive actions.		\\
+  \textit{checkRelativeUserEfficiency}& 			& It compares the efficiency of the\\
+				&				& user compared to an expert.	\\
   \hline
 \end{tabular}
 \end{table}
+
+Equation~\ref{ec:usability_rule} shows an example of the \textit{checkRelativeEfficiency} 
+adaptation rule.
+
+\footnotesize
+\begin{equation} \label{ec:usability_rule}
+  \begin{align*} 
+  UserAux(?user) ∧ Productivity(?productivity) ∧ Polisher(?polisher) ∧\\ 
+  userAuxHasProductivityMetrics(?user, ?productivity) ∧ \\
+  hasRelativeEfficiency(?productivity, ?efficiency) ∧ \\
+  lessThanOrEqual(?efficiency, 0.5) ∧ \\
+  \\
+  \Rightarrow \\
+  launchPolisherRules(?polisher, true)
+  \end{align*}
+\end{equation}
+\normalsize
 
 \begin{table}
   \caption{The AdaptUIOnt post-adaptation rules.}
