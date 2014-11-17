@@ -7,7 +7,10 @@ are classified taking into account their participation in the adaptation process
 Thus, the pre-adaptation rules set are is detailed in Table~\ref{tbl:pre_adaptation_rules}.
 Next, Table~\ref{tbl:adaptation_rules} lists the adaptation rules. Table~\ref{tbl:usability_rules}
 shows the usability rules. Finally, the post-adaptation rules are detailed in 
-Table~\ref{tbl:post_adaptation_rules}. 
+Table~\ref{tbl:post_adaptation_rules}. Besides, several examples of these rules
+are presented through Equation~\ref{ec:pre_adaptation_rule}, 
+Equation~\ref{ec:adaptation_rule}, Equation~\ref{ec:usability_rule} and
+Equation~\ref{ec:post_adaptation_rule}.
 
 \begin{table}
   \caption{The AdaptUIOnt pre-adaptation rules.}
@@ -90,16 +93,16 @@ Equation~\ref{ec:pre_adaptation_rule} shows an example of the
 				& \textbf{and classes} 		& 				\\
   \hline
   \textit{adaptBrightness}	& \textit{adaptui:Adaptation}	& These rules consider the  	\\
-				& \textit{adaptui:DeviceAux}	& values stored in the \textit{UserAux}\\
-				& \textit{adaptui:UserAux}	& class to adapt the brightness \\
-  \textit{adaptVolume}		& \textit{adaptui:Brightness}	& and volume accordingly. 	\\
-				& \textit{adaptui:Volume}	& 				\\
+				& \textit{adaptui:DeviceAux}	& values stored in the 		\\
+				& \textit{adaptui:UserAux}	& \textit{UserAux} class to adapt the \\
+  \textit{adaptVolume}		& \textit{adaptui:Brightness}	& brightness and volume 	\\
+				& \textit{adaptui:Volume}	& accordingly. 			\\
 				& \textit{adaptui:Display}	& 				\\
   \hline 
   \textit{adaptButtonSize}	& \textit{adaptui:Adaptation}	& These rules take into account	\\
-				& \textit{adaptui:DeviceAux}	& the current button configuration\\
-				& \textit{adaptui:UserAux}	& and the sensed context disabilities.\\
-  \textit{adaptButtonColor}	& \textit{adaptui:Button}	& 				\\
+				& \textit{adaptui:DeviceAux}	& the current button configu-	\\
+				& \textit{adaptui:UserAux}	& ration and the sensed context	\\
+  \textit{adaptButtonColor}	& \textit{adaptui:Button}	& disabilities.			\\
   \textit{adaptButtonBackgroundColor}&				& 				\\
   \textit{adaptButtonTextColor}	& 				& 				\\
 
@@ -222,11 +225,11 @@ adaptation rule.
 \end{tabular}
 \end{table}
 
-Equation~\ref{ec:polisher_rule} shows an example of the \textit{incrementButtonSize} 
+Equation~\ref{ec:post_adaptation_rule} shows an example of the \textit{incrementButtonSize} 
 post-adaptation rule.
 
 \footnotesize
-\begin{equation} \label{ec:polisher_rule}
+\begin{equation} \label{ec:post_adaptation_rule}
   \begin{align*} 
   Polisher(?polisher) ∧ launchPolisherRules(?polisher, true) ∧\\
   UserAux(?user) ∧ userAuxHasEffectivenessMetrics(?user, ?effectiveness) ∧ \\
