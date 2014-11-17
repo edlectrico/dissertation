@@ -3,69 +3,55 @@
 \label{sec:modelling_techniques}
 
 \citet{strang_context_2004} reviewed the context modelling literature in 2004.
-They differentiate among several paradigms. Here we discuss several previously 
-used context modelling techniques.
+They differentiate among several paradigms. Here a discussion of several 
+previously used context modelling techniques is presented:
 
-
-\myparagraph{Key-value}
-
-\citet{maass_location_aware_1998} adopted a X.500 based solution to store location 
-data. This approach is also used in distributed searching systems. Although it 
-is very easy to maintain and handle its main problem is that it makes difficult 
-to build complex structures~\citep{strang_context_2004}. Similar solutions follow 
-this key-value approach to identify a context element (key), like location, with 
-an environment variable (value)~\citep{schilit_customizing_1993}~\citep{voelker_mobisaic_1996}.
-
-\myparagraph{Markup scheme}
-
-Based on several derivative \ac{sgml}, for example \ac{xml}, marking schemes 
-based models are widespread for modelling profiles. Some extensions are defined 
-as \ac{ccpp} \footnote{http://www.w3.org/Mobile/CCPP/} standards and 
-\ac{uaprof} \footnote{http://www.mobilemultimedia.be/en/uaprof/}. This kind of 
-context modelling usually extends and completes the \ac{ccpp} and \ac{uaprof} 
-basic vocabularies. In~\citep{held_modeling_2002} authors present an extension 
-of this model, \ac{cscp}, which provides hierarchy to such schemes supporting 
-the \ac{rdf} flexibility to express natural structures of profile information.
-
-\myparagraph{Graphic models}
-
-While~\citet{bauer_identification_2003} used a \ac{uml} tool to model the context in
-a air traffic domain,~\citet{henricksen_generating_2003} presented a graphic model
-(as an extension of Object-Role Modelling\footnote{http://www.orm.net/}). 
-\ac{uml} is a widespread general purpose modelling tool with a very powerful 
-graphic component (graphic models): the \ac{uml} diagram. 
-
-\myparagraph{Object oriented models}
-
-\citet{strang_context_2004} presented an object oriented model in which context
-process details are embedded into object level. Data is hidden from other components.
-Therefore, the access to this context data is just allowed through several interfaces.
-This approach tries to use the object oriented programming benefits, as re-usability
-and encapsulation, to cover ubiquitous environment's problems about context. Another
-example of this approach is the one given by the GUIDE project by~\citet{cheverst_design_1999},
-which is focused on location. In this case the context information is also in the
-object as accessible states through those methods defined by the object itself
-and by modifying these states.
-
-% \paragraph{Logic models}
-
-\myparagraph{Ontology based models}
-
-As~\citet{strang_context_2004} discussed, modelling the context with
-ontologies offers the following advantages:
-\begin{itemize}
-  \item Ontologies are the most expressive approach to model context.
-  \item Composition and management of the model can be done in a distributed 
-  manner.
-  \item It is possible to partially validate the contextual knowledge.
-  \item One of the main strengths of ontologies is the simplicity to enact 
-  the normalization and formality of the model.
-\end{itemize}
-
-Multiple ontology based context models have been developed in the past. In the 
-following section several ontology-based relevant models will be discussed.
-
-
-
-% ----------------------------------------------------------------------
-
+\begin{enumerate}
+  \item Key-value: \citet{maass_location_aware_1998} adopted a X.500 based 
+  solution to store location data. This approach is also used in distributed 
+  searching systems. Although it is very easy to maintain and handle its main 
+  problem is that it makes difficult to build complex structures~\citep{strang_context_2004}. 
+  Similar solutions follow this key-value approach to identify a context element 
+  (key), like location, with an environment variable (value)~\citep{schilit_customizing_1993}~\citep{voelker_mobisaic_1996}. 
+  
+  \item Markup scheme: Based on several derivative \ac{sgml}, for example 
+  \ac{xml}, marking schemes based models are widespread for modelling profiles. 
+  Some extensions are defined as \ac{ccpp} \footnote{http://www.w3.org/Mobile/CCPP/} 
+  standards and \ac{uaprof} \footnote{http://www.mobilemultimedia.be/en/uaprof/}. 
+  This kind of context modelling usually extends and completes the \ac{ccpp} and 
+  \ac{uaprof} basic vocabularies. In~\citep{held_modeling_2002} authors present 
+  an extension of this model, \ac{cscp}, which provides hierarchy to such schemes 
+  supporting the \ac{rdf} flexibility to express natural structures of profile 
+  information.
+  
+  \item Graphic models: While~\citet{bauer_identification_2003} used a \ac{uml} 
+  tool to model the context in a air traffic domain,~\citet{henricksen_generating_2003} 
+  presented a graphic model (as an extension of Object-Role Modelling\footnote{http://www.orm.net/}). 
+  \ac{uml} is a widespread general purpose modelling tool with a very powerful 
+  graphic component (graphic models): the \ac{uml} diagram. 
+  
+  \item Object oriented models: \citet{strang_context_2004} presented an object 
+  oriented model in which context process details are embedded into object level. 
+  Data is hidden from other components.Therefore, the access to this context data 
+  is just allowed through several interfaces. This approach tries to use the 
+  object oriented programming benefits, as re-usability and encapsulation, to 
+  cover ubiquitous environment's problems about context. Another example of this 
+  approach is the one given by the GUIDE project by~\citet{cheverst_design_1999}, 
+  which is focused on location. In this case the context information is also in 
+  the object as accessible states through those methods defined by the object 
+  itself and by modifying these states.
+  
+  \item {Ontology based models: As~\citet{strang_context_2004} discussed, modelling 
+  the context with ontologies offers the following advantages:
+  \begin{itemize}
+    \item Ontologies are the most expressive approach to model context.
+    \item Composition and management of the model can be done in a distributed 
+    manner.
+    \item It is possible to partially validate the contextual knowledge.
+    \item One of the main strengths of ontologies is the simplicity to enact 
+    the normalization and formality of the model.
+  \end{itemize}
+  Multiple ontology based context models have been developed in the past. In the 
+  following section several ontology-based relevant models will be discussed.}
+  
+\end{enumerate}
