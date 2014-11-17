@@ -10,6 +10,7 @@
 
 dissertation.pdf
 *.tex.backup
+*~
 
 ## Intermediate documents:
 *.dvi
