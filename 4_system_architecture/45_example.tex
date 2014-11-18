@@ -102,8 +102,8 @@ shows.
 The most significant characteristics collected by the Capabilities Collector
 are the battery level and the maximum brightness and volume available levels.
 The first one might determine if the adaptation can lead to an excessive power
-consumption, while the last two determine the adaptation boundaries for brightness
-and volume.
+consumption, while the last two determine the adaptation boundaries for 
+brightness and volume.
 
 Next, the activities which collect the interaction capabilities of the user
 represent the gathered information as shown in Table~\ref{tbl:user}.
@@ -135,9 +135,10 @@ represent the gathered information as shown in Table~\ref{tbl:user}.
 
 Due to the context situation Molly specifies a minimum brightness value of $9$.
 Taking into account that the maximum available value is $15$, it represents a
-high value within the brightness range. This is due to the context brightness that
-she is suffering, which impedes a proper use of the display. The context situation
-is detailed in Table~\ref{tbl:context}.
+high value within the brightness range. This is due to the context brightness 
+that she is suffering, which impedes a proper use of the display. More concretely,
+the current amount of luxes ($30,000$ \ac{lx}) causes trouble when using the
+display. The described context situation is detailed in Table~\ref{tbl:context}.
 
 \begin{table}
  \caption{The context's characteristics represented by the Capabilities Collector.}
@@ -160,112 +161,29 @@ is detailed in Table~\ref{tbl:context}.
 \end{table}
 
 
+As mentioned before, in order to allow AdaptUI to properly adapt the user 
+interface the user is asked to use the Capabilities Collector. 
+Figure~\ref{fig:capabilities_collector_scenario} shows one of the Capabilities
+Collector's activities in which Molly is choosing different colours for the
+corresponding views.
 
-\begin{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%Modelling Layer%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \item The Modelling Layer aims to build a semantic model of the user, context
-  and device, based on the interaction characteristics available in the current
-  situation. For further details of the Modelling Layer see Section~\ref{sec:modelling_layer}.
-  
-  \begin{itemize}
-    %Capabilities Collector%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \item First, the user has to use the Capabilities Collector. As explained in 
-    Section~\ref{sec:capabilities_collector}, this software module collects non 
-    physiological capabilities of the user, gathers different variables of the 
-    current context, and identifies several device characteristics. An example of 
-    the Capabilities Collector is given through 
-    Figure~\ref{fig:capabilities_collector_scenario}. Through a series of
-    activities, the user is requested to dynamically configure different user 
-    interface components taking into account the current scenario characteristics. 
-    Each activity presents different user interface views, and the user's
-    interaction decisions are stored in an Android SharedPreferences model.
-    This model is easy to maintain and manipulate, and it serves as input for
-    the next module. The user, context and device profiles are detailed in 
-    Table~\ref{tbl:profiles}.
-    
 \begin{figure}
 \centering
 \includegraphics[width=0.35\textwidth]{capabilities_collector_scenario.png}
 \caption{A user configuring the buttons colour set through the Capabilities Collector.}
 \label{fig:capabilities_collector_scenario}
 \end{figure}
-    
-\begin{table}
- \caption{User, context and device profiles after using the Capabilities Collector.
- The class (*) is translated to a semantic representation in the AdaptUIOnt ontology.
- It is not represented in the SharedPreferences model. The colour set (*) represents
- the whole colour configuration that the user specifies for the corresponding
- views, including the background colours, text colours and so on.}
- \label{tbl:profiles}
- \footnotesize
- \centering
-\begin{tabular}{l l l l}
-  \hline 
-  \textbf{Entity}& \textbf{Class(*)}& \textbf{SharedPreferences} & \textbf{Value}\\
-		& 		& \textbf{property} 		& \\
-  \hline
-  User 		& Interface 	& \textit{input}		& default	\\
-		& 		& \textit{output} 		& default	\\
-		& View		& \textit{colourSet(*)}		& default	\\
-		& Display 	& \textit{minBrightness}	& $9$		\\ 
-		& 		& \textit{maxBrightness}	& max		\\
-		& Audio 	& \textit{minVolume}		& $4$		\\
-		& 		& \textit{maxVolume} 		& max		\\
-		& Other 	& \textit{language}		& English	\\
-		& 		& \textit{vibration} 		& true 		\\
-		
-  Context	& Brightness	& \textit{brightness}		& $30,000$	\\
-		& Noise		& \textit{noise}		& $80$		\\
-		& Time		& \textit{time}			& $14$:$35$	\\
-		& Location	& \textit{city}			& Plentzia	\\
-		&		& \textit{country}		& Spain		\\
-		&		& \textit{longitude}		& $43.414353$	\\
-		&		& \textit{latitude} 		& $-2.944183$	\\
-  Device	& \ac{os}	& \textit{osVersion}		& $4.1.2$	\\
-		& Battery	& \textit{battery}		& $55$		\\
-		& Volume	& \textit{maxVolume}		& $12$		\\
-		& Brightness	& \textit{maxBrightness}	& $15$		\\
-		& DeviceScreenResolution & \textit{resolution}	& $480×800$	\\	
-  \hline
-\end{tabular}
-\end{table}
 
-    %Semantic Modeller%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \item Once the interaction with the Capabilities Collector is finished, the
-    Semantic Modeller (see Section~\ref{sec:semantic_modeller}) uses the 
-    SharedPreferences stored model and stores it as a semantic representation of 
-    this model in the AdaptUIOnt ontology. This is performed thanks to the 
-    \textit{Pellet4Android} mobile semantic engine, which allows to manipulate 
-    semantic knowledge in Android. Storing in the ontology requires more time 
-    than using SharedPreferences. Thus, the last operation in the Modelling Layer 
-    is the semantic storage. The most significant represented characteristics 
-    are shown in Table~\ref{tbl:capabilities_collector_scenario}. Those 
-    characteristics that are not present in Table~\ref{tbl:profiles} are computed 
-    by the pre-adaptation. For example, Equation~\ref{ec:pre_rule_1} updates the 
-    \textit{userAuxDisplayHasApplicable} datatype property by checking if the 
-    user interacts with the Capabilities Collector in a \textit{default} manner.
-    
-    \footnotesize
-    \begin{equation} \label{ec:pre_rule_1} 
-    \begin{align*} 
-    adaptui:UserAux(?uaux) ∧ adaptui:UserCharacteristics(?user) ∧ \\
-    adaptui:Interface(?interf) ∧ adaptui:Input(?input) ∧ \\
-    userHasInterface(?user, ?interf) ∧ interfaceHasInput(?interf, ?input) ∧\\
-    swrlb:equal("default") \\    
-    \Rightarrow \\
-    adaptui:userAuxDisplayHasApplicable(?uaux, true)
-    \end{align*}
-    \end{equation}
-    \normalsize
-    
-    
+Once the interaction with the Capabilities Collector is finished, the Semantic 
+Modeller uses the SharedPreferences stored model and stores it as a semantic 
+representation of this model in the AdaptUIOnt ontology. The semantic representation
+of the knowledge represented in Table~\ref{tbl:user}, Table~\ref{tbl:device} and
+Table~\ref{tbl:context} is shown in Table~\ref{tbl:capabilities_collector_scenario}.
 
-  \end{itemize}
 
 \begin{table}
- \caption{User, context and device profiles as represented in the AdaptUIOnt ontology.}
+ \caption{User, context and device profiles as represented in the AdaptUIOnt 
+ ontology.}
  \label{tbl:capabilities_collector_scenario}
  \footnotesize
  \centering
@@ -300,80 +218,98 @@ is detailed in Table~\ref{tbl:context}.
 \end{tabular}
 \end{table}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%Adaptation Layer%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \item After storing the semantic model in the AdaptUIOnt ontology, it is sent
-  to the the Adaptation Layer. This layer aims to lead the dynamic adaptation of
-  the elements presented in the user interface.
-  
-  \begin{itemize}
-    %Adaptation Engine%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \item The Adaptation Engine loads, as input, the stored AdaptUIOnt model, 
-    and it executes the corresponding adaptation rules defined by the developer. 
-    Once the rules have been executed, the resulting user interface is dynamically 
-    updated and presented to the user. Equation~\ref{ec:adap_rule_8} shows how
-    the views are updated due to the context brightness. The resulting adapted
-    user interface is shown in Figure~\ref{fig:example_scenario_default_vs_adapted}.
 
-    \footnotesize
-    \begin{equation} \label{ec:adap_rule_8} 
-    \begin{align*} 
-    adaptui:Button(?b) ∧ adaptui:ContextCharacteristics(?c) ∧ gumo:Light(?light) ∧ \\  
-    gumo:PhysicalEnvironment(?pe) ∧ contextHasPhysicalEnvironment(?c, ?pe) ∧ \\ 
-    lightHasBrightness(?light, ?value) ∧ physicalEnvironmentHasLight(?pe, ?light) ∧ \\
-    swrlb:greaterThanOrEqual(?value, 20000) \\
-    \Rightarrow \\
-    adaptui:buttonHasBackgroundColor(?b, -16711936)
-    \end{align*}
-    \end{equation}
-    \normalsize
+Consequently, the first rules of the AdaptUIOnt ontology are triggered. These 
+rules form the pre-adaptation rules set, and their goal is to compute possible 
+interaction disabilities for the user tanking into account the input user 
+interaction capabilities, context sensed characteristics, and device features. 
+For example, Equation~\ref{ec:pre_rule} updates the 
+\textit{userAuxDisplayHasApplicable} datatype property by checking if the user 
+interacts with the Capabilities Collector in a \textit{default} manner.
     
-    \begin{figure}
-    \centering
-    \includegraphics[width=0.50\textwidth]{example_scenario_default_vs_adapted.png}
-    \caption{The default user interface (left) and the adapted user interface (right).}
-    \label{fig:example_scenario_default_vs_adapted}
-    \end{figure}
-    
-    %Adaptation Polisher%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \item Finally, the Adaptation Polisher monitors the usability of the adapted
-    user interface. To safeguard this usability it builds and compares two
-    interaction models. The first one is built with the usability metrics detailed
-    in Section~\ref{sec:usability_metrics} under default circumstances. This means
-    that this model is fully accessible by the user in many contexts. The second 
-    model, is built from the same usability metrics but taking into account the 
-    adapted user interface. The Interaction Model Comparator executes the following
-    interaction rules, which aim to evaluate the usability metrics differences
-    between the two interaction models. Once these rules are executed, their
-    results update the last adaptation of the user interface if needed. The
-    polished user interface is compared with the adapted one in 
-    Figure~\ref{fig:example_scenario_adapted_vs_polished}. In the presented
-    scenario, the Equation~\ref{ec:pre_rule_8} updates polishes the button's
-    text as follows: 
+\footnotesize
+\begin{equation} \label{ec:pre_rule} 
+\begin{align*} 
+adaptui:UserAux(?uaux) ∧ adaptui:UserCharacteristics(?user) ∧ \\
+adaptui:Interface(?interf) ∧ adaptui:Input(?input) ∧ \\
+userHasInterface(?user, ?interf) ∧ interfaceHasInput(?interf, ?input) ∧\\
+swrlb:equal("default") \\    
+\Rightarrow \\
+adaptui:userAuxDisplayHasApplicable(?uaux, true)
+\end{align*}
+\end{equation}
+\normalsize
 
-    \footnotesize
-    \begin{equation} \label{ec:pre_rule_8} 
-    \begin{align*} 
-    adaptui:Button(?b) ∧ adaptui:Usability (?u) ∧ adaptui:EfficiencyMetric(?em) ∧ \\
-    usabilityHasEfficiencyMetric(?u, ?em) ∧ swrlb:greaterThanOrEqual(?value, 0.5) ∧ \\
-    efficiencyMetricHasTaskEffectiveness(?em, ?value)\\
-    \Rightarrow \\
-    adaptui:buttonHasTextColor(?b, 16777215)
-    \end{align*}
-    \end{equation}
-    \normalsize
+As this is an intermediate and internal process Molly still does not perceive
+any adaptation or change. It is in the next step when the adaptation rules
+determine the new configuration of the presented views shown in 
+Figure~\ref{fig:example_scenario_default}. The Adaptation Engine loads the 
+stored AdaptUIOnt model, and it executes the corresponding adaptation rules 
+defined by the developer, whose goal is to make the corresponding modifications
+on the mentioned views. Once the rules have been executed, the resulting user 
+interface is dynamically updated and presented to the user. 
+Equation~\ref{ec:adap_rule} shows how the views are updated due to the context 
+brightness. The resulting adapted user interface is then presented to Molly, and 
+its appearance is shown in Figure~\ref{fig:example_scenario_default_vs_adapted}.
 
-    \begin{figure}
-    \centering
-    \includegraphics[width=0.50\textwidth]{example_scenario_adapted_vs_polished.png}
-    \caption{The adapted user interface (left) and the polished user interface (right).}
-    \label{fig:example_scenario_adapted_vs_polished}
-    \end{figure}
+\footnotesize
+\begin{equation} \label{ec:adap_rule} 
+\begin{align*} 
+adaptui:Button(?b) ∧ adaptui:ContextCharacteristics(?c) ∧ gumo:Light(?light) ∧ \\  
+gumo:PhysicalEnvironment(?pe) ∧ contextHasPhysicalEnvironment(?c, ?pe) ∧ \\ 
+lightHasBrightness(?light, ?value) ∧ physicalEnvironmentHasLight(?pe, ?light) ∧ \\
+swrlb:greaterThanOrEqual(?value, 20000) \\
+\Rightarrow \\
+adaptui:buttonHasBackgroundColor(?b, -16711936) %%This should be the Adaption class
+\end{align*}
+\end{equation}
+\normalsize
 
-  \end{itemize}
+\begin{figure}
+\centering
+\includegraphics[width=0.50\textwidth]{example_scenario_default_vs_adapted.png}
+\caption{The default user interface (left) and the adapted user interface (right).}
+\label{fig:example_scenario_default_vs_adapted}
+\end{figure}
 
-\end{itemize}
+
+Now the user interface has been adapted there are two possibilities. On the one
+hand, if Molly is satisfied with the provided adaptation, AdaptUI finishes its
+process. On the other hand, there is the possibility of rejection. In any case,
+the system checks the satisfaction of the user by computing several usability
+metrics which determine the usability comfort with the presented user interface.
+The Adaptation Polisher builds and compares two interaction models. The first 
+one is built with the usability metrics detailed in 
+Section~\ref{sec:usability_metrics} under default circumstances. This means that 
+the model is built when Molly interacts with the device in a scenario in which
+there are no context disabilities. On the contrary, the second model, is built 
+from the same usability metrics but taking into account the adapted user interface. 
+The Interaction Model Comparator evaluate the usability metrics differences
+between the two interaction models. Once these rules are executed, their results 
+update the last adaptation of the user interface if needed. The polished user 
+interface is compared with the adapted one in 
+Figure~\ref{fig:example_scenario_adapted_vs_polished}. In the presented scenario, 
+the Equation~\ref{ec:post_rule} updates polishes the button's text as follows: 
+
+\footnotesize
+\begin{equation} \label{ec:post_rule} 
+\begin{align*} 
+adaptui:Button(?b) ∧ adaptui:Usability (?u) ∧ adaptui:EfficiencyMetric(?em) ∧ \\
+usabilityHasEfficiencyMetric(?u, ?em) ∧ swrlb:greaterThanOrEqual(?value, 0.5) ∧ \\
+efficiencyMetricHasTaskEffectiveness(?em, ?value)\\
+\Rightarrow \\
+adaptui:buttonHasTextColor(?b, 16777215)
+\end{align*}
+\end{equation}
+\normalsize
+
+\begin{figure}
+\centering
+\includegraphics[width=0.50\textwidth]{example_scenario_adapted_vs_polished.png}
+\caption{The adapted user interface (left) and the polished user interface (right).}
+\label{fig:example_scenario_adapted_vs_polished}
+\end{figure}
+
 
 As this example demonstrates, the polisher rules allow the developer to keep
 improving the adapted user interfaces. This is carried out by maintaining both
