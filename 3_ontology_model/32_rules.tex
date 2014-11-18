@@ -13,7 +13,7 @@ In AdaptUI the adaptation process is understood as a three step procedure:
  \item First, the knowledge of the main entities needs to be collected. Once it
  is gathered, a normalization process needs to be performed. This process classifies
  the collected information so it can be easily read. For example, a noise sensor
- might sense a 100 \acp{db} sound. Initially, we may not understand this value. Thus,
+ might sense a $100$~\acp{db} sound. Initially, we may not understand this value. Thus,
  using several ranges explained during this chapter (see Table~\ref{tbl:luminance},
  Table~\ref{tbl:sounds} and Table~\ref{tbl:batteries}) a high level classification
  is carried out.
@@ -27,123 +27,283 @@ In AdaptUI the adaptation process is understood as a three step procedure:
 \end{itemize}
 
 This conceptual division of the adaptation process in AdaptUI results in a three
-set of different rules:
+set of different rules, which are detailed below.
 
-\begin{itemize}
- \item Pre-adaptation rules: this group of rules are designed to check those
- values which come from each entity of the Entities Model in order to translate
- them to the auxiliary models (see the primary model in Figure~\ref{fig:entities_characteristics}).
- For example, a context brightness value of 35,000 indicates the amount of \ac{lx}
- of the current environment. This value is then classified to a more verbose
- subgroup (in this case, to \textit{direct\_sunlight}); a device battery
- value of 10 implies the percentage of the remaining battery. This is translated
- as a \textit{non\_sufficient} battery level in the auxiliary device class. Thus,
- the corresponding adaptation rule checks these new parameters and decides whether
- the adaptation should follow one path or the other. Here we consider that 10\%
- of the total battery levels for a device might not be enough to run an
- adaptation process. Of course this is not accurate. The user might be able to
- use a nearby power adaptor. Besides, a 20\% battery level might not be enough 
- if the user aims to browse the web, make a video call, and so forth. This means
- that these values are established by us regarding the just the adaptation, but
- they directly depend on the user context. This set of rules directly affects
- the \textit{UserAux}, \textit{ContextAux} and \textit{DeviceAux} classes, being
- the main reason for these classes to belong to the Dynamic Model introduced in
- Section~\ref{sec:dynamic_model}.
- 
- \item Adaptation rules: depending on the checked rules and the auxiliary classes’
- status, different rules are triggered. These rules result in different values
- for the Adaptation class, which is the class queried in the device platform for
- bringing the final adaptation to the device. These rules affect the 
- \textit{Adaptation} class.
- 
- \item Post-adaptation rules: Once the user interface is adapted, a concrete
- architecture module (see Section \ref{sec:adaptation_polisher}) monitors the
- user activity. Hence, through a series of usability metrics (see 
- Section~\ref{sec:usability_metrics}) the the adaptation is considered satisfactory 
- by AdaptUI. If it detects that the usability level is insufficient, these rules
- are triggered changing the user model.
-\end{itemize}
+\subsection{The pre-adaptation rules}
+This group of rules are designed to check those values which come from each entity 
+of the Entities Model in order to translate them to the auxiliary models (see 
+the primary model in Figure~\ref{fig:entities_characteristics}). For example, a 
+context brightness value of $35,000$ indicates the amount of \ac{lx} of the 
+current environment. This value is then classified to a more verbose subgroup 
+(in this case, to \textit{direct\_sunlight}); a device battery value of $10$ 
+implies the percentage of the remaining battery. This is translated as a 
+\textit{non\_sufficient} battery level in the auxiliary device class. Thus,
+the corresponding adaptation rule checks these new parameters and decides whether
+the adaptation should follow one path or the other. Here we consider that $10$\%
+of the total battery levels for a device might not be enough to run an adaptation
+process. Of course this is not accurate. The user might be able to use a nearby 
+power adaptor. Besides, a $20$\% battery level might not be enough if the user 
+aims to browse the web, make a video call, and so forth. This means that these 
+values are established by us regarding the just the adaptation, but they directly 
+depend on the user context. This set of rules directly affects the 
+\textit{UserAux}, \textit{ContextAux} and \textit{DeviceAux} classes, being the 
+main reason for these classes to belong to the Dynamic Model introduced in 
+Section~\ref{sec:dynamic_model}.
 
-\footnotesize
+Table~\ref{tbl:pre_adaptation_rules} describe the default pre-adaptation rules
+included in AdaptUIOnt.
 
-% \begin{center}
-  \begin{equation} \label{ec:pre_rule1}
-  \begin{align*} 
-  Device(?device) ∧ deviceIsDefinedBy(?device, ?chars) ∧ Battery(?battery) ∧ \\
-  DeviceAux(?daux) ∧ deviceBatteryHasLevel(?battery, ?batterylevel) ∧ \\
-  lessThanOrEqual(?batterylevel, 100) ∧ greaterThanOrEqual(?batterylevel, 15) \\
-  \Rightarrow \\
-  deviceAuxBatteryIsSufficient(?daux, true)
-  \end{align*}
-  \end{equation}
-% \end{center}
-
-\normalsize
-
-Equation~\ref{ec:pre_rule1} shows an example of a pre-adaptation rule used in
-AdaptUI. Equation~\ref{ec:rule2} shows an example of an adaptation rule. These
-rules have been written using the Protégé rules editor, which is based on the
-\ac{swrl} syntax~\citep{swrl}.
-
-\footnotesize
-%  \begin{center}
-  \begin{equation} \label{ec:rule2}
-  \begin{align*} 
-  UserAux(?user) ∧ userAuxHasDisplayBrightness(?user, ?brightness) ∧ \\ 
-  equal(?brightness, 255) ∧ Adaptation(?adaptation) ∧  DeviceAux(?device) ∧ \\
-  deviceAuxBatteryIsSufficient(?device, ?battery) ∧  equal(?battery, true) \\
-  \Rightarrow \\
-  adaptui:adaptationBrightnessHasValue(?adaptation, ?brightness)
-  \end{align*}
-  \end{equation}
-% \end{center}
-\normalsize
-
-\begin{table}[H]
-  \caption{AdaptUI adaptation rules set. The asterisk at the end of each rule
-  means that there is a corresponding equivalent rule taking into account
-  Table~\ref{tbl:sounds}, Table~\ref{tbl:luminance} and Table~\ref{tbl:batteries}.
-  Thus, there is a \textit{CheckLightLevelSunrise} or a \textit{CheckNoiseLevelTraffic}.
-  The whole rules set is detailed in Appendix~\ref{cha:appendixB}.}
- \label{tbl:pre_adaptui_rules_set}
+\begin{table}
+  \caption{The AdaptUIOnt pre-adaptation rules.}
+ \label{tbl:pre_adaptation_rules}
 \footnotesize
 \centering
  \begin{tabular}{l l l}
   \hline 
-  \textbf{Rule group} 	& \textbf{Rule}					& \textbf{Description}						\\
+  \textbf{Pre-adaptation rule} 			& \textbf{Involved ontologies} 	& \textbf{Description} 	\\
+						& \textbf{and classes} 		& 			\\
   \hline
-  Pre-adaptation 	& \textit{CheckBatteryLevelIsSufficient} 	& Considering Table~\ref{tbl:batteries} this rule evaluates	\\ 
-			& 						& if the current battery level is enough to			\\
-			& 						& perform any adaptation.					\\
-			& \textit{CheckLightLevel*}			& These rules evaluate the context light input  		\\
-			& 						& through sensors by using the classification 			\\
-			& 						& shown in Table~\ref{tbl:luminance}. The result of  this	\\
-			& 						& evaluation would be a verbose concept (e.g.,			\\
-			&						& \textit{sunrise}) which is stored in the ontology		\\
-			&						& using the \textit{contextAuxHasLightLevel} datatype 		\\
-			&						& property							\\
-			& \textit{CheckNoiseLevel*}			& These rules evaluate the context noise input 			\\
-			& 						& through sensors by using the classification 			\\
-			& 						& shown in Table~\ref{tbl:sounds}. The result of this		\\
-			& 						& evaluation would be a verbose concept (e.g.,	 		\\
-			&						& \textit{sunrise}) which is stored in the ontology  		\\
-			&						& using the \textit{contextAuxHasNoiseLevel} datatype  		\\
-			&						& property.							\\
-			& \textit{CheckUserHasRestriction}		& If the current activity impedes the user, these 		\\
-			& 						& rules would store the corresponding boolean 			\\
-			&						& value in the \textit{userAuxHasRestriction} datatype 		\\
-			&						& property.							\\
-  Adaptation		& \textit{Adapt*}				& The adaptation rules are triggered once the 			\\
-			&						& checking rules and the user, context and			\\
-			&						& device characteristics are stored.				\\
-  Post-adaptation	& \textit{CheckUsabilityMetric*}		& These set of rules check the cited usability metrics 		\\
-			& 						& shown in Table~\ref{tbl:effectiveness_metrics}.		\\
-			& \textit{CheckProductivityMetric*}		& These set of rules check the cited usability metrics 		\\
-			&						& shown in Table~\ref{tbl:productivity_metrics}.		\\
+  \textit{checkBatteryLevelIsSufficient}& \textit{soupa:Battery}	& Considering Table~\ref{tbl:batteries} this rule\\
+					& \textit{adaptui:Device}	& evaluates if the current battery 		\\
+					& \textit{adaptui:DeviceAux}	& level is enough to perform any 		\\
+					&				& adaptation. 					\\
   \hline
-
+  
+  \textit{checkLightLevelDarkOvercast}	& \textit{adaptui:Context}	& These rules evaluate the context   		\\
+  \textit{checkLightLevelTwilight}	& \textit{adaptui:ContextAux}	& light input through sensors by  		\\
+  \textit{checkLightLevelSunrise}	& \textit{gumo:Light}		& using the classification shown in 		\\
+  \textit{checkLightLevelOvercast}	& 				& Table~\ref{tbl:luminance}. The result of this \\
+  \textit{checkLightLevelOfficeLightning}&				& evaluation would be a verbose  		\\
+  \textit{checkLightLevelOfficeHallway}	&				& concept (e.g., \textit{sunrise}) which is   	\\
+  \textit{checkLightLevelMoonlessClear}	&				& stored in the ontology using the  		\\
+  \textit{checkLightLevelDayLight}	& 				& \textit{contextAuxHasLightLevel} datatype	\\
+  \textit{checkLightLevelDirectSunlight}& 				&  property.					\\
+  \textit{checkLightLevelFullMoon}	& 				& 						\\
+  \textit{checkLightLevelLivingRoom}	& 				& 						\\
+  \hline
+  
+  \textit{checkNoiseLevelBreathing}	& \textit{adaptui:Context}	& These rules evaluate the context 	 	\\
+  \textit{checkNoiseLevelTruck}		& \textit{adaptui:ContextAux}	& noise input through sensors by  		\\
+  \textit{checkNoiseLevelTrain}		& \textit{gumo:Noise}		& using the classification  shown in 		\\
+  \textit{checkNoiseLevelTraffic}	& 				& Table~\ref{tbl:sounds}. The result of this 	\\
+  \textit{checkNoiseLevelOffice}	&				& evaluation would be a verbose 		\\
+  \textit{checkNoiseLevelLibrary}	&				& concept (e.g., \textit{sunrise}) which is  	\\
+  \textit{checkNoiseLevelLeavesMurmuring}&				& stored in the ontology using the 		\\
+  \textit{checkNoiseLevelBreathing}	&				& \textit{contextAuxHasNoiseLevel} datatype	\\
+  \textit{checkNoiseLevelBuildingWork}	&				& property.					\\
+  \textit{checkNoiseLevelConversation}	&				& 						\\
+  \textit{checkNoiseLevelFactory}	&				& 						\\
+  \textit{checkNoiseLevelGig}		&				& 						\\
+  \textit{checkNoiseLevelJackhammer}	&				& 						\\
+  \hline
+  
+  \textit{checkUserHasAttentionRestriction}& \textit{adaptui:Activity}	& If the current activity impedes the 		\\
+  \textit{checkUserHasNoRestriction}	& \textit{adaptui:UserAux}	& user, these rules would store the 		\\
+  \textit{checkUserHasSightRestriction}	&				& corresponding boolean value in the 		\\
+  \textit{checkUserHasMovementRestriction}&				& \textit{userAuxHasRestriction} datatype 	\\
+  \textit{checkUserHasHandsRestriction}	&				& property.					\\
+  \textit{checkUserHasHearingRestriction}&				& 						\\
+  \hline
 \end{tabular}
 \end{table}
+
+Equation~\ref{ec:pre_adaptation_rule} shows an example of the 
+\textit{checkNoiseLevelTraffic} pre-adaptation rule.
+
+\footnotesize
+\begin{equation} \label{ec:pre_adaptation_rule}
+  \begin{align*} 
+  Context(?context) ∧ Noise(?noise) ∧ ContextAux(?caux) ∧ \\
+  contextHasNoise(?noise, ?value) ∧ lessThanOrEqual(?value, 70) ∧ \\
+  greaterThan(?value, 60) \\
+  \Rightarrow \\
+  contextAuxHasNoiseLevel(?caux, "traffic")
+  \end{align*}
+\end{equation}
+\normalsize
+
+
+\subsection{The adaptation rules}
+Depending on the checked rules and the auxiliary classes’ status, different 
+rules are triggered. These rules result in different values for the Adaptation 
+class, which is the class queried in the device platform for bringing the final 
+adaptation to the device. These rules affect the \textit{Adaptation} class.
+Table~\ref{tbl:adaptation_rules} details the default adaptation rules within
+the AdaptUIOnt ontology.
+
+\begin{table}
+  \caption{The AdaptUIOnt adaptation rules.}
+ \label{tbl:adaptation_rules}
+\footnotesize
+\centering
+ \begin{tabular}{l l l}
+  \hline 
+  \textbf{Adaptation rule} 	& \textbf{Involved ontologies} 	& \textbf{Description} 		\\
+				& \textbf{and classes} 		& 				\\
+  \hline
+  \textit{adaptBrightness}	& \textit{adaptui:Adaptation}	& These rules consider the  	\\
+				& \textit{adaptui:DeviceAux}	& values stored in the 		\\
+				& \textit{adaptui:UserAux}	& \textit{UserAux} class to adapt the \\
+  \textit{adaptVolume}		& \textit{adaptui:Brightness}	& brightness and volume 	\\
+				& \textit{adaptui:Volume}	& accordingly. 			\\
+				& \textit{adaptui:Display}	& 				\\
+  \hline 
+  \textit{adaptButtonSize}	& \textit{adaptui:Adaptation}	& These rules take into account	\\
+				& \textit{adaptui:DeviceAux}	& the current button configu-	\\
+				& \textit{adaptui:UserAux}	& ration and the sensed context	\\
+  \textit{adaptButtonColor}	& \textit{adaptui:Button}	& disabilities.			\\
+  \textit{adaptButtonBackgroundColor}&				& 				\\
+  \textit{adaptButtonTextColor}	& 				& 				\\
+
+  \hline
+  \textit{adaptEditTextSize}	& \textit{adaptui:Adaptation}	& These rules take into account	\\
+				& \textit{adaptui:DeviceAux}	& the current edit text configu-\\
+				& \textit{adaptui:UserAux}	& ration and the sensed	context	\\
+  \textit{adaptEditTextBackgroundColor}	& \textit{adaptui:EditText}& disabilities.		\\
+  \textit{adaptEditTextTextSize}& 				& 				\\
+  \textit{adaptEditTextTextColor}&				& 				\\
+
+  \hline 
+  \textit{adaptTextViewtSize}	& \textit{adaptui:Adaptation}	& These rules take into account	\\
+				& \textit{adaptui:DeviceAux}	& the current text view configu-\\
+				& \textit{adaptui:UserAux}	& ration and the sensed	context	\\
+  \textit{adaptTextViewtBackgroundColor}& \textit{adaptui:TextView}& disabilities.		\\
+  \textit{adaptTextViewtTextSize}&				& 				\\
+  \textit{adaptTextViewtTextColor}&				& 				\\
+  \hline 
+\end{tabular}
+\end{table}
+
+Equation~\ref{ec:adaptation_rule} shows an example of the \textit{adaptBrightness} 
+adaptation rule.
+
+\footnotesize
+\begin{equation} \label{ec:adaptation_rule}
+  \begin{align*} 
+  Adaptation(?adaptation) ∧ DeviceAux(?device) ∧ UserAux(?user) ∧ \\
+  deviceAuxBatteryIsSufficient(?device, ?battery) ∧ equal(?battery, true) ∧ \\
+  userAuxHasDisplayBrightness(?user, ?brightness) ∧ equal(?brightness, 255)\\ 
+  \Rightarrow \\
+  adaptationBrightnessHasValue(?adaptation, ?brightness)\\
+  \end{align*}
+\end{equation}
+\normalsize
+
+
+\subsection{The usability rules}
+In order to check the usability satisfaction of the user with the provided
+adapted user interface, the usability rules set is provided. By checking several
+usability metrics (detailed in Section~\ref{sec:usability_metrics}) these rules
+determine if the interaction with the adapted user interface might be considered
+enough. Table~\ref{tbl:usability_rules} introduced the usability rules included
+in AdaptUIOnt.
+
+\begin{table}
+  \caption{The AdaptUIOnt usability rules. The metrics mentioned in this table
+  are detailed in Table~\ref{tbl:effectiveness_metrics} and Table~\ref{tbl:productivity_metrics}.}
+ \label{tbl:usability_rules}
+\footnotesize
+\centering
+ \begin{tabular}{l l l}
+  \hline 
+  \textbf{Usability rule} 	& \textbf{Involved ontologies} 	& \textbf{Description} 		\\
+				& \textbf{and classes} 		& 				\\
+  \hline
+  \textit{checkTaskEffectiveness}&\textit{adaptui:UserAux}	& It measures the proportion of \\
+				& \textit{adaptui:Effectiveness}& goals of the task achieved	\\
+				& \textit{adaptui:Polisher}	& correctly. 			\\
+  \textit{checkTaskCompletion}	& 				& It measures the proportion of	\\
+				& 				& the task that is completed.	\\
+  \textit{checkErrorFrequency}	& 				& It measures the frequency of 	\\
+				& 				& errors.			\\
+  \hline
+  \textit{checkTaskTime}	& \textit{adaptui:UserAux}	& It measures the required time	\\
+				& \textit{adaptui:Productivity}	& to complete the current task.	\\
+  \textit{checkTaskEfficiency}	& \textit{adaptui:Polisher}	& It measures the efficiency of	\\
+				& 				& the user.			\\
+  \textit{checkEconomicProductivity} &				& It measures the cost-effectiveness\\
+				&				& of the user.			\\
+  \textit{checkProductiveProportion} & 				& It measures the proportion of \\
+				& 				& the time the user is performing\\
+				&				& productive actions.		\\
+  \textit{checkRelativeUserEfficiency}& 			& It compares the efficiency of the\\
+				&				& user compared to an expert.	\\
+  \hline
+\end{tabular}
+\end{table}
+
+Equation~\ref{ec:usability_rule} shows an example of the \textit{checkRelativeEfficiency} 
+adaptation rule.
+
+\footnotesize
+\begin{equation} \label{ec:usability_rule}
+  \begin{align*} 
+  UserAux(?user) ∧ Productivity(?productivity) ∧ Polisher(?polisher) ∧\\ 
+  userAuxHasProductivityMetrics(?user, ?productivity) ∧ \\
+  hasRelativeEfficiency(?productivity, ?efficiency) ∧ \\
+  lessThanOrEqual(?efficiency, 0.5) ∧ \\
+  \Rightarrow \\
+  launchPolisherRules(?polisher, true)
+  \end{align*}
+\end{equation}
+\normalsize
+
+\subsection{The post-adaptation rules}
+Once the user interface is adapted, a concrete architecture module (see 
+Section~\ref{sec:adaptation_polisher}) monitors the user activity. Hence, 
+through a series of usability metrics (see Section~\ref{sec:usability_metrics}) 
+the the adaptation is considered satisfactory by AdaptUI. If it detects that the 
+usability level is insufficient, these rules are triggered changing the user model.
+
+\begin{table}
+  \caption{The AdaptUIOnt post-adaptation rules. For edit texts and text views
+  the same rules that are applied for the buttons are provided.}
+ \label{tbl:post_adaptation_rules}
+\footnotesize
+\centering
+ \begin{tabular}{l l l}
+  \hline 
+  \textbf{Adaptation rule} 	& \textbf{Involved ontologies} 	& \textbf{Description} 		\\
+				& \textbf{and classes} 		& 				\\
+  \hline
+  \textit{incrementBrightness}	& \textit{adaptui:UserAux}	& It increments the brightness of\\
+				& \textit{adaptui:Polisher}	& the device in $1$F.		\\
+  \textit{decrementBrightness}	& \textit{adaptui:Adaptation}	& It decrements the brightness of\\
+				& 				& the device in $1$F.		\\
+  \textit{incrementVolume}	& 				& It increments the volume of	\\
+				& 				& the device in $1$ unit.	\\
+  \textit{decrementVolume}	& 				& It decrements the volume of	\\
+				& 				& the device in $1$ unit.	\\
+  \hline
+  \textit{incrementButtonSize}	& \textit{adaptui:UserAux}	& It increments the size of the \\
+				& \textit{adaptui:Polisher}	& button adding $10$ dpis. 	\\
+  \textit{decrementButtonSize}	& \textit{adaptui:Adaptation}	& It decrements the size of the \\
+				& 				& button in $10$ dpis.		\\
+  \textit{darkenButtonBackgroundColor}&				& It darkens the colour.	\\
+  \textit{lightenButtonBackgroundColor}&			& It lightens the colour.	\\
+  \textit{darkenButtonTextColor}&				& It darkens the text colour.	\\
+  \textit{lightenButtonTextColor}&				& It lightens the text colour.	\\
+  \hline
+\end{tabular}
+\end{table}
+
+Equation~\ref{ec:post_adaptation_rule} shows an example of the \textit{incrementButtonSize} 
+post-adaptation rule.
+
+\footnotesize
+\begin{equation} \label{ec:post_adaptation_rule}
+  \begin{align*} 
+  Polisher(?polisher) ∧ launchPolisherRules(?polisher, true) ∧\\
+  UserAux(?user) ∧ userAuxHasEffectivenessMetrics(?user, ?effectiveness) ∧ \\
+  effectivenessMetricHasErrorFreequency(?effectiveness, ?freq?) ∧\\
+  greaterThan(?freq, 0.5) ∧ Adaptation(?adaptation) ∧\\
+  adaptationHasButtonSize(?adaptation, ?size)
+  \Rightarrow \\
+  adaptationButtonHasSize(?adaptation, ?size + 10)
+  \end{align*}
+\end{equation}
+\normalsize
+
 
 
 The given set of rules by AdaptUI have been included as they are understood as
