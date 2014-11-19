@@ -10,6 +10,7 @@
 
 dissertation.pdf
 *.tex.backup
+*.bib.backup
 *~
 
 ## Intermediate documents:
