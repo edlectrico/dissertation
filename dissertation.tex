@@ -131,44 +131,9 @@ on grid
 }
 % End of definitions
 
-% \usepackage{bibentry} % http://gking.harvard.edu/files/bibentry2.pdf
-% % \nobibliography* throws an error
-% \nobibliography{9_backmatter/self} % http://stefaanlippens.net/bibentry
-% %split the bibliography
-% \usepackage{multibib} % split bibliography in two. Requires texlive-bibtex-extra package
-% \newcites{web}{Secondary Web Resources}
-
-
-% List of equations
-% \makeatletter
-% \newcommand\DefiEqu[2]{%
-%   \noindent
-%   \makebox[\ListOfDefAbbrevLength][l]{\textbf{#1}}%
-%     \csname phantomsection\endcsname
-%     \addcontentsline{equ}{figure}{#1}%
-%   {#2}\par
-% }
-% \newdimen\ListOfDefAbbrevLength
-% \ListOfDefAbbrevLength=1.5cm
-% % \newcommand\ListOfDefName{List of Definitions}
-% \newcommand\ListOfEquations{%
-% %   \section*{\ListOfDefName}%
-%   \@starttoc{equ}%
-% }
-
-% End of equations
-
-
 \setlength{\mathindent}{0pt}
 
 \newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
-
-% \theoremstyle{plain}
-% \theoremstyle{definition}
-% \newtheorem{mydef}{Definition}
-
-% \usepackage{pgfplots}
-% \usepackage[pdftex,active,tightpage]{preview}
 
 %: ----------------------------------------------------------------------
 %:                  TITLE PAGE: name, degree,..
@@ -214,13 +179,11 @@ Reasoning In Mobile Devices.}
 %\degreedate{\monthname \ \the\year}
 \degreedate{Month de \the\year}
 
-
 % ----------------------------------------------------------------------
        
 % turn of those nasty overfull and underfull hboxes
 \hbadness=10000
 \hfuzz=50pt
-
 
 %: --------------------------------------------------------------
 %:                  FRONT MATTER: dedications, abstract,..
@@ -236,7 +199,6 @@ Reasoning In Mobile Devices.}
 
 % Watermark
 %\watermark{DRAFT	DRAFT	DRAFT	DRAFT	DRAFT	DRAFT	DRAFT	DRAFT	DRAFT}
-
 
 %: ----------------------- generate cover page ------------------------
 
@@ -264,9 +226,7 @@ Reasoning In Mobile Devices.}
 \frontmatter
 
 \include{0_frontmatter/dedication}
-
 \include{0_frontmatter/abstract}
-
 \include{0_frontmatter/acknowledgement}
 
 % As abstract contains various languages we set the main language again
@@ -279,11 +239,13 @@ Reasoning In Mobile Devices.}
 \setcounter{tocdepth}{5}    % print table of contents for level 3
 
 
-%%You can also add extra lines to the ToC or to force extra unnumbered section headings to be included. For example, if you wanted to add an entry called Preface, and you didn't want the Preface to be numbered, you'd use these commands:
+%%You can also add extra lines to the ToC or to force extra unnumbered section 
+% headings to be included. For example, if you wanted to add an entry called 
+% Preface, and you didn't want the Preface to be numbered, you'd use these commands:
 %\ subsection*{Preface}
 %\addcontentsline{toc}{subsection}{Preface} 
 
-\tableofcontents            % print the table of contents
+\tableofcontents % print the table of contents
 % levels are: 0 - chapter, 1 - section, 2 - subsection, 3 - subsection
 
 %: ----------------------- list of figures/tables ------------------------
@@ -302,21 +264,11 @@ Reasoning In Mobile Devices.}
 \label{sec:glossary} % target name for links to glossary
 
 \include{0_frontmatter/definitions}
-
-% \include{0_frontmatter/equations}
-
-%: ----------------------- glossary ------------------------
-
-% Tie in external source file for definitions: /0_frontmatter/glossary.tex
-% Glossary entries can also be defined in the main text. See glossary.tex
 \include{0_frontmatter/acronyms}
-
 \include{0_frontmatter/tag_cloud}
 
 %\end{footnotesize}
 %\end{multicols}
-
-
 
 
 %: --------------------------------------------------------------
@@ -345,7 +297,7 @@ Reasoning In Mobile Devices.}
 \include{4_system_architecture/0_index}
 \include{5_experiments_and_results/0_index}	
 \include{6_conclusion/0_index}	
-	
+
 
 % --------------------------------------------------------------
 %:                  BACK MATTER: appendices, refs,..
