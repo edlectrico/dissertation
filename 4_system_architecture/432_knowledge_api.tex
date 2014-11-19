@@ -38,9 +38,9 @@ AdaptUIOnt ontology.
 AdaptUI is designed to support several user capabilities, context status and
 device characteristics. Nevertheless, regarding the rules set it is impossible
 to assume every possible situation and react accordingly. Thus, a set of methods
-to create, edit and delete \ac{swrl} rules has been provided. This allows developers
-to adapt the AdaptUI platform to new and unexpected situations in the domain
-where the platform might not behave properly.
+to create, edit and delete \ac{swrl} rules has been provided. This allows 
+developers to adapt the AdaptUI platform to new and unexpected situations in the 
+domain where the platform might not behave properly.
 
 \begin{center}
 \footnotesize
@@ -52,64 +52,65 @@ where the platform might not behave properly.
 % \centering
 %  \begin{tabular}{l l l l}
   \hline 
-  \textbf{\ac{api} group} 	& \textbf{Method name} 	& \textbf{Description} 		& \textbf{Input}\\
+  \textbf{\ac{api} group}& \textbf{Method}& \textbf{Description} 	& \textbf{Input}\\
   \hline
-  Classes		& insertClass		& Inserts a new class.		& The namespace and the \\
-			& 			& 				& class name.		\\
-			& removeClass		& Erases an existing class, its	& The namespace and the \\
-			& 			& individuals, attributes and	& class name.		\\
-			& 			& relationships with other 	& 			\\
-			& 			& classes.			& 			\\
-			& editClass		& Changes the name of the class.& The namespace and the \\
-			&			& Internally it deletes the 	& new class name.	\\
-			&			& class passed as parameter 	&			\\
-			&			& and creates a new one.	&			\\
+  Classes	& insertClass		& Inserts a new class.		& The namespace and the \\
+		& 			& 				& class name.		\\
+		& removeClass		& Erases an existing class, its	& The namespace and the \\
+		& 			& individuals, attributes and	& class name.		\\
+		& 			& relationships with other 	& 			\\
+		& 			& classes.			& 			\\
+		& editClass		& Changes the name of the class.& The namespace and the \\
+		&			& Internally it deletes the 	& new class name.	\\
+		&			& class passed as parameter 	&			\\
+		&			& and creates a new one.	&			\\
 \hline 
-  Object 		& insertObjectProperty	& Inserts a new object property	& The namespace and the	\\
-  properties		&			& connecting two classes.	&  object property name.\\
-			&			&				& It also needs the 	\\
-			& 			& 				& namespaces and names of 	\\
-			&			&				& the classes that will be 	\\
-			& 			& 				& connected. The two set 	\\ 
-			&			&				& of classes are passed as 	\\
-			& 			& 				& a Map$<$String namespace,	\\
-			& 			& 				& String classname$>$.	\\
-			& removeObjectProperty	& Erases an existing datatype	& The namespace and the \\
-			& 			& property.			& object property name.	\\
-			& editObjectProperty	& Changes the name of the 	& The namespace and the \\
-			&			& datatype property. Internally & new class name.	\\
-			&			& it deletes the property 	& 			\\
-			&			& passed as parameter and 	&			\\
-			& 			& creates a new one.		& 			\\
+  Object 	& insertObjectProperty	& Inserts a new object property	& The namespace and the	\\
+  properties	&			& connecting two classes.	&  object property name.\\
+		&			&				& It also needs the 	\\
+		& 			& 				& namespaces and names of\\
+		&			&				& the classes that will be\\
+		& 			& 				& connected. The two set\\ 
+		&			&				& of classes are passed as\\
+		& 			& 				& a Map$<$String namespace,\\
+		& 			& 				& String classname$>$.	\\
+		& removeObjectProperty	& Erases an existing datatype	& The namespace and the \\
+		& 			& property.			& object property name.	\\
+		& editObjectProperty	& Changes the name of the 	& The namespace and the \\
+		&			& datatype property. Internally & new class name.	\\
+		&			& it deletes the property 	& 			\\
+		&			& passed as parameter and 	&			\\
+		& 			& creates a new one.		& 			\\
   \hline 
-  Datatype 		& addDatatypeProperty	& Inserts a new datatype 	& The namespace and the \\
-  properties		&			& property assigning a value to & datatype property name.\\
-			& 			& a class.			& 			\\
-			&			& If it does not exist, it is	& It also needs the namespace 	\\
-			&			& created.			& and name of the class \\
-			& 			& 				& that will have this property 	\\
-			& 			& 				& and the value type.	\\
-			& removeDatatypeProperty& Erases an existing datatype	& The namespace and the \\
-			& 			& property.			& datatype property name.\\
-			& editDatatypeProperty	& Changes the name of the 	& The namespace and the \\
-			&			& datatype property. Internally & new class name.	\\
-			&			& it deletes the property passed& 			\\
-			&			& as parameter and creates 	&			\\
-			& 			& a new one.			& 			\\
+  Datatype 	& addDatatypeProperty	& Inserts a new datatype 	& The namespace and the \\
+  properties	&			& property assigning a value to & datatype property name.\\
+		& 			& a class.			& 			\\
+		&			& If it does not exist, it is	& It also needs the namespace\\
+		&			& created.			& and name of the class \\
+		& 			& 				& that will have this 	\\
+		& 			& 				& property and the value\\
+		& 			& 				& type.			\\
+		& removeDatatypeProperty& Erases an existing datatype	& The namespace and the \\
+		& 			& property.			& datatype property name.\\
+		& editDatatypeProperty	& Changes the name of the 	& The namespace and the \\
+		&			& datatype property. Internally & new class name.	\\
+		&			& it deletes the property passed& 			\\
+		&			& as parameter and creates 	&			\\
+		& 			& a new one.			& 			\\
   \hline 
-  Individuals 		& insertIndividual	& Inserts a new individual of a & The name of the 	\\
-			&			& concrete class.		& individual and the 	\\
-			& 			& 				& namespace and name 	\\
-			& 			& 				& of the class.		\\
-			& removeIndividual 	& Removes an individual.	& The name of the 	\\
-			&			&				& individual to be 	\\
-			& 			& 				& deleted.		\\
+  Individuals 	& insertIndividual	& Inserts a new individual of a & The name of the 	\\
+		&			& concrete class.		& individual and the 	\\
+		& 			& 				& namespace and name 	\\
+		& 			& 				& of the class.		\\
+		& removeIndividual 	& Removes an individual.	& The name of the 	\\
+		&			&				& individual to be 	\\
+		& 			& 				& deleted.		\\
   \hline 
-  Rules 		& insertRule		& Inserts a new rule.		& The name of the 	\\
-			&			& 				& rule, the antecedent 	\\
-			& 			& 				& and the consequent.	\\
-			& removeRule 		& Removes a rule if the rule 	& The name of the rule 	\\
-			&			& has a name associated to it.	& to be deleted.	\\
+  Rules 	& insertRule		& Inserts a new rule.		& The name of the 	\\
+		&			& 				& rule, the antecedent 	\\
+		& 			& 				& and the consequent.	\\
+		& removeRule 		& Removes a rule if the rule 	& The name of the rule 	\\
+		&			& has a name associated to it.	& to be deleted.	\\
   \hline
 % \end{tabular}
 \end{longtable}
