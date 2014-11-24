@@ -35,6 +35,33 @@ knowledge of the domain (see an example in Listing~\ref{lst:api_knowledge}).
 \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/api_knowledge.java}
 \captionof{listing}{Modifying the ontology knowledge with the AdaptUI's \ac{api}.\label{lst:api_knowledge}}
 
+Table~\ref{tbl:api} contains the most significant methods from AdaptUI, regarding
+the loading of the ontology and initialization.
+
+\begin{center}
+\footnotesize
+\begin{longtable}{l l}
+  \caption{AdaptUI \ac{api} methods.}\\
+  \label{tbl:api} \\
+  \hline 
+  \textbf{Method}				& \textbf{Description}\\
+  \hline
+  AdaptUI()					& Constructor with no parameters			\\
+  AdaptUI(namespace, views)			& This method requires the main ontology namespace	\\
+						& and a Collection with the views to adapt.		\\
+  loadOntologyFromFile(path, fileLocation)	& It loads an ontology file from a specific Android	\\
+						& path.							\\
+  loadOntologyFromUri(uri)			& Loads the ontology from a specified \ac{uri}.		\\
+  getExternalDirectory()			& Returns the root storage folder in the current	\\
+						& Android device.					\\
+  mapOntology(namespace, fileName)		& It loads the stored ontology to avoid Internet connection\\
+						& when managing the namespace.				\\
+  getOntologyManager()				& It returns the \textit{OntologyManager} instance, which\\
+						& gives access to further operations (i.e., 		\\
+						& \textit{getIndividualOfClass}.			\\
+  \hline
+\end{longtable}
+\end{center}
 
 \input{4_system_architecture/431_adaptation_api}
 \input{4_system_architecture/432_knowledge_api}
