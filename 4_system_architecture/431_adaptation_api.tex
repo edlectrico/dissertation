@@ -5,16 +5,26 @@ The adaptation \ac{api} aims to provide developers a set of methods to include
 user interface adaptation in their applications. Table~\ref{tbl:api_adaptation} 
 details the most useful methods available in AdaptUI.
 
-
 \begin{center}
 \footnotesize
-\begin{longtable}{l l l}
+\begin{longtable}{l l}
   \caption{Adaptation related AdaptUI \ac{api} methods.}\\
   \label{tbl:api_adaptation} \\
   \hline 
-  \textbf{Method}& \textbf{Description} 	& \textbf{Input}\\
+  \textbf{Method}				& \textbf{Description}					\\
   \hline
-  
+  adaptLoadedViews()				& It returns a Map object which keys are the property	\\
+						& names, and its values the stored values in the ontology.\\
+						& It requires the use of the constructor with parameters.\\
+  adaptViewBackgroundColor(namespace, className)& It adapts the view's background colour with the 	\\
+						& corresponding value.					\\
+  adaptViewTextColor(namespace, className)	& It adapts the view's text colour with the corresponding\\
+						& value.						\\
+  adaptViewTextSize(namespace, className)	& It adapts the view's text size with the corresponding	\\
+						& value.						\\
+  adaptBrightness(namespace, className)		& It adapts the display's brightness with the corresponding\\
+						& value.						\\
+  adaptVolume(namespace, className)		& It adapts the volume with the corresponding value.	\\
   \hline
 \end{longtable}
 \end{center}
