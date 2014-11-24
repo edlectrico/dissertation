@@ -44,69 +44,53 @@ domain where the platform might not behave properly.
 
 \begin{center}
 \footnotesize
-\begin{longtable}{l l l l}
+\begin{longtable}{l l}
   \caption{Knowledge related AdaptUI \ac{api} methods.}\\
   \label{tbl:api_knowledge} \\
   \hline 
-  \textbf{\ac{api} group}& \textbf{Method}& \textbf{Description} 	& \textbf{Input}\\
+  \textbf{Method}		& \textbf{Description}\\
   \hline
-  Classes	& insertClass		& Inserts a new class.		& The namespace and the \\
-		& 			& 				& class name.		\\
-		& removeClass		& Erases an existing class, its	& The namespace and the \\
-		& 			& individuals, attributes and	& class name.		\\
-		& 			& relationships with other 	& 			\\
-		& 			& classes.			& 			\\
-		& editClass		& Changes the name of the class.& The namespace and the \\
-		&			& Internally it deletes the 	& new class name.	\\
-		&			& class passed as parameter 	&			\\
-		&			& and creates a new one.	&			\\
-\hline 
-  Object 	& insertObjectProperty	& Inserts a new object property	& The namespace and the	\\
-  properties	&			& connecting two classes.	&  object property name.\\
-		&			&				& It also needs the 	\\
-		& 			& 				& namespaces and names of\\
-		&			&				& the classes that will be\\
-		& 			& 				& connected. The two set\\ 
-		&			&				& of classes are passed as\\
-		& 			& 				& a Map$<$String namespace,\\
-		& 			& 				& String classname$>$.	\\
-		& removeObjectProperty	& Erases an existing datatype	& The namespace and the \\
-		& 			& property.			& object property name.	\\
-		& editObjectProperty	& Changes the name of the 	& The namespace and the \\
-		&			& datatype property. Internally & new class name.	\\
-		&			& it deletes the property 	& 			\\
-		&			& passed as parameter and 	&			\\
-		& 			& creates a new one.		& 			\\
+  insertClass(namespace, className)	& Inserts a new class.		\\
+  removeClass(namespace, className)	& Erases an existing class, its	\\
+					& individuals, attributes and	\\
+					& relationships with other 	\\
+					& classes.			\\
+  editClass(namespace, newClassName)	& Changes the name of the class.\\
+					& Internally it deletes the 	\\
+					& class passed as parameter 	\\
+					& and creates a new one.	\\
   \hline 
-  Datatype 	& addDatatypeProperty	& Inserts a new datatype 	& The namespace and the \\
-  properties	&			& property assigning a value to & datatype property name.\\
-		& 			& a class.			& 			\\
-		&			& If it does not exist, it is	& It also needs the namespace\\
-		&			& created.			& and name of the class \\
-		& 			& 				& that will have this 	\\
-		& 			& 				& property and the value\\
-		& 			& 				& type.			\\
-		& removeDatatypeProperty& Erases an existing datatype	& The namespace and the \\
-		& 			& property.			& datatype property name.\\
-		& editDatatypeProperty	& Changes the name of the 	& The namespace and the \\
-		&			& datatype property. Internally & new class name.	\\
-		&			& it deletes the property passed& 			\\
-		&			& as parameter and creates 	&			\\
-		& 			& a new one.			& 			\\
+  insertObjectProperty	(namespace, objectPropName,& Inserts a new object\\
+  Map$<$namespace, classname$>$)	& property connecting two classes.\\
+  removeObjectProperty(namespace, objectPropName)& Erases an existing datatype\\
+ 					& property.			\\
+  editObjectProperty(namespace, objectPropName)& Changes the name of the\\
+					& datatype property. Internally \\
+					& it deletes the property 	\\
+					& passed as parameter and 	\\
+					& creates a new one.		\\
   \hline 
-  Individuals 	& insertIndividual	& Inserts a new individual of a & The name of the 	\\
-		&			& concrete class.		& individual and the 	\\
-		& 			& 				& namespace and name 	\\
-		& 			& 				& of the class.		\\
-		& removeIndividual 	& Removes an individual.	& The name of the 	\\
-		&			&				& individual to be 	\\
-		& 			& 				& deleted.		\\
+  addDatatypeProperty(namespace, dataTypeName)	& Inserts a new datatype\\
+					& property assigning a value to \\
+ 					& a class.			\\
+					& If it does not exist, it is	\\
+					& created.			\\
+  removeDatatypeProperty(namespace, dataTypeName)& Erases an existing datatype\\
+ 					& property.			\\
+  editDatatypeProperty(namespace, dataTypeName)	& Changes the name of the \\
+					& datatype property. Internally \\
+					& it deletes the property passed\\
+					& as parameter and creates 	\\
+ 					& a new one.			\\
   \hline 
-  Rules 	& insertRule		& Inserts a new rule.		& The name of the 	\\
-		&			& 				& rule, the antecedent 	\\
-		& 			& 				& and the consequent.	\\
-		& removeRule 		& Removes a rule if the rule 	& The name of the rule 	\\
-		&			& has a name associated to it.	& to be deleted.	\\
+  insertIndividual(name, namespace, className)& Inserts a new individual of a \\
+					& concrete class.		\\
+  removeIndividual(name)	 	& Removes an individual.	\\
+
+  \hline 
+  insertRule(name, antecedent, consequent)& Inserts a new rule.		\\
+  removeRule(name)	 		& Removes a rule if the rule 	\\
+					& has a name associated to it.	\\
   \hline
 \end{longtable}
 \end{center}
