@@ -25,19 +25,9 @@ platform. Thus, through the AdaptUI provided \ac{api}, developers are allowed to
 
 The AdaptUI's \ac{api} can be internally divided into two separated \acp{api}:
 the adaptation \ac{api} and the knowledge \ac{api}. The first one, aiming to solve 
-developer's adaptation issues, is described in Section~\ref{sec:adaptation_api}. 
-Listing~\ref{lst:api_adaptation} shows an example of an Android activity 
-developed using AdaptUI. 
-
-\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/api_adaptation.java}
-\captionof{listing}{The AbstractActivity class ontology related methods.\label{lst:api_adaptation}}
-
-The second one's purpose is to allow developers for adapting
-the knowledge of the domain (see an example in Listing~\ref{lst:api_knowledge}).
-This \ac{api} is detailed in Section~\ref{sec:knowledge_api}.
-
-\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/api_knowledge.java}
-\captionof{listing}{Modifying the ontology knowledge with the AdaptUI's \ac{api}.\label{lst:api_knowledge}}
+developer's adaptation issues, is described in Section~\ref{sec:adaptation_api};
+The second one's purpose is to allow developers for adapting the knowledge of the 
+domain.
 
 Nevertheless, this division of the \ac{api} methods is a conceptual split. The
 provided methods are available under the same \ac{api}. Table~\ref{tbl:api} 
