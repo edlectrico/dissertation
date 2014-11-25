@@ -23,20 +23,26 @@ platform. Thus, through the AdaptUI provided \ac{api}, developers are allowed to
  methods to edit different rules.
 \end{enumerate}
 
-The AdaptUI's \ac{api} can be internally divided into two separated \acp{api}. 
-The first one, aiming to solve developer's adaptation issues. 
+The AdaptUI's \ac{api} can be internally divided into two separated \acp{api}:
+the adaptation \ac{api} and the knowledge \ac{api}. The first one, aiming to solve 
+developer's adaptation issues, is described in Section~\ref{sec:adaptation_api}. 
 Listing~\ref{lst:api_adaptation} shows an example of an Android activity 
-developed using AdaptUI. The second one, with the purpose of adapting the 
-knowledge of the domain (see an example in Listing~\ref{lst:api_knowledge}).
+developed using AdaptUI. 
 
 \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/api_adaptation.java}
 \captionof{listing}{The AbstractActivity class ontology related methods.\label{lst:api_adaptation}}
 
+The second one's purpose is to allow developers for adapting
+the knowledge of the domain (see an example in Listing~\ref{lst:api_knowledge}).
+This \ac{api} is detailed in Section~\ref{sec:knowledge_api}.
+
 \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/api_knowledge.java}
 \captionof{listing}{Modifying the ontology knowledge with the AdaptUI's \ac{api}.\label{lst:api_knowledge}}
 
-Table~\ref{tbl:api} contains the most significant methods from AdaptUI, regarding
-the loading of the ontology and initialization.
+Nevertheless, this division of the \ac{api} methods is a conceptual split. The
+provided methods are available under the same \ac{api}. Table~\ref{tbl:api} 
+contains the most significant methods from AdaptUI, regarding the loading of the 
+ontology and its initialization.
 
 \begin{center}
 \footnotesize
@@ -58,7 +64,7 @@ the loading of the ontology and initialization.
 						& when managing the namespace.				\\
   getOntologyManager()				& It returns the \textit{OntologyManager} instance, which\\
 						& gives access to further operations (i.e., 		\\
-						& \textit{getIndividualOfClass}.			\\
+						& \textit{getIndividualOfClass} and \textit{createClass}).\\
   \hline
 \end{longtable}
 \end{center}

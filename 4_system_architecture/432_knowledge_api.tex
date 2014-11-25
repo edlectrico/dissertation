@@ -50,45 +50,45 @@ domain where the platform might not behave properly.
   \hline 
   \textbf{Method}		& \textbf{Description}\\
   \hline
-  insertClass(namespace, className)	& Inserts a new class.		\\
+  createClass(namespace, className)	& Inserts a new class.		\\
   removeClass(namespace, className)	& Erases an existing class, its	\\
 					& individuals, attributes and	\\
 					& relationships with other 	\\
 					& classes.			\\
-  editClass(namespace, newClassName)	& Changes the name of the class.\\
-					& Internally it deletes the 	\\
-					& class passed as parameter 	\\
-					& and creates a new one.	\\
+%   editClass(namespace, newClassName)	& Changes the name of the class.\\
+% 					& Internally it deletes the 	\\
+% 					& class passed as parameter 	\\
+% 					& and creates a new one.	\\
   \hline 
-  insertObjectProperty	(namespace, objectPropName,& Inserts a new object\\
+  createObjectProperty	(namespace, objectPropName,& Inserts a new object\\
   Map$<$namespace, classname$>$)	& property connecting two classes.\\
   removeObjectProperty(namespace, objectPropName)& Erases an existing datatype\\
  					& property.			\\
-  editObjectProperty(namespace, objectPropName)& Changes the name of the\\
-					& datatype property. Internally \\
-					& it deletes the property 	\\
-					& passed as parameter and 	\\
-					& creates a new one.		\\
+%   editObjectProperty(namespace, objectPropName)& Changes the name of the\\
+% 					& datatype property. Internally \\
+% 					& it deletes the property 	\\
+% 					& passed as parameter and 	\\
+% 					& creates a new one.		\\
   \hline 
-  addDatatypeProperty(namespace, dataTypeName)	& Inserts a new datatype\\
+  createDatatypeProperty(namespace, dataTypeName)	& Inserts a new datatype\\
 					& property assigning a value to \\
  					& a class.			\\
 					& If it does not exist, it is	\\
 					& created.			\\
   removeDatatypeProperty(namespace, dataTypeName)& Erases an existing datatype\\
  					& property.			\\
-  editDatatypeProperty(namespace, dataTypeName)	& Changes the name of the \\
-					& datatype property. Internally \\
-					& it deletes the property passed\\
-					& as parameter and creates 	\\
- 					& a new one.			\\
+%   editDatatypeProperty(namespace, dataTypeName)	& Changes the name of the \\
+% 					& datatype property. Internally \\
+% 					& it deletes the property passed\\
+% 					& as parameter and creates 	\\
+%  					& a new one.			\\
   \hline 
-  insertIndividual(name, namespace, className)& Inserts a new individual of a \\
+  createIndividual(name, namespace, className)& Inserts a new individual of a \\
 					& concrete class.		\\
   removeIndividual(name)	 	& Removes an individual.	\\
 
   \hline 
-  insertRule(name, antecedent, consequent)& Inserts a new rule.		\\
+  createRule(name, antecedent, consequent)& Inserts a new rule.		\\
   removeRule(name)	 		& Removes a rule if the rule 	\\
 					& has a name associated to it.	\\
   \hline
