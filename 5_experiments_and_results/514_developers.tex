@@ -3,42 +3,43 @@
 
 Before introducing the results obtained from working with potential final users
 of AdaptUI (as consumers of adapted user interfaces), an experiment has been
-carried out involving developers with previous experience with Android development.
-This experiment aims to evaluate the provided \acp{api} and to compare the 
-differences between performing a configuration of the user interface in Android
-and in AdaptUI. 
+carried out involving developers with previous experience with Android development
+and semantics. This experiment aims to evaluate the provided \acp{api} and to 
+compare the differences between performing a configuration of the user interface 
+in Android and in AdaptUI. 
 
-As AdaptUI provides two different \acp{api}, this experiment has been divided
-in two parts. The first one deals with the adaptation \ac{api}. This \ac{api}
-eases the adaptation process by calling several methods related to the aspect of 
-the different elements displayed on the screen. Section~\ref{sec:adaptation_api} 
-details its most significant methods. The second part's goal is to show developers 
-how to modify the knowledge of the AdaptUIOnt ontology. These methods are
-listed in Section~\ref{sec:knowledge_api}.
+As AdaptUI provides an \ac{api} divided in two (see Section~\ref{sec:application_layer}), 
+this experiment has been fragmented accordingly. The first part of the experiment 
+considers the user interface adaptation itself. The adaptation \ac{api} eases the 
+adaptation process through methods which modify the aspect of the elements 
+displayed on the screen. Section~\ref{sec:adaptation_api} details its most 
+significant provided methods. The second part's goal is to show developers how 
+to modify the knowledge of the AdaptUIOnt ontology. These methods are listed in 
+Section~\ref{sec:knowledge_api}.
 
 \subsubsection{The adaptation \ac{api}}
-\label{sec:adaptation_api}
+\label{sec:adaptation_api_experiment}
 
-The adaptation \ac{api} provides a set of methods with the purpose of easing the 
-adaptation process for developers. As previous Android development experience
-is needed, the idea of this \ac{api} is to maintain the design paradigm established
-by Android. This includes layout configuration \ac{xml} file, in which the 
-declaration of the user interface elements have to be detailed; and also a
-search and a declaration of the same items in the \textit{onCreate} main method
-if any actions are planned with these items (e.g., change their behaviour or
-colour).
-
-The developers participating in this experiment are guided through a brief 
-explanation of the available adaptation \ac{api} methods. The purpose of this
-part of the experiment is to check their feedback when dealing with the AdaptUI
-framework, collecting their opinions. In the experiment, a pre-defined application
-with its user interface is presented. Listing~\ref{lst:default_layout} shows the 
-pre-defined Android \ac{xml} layout, including a grid layout, an edit text, a 
-button and a text view. The resulting user interface is shown in Figure~\ref{fig:default_layout}.
+As mentioned in Section~\ref{sec:adaptation_api}, the adaptation \ac{api} provides 
+a set of methods whose purpose is to facilitate the adaptation process for 
+developers. The purpose of this part of the experiment is to check developer's 
+feedback when dealing with the AdaptUI framework by collecting their opinions.
+To do so, the experiment presents an Android application developed with the 
+Eclipse\footnote{https://eclipse.org/} \ac{ide}. It includes a layout configuration 
+\ac{xml} file with the corresponding declaration of several user interface views
+(see Listing~\ref{lst:default_layout}), and also an \textit{onCreate} main method, 
+shown in Listing~\ref{lst:default_oncreate} (the default aspect of the application
+is illustrated through Figure~\ref{fig:default_layout}). The developers 
+participating in this experiment are guided through a brief explanation of the 
+available adaptation \ac{api} methods. Once they are aware of the possibilities 
+the framework provides, they are asked to modify the aspect of the listed views.
 
 \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{xml}{5_experiments_and_results/default_layout.xml}
 \captionof{listing}{The default layout defining a grid layout, a text view,
 a button and an edit text.\label{lst:default_layout}}
+
+\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/default_oncreate.java}
+\captionof{listing}{The default \textit{onCreate} method.\label{lst:default_oncreate}}
 
 \begin{figure}
 \centering
@@ -48,20 +49,15 @@ Listing~\ref{lst:default_layout}.}
 \label{fig:default_layout}
 \end{figure}
 
-The usual Android code for managing the user interface is shown in Listing~\ref{lst:default_oncreate}.
-Once the AdaptUI available adaptation methods are explained to the developers,
-they are asked to make the mentioned user interface items dynamically adaptive.
-The developers are asked to install the Capabilities Collector in their Android
-devices. Then, they run it and they adapt the user interface as needed. After
-the adaptation process (as users) they are asked to develop their own application,
-showing a text view, an edit text, and a button. 
+Obviously, in order to adapt the application, developers need a copy of the
+AdaptUIOnt ontology, in which the corresponding values for the adaptation are
+semantically represented. Hence, developers are asked to install the Capabilities 
+Collector in their Android devices. Thus, they can add new knowledge to the ontology.
 
-An example is shown in Listing~\ref{lst:adaptui_oncreate}. In it, it is shown 
-how declaring an \textit{AdaptUI} object the adaptation of the views is easy and 
-dynamic.
-
-\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/default_oncreate.java}
-\captionof{listing}{The default \textit{onCreate} method.\label{lst:default_oncreate}}
+On the one hand, Listing~\ref{lst:default_oncreate} shows the presented 
+\textit{onCreate} method, which defines the views listed in Listing~\ref{lst:default_layout}.
+Using AdaptUI developers reach the \textit{onCreate} shown in Listing~\ref{lst:adaptui_oncreate},
+which includes the corresponding calls to the provided adaptation \ac{api}.
 
 \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/adaptui_oncreate.java}
 \captionof{listing}{The AdaptUI \textit{onCreate} method.\label{lst:adaptui_oncreate}}
