@@ -78,10 +78,18 @@ Listing~\ref{lst:adaptui_oncreate}.}
 
 
 \subsubsection{The knowledge editor \ac{api}}
-\label{sec:knowledge_api}
+\label{sec:knowledge_editor_api}
 
 The knowledge editor \ac{api} provides a set of methods to modify the knowledge
 stored in the ontology. Imported as a library from a Java project, this \ac{api}
 allows to add and remove classes, individuals, object and datatype properties,
 and rules. In this experiment developers are asked to modify the ontology by
 adding new concepts to be used by the adaptation \ac{api}.
+Listing~\ref{lst:adaptui_add_knowledge} shows an example of how developers can
+modify the knowledge stored in the ontology.
+
+\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/adaptui_add_knowledge.java}
+\captionof{listing}{Modifying the knowledge represented in the ontology through the knowledge \ac{api}.\label{lst:adaptui_add_knowledge}}
+
+\subsubsection{Results and conclusions}
+\label{sec:api_results}
