@@ -5,68 +5,89 @@ Before introducing the results obtained from working with final users (as
 consumers of adapted user interfaces), an experiment with developers has been 
 performed. This experiment aims to evaluate the provided \acp{api}, and also to 
 compare the differences between performing a configuration of the user interface 
-in Android and in AdaptUI. Thus, developers with experience in both Android
-development and semantics are involved.
+in Android with and without AdaptUI. Thus, developers with experience in both 
+Android development and semantics are involved.
 
 As AdaptUI provides an \ac{api} conceptually divided in two (see 
 Section~\ref{sec:application_layer}), this experiment has been fragmented 
-accordingly. The experiment has been presented as follows:
+accordingly. The experiment, consisting in 6 steps and with a 20 minutes duration
+has been carried out as follows:
 
 \begin{enumerate}
-  \item First, developers are introduced to the AdaptUI framework through a brief
-  explanation of AdaptUI's virtues and boundaries. Both \acp{api} are described
-  and explained to them.
+  \item First, the developer is introduced to the AdaptUI framework through a brief
+  explanation of AdaptUI's goals, virtues and boundaries. Both \acp{api} are 
+  described and explained to them, and the \acp{api} descriptions are given in a 
+  printed version, as they appear in Table~\ref{tbl:api_adaptation} and
+  Table~\ref{tbl:api_knowledge}.
   
-  \item Next, a Java project build in Eclipse \ac{ide} is presented. This project
-  uses AdaptUI as a library, and the main class lists the code shown in
-  Listing~\ref{lst:default_knowledge_experiment}. This class has an AdaptUI
-  declaration and initialization and also several \textit{TODO} tasks with
-  the corresponding instructions. 
-  
-  \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/default_knowledge_experiment.java}
-  \captionof{listing}{The default main class.\label{lst:default_knowledge_experiment}}
+  \item Next, a Java project built in Eclipse \ac{ide} is presented. This project
+  uses the AdaptUI framework as an imported library. The main class of this Java
+  application instantiates AdaptUI and initializes the environment. Besides,
+  several \textit{TODO} tasks with the corresponding instructions are given for
+  the developer to complete. This class is summarized through
+  Listing~\ref{lst:default_knowledge_experiment}. The tasks include:
+  \begin{itemize}
+    \item The creation of a new class.
+    \item The creation of a new instance of the created class.
+    \item Adding a new datatype property with the corresponding value to the
+    new instance.
+    \item Adding a new object property to the new instance, involving several
+    classes\footnote{As the developer might not know how the AdaptUIOnt ontology
+    is structured, a brief explanation is given using Protégé}.
+    \item The creation of a new rule, involving at least three classes (including
+    the created class), and the previous mentioned datatype and object properties.
+  \end{itemize}
 
-  \item Once the corresponding knowledge adaptations are made, the resulting
-  ontology is stored and show to developers using Protégé. Figure~\ref{fig:protege}
-  shows an example of a modified ontology by a participating developer.
+  \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/default_knowledge_experiment.java}
+  \captionof{listing}{The default main class with the corresponding tasks to
+  be accomplished by the developer.\label{lst:default_knowledge_experiment}}
+
+  \item Once the corresponding knowledge modification are made, the resulting
+  ontology is stored and shown to developers using Protégé. Figure~\ref{fig:protege}
+  shows an example of a modified ontology by a participating developer. Hence,
+  the developer is allowed to check if the changes made in the Java main class
+  using the AdaptUI framework have been correctly represented in the ontology.
+  If any errors are found, the process is revised.
 
   \begin{figure}
   \centering
   \includegraphics[width=0.85\textwidth]{protege.pdf}
-  \caption{A test ontology modified by a developer. Several classes have been
-  added. Also the \textit{viewBackgroundColor} for the \textit{Button} only 
-  instance has been modified.}
+  \caption{A test ontology modified by one of the participating developers. 
+  The modifications are highlighted in red. Several classes have been added. 
+  Also the \textit{viewBackgroundColor} for the \textit{Button} only instance 
+  has been modified.}
   \label{fig:protege}
   \end{figure}
   
-  \item After modifying the ontology the AdaptUIDemo Android project is launched.
-  This project's main activity shows a text edit, an edit text and a button, and
-  its goal is to dynamically modify these views using the changes in the ontology
-  performed by the developer. In order to make this application use the new modified
-  version of the ontology an \ac{adb} command is needed. This command pushes the
-  required file from the laptop disk to the desired Android folder. 
+  \item After the modification of the ontology, the AdaptUIDemo Android project 
+  is presented to the developer. This project's main activity shows a text edit, 
+  an edit text and a button, and its goal is to dynamically modify these views 
+  using the changes in the ontology performed by the developer in the previous
+  steps. In order to make this application to use the new modified version of 
+  the ontology, an \ac{adb} command is needed. This command pushes the required 
+  file from the current computer disk to the desired Android folder. 
   Listing~\ref{lst:adb_push} shows the mentioned command.
   
   \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/adb_push.java}
-  \captionof{listing}{The \ac{adb} push command. The first parameter refers to the
-  file to be sent to the device. The second parameter points at the absolute location
-  in the device. \label{lst:adb_push}}
+  \captionof{listing}{The \ac{adb} push command. The first parameter specifies  
+  the location of the file to be sent to the device. The second parameter points
+  at the absolute location in the device. \label{lst:adb_push}}
   
   \item Next, once the developer checks that the adaptation to the views shown
   in the demo application matches the modifications performed with the knowledge 
   \ac{api}, the developer is asked to use the adaptation \ac{api} through an
-  Android project. Similar to the first case, the application is already developed,
-  and the developer is asked to fulfil several tasks (see 
-  Listing~\ref{lst:default_adaptation_experiment}).
+  Android project. Similar to the first case, the developer is asked to complete
+  several tasks (see Listing~\ref{lst:default_adaptation_experiment}).
 
   \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/default_adaptation_experiment.java}
-  \captionof{listing}{The default Android version with the corresponding task to
-  be completed by the developer. \label{lst:default_adaptation_experiment}}
+  \captionof{listing}{The default Android version with the corresponding tasks to
+  be completed by the developer. These tasks include adapting the background and
+  text colour of a button, its size and the background colour of the whole activity\label{lst:default_adaptation_experiment}}
   
   \item Finally, the developer uses the Capabilities Collector to adapt several
-  views. As the last task of the Capabilities Collector is to store the required
-  values in the ontology, the developer checks these changes again in the AdaptUIDemo
-  application.
+  views as a user. As the last task of the Capabilities Collector is to store the
+  required values in the ontology through the Semantic Modeller, the developer 
+  is able to check these changes again in the AdaptUIDemo application.
   
 \end{enumerate}
 
