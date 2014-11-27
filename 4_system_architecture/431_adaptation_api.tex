@@ -2,8 +2,12 @@
 \label{sec:adaptation_api}
 
 The adaptation \ac{api} aims to provide developers a set of methods to include
-user interface adaptation in their applications. Table~\ref{tbl:api_adaptation} 
-details the most useful methods available in AdaptUI.
+user interface adaptation in their applications. As the adaptation is lead by
+Android views, the goal of the adaptation \ac{api} is to be easy enough for
+any Android developer to use it. Thus, with a simple view initialization
+it would be possible to change the view's aspect by calling several simple 
+AdaptUI methods. Table~\ref{tbl:api_adaptation} details the most useful methods 
+available in the AdaptUI's adaptation \ac{api}.
 
 \begin{center}
 \footnotesize
@@ -11,26 +15,34 @@ details the most useful methods available in AdaptUI.
   \caption{Adaptation related AdaptUI \ac{api} methods.}\\
   \label{tbl:api_adaptation} \\
   \hline 
-  \textbf{Method}				& \textbf{Description}					\\
+  \textbf{Method}				& \textbf{Description}			\\
   \hline
-  adaptLoadedViews()				& It returns a Map object which keys are the property	\\
-						& names, and its values the stored values in the ontology.\\
-						& It requires the use of the constructor with parameters.\\
-  adaptViewBackgroundColor(namespace, className)& It adapts the view's background colour with the 	\\
-						& corresponding value.					\\
-  adaptViewTextColor(namespace, className)	& It adapts the view's text colour with the corresponding\\
-						& value.						\\
-  adaptViewTextSize(namespace, className)	& It adapts the view's text size with the corresponding	\\
-						& value.						\\
-  adaptBrightness(namespace, className)		& It adapts the display's brightness with the corresponding\\
-						& value.						\\
-  adaptVolume(namespace, className)		& It adapts the volume with the corresponding value.	\\
+  adaptLoadedViews()				& It returns a Map object which keys are\\
+						& the property names, and its values the\\
+						& stored values in the ontology.	\\
+						& It requires the use of the constructor\\
+						& with parameters.			\\
+  adaptViewBackgroundColor(namespace, className)& It adapts the view's background colour\\
+						& with the corresponding value.		\\
+  adaptViewBackgroundColor(fullClassName)	& 					\\
+  adaptViewTextColor(namespace, className)	& It adapts the view's text colour with \\
+						& the corresponding value.		\\
+  adaptViewTextColor(fullClassName)		&					\\
+  adaptViewTextSize(namespace, className)	& It adapts the view's text size with the\\
+						& corresponding value.			\\
+  adaptViewTextsize(fullClassName)		&					\\
+  adaptBrightness(namespace, className)		& It adapts the display's brightness with\\
+						& the corresponding value.		\\
+  adaptBrightness(fullClassName)		& 					\\
+  adaptVolume(namespace, className)		& It adapts the volume with the 	\\
+  adaptVolume(fullClassName)			& corresponding value.			\\
   \hline
 \end{longtable}
 \end{center}
 
-Listing~\ref{lst:api_adaptation} shows an example of an Android activity 
-developed using AdaptUI. 
+Listing~\ref{lst:api_adaptation} shows an example of an Android activity using 
+AdaptUI. This example presents a simple button initialized with the values 
+stored in the AdaptUIOnt ontology.
 
 \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/api_adaptation.java}
 \captionof{listing}{The AbstractActivity class ontology related methods.\label{lst:api_adaptation}}
