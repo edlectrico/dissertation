@@ -1,4 +1,5 @@
-private static final NAMESPACE = "http://www.morelab.deusto.es/ontologies/adaptui.owl#"
+private static final NAMESPACE = 
+	"http://www.morelab.deusto.es/ontologies/adaptui.owl#"
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -9,7 +10,9 @@ protected void onCreate(Bundle savedInstanceState) {
   
   AdaptUI adaptUI = new AdaptUI();
   
-  List<String> buttons = adaptUI.getIndividualsOfClass(NAMESPACE, "Button");
+  List<String> buttons = adaptUI.getIndividualsOfClass(
+					NAMESPACE, "Button");
 
-  button.setBackgroundColor(
+  button.setBackgroundColor(adaptUI.adaptViewBackgroundColor(
+					buttons.get(0));
 }
