@@ -1,95 +1,155 @@
 \subsection{Developers using AdaptUI}
 \label{sec:developers}
 
-Before introducing the results obtained from working with potential final users
-of AdaptUI (as consumers of adapted user interfaces), an experiment has been
-carried out involving developers with previous experience with Android development
-and semantics. This experiment aims to evaluate the provided \acp{api} and to 
+Before introducing the results obtained from working with final users (as 
+consumers of adapted user interfaces), an experiment with developers has been 
+performed. This experiment aims to evaluate the provided \acp{api}, and also to 
 compare the differences between performing a configuration of the user interface 
-in Android and in AdaptUI. 
+in Android and in AdaptUI. Thus, developers with experience in both Android
+development and semantics are involved.
 
-As AdaptUI provides an \ac{api} divided in two (see Section~\ref{sec:application_layer}), 
-this experiment has been fragmented accordingly. The first part of the experiment 
-considers the user interface adaptation itself. The adaptation \ac{api} eases the 
-adaptation process through methods which modify the aspect of the elements 
-displayed on the screen. Section~\ref{sec:adaptation_api} details its most 
-significant provided methods. The second part's goal is to show developers how 
-to modify the knowledge of the AdaptUIOnt ontology. These methods are listed in 
-Section~\ref{sec:knowledge_api}.
+As AdaptUI provides an \ac{api} conceptually divided in two (see 
+Section~\ref{sec:application_layer}), this experiment has been fragmented 
+accordingly. The experiment has been presented as follows:
 
-\subsubsection{The adaptation \ac{api}}
-\label{sec:adaptation_api_experiment}
+\begin{enumerate}
+  \item First, developers are introduced to the AdaptUI framework through a brief
+  explanation of AdaptUI's virtues and boundaries. Both \acp{api} are described
+  and explained to them.
+  
+  \item Next, a Java project build in Eclipse \ac{ide} is presented. This project
+  uses AdaptUI as a library, and the main class lists the code shown in
+  Listing~\ref{lst:default_knowledge_experiment}. This class has an AdaptUI
+  declaration and initialization and also several \textit{TODO} tasks with
+  the corresponding instructions. 
+  
+  \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/default_knowledge_experiment.java}
+  \captionof{listing}{The default main class.\label{lst:default_knowledge_experiment}}
 
-As mentioned in Section~\ref{sec:adaptation_api}, the adaptation \ac{api} provides 
-a set of methods whose purpose is to facilitate the adaptation process for 
-developers. The purpose of this part of the experiment is to check developer's 
-feedback when dealing with the AdaptUI framework by collecting their opinions.
-To do so, the experiment presents an Android application developed with the 
-Eclipse\footnote{https://eclipse.org/} \ac{ide}. It includes a layout configuration 
-\ac{xml} file with the corresponding declaration of several user interface views
-(see Listing~\ref{lst:default_layout}), and also an \textit{onCreate} main method, 
-shown in Listing~\ref{lst:default_oncreate} (the default aspect of the application
-is illustrated through Figure~\ref{fig:default_layout}). The developers 
-participating in this experiment are guided through a brief explanation of the 
-available adaptation \ac{api} methods. Once they are aware of the possibilities 
-the framework provides, they are asked to modify the aspect of the listed views.
+  \item Once the corresponding knowledge adaptations are made, the resulting
+  ontology is stored and show to developers using Protégé. Figure~\ref{fig:protege}
+  shows an example of a modified ontology by a participating developer.
 
-\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{xml}{5_experiments_and_results/default_layout.xml}
-\captionof{listing}{The default layout defining a grid layout, a text view,
-a button and an edit text.\label{lst:default_layout}}
+  \begin{figure}
+  \centering
+  \includegraphics[width=0.85\textwidth]{protege.pdf}
+  \caption{A test ontology modified by a developer. Several classes have been
+  added. Also the \textit{viewBackgroundColor} for the \textit{Button} only 
+  instance has been modified.}
+  \label{fig:protege}
+  \end{figure}
+  
+  \item After modifying the ontology the AdaptUIDemo Android project is launched.
+  This project's main activity shows a text edit, an edit text and a button, and
+  its goal is to dynamically modify these views using the changes in the ontology
+  performed by the developer. In order to make this application use the new modified
+  version of the ontology an \ac{adb} command is needed. This command pushes the
+  required file from the laptop disk to the desired Android folder. 
+  Listing~\ref{lst:adb_push} shows the mentioned command.
+  
+  \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/adb_push.java}
+  \captionof{listing}{The \ac{adb} push command. The first parameter refers to the
+  file to be sent to the device. The second parameter points at the absolute location
+  in the device. \label{lst:adb_push}}
+  
+  \item Next, once the developer checks that the adaptation to the views shown
+  in the demo application matches the modifications performed with the knowledge 
+  \ac{api}, the developer is asked to use the adaptation \ac{api} through an
+  Android project. Similar to the first case, the application is already developed,
+  and the developer is asked to fulfil several tasks (see 
+  Listing~\ref{lst:default_adaptation_experiment}).
 
-\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/default_oncreate.java}
-\captionof{listing}{The default \textit{onCreate} method.\label{lst:default_oncreate}}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.25\textwidth]{default_layout.png}
-\caption{The corresponding user interface considering the layout specified in
-Listing~\ref{lst:default_layout}.}
-\label{fig:default_layout}
-\end{figure}
-
-Obviously, in order to adapt the application, developers need a copy of the
-AdaptUIOnt ontology, in which the corresponding values for the adaptation are
-semantically represented. Hence, developers are asked to install the Capabilities 
-Collector in their Android devices. Thus, they can add new knowledge to the ontology.
-
-Listing~\ref{lst:default_oncreate} shows the presented \textit{onCreate} method, 
-which defines the views listed in Listing~\ref{lst:default_layout}. Using AdaptUI 
-developers reach the \textit{onCreate} shown in Listing~\ref{lst:adaptui_oncreate},
-which includes the corresponding calls to the provided adaptation \ac{api}.
-
-\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/adaptui_oncreate.java}
-\captionof{listing}{The AdaptUI \textit{onCreate} method.\label{lst:adaptui_oncreate}}
-
-Thus, the resulting adapted user interface is illustrated by Figure~\ref{fig:adapted_layout}.
-While Figure~\ref{fig:default_layout} shows a default disposition and configuration
-of the user interface items described in Listing~\ref{lst:default_layout}, in this
-case they have been adapted according to Listing~\ref{lst:adaptui_oncreate}.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.25\textwidth]{adapted_layout.png}
-\caption{The corresponding user interface considering the layout specified in
-Listing~\ref{lst:adaptui_oncreate}.}
-\label{fig:adapted_layout}
-\end{figure}
+  \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/default_adaptation_experiment.java}
+  \captionof{listing}{The default Android version with the corresponding task to
+  be completed by the developer. \label{lst:default_adaptation_experiment}}
+  
+  \item Finally, the developer uses the Capabilities Collector to adapt several
+  views. As the last task of the Capabilities Collector is to store the required
+  values in the ontology, the developer checks these changes again in the AdaptUIDemo
+  application.
+  
+\end{enumerate}
 
 
 
-\subsubsection{The knowledge editor \ac{api}}
-\label{sec:knowledge_editor_api}
+% The following sections aim to give more details about the experiments defined
+% above.
+% 
+% \subsubsection{Using the knowledge editor \ac{api}}
+% \label{sec:knowledge_editor_api}
+% 
+% The knowledge editor \ac{api} provides a set of methods to modify the knowledge
+% stored in the ontology. Imported as a library from a Java project, this \ac{api}
+% allows to add and remove classes, individuals, object and datatype properties,
+% and rules. In this experiment developers are asked to modify the ontology by
+% adding new concepts to be used by the adaptation \ac{api}.
+% Listing~\ref{lst:adaptui_add_knowledge} shows an example of how developers can
+% modify the knowledge stored in the ontology.
+% 
+% \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/adaptui_add_knowledge.java}
+% \captionof{listing}{Modifying the knowledge represented in the ontology through the knowledge \ac{api}.\label{lst:adaptui_add_knowledge}}
+% 
+% \subsubsection{Using adaptation \ac{api}}
+% \label{sec:adaptation_api_experiment}
+% 
+% As mentioned in Section~\ref{sec:adaptation_api}, the adaptation \ac{api} provides 
+% a set of methods whose purpose is to facilitate the adaptation process for 
+% developers. The purpose of this part of the experiment is to check developer's 
+% feedback when dealing with the AdaptUI framework by collecting their opinions.
+% To do so, the experiment presents an Android application developed with the 
+% Eclipse\footnote{https://eclipse.org/} \ac{ide}. It includes a layout configuration 
+% \ac{xml} file with the corresponding declaration of several user interface views
+% (see Listing~\ref{lst:default_layout}), and also an \textit{onCreate} main method, 
+% shown in Listing~\ref{lst:default_oncreate} (the default aspect of the application
+% is illustrated through Figure~\ref{fig:default_layout}). The developers 
+% participating in this experiment are guided through a brief explanation of the 
+% available adaptation \ac{api} methods. Once they are aware of the possibilities 
+% the framework provides, they are asked to modify the aspect of the listed views.
+% 
+% \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{xml}{5_experiments_and_results/default_layout.xml}
+% \captionof{listing}{The default layout defining a grid layout, a text view,
+% a button and an edit text.\label{lst:default_layout}}
+% 
+% \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/default_oncreate.java}
+% \captionof{listing}{The default \textit{onCreate} method.\label{lst:default_oncreate}}
+% 
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.25\textwidth]{default_layout.png}
+% \caption{The corresponding user interface considering the layout specified in
+% Listing~\ref{lst:default_layout}.}
+% \label{fig:default_layout}
+% \end{figure}
+% 
+% Obviously, in order to adapt the application, developers need a copy of the
+% AdaptUIOnt ontology, in which the corresponding values for the adaptation are
+% semantically represented. Hence, developers are asked to install the Capabilities 
+% Collector in their Android devices. Thus, they can add new knowledge to the ontology.
+% 
+% Listing~\ref{lst:default_oncreate} shows the presented \textit{onCreate} method, 
+% which defines the views listed in Listing~\ref{lst:default_layout}. Using AdaptUI 
+% developers reach the \textit{onCreate} shown in Listing~\ref{lst:adaptui_oncreate},
+% which includes the corresponding calls to the provided adaptation \ac{api}.
+% 
+% \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/adaptui_oncreate.java}
+% \captionof{listing}{The AdaptUI \textit{onCreate} method.\label{lst:adaptui_oncreate}}
+% 
+% Thus, the resulting adapted user interface is illustrated by Figure~\ref{fig:adapted_layout}.
+% While Figure~\ref{fig:default_layout} shows a default disposition and configuration
+% of the user interface items described in Listing~\ref{lst:default_layout}, in this
+% case they have been adapted according to Listing~\ref{lst:adaptui_oncreate}.
+% 
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.25\textwidth]{adapted_layout.png}
+% \caption{The corresponding user interface considering the layout specified in
+% Listing~\ref{lst:adaptui_oncreate}.}
+% \label{fig:adapted_layout}
+% \end{figure}
 
-The knowledge editor \ac{api} provides a set of methods to modify the knowledge
-stored in the ontology. Imported as a library from a Java project, this \ac{api}
-allows to add and remove classes, individuals, object and datatype properties,
-and rules. In this experiment developers are asked to modify the ontology by
-adding new concepts to be used by the adaptation \ac{api}.
-Listing~\ref{lst:adaptui_add_knowledge} shows an example of how developers can
-modify the knowledge stored in the ontology.
 
-\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/adaptui_add_knowledge.java}
-\captionof{listing}{Modifying the knowledge represented in the ontology through the knowledge \ac{api}.\label{lst:adaptui_add_knowledge}}
+
+
 
 \subsubsection{Results and conclusions}
 \label{sec:api_results}
