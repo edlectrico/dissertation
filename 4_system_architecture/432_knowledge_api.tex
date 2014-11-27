@@ -88,7 +88,9 @@ domain where the platform might not behave properly.
   removeIndividual(name)	 	& Removes an individual.	\\
 
   \hline 
-  createRule(name, antecedent, consequent)& Inserts a new rule.		\\
+  createSWRLRule(name, ant\_classes, 	& Inserts a new rule, including	\\
+  ant\_dataprop, ant\_objectprop, cons\_classes,& the set of antecedent and\\
+  cons\_dataprop, cons\_objprop)	& consequent classes and properties.\\
   removeRule(name)	 		& Removes a rule if the rule 	\\
 					& has a name associated to it.	\\
   \hline

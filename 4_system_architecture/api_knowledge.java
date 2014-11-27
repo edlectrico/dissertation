@@ -1,15 +1,16 @@
 private void modifyOntologyKnowldege() {
-    
-  List<String> classes = (List<String>) ontManager.getClassList();
+  AdaptUI adaptUI = new AdaptUI();  
+  
+  List<String> classes = (List<String>) adaptUI.getClassList();
   System.out.println("Classes: " + classes.size());
   // Prints 'Classes: 18'
 
   // Any modification of the ontology knowledge is
   // performed through the OntologyManager instance,
   // which can be accessed through AdaptUI
-  adaptUI.getOntologyManager().createClass(NAMESPACE + "Test");
+  adaptUI.createClass(NAMESPACE + "Test");
 
-  classes = (List<String>) ontManager.getClassList();
+  classes = (List<String>) adaptUI.getClassList();
   System.out.println("Classes: " + classes.size());
   // Prints 'Classes: 19'
 }
