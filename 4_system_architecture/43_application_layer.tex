@@ -42,19 +42,22 @@ ontology and its initialization.
   \hline 
   \textbf{Method}				& \textbf{Description}\\
   \hline
-  AdaptUI()					& Constructor with no parameters			\\
-  AdaptUI(namespace, views)			& This method requires the main ontology namespace	\\
-						& and a Collection with the views to adapt.		\\
-  loadOntologyFromFile(path, fileLocation)	& It loads an ontology file from a specific Android	\\
-						& path.							\\
-  loadOntologyFromUri(uri)			& Loads the ontology from a specified \ac{uri}.		\\
-  getExternalDirectory()			& Returns the root storage folder in the current	\\
-						& Android device.					\\
-  mapOntology(namespace, fileName)		& It loads the stored ontology to avoid Internet connection\\
-						& when managing the namespace.				\\
-  getOntologyManager()				& It returns the \textit{OntologyManager} instance, which\\
-						& gives access to further operations (i.e., 		\\
-						& \textit{getIndividualOfClass} and \textit{createClass}).\\
+  AdaptUI()					& Constructor with no parameters		\\
+  AdaptUI(namespace, views)			& This method requires the main ontology 	\\
+						& namespace and a Collection with the views	\\
+						& to adapt.					\\
+  loadOntologyFromFile(path, fileLocation)	& It loads an ontology file from a specific 	\\
+						& Android path.					\\
+  loadOntologyFromUri(uri)			& Loads the ontology from a specified 		\\
+						& \ac{uri}.					\\
+  getExternalDirectory()			& Returns the root storage folder in the current\\
+						& Android device.				\\
+  mapOntology(namespace, fileName)		& It loads the stored ontology to avoid Internet\\
+						& connection when managing the namespace.	\\
+  getOntologyManager()				& It returns the \textit{OntologyManager} 	\\
+						& instance, which gives access to further 	\\
+						& operations (i.e., \textit{getIndividualOfClass} and \\
+						& \textit{createClass}).			\\
   \hline
 \end{longtable}
 \end{center}
