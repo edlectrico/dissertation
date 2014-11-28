@@ -18,10 +18,8 @@ public class ActivityExample extends Activity {
     textView = (TextView) findViewById(R.id.textView);
     button = (Button) findViewById(R.id.button);
     editText = (EditText) findViewById(R.id.editText);
-
     // Initializing the framework
     AdaptUI adaptUI = new AdaptUI(ADAPTUI_NAMESPACE, views);
-	
     // Simulating context change with a listener
     button.setOnClickListener(new OnClickListener() {
     @Override

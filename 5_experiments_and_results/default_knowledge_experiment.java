@@ -1,5 +1,4 @@
 public class Main {
-
   private final static String ADAPTUI = "original/test.owl";
   private static final String NAMESPACE = 
 		"http://www.morelab.deusto.es/ontologies/test.owl#";
@@ -10,7 +9,6 @@ public class Main {
     // Loading the ontology through the ontology manager
     adaptUI.loadOntologyFromFile(new FileInputStream(
     new File(ADAPTUI)));
-
     // TODO: create a new class
 
     // TODO: create a new individual of the created class
