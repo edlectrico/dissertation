@@ -5,14 +5,18 @@ private static final NAMESPACE =
 protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity);
-
-  Button button = (Button) findViewById(R.id.button1);
   
+  // Fetch the desired view
+  Button button = (Button) findViewById(R.id.button);
+  // Initialize an AdaptUI instance
   AdaptUI adaptUI = new AdaptUI();
-  
+  // Fetch the desired views instances in the ontology, in
+  // this case we want to adapt a button.
   List<String> buttons = adaptUI.getIndividualsOfClass(
 					NAMESPACE, "Button");
-
+  // Use Android default View methods to adapt the user
+  // interface through retrieving the corresponding value
+  // from the ontology
   button.setBackgroundColor(adaptUI.adaptViewBackgroundColor(
 					buttons.get(0));
 }
