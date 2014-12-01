@@ -30,4 +30,13 @@ been already taken are given.
   
   \item Translate the models to JSON-LD\footnote{http://json-ld.org/}, which is
   a JSON based Linked Data format.
+  
+  \item Adapt the \ac{api}, reaching a more object oriented paradigm. For instance,
+  declaring an individual and being able to modify it with class methods would 
+  be desirable than the current approach, in which there is just a method to
+  declare it through the AdaptUI object. Listing~\ref{lst:api_adaptation} shows
+  an example of the mentioned changes.
+  
+  \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{6_conclusion/api_adaptation.java}
+\captionof{listing}{Projected changes in the \ac{api}.\label{lst:api_adaptation}}
 \end{enumerate}
