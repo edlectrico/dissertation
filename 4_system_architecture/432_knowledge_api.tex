@@ -60,8 +60,8 @@ domain where the platform might not behave properly.
 % 					& class passed as parameter 	\\
 % 					& and creates a new one.	\\
   \hline 
-  createObjectProperty	(namespace, objectPropName,& Inserts a new object\\
-  Map$<$namespace, classname$>$)	& property connecting two classes.\\
+  addObjectProperty	(namespace, indName1,& Inserts a new object\\
+  indName2, objectPropName)	& property connecting two individuals.\\
   removeObjectProperty(namespace, objectPropName)& Erases an existing datatype\\
  					& property.			\\
 %   editObjectProperty(namespace, objectPropName)& Changes the name of the\\
@@ -70,8 +70,8 @@ domain where the platform might not behave properly.
 % 					& passed as parameter and 	\\
 % 					& creates a new one.		\\
   \hline 
-  createDatatypeProperty(namespace, dataTypeName)	& Inserts a new datatype\\
-					& property assigning a value to \\
+  addDatatypeProperty(namespace, individual,& Inserts a new datatype\\
+  dataPropName)				& property assigning a value to \\
  					& a class.			\\
 					& If it does not exist, it is	\\
 					& created.			\\
@@ -83,15 +83,15 @@ domain where the platform might not behave properly.
 % 					& as parameter and creates 	\\
 %  					& a new one.			\\
   \hline 
-  createIndividual(name, namespace, className)& Inserts a new individual of a \\
-					& concrete class.		\\
+  addIndividualMembership(namespace, indName,& Inserts a new individual of a \\
+  className)				& concrete class.		\\
   removeIndividual(name)	 	& Removes an individual.	\\
 
   \hline 
-  createSWRLRule(name, ant\_classes, 	& Inserts a new rule, including	\\
+  addSWRLRule(name, ant\_classes, 	& Inserts a new rule, including	\\
   ant\_dataprop, ant\_objectprop, cons\_classes,& the set of antecedent and\\
   cons\_dataprop, cons\_objprop)	& consequent classes and properties.\\
-  removeRule(name)	 		& Removes a rule if the rule 	\\
+  removeSWRLRule(name)	 		& Removes a rule if the rule 	\\
 					& has a name associated to it.	\\
   \hline
 \end{longtable}
