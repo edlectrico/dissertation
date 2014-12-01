@@ -1,15 +1,15 @@
 {
-  "piramide.devices.screen.height": 1280,
-  "piramide.devices.screen.width": 720,
-  "piramide.devices.modelname": "Samsung Galaxy SIII",
-  "piramide.devices.os": "Android",
-  "piramide.devices.os.version": "4.3",
+  "imhotep.devices.screen.height": 1280,
+  "imhotep.devices.screen.width": 720,
+  "imhotep.devices.modelname": "Samsung Galaxy SIII",
+  "imhotep.devices.os": "Android",
+  "imhotep.devices.os.version": "4.3",
  
-  "piramide.user.capabilities.problems": true,
-  "piramide.user.capabilities.problems.sight": true,
-  "piramide.user.capabilities.problems.sight.diopters": 10,
-  "piramide.user.capabilities.problems.hearing": false,
-  "piramide.user.capabilities.problems.smell": false,
-  "piramide.user.capabilities.problems.touch": false,
-  "piramide.user.capabilities.problems.problems": false
+  "imhotep.user.capabilities.problems": true,
+  "imhotep.user.capabilities.problems.sight": true,
+  "imhotep.user.capabilities.problems.sight.diopters": 10,
+  "imhotep.user.capabilities.problems.hearing": false,
+  "imhotep.user.capabilities.problems.smell": false,
+  "imhotep.user.capabilities.problems.touch": false,
+  "imhotep.user.capabilities.problems.problems": false
 }

@@ -17,7 +17,7 @@ a discussion and several conclusions are presented.
 Imhotep~\citep{almeida_imhotep_2011} is a framework developed and maintained at
 the University of Deusto which aims to ease the development of adaptable and 
 more accessible user interfaces. Designed by developers and for developers, this
-framework allows the to write their applications in a way in which they do not
+framework allows to write their applications in a way in which they do not
 have to worry about the adaptation of the user interface. This is possible 
 through the definition of a series of preprocessor directives. These 
 directives take into account both the user capabilities and the device 
@@ -44,7 +44,7 @@ devices (provided by \ac{wurfl}~\citep{wurfl}) and pondering it with their popul
 
 In order to fully understand how Imhotep works, 
 Figure~\ref{fig:imhotep_architecture}
-illustrates its architecture design. As it can be seen in the figure, Imhotep is
+illustrates its architecture design. As can be seen in the figure, Imhotep is
 divided into 4 modules:
 
 \begin{itemize}
@@ -52,8 +52,8 @@ divided into 4 modules:
     in the user's device to connect to the repository and download adapted
     applications.
     
-    \item The \ac{rest} server contains the application repository. Once users select
-    a desired application, the server will:
+    \item The \ac{rest} server contains the application repository. Once a user 
+    selects a desired application, the server will:
     
     \begin{itemize}
       \item Use the Fuzzy Knowledge-Eliciting Reasoner to infer new values with
@@ -107,7 +107,7 @@ syntax of the conditions is  based on the syntax used by the Python programming
 language. The following code shows an example of using preprocessor directives 
 in Java. During compiling time this code will be analysed by the framework 
 taking into account the defined variables and their values. Therefore, the final 
-binaries would contain just one reference to one of the methods shown in 
+binaries will contain just one reference to one of the methods shown in 
 Listing~\ref{lst:preprocessor_directives}.
 
 
@@ -118,8 +118,8 @@ directives~\citep{imhotep_website}.\label{lst:preprocessor_directives}}
 
 Developers ask for user and device capabilities in these conditions. For 
 example, one directive could state that if the user is blind the application 
-should use a voice based interface. Five categories for user capabilities have 
-been defined (see Figure~\ref{fig:imhotep_user_capabilities}).
+should use a voice based interface. Five categories of user capabilities were 
+defined (see Figure~\ref{fig:imhotep_user_capabilities}).
 
 
 \begin{figure}[H]
@@ -134,9 +134,9 @@ different disabilities; and communicational, which deals with speech.}
 \label{fig:imhotep_user_capabilities}
 \end{figure}
 
-Now the Imhotep framework has been introduced, a comparison between AdaptUI and
-Imhotep running the same experiments is presented. Despite that both solutions
-having the same purpose (to help to reduce the boundaries for those who cannot
+Now that the Imhotep framework has been introduced, a comparison between AdaptUI and
+Imhotep running the same experiments is presented. Despite the fact that both solutions
+have the same purpose (to help reducing the boundaries for those who cannot
 properly interact with a user interface), their differences are substantial.
 Imhotep directly depends on a server (allocated in the University of Deusto)
 while AdaptUI runs 100\% in the mobile phone, performing the adaptation on the
@@ -150,14 +150,14 @@ preprocessor directive based procedure to build adaptive user interfaces. The
 Imhotep framework was originally tested with AssistedCity\footnote{\url{
 https://github.com/aitoralmeida/imhotep/tree/master/PiramideRestServer/deploy/piramide/applications/AssistedCity/1.0.0.0/project}}. 
 AssistedCity is a tour 
-guide application which guides the user taking into account several venues 
+guide application which guides the user taking into account several points of interest 
 categories (i.e., monuments, museums, restaurants, and so forth) that the user 
-needs to choose from a menu. Then, using the camera and through an augmented 
-reality interface the application guides the user to the desired point of 
+needs to choose from a menu. Then, using the camera and through an Augmented 
+Reality interface the application guides the user to the desired point of 
 interest. As a demonstrator of the Imhotep framework, this application was 
-developed using several preprocessor directives which takes into account sight 
+developed using several preprocessor directives which take into account sight 
 sensory capabilities, hearing capabilities and device's screen size, to adapt 
-the user interface of the application.Hence, we have chosen the same use case to 
+the user interface of the application. Hence, we have chosen the same use case to 
 evaluate the results of the adaptation using the corresponding platform.
 
 This evaluation is split in two different parts. First, a visual comparison of
@@ -178,7 +178,7 @@ capabilities are described.\label{lst:variables}}
 
 
 On the contrary, the corresponding AdaptUI models for the user and the device 
-are represented  through the AdaptUIOnt ontology, and there is no need of 
+are represented  through the AdaptUIOnt ontology, and there is no need for 
 external servers. The similar user and device situation is represented as 
 follows, in Table~\ref{tbl:adaptui_repr}:
 
@@ -238,6 +238,9 @@ application is generated and send back to the user. On the contrary, on the
 right side of Figure~\ref{fig:ac_adapted} there is the adaptation performed by 
 AdaptUI. Considering the input detailed in Table~\ref{tbl:adaptui_repr} AdaptUI 
 performs the corresponding adaptation (depending on the set of specified rules).
+The adaptation performed by AdaptUI matches the input capabilities shown in
+Table~\ref{tbl:adaptui_repr}, which represents better the user capabilities
+than the specification given by Listing~\ref{lst:variables}.
 
 \begin{figure}[H]
 \centering
@@ -254,10 +257,10 @@ Table~\ref{tbl:adaptui_repr}.}
 % Imhotep using the parameters detailed in Listing~\ref{lst:variables} for the 
 % user and device characteristics.
 
-Regarding a time performance evaluation Table~\ref{tbl:imhotep_timing} shows
-the time required by Imhotep to adapt AssistedCity. As is seen through this 
+Regarding the time performance evaluation in Table~\ref{tbl:imhotep_timing}, it 
+shows the time required by Imhotep to adapt AssistedCity. As seen through this 
 table, if the server maintains a cache of the already adapted applications for 
-the specific user and device the response of the system do not exceed the 1.3
+the specific user and device the response of the system does not exceed 1.3
 seconds. 
 
 \begin{table}[H]
@@ -274,7 +277,7 @@ seconds.
   & \textbf{Mean} & \textbf{Median} & \textbf{Deviation} &  \textbf{Mean} 
   & \textbf{Median} & \textbf{Deviation}\\
   \hline    
-  Galaxy SIII~Mini & $1,257$ & $1,237$ & $0,247$ & $15,125$ & $15,0344$ & 
+  Galaxy SIII~Mini & $1,257$ & $1,237$ & $0,247$ & $15,125$ & $15,034$ & 
 $0,445$ \\
 %   
   Galaxy SIII & $1,175$ & $1,107$ & $0,239$ & $15,094$ & $14,950$ & $0,501$ \\
@@ -286,9 +289,13 @@ $0,445$ \\
 
 On the contrary, AdaptUI does not require an external server, and it does not 
 use any cache. Thus, the required time for the adaptation depends mostly on the 
-hardware of the device running reasoning. Table~\ref{tbl:imhotep_vs_adaptui}
-compares the means of using Imhotep or AdaptUI for an adaptation. In case of 
-AdaptUI a context light change triggers the process.
+hardware of the device running the reasoning process. Table~\ref{tbl:imhotep_vs_adaptui}
+compares the means of using Imhotep or AdaptUI for an adaptation. In the case of 
+AdaptUI, a light change in context triggers the process. Obviously, this represents
+one of the most significant benefits of AdaptUI, as the platform is able to 
+dynamically react to these changes. On the contrary, a user of AssistedCity will
+need to indicate the new situation in the variables file, and the reasoning process
+will start again in the Imhotep server.
 
 \begin{table}[H]
  \caption{Comparing Imhotep and AdaptUI time performance. The mean is 
@@ -325,7 +332,7 @@ several solutions cited in Chapter~\ref{cha:state_of_the_art} used:
 externalizing the computational complex processes to an external server. Hence, 
 in Imhotep the developers have to use several available preprocessor directives 
 where the user interface alternative code has to be included. Then, their 
-applications are sent to an external server, which would generate the 
+source code is uploaded to an external server, which would generate the 
 corresponding binaries (according to user's requests) with the 
 corresponding adaptation. These requests include the characteristics of the 
 mobile device and the user's profile. 
