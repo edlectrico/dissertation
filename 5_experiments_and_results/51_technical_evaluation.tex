@@ -46,12 +46,12 @@ performance results of both solutions. This evaluation has been divided into
 three different experiments:
 
 \begin{enumerate}
-  \item The first experiment consists in using the default AdaptUIOnt ontology 
-  version with both reasoning engines. When loading the ontology several rules 
-  are processed and triggered. As a result of this experiment the  
-  corresponding performance results are compared.
+  \item The first experiment evaluates the AdaptUIOnt ontology version with both 
+  reasoning engines. When loading the ontology several rules are processed and 
+  triggered. As a result of this experiment the corresponding performance 
+  results are compared.
   
-  \item For the second experiment the ABox axioms set of the AdaptUIOnt 
+  \item For the second experiment the set of ABox axioms of the AdaptUIOnt 
   ontology is increased. The ABox gathers the knowledge about the 
   individuals, including concepts and roles assertions, and individuals 
   equality and inequality~\citep{krotzsch_description_2012}. In other words, 
@@ -64,10 +64,10 @@ three different experiments:
   Table~\ref{tbl:dl_terminology}. Hence, increasing the number of individuals   
   might result into difference performance results comparing both platforms.
   
-  \item Next, the \ac{swrl} axioms set of the AdaptUIOnt ontology is modified by 
-  increasing its axioms. This axiom set collects axioms related to the rules 
-  included in the ontology. Therefore, this experiment focuses on the reasoning 
-  capabilities of each version of Pellet.
+  \item Next, the set of \ac{swrl} axioms of the AdaptUIOnt ontology is modified 
+  by increasing its amount of axioms. This axiom set collects axioms related to 
+  the rules included in the ontology. Therefore, this experiment focuses on the 
+  reasoning capabilities of each version of Pellet.
 \end{enumerate}
 
 \input{5_experiments_and_results/table_abox_tbox}
@@ -88,12 +88,11 @@ three different experiments:
 % \end{lstlisting}
 
 
-The cited experiments have been performed using two different types of devices 
-have been used. The ones running Pellet have been launched using a desktop 
-environment. On the contrary, as \textit{Pellet4Android} is an Android based 
-version of the reasoning engine, several mobile devices have been tested. The 
-characteristics of all the devices used for these experiments are detailed in 
-Table~\ref{tbl:devices_specs}. 
+The cited experiments have been performed using two different types of devices. 
+The ones running Pellet have been launched using a desktop environment. On the 
+contrary, as \textit{Pellet4Android} is an Android based version of the reasoning 
+engine, several mobile devices have been tested. The characteristics of all the 
+devices used for these experiments are detailed in Table~\ref{tbl:devices_specs}. 
 
 \input{5_experiments_and_results/devices_specs}
 
@@ -126,8 +125,8 @@ sets of rules (see Section~\ref{sec:eval_swrl}).
 
 In this experiment the default version of the AdaptUIOnt ontology is used as 
 input of the reasoning engines in order to evaluate their performance. As 
-AdaptUIOnt has been designed to be a light ontology to be available to be used 
-with mobile reasoning engines, this experiment shows how \textit{Pellet4Android} 
+AdaptUIOnt has been designed to be a lightweight ontology to be available to be 
+used with mobile reasoning engines, this experiment shows how \textit{Pellet4Android} 
 performs in comparison with the the results obtained by Pellet in a desktop 
 environment. These results are shown in Table~\ref{tbl:eval_default_ont}.
 
@@ -156,9 +155,15 @@ AdaptUIOnt ontology.}
 \end{tabular}
 \end{table}
 
+Surprisingly Table~\ref{tbl:eval_default_ont} reveals that the Nexus 10 performs
+worse than the other two mobile devices. This is usually due to the available
+and allocated memory that Java estimates for launching the required reasoning
+tasks. Table~\ref{tbl:eval_abox} for instance shows a more usual behaviour of
+the Nexus 10, which matches its hardware specifications.
+
 Figure~\ref{fig:pellet_default} illustrates the differences of using Pellet or
 \textit{Pellet4Android} when loading the default ABox and \ac{swrl} axiom sets in 
-AdaptUIOnt. As is shown in Figure~\ref{fig:pellet_default} and in 
+AdaptUIOnt. As shown in Figure~\ref{fig:pellet_default} and in 
 Table~\ref{tbl:eval_default_ont}, the performance of Pellet for Java 
 environments is better in any case if we compare it with the Android based 
 version. However, and although there are several differences depending on the 
@@ -226,7 +231,7 @@ ontology with an increment in the ABox axiom set.}
 
 Figure~\ref{fig:pellet_abox} illustrates the differences between Pellet and
 \textit{Pellet4Android} when loading the AdaptUIOnt ontology with an increment 
-applied to the ABox axioms set. As is shown in the chart (accordingly with
+applied to the ABox axioms set. As shown in the chart (accordingly with
 Table~\ref{tbl:eval_abox}) the performance of Pellet for Java environments 
 keeps being better in comparison with the Android based version. While Pellet
 maintains its performance under 5 seconds, Android devices require much more
@@ -246,7 +251,7 @@ AdaptUIOnt ontology increasing the ABox axioms set.}
 \subsubsection{Incrementing the \ac{swrl} Axioms Set}
 \label{sec:eval_swrl}
 
-Finally, this last experiment consists in incrementing the \ac{swrl} axioms set of 
+Finally, this last experiment consists on incrementing the \ac{swrl} axioms set of 
 the AdaptUIOnt ontology, which collects the axioms related to the rules
 included in the ontology. Using an amount of 5,000, 10,000, 15,000 and 
 finally 20,000 rules we aim to evaluate how increasing the number of rules 
@@ -283,7 +288,7 @@ ontology with an increment in the \ac{swrl} axiom set.}
 		& 322,779 & 37 & 20,013	& 216.005 & 216.077 & 1.202 \\
 \hline
   Nexus 10	& 82,779 & 37 & 5,013 & 22.317 & 22.471	& 0.333 \\
-		& 162,779& 37 & 10,013& 45.193 & 44.736	& 1.312	\\
+(\textit{Pellet4Android})& 162,779& 37 & 10,013& 45.193 & 44.736 & 1.312 \\
 		& 242,779& 37 & 15,013& 85.543 & 88.134 & 5.490	\\
 		& 322,779& 37 & 20,013& 107.151& 106.131& 2.749	\\
   \hline
@@ -292,10 +297,10 @@ ontology with an increment in the \ac{swrl} axiom set.}
 
 Figure~\ref{fig:pellet_swrl} illustrates the differences between Pellet and
 \textit{Pellet4Android} when running the different sets of \ac{swrl} axioms of the 
-AdaptUIOnt ontology. As is shown in the chart it takes more time to evaluate the 
+AdaptUIOnt ontology. As shown in the chart, it takes more time to evaluate the 
 set of rules than the instances. In fact, the scale of the Y axis reaches 350 
-seconds, while in Figure~\ref{fig:pellet_abox} the maximum mean reaches less 
-than 200 seconds.
+seconds, while in Figure~\ref{fig:pellet_abox} the maximum mean value reaches 
+less than 200 seconds.
 
 \begin{figure}
 \centering
@@ -308,7 +313,7 @@ AdaptUIOnt ontology increasing the \ac{swrl} axioms set.}
 \subsubsection{Discussion}
 \label{sec:performance_discussion}
 
-During these experiments, and as is shown in Table~\ref{tbl:eval_default_ont}, 
+During these experiments, and as shown in Table~\ref{tbl:eval_default_ont}, 
 Table~\ref{tbl:eval_abox} and Table~\ref{tbl:eval_swrl}, neither the TBox or 
 RBox axioms sets have been modified. These collections belong to what is called 
 the terminology knowledge in \ac{owl} 2, and it does not affect the performance of 
@@ -316,27 +321,26 @@ the reasoning process. Hence, the TBox and the RBox contain 266 and 22 axioms
 respectively during the experiments.
 
 On the contrary, sets of 5,000, 10,000, 15,000 and 20,000 axioms have been added
-to the ABox and \ac{swrl} axioms sets to demonstrate the performance penalization of 
-when using large axioms sets with the tested reasoning engine. These 
-modifications of the AdaptUIOnt ontology have been performed through several 
-Python scripts, which have modified the corresponding default 
-\textit{adaptui.owl} file.
+to the ABox and \ac{swrl} axioms sets to demonstrate the performance penalization
+when using large axioms sets with the tested reasoning engine. These modifications 
+of the AdaptUIOnt ontology instance set have been performed through several 
+Python scripts, which have modified the corresponding default \textit{adaptui.owl} file.
 
 
 \subsubsection{Conclusions}
 \label{sec:performance_conclusions}
 
 These results demonstrate that, although managing semantics in mobile devices is
-possible, they still lack of more appropriate capabilities to perform reasoning
-tasks. Nevertheless, \textit{Pellet4Android} is a good approximation of a 
-reasoner to run on mobile devices. A native Pellet for Android port written in 
-C++ would probably improve these results. But one of the AdaptUIOnt ontology's 
-benefits is its lightness. Using less than 400 axioms, this ontology is able to 
-model a full adaptation domain, remarking the user and his/her capabilities, the 
-surrounding environment and the device characteristics. The results shown in 
-Table~\ref{tbl:eval_default_ont} show how \textit{Pellet4Android} responses 
-properly when dealing with the AdaptUIOnt ontology. However, more efforts in 
-mobile reasoners would benefit these systems.
+possible, they are still far from the results obtained in a desktop environment 
+when dealing with complex reasoning tasks. Nonetheless, \textit{Pellet4Android} 
+is a good approximation of a reasoner to run on mobile devices. A native Pellet 
+for Android port written in C++ would probably improve these results. But one of 
+the AdaptUIOnt ontology's benefits is its lightness. Using less than 400 axioms, 
+this ontology is able to model a full adaptation domain, considering the user and 
+his/her capabilities, the surrounding environment and the device characteristics. 
+The results shown in Table~\ref{tbl:eval_default_ont} show how \textit{Pellet4Android} 
+responses properly when dealing with the AdaptUIOnt ontology. However, more efforts 
+in mobile reasoners would benefit these systems.
 
 % Repasar bien
 Regarding the ABox collection of axioms, the first conclusion that is extracted
@@ -348,11 +352,11 @@ performance, incrementing the number of seconds for loading the ontology. On
 the contrary, running this experiment in the mobile devices reveals a lack of 
 efficiency. First, each device's hardware capabilities are taken into account. 
 The first mobile device, the Samsung Galaxy SIII~Mini needs around 2.764 
-seconds for loading the default AdaptUI ontology with its 37 ABox and 13 \ac{swrl} 
-axioms. This same case takes 1.649 seconds in the Samsung Galaxy SIII and 5.147 
-seconds in the Nexus 10. Although these figures might be appear to be enough 
-considering we are dealing with limited Hardware, by increasing them in the 
-same way that it has been done with the Acer laptop results into unmanageable
+seconds for loading the default AdaptUI ontology, which consists of 37 ABox and 
+13 \ac{swrl} axioms. This same case takes 1.649 seconds in the Samsung Galaxy 
+SIII and 5.147 seconds in the Nexus 10. Although these figures might appear to 
+be enough considering we are dealing with limited hardware, by increasing them 
+in the same way that it has been done with the Acer laptop results into unmanageable
 time responses. For instance, loading 5,032 ABox axioms takes 3.014 seconds for
 the laptop and Pellet, for the Samsung Galaxy SIII Mini it takes 59.412 seconds,
 36.336 seconds for the Samsung Galaxy SIII and 14.171 seconds for the Nexus 10. 
@@ -361,6 +365,11 @@ Nevertheless, these differences are more significant when dealing with the \ac{s
 axioms set. In this case, although Pellet's performance does not exceed 9 
 seconds, the differences with the ABox axioms set are much bigger regarding
 \textit{Pellet4Android}. In the best case, the Nexus 10 needs around 22 seconds
-to reason over a 5,000 rules, while the Samsung Galaxy SIII Mini needs more 
+to reason over 5,000 rules, while the Samsung Galaxy SIII Mini needs more 
 than 90. This depicts the existing differences of performance depending on the
 Android device we choose.
+
+As a final conclusion, taking into account the presented results, \textit{Pellet4Android}
+presents promising performance results when dealing with the AdaptUIOnt. The
+lightness of the ontology (considering the amount of axioms) assures a more
+than acceptable performance.
