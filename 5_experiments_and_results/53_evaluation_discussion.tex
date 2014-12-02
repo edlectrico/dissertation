@@ -13,7 +13,7 @@ Table~\ref{tbl:eval_abox} and Table~\ref{tbl:eval_swrl} show these differences
 remarking performance of reasoning for the corresponding execution platform.
 
 After this first part of the experiments, a comparison between other 
-alternatives has been presented. As it is explained in 
+alternatives has been presented. As is explained in 
 Section~\ref{sec:imhotep_vs_adaptui}, Imhotep is a framework which aims to ease 
 the development of adaptive user interfaces. The main problems or limitations 
 of the Imhotep framework are: 
@@ -41,8 +41,8 @@ difficult
   \item Finally, there is the problem of the network dependency, which 
   approximately adds 14 seconds to the whole process for compiling the 
   corresponding sources. Although Imhotep's performance when using the cache is 
-  good enough (see Figure~\ref{fig:imhotep_comparison}), the response decreases 
-  significantly  when this cache is not present.
+  good enough (see Figure~\ref{fig:imhotep_comparison}), the response time 
+  decreases significantly  when this cache is not present.
 \end{itemize}
 
 
@@ -50,7 +50,7 @@ AdaptUI faces these problems inherited from Imhotep and solve them as follows:
 
 \begin{itemize}
   \item Regarding the problem of using an external server, the AdaptUI platform
-  runs 100\% in the mobile device. It is true that nowadays these devices
+  runs fully in the mobile device. It is true that nowadays these devices'
   capabilities are far from the ones present when Imhotep was conceived. This
   allowed us to design a platform compatible with Android and network or 
   external services independent. Through the ontology and several optimized 
@@ -73,29 +73,29 @@ AdaptUI faces these problems inherited from Imhotep and solve them as follows:
   the disabilities that users might suffer are understood as a set of conditions
   that somehow limit the user. These conditions do not have to be specifically
   physiological. To us, context might also generate several situations in which
-  the user might sense temporary disabled.
+  the user might feel temporary disabled.
   
   \item The adaptations are dynamic, not just considering that they are 
-  modifiable in running time. They also change through the experience monitored 
-  by the Adaptation Polisher. This module aims to always monitor the user 
-  interaction with the adapted interfaces to provide alternatives if the 
+  modifiable in running time. They also change according to the experience 
+  monitored by the Adaptation Polisher. This module aims to always monitor the 
+  user interaction with the adapted interfaces to provide alternatives if the 
   usability decreases.
   
-  \item AdaptUI do not depend on any network connection. It runs 100\% in the
-  mobile device, which allows a fully independence from external connectivity
+  \item AdaptUI does not depend on any network connection. It runs fully in the
+  mobile device, which allows a complete independence from external connectivity
   issues.
 \end{itemize}
 
 Regarding the performance of both platforms, Table~\ref{tbl:imhotep_vs_adaptui}
-shows how after loading the ontology the adaptation process response in AdaptUI
-is acceptable, not exceeding the 2 seconds. On the contrary, if the cache is not
+shows how after loading the ontology, the adaptation process response in AdaptUI
+is acceptable, not exceeding 2 seconds. On the contrary, if the cache is not
 used, Imhotep has to deal with a performance over 14 seconds due to the network
 dependency.
 
 
-After these comparisons, several qualitative experiments are presented through
-different scenarios (see Section~\ref{sec:scenarios}). These experiments are
-based on several complex situations that put AdaptUI under the microscope.
+After these comparisons, several qualitative experiments have been presented 
+through different scenarios (see Section~\ref{sec:scenarios}). These experiments 
+are based on several complex situations, in which AdaptUI is scrutinized.
 The presented scenarios have been categorized into 3 different groups, each 
 group representing a concrete situation in which an adaptation of the user 
 interface would be needed. In this case, these categories are:
@@ -115,7 +115,7 @@ performance of both systems is depicted.
 Finally, the users' feedback is collected. To do so, an experiment with AdaptUI 
 has been developed. Users have to use an application which translates the 
 interaction to the AdaptUIOnt ontology. Then, several context changes are 
-triggered so the users witness how the user interface adapts dynamically. After 
+triggered so that the users see how the user interface adapts dynamically. After 
 this experiment, a questionnaire is presented, so their experiences with the 
 AdaptUI platform can be collected. Along with several extra questions to ease 
 the analysis of the results, the \ac{sus} questionnaire is used. The main idea 
@@ -123,7 +123,7 @@ extracted from these results is that users find the platform useful. Although
 there are several differences considering one group of users or another (e.g., 
 based on their age, technical experience or disability), the obtained results 
 are promising. Besides, the requested developers also consider that the 
-framework would benefit the design of adaptive user interfaces, integrating them 
-with their personal applications. Hence, we conclude that, although much work 
+framework would benefit from the design of adaptive user interfaces, integrating 
+them with their personal applications. Hence, we conclude that, although much work 
 can be performed, the results of the evaluation performed and described in this 
 chapter are promising.
