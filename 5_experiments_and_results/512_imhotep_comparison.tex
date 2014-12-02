@@ -324,39 +324,37 @@ represented in seconds.}
 \subsubsection{Discussion}
 \label{sec:imhotep_discussion}
 
-Imhotep was conceived in 2010, when the hardware characteristics of the 
-available Android devices was still limited. First 1 \ac{ghz} processors started to 
-power these devices, and their \ac{ram} memory vaguely exceeded 500 \ac{mb}. Considering 
-these limitations, Imhotep was designed following the same approach that 
-several solutions cited in Chapter~\ref{cha:state_of_the_art} used: 
-externalizing the computational complex processes to an external server. Hence, 
-in Imhotep the developers have to use several available preprocessor directives 
-where the user interface alternative code has to be included. Then, their 
-source code is uploaded to an external server, which would generate the 
-corresponding binaries (according to user's requests) with the 
-corresponding adaptation. These requests include the characteristics of the 
-mobile device and the user's profile. 
+Imhotep was conceived in 2010, when the hardware characteristics of the available 
+Android devices was still limited. First 1 \ac{ghz} processors started to power 
+these devices, and their \ac{ram} memory vaguely exceeded 500 \ac{mb}. Considering 
+these limitations, Imhotep was designed following the same approach that several 
+solutions cited in Chapter~\ref{cha:state_of_the_art} used: externalizing the 
+computational complex processes to an external server. Hence, in Imhotep the 
+developers have to use several available preprocessor directives where the user 
+interface alternative code has to be included. Then, their source code is 
+uploaded to an external server, which would generate the corresponding binaries 
+(according to user's requests) with the corresponding adaptation. These requests 
+include the characteristics of the mobile device and the user's profile. 
 
 Although Imhotep was a good approximation as a tool for developers to write 
-applications with adaptive user interfaces, nowadays we found several problems
+applications with adaptive user interfaces, we have found several problems
 in it:
 
 \begin{itemize}
-  \item Regarding final users, Imhotep requires an extra tool for downloading 
-  the required application with the corresponding and adapted user interface. 
-  This means that every time the user requires a different adaptation the 
-  profile configuration process is needed to be launched. Thus, there is no 
-  cached data in the server, which will cause a significant delay in the 
-  adaptation process.
+  \item Regarding final users, \textit{Imhotep requires an extra tool for 
+  downloading the required application} with the corresponding and adapted user 
+  interface. This means that every time the user requires a different adaptation 
+  the profile configuration process is launched. Thus, if there is no cached data 
+  in the server, it will cause a significant delay in the adaptation process.
   
-  \item Besides, depending on an Internet connectivity for for the adaptation 
-  might be problematic. As an external server is needed to perform the adaptive 
-  operations and sources compiling, there is the possibility of a server or 
-  network failure, which would obviously affect or even cancel the whole 
-  process.
+  \item Besides, \textit{Imhotep depends on Internet connection} for for the 
+  adaptation, which might be problematic. As an external server is needed to 
+  perform the adaptive operations and source code compiling, there is the 
+  possibility of a server or network failure, which would obviously affect or 
+  even cancel the whole process.
   
-  \item Context is not taken into account for the adaptation. Only the user 
-  and the characteristics of the current device were considered. Several 
+  \item \textit{Context is not taken into account for the adaptation}. Only the 
+  user and the characteristics of the current device were considered. Several 
   examples of the benefits of including context for the adaptation process have
   been presented during this section.
 \end{itemize}
@@ -368,30 +366,30 @@ Therefore, AdaptUI first designs were definitely based on Android. This brings
 the whole adaptation process to the mobile. This means that, on the one hand, 
 there is the advantage of not depending on the network or an external server to 
 process anything. But it also means that the workload has to be managed by a 
-hardware not as powerful or capable as a computer's. As is detailed also in 
+hardware not as powerful or capable as a computer's one. As also detailed in 
 Table~\ref{tbl:imhotep_vs_adaptui}, the adaptation performance relies on the
 each device's hardware capabilities. 
 
-Besides, AdaptUI includes the context current situation in the equation for the 
-user interface adaptation. This fact presents several challenges and 
-possibilities, as it is considered in AdaptUI as a trigger for different 
-situations involving the user and the device.
+Besides, AdaptUI includes the current context situation in the equation for the 
+user interface adaptation. This fact presents several challenges and possibilities, 
+as is considered in AdaptUI as a trigger for different situations involving the 
+user and the device.
 
 
 \subsubsection{Conclusions}
 \label{sec:imhotep_conclusions}
 
 During this section a comparison between AdaptUI and Imhotep has been performed.
-Imhotep is a framework for easing the adaptation of user interfaces. Regarding 
-the presented figures and tables where both solutions have been illustrated 
-presenting the resulting adapted interfaces and the corresponding performance 
-of both platforms, we summarize our experiences through this evaluation with 
-several considerations in the following lines.
+Imhotep is a framework for easing the adaptation of user interfaces. In the 
+presented figures and tables both solutions evaluation has been illustrated. 
+The resulting adapted interfaces and the corresponding performance of both 
+platforms have been shown. Next, we summarize our experiences through this 
+evaluation with several considerations in the following lines.
 
 As Imhotep needs an external server for the complex processing of the user 
 interface adaptations, maintaining a cache is vital for this system. On the 
-contrary, and as is shown in Table~\ref{tbl:imhotep_timing}, the response time 
-from rebuilding the whole sources results in a 15 seconds delay. Comparing with
+contrary, and as shown in Table~\ref{tbl:imhotep_timing}, the response time 
+from rebuilding the whole source code results in a 15 seconds delay. Comparing with
 the cached results, which imply less than 1.5 seconds to perform the same 
 operation is clear that the difference is significant. Nevertheless, one of the 
 benefits of this solution is that, as the adaptation process is delegated to an 
@@ -399,29 +397,29 @@ external server, is not important which device is being used by the user. The
 current device has just to be compatible with the applications available in the
 server.
 
-One of the main problems of Imhotep is that the context is not taken into 
-account for the adaptations. The explanation for this decision was based on the 
-required time for Imhotep for performing a complete adaptation. 
+One of the main problems of Imhotep is that context is not taken into account 
+for the adaptations. The explanation for this decision was based on the time 
+limitation of Imhotep for performing a complete adaptation. 
 Figure~\ref{fig:imhotep_comparison} illustrates how operating without cached 
 data takes around 15 seconds for receiving the corresponding user interface in 
 the device. This means that the context might change during this period of time. 
 On the other side, the cache was conceived to store information about the 
 profile of the user and the device that might not change during time. By using 
-this cache the adaptations were send back to the device in less than 2 seconds.
+this cache the adaptations were sent back to the device in less than 2 seconds.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.75\textwidth]{imhotep_comparison.pdf}
-\caption{Receiving the corresponding adapted user interface in for different
+\caption{Receiving the corresponding adapted user interface for different
 devices using Imhotep without cache.}
 \label{fig:imhotep_comparison}
 \end{figure}
 
 
 Imhotep time responses are obtained as the result of the addition of three
-different processes. The first one, the required time, in terms of networking,
+different processes. The first one is the required time in terms of networking,
 that takes to send the adaptation request from the device to the adaptation 
-server. Second, the required time to process the request, compile and generate 
+server. Secondly, the required time to process the request, compile and generate 
 the adapted version (around 14 seconds). And finally, the time needed to send 
 the adaptation back to the user's device with the corresponding user interface. 
 
@@ -434,17 +432,17 @@ AdaptUI respectively. This is shown in Table~\ref{tbl:imhotep_vs_adaptui}.
 Regarding the presented arguments, we conclude that:
 
 \begin{enumerate}[label=\alph*]
-  \item Imhotep's performance when using cache is similar (even better) when
+  \item Imhotep's performance when using a cache is similar (even better) when
   network conditions are optimal. 
   
-  \item As Imhotep do not carry out complex operations in the mobile devices,
+  \item As Imhotep does not carry out complex operations in the mobile devices,
   leaving this workload to an external server, the hardware specifications of 
   the current device are not as important as in AdaptUI.
   
   \item On the contrary, this dependency carries several drawbacks. For 
   example, a network failure would leave the adaptation process incomplete.
   
-  \item Besides, although working with cache results in a similar time responses
+  \item Besides, although working with a cache results in similar time responses
   than AdaptUI, first adaptations of each application will cost a high time to
   be performed. During this time (around 15 seconds under normal circumstances)
   the context of the user might change, and it is possible for the user to 
@@ -453,12 +451,12 @@ Regarding the presented arguments, we conclude that:
   \item As AdaptUI takes the context into account, the adapted solutions are
   more characterized for the current user situation.
   
-  \item Although depending on the device's hardware might result into slower
+  \item Although depending on the device's hardware, it might result into slower
   adaptations, managing small semantic models (as AdaptUIOnt) is still 
   manipulable by the platform. Besides, as the smartphones market grows in terms
   of hardware capabilities, the performance of such systems will be increased.
   
-  \item AdaptUI do not consider explicit physiological user capabilities. On 
+  \item AdaptUI does not consider explicit physiological user capabilities. On 
   the contrary, Imhotep works with a user model in which it is necessary to
   provide several physiological based capabilities. This results into a non
   practical solution, as we lack of medical knowledge.
@@ -466,5 +464,6 @@ Regarding the presented arguments, we conclude that:
   \item Another benefit from AdaptUI is the automation of the adaptation 
   through several sets of adaptation rules. These rules, not considering 
   explicit physiological user capabilities, infer knowledge about the user that
-  is vital for the adaptation.
+  is vital for the adaptation. The whole set of rules that manages the adaptation
+  process in AdaptUI are detailed in Section~\ref{sec:adaptui_rules}.
 \end{enumerate}
