@@ -1,18 +1,18 @@
 {
-  "piramide.devices.screen.height": 480,
-  "piramide.devices.screen.width": 320,
-  "piramide.devices.modelname": "Samsung Galaxy Ace",
-  "piramide.devices.os": "Android",
-  "piramide.devices.os.version": "2.3.6",
-  "piramide.devices.capabilities.video": true,
-  "piramide.devices.capabilities.audio": true,
-  "piramide.devices.capabilities.gps": true,
-  "piramide.devices.capabilities.flash": true,
+  "imhotep.devices.screen.height": 480,
+  "imhotep.devices.screen.width": 320,
+  "imhotep.devices.modelname": "Samsung Galaxy Ace",
+  "imhotep.devices.os": "Android",
+  "imhotep.devices.os.version": "2.3.6",
+  "imhotep.devices.capabilities.video": true,
+  "imhotep.devices.capabilities.audio": true,
+  "imhotep.devices.capabilities.gps": true,
+  "imhotep.devices.capabilities.flash": true,
   
-  "piramide.user.capabilities.problems": true,
-  "piramide.user.capabilities.problems.sight": true,
-  "piramide.user.capabilities.problems.sight.dioptres": "blindness",
-  "piramide.user.capabilities.problems.hearing": false,
-  "piramide.user.capabilities.problems.smell": false,
-  "piramide.user.capabilities.problems.touch": false
+  "imhotep.user.capabilities.problems": true,
+  "imhotep.user.capabilities.problems.sight": true,
+  "imhotep.user.capabilities.problems.sight.dioptres": "blindness",
+  "imhotep.user.capabilities.problems.hearing": false,
+  "imhotep.user.capabilities.problems.smell": false,
+  "imhotep.user.capabilities.problems.touch": false
 }

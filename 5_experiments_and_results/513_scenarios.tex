@@ -2,7 +2,7 @@
 \label{sec:scenarios}
 
 In the previous section several quantitative experiments have been presented.
-These experiments illustrate the performance differences considering the 
+The experiments have illustrated the performance differences considering the 
 required time to manage the AdaptUIOnt ontology and Imhotep. Regarding the 
 ontology itself, AdaptUI takes into account many context situations, user's 
 capabilities and device's characteristics. This makes difficult to evaluate 
@@ -11,9 +11,9 @@ hypothetical scenarios are presented simulating the behaviour of the analysed
 adaptive systems in more complex situations.
 
 The scenarios are included in the evaluation of AdaptUI compared to Imhotep.
-Consequently, both adaptation processes are taking into account for the 
+Consequently, both adaptation processes are taken into account for the 
 resulting adaptation and the presented scenario conditions. Hence, the scenarios
-represent three different situations which might require a user interface 
+represent three stereotypical situations which might require a user interface 
 adaptation:
 
 \begin{itemize}
@@ -36,12 +36,12 @@ adaptation:
 Each scenario is presented as follows:
 
 \begin{itemize}
-  \item First, an introduction of the problem to be evaluated is described.
+  \item First, an introduction to the problem to be evaluated is described.
   
-  \item Next, the scenario situation is presented. It is also summarized with
+  \item Secondly, the scenario situation is presented. It is also summarized with
   a table indicating the main characteristics of the three main entities.
   
-  \item Third, the adaptation process by Imhotep and AdaptUI is detailed.
+  \item Thirdly, the adaptation process by Imhotep and AdaptUI is detailed.
   
   \item Finally, each scenario presents several conclusions after a brief 
   discussion.
@@ -52,14 +52,14 @@ Each scenario is presented as follows:
 
 This scenario introduces several limitations that context might induce to 
 certain user capabilities. As context is considered as a significant entity in 
-AdaptUI, this scenario aim to solve a situation in which it impedes the user 
+AdaptUI, this scenario aims to solve a situation in which it impedes the user to
 interact properly. On the contrary, Imhotep does not include the context 
 situation for adapting the user interface. Thus, it would not be possible to 
 have a coherent result regarding the proposed scenario. The following 
 lines introduce the cited scenario:
 
 John is going home after work. He lives and works in Rovaniemi, one of the
-northernmost and coldest regions of Finland. As can be seen in see
+northernmost and coldest regions in Finland. As can be seen in 
 Table~\ref{tbl:scenario1}, John does not suffer from any disability. He removes
 his gloves and then he proceeds to send a \ac{sms} to his wife. The current 
 temperature is $-10$~ºC.
@@ -198,7 +198,7 @@ adaptation is shown in Table~\ref{tbl:final_adaptation_scenario1}:
 \end{table}
 
 Finally, the system should provide the user a chance to evaluate, provide 
-feedback, on whether the interaction with the presented adaptation is good 
+feedback, on whether the interaction with the presented adaptation is usable 
 enough or if another adaptation should be triggered. There are also a few rules 
 which take into account the device’s dynamic capabilities. The remaining 
 memory, available processor and battery are monitored in order to avoid 
@@ -227,7 +227,7 @@ low to perform an adaptation.
 
 This first scenario presents a situation in which the user capabilities are
 limited by certain context characteristics. More specifically, the current
-temperature (-10~ºC) might make difficult to John to use his hands and properly
+temperature (-10~ºC) might make difficult for John to use his hands and properly
 interact with his device. In this case, thanks to the context modelling 
 availability in AdaptUIOnt and due to the configuration of the user profile, 
 several sets of rules lead to the results of Table~\ref{tbl:userAux_scenario1},
@@ -237,8 +237,8 @@ Table~\ref{tbl:final_adaptation_scenario1}, in which the final adaptation is
 shown.
 
 On the contrary, Imhotep does not take context conditions into account. The only
-way to indicate a disability would be if the user configures the Imhotep user
-profile with a concrete disability. This would lead to a series of 
+way to indicate a change on context would be if the user configures the Imhotep 
+user profile with a concrete disability. This would lead to a series of 
 configurations each time the user is within a different environment.
 
 \myparagraph{Conclusions}
@@ -246,8 +246,8 @@ configurations each time the user is within a different environment.
 
 John is perfectly healthy and he usually does not need complex adaptations. 
 However, in this case the current freezing temperature makes difficult for him
-to use his fingers with the usual precision. Considering these premises,
-any adaptive system would just ignore the current situation (including Imhotep).
+to use his fingers with the usual precision. Considering these premises, any 
+adaptive system would generally ignore the current situation (including Imhotep).
 Nevertheless, with these weather conditions, John is partially disabled. The
 weather, more concretely the temperature, might affect several physiological
 capabilities of the user. Therefore, the interaction between John and the \ac{sms}
@@ -265,11 +265,11 @@ which deals with mobility and precision using fingers on  the screen.
 Table~\ref{tbl:adaptui_vs_imhotep_scenario1} shows several significant 
 differences between those characteristics that Imhotep is able to take into 
 account in this scenario and the ones that AdaptUI considers. It is shown how 
-any context characteristic lacks Imhotep of accuracy when adapting the user 
-interface to the current situation. Besides, it is not able to model not only 
-an activity, but the consequences of it (as AdaptUI, which takes into account 
-that the user is performing an activity that, due to the context conditions,
-cannot carry out properly).
+Imhotep unawareness of context features makes it inaccurate when adapting the 
+user interface to the current situation. Besides, it is not able to model an 
+activity, but the consequences of it (as AdaptUI, which takes into account that 
+the user is performing an activity that, due to the context conditions, cannot 
+carry out properly).
 
 \begin{table}
  \caption{AdaptUI and Imhotep comparison of the final reached adaptation for 
@@ -307,14 +307,14 @@ and device characteristics are going to be used in Imhotep to follow the
 corresponding user interface adaptation. The scenario 2 is described now in the 
 following lines:
 
-Karen is a 60 years woman with several disabilities due to her ageing. She is
-colour blind, which means she has problems distinguishing several colours. In
-addition, she suffers from a light hearing loss, which is not severe. She is
-driving to the down town using a \ac{gps} mobile application. For this scenario, the
-most significant information to infer is the impossibility to use the hands and
-the impossibility to distract her, as Karen is driving. Besides, the user model
-should consider the capabilities cited in Table~\ref{tbl:scenario2}, as she is
-colour blind. Therefore, with this information a first user model is 
+Karen is a 60 years old woman with several disabilities due to her ageing. She 
+is colour blind, which means that she has problems distinguishing several 
+colours. In addition, she suffers from a light hearing loss, which is not severe. 
+She is driving to down town using a \ac{gps} mobile application. For this 
+scenario, the most significant information to infer is the impossibility to use 
+the hands and the impossibility to distract her, as Karen is driving. Besides, 
+the user model should consider the capabilities cited in Table~\ref{tbl:scenario2}, 
+as she is colour blind. Therefore, with this information a first user model is 
 semantically represented by AdaptUI in Table~\ref{tbl:user_profile_scenario2}. 
 The following lines analyse the adaptation process due to the situation 
 summarized in Table~\ref{tbl:scenario2}.
@@ -349,7 +349,7 @@ summarized in Table~\ref{tbl:scenario2}.
 
 Karen suffers from two different disabilities: colour blindness and hearing 
 loss. As AdaptUIOnt is focused on the user’s preferences rather than on the 
-disabilities, the user model configures her capabilities as it is shown in 
+disabilities, the user model configures her capabilities as is shown in 
 Table~\ref{tbl:user_profile_scenario2}. 
 
 \begin{table}
@@ -410,7 +410,8 @@ The final adaptation for this situation is modelled by the adaptation rules.
 As the limitations in this case come from the special situation generated by 
 the activities performed by the user, AdaptUI has to change the interaction 
 channels considering that the user has several restrictions. Thus, the size of 
-the corresponding views is increased, the interaction channel allows voice 
+the corresponding views is increased (not because Karen's colour blindness, but
+because of the activity of driving), the interaction channel allows voice 
 interaction, and the volume is also increased due to the possible noise while
 driving a car or traffic. These adaptations are shown in 
 Table~\ref{tbl:final_adaptation_scenario2}:
@@ -447,8 +448,8 @@ capabilities are described for the scenario 2.\label{lst:scenario2_imhotep}}
 
 Regarding Listing~\ref{lst:scenario2_imhotep} the Imhotep framework will avoid
 combining red/green colours, but no magnification of the screen or the size
-of the text would be added. Voice control would also be provided, and volume
-levels would be increased by indicating a hearing disability.
+of the text would be added. Voice control will also be provided, and volume
+levels will be increased by indicating a hearing disability.
 
 
 \myparagraph{Discussion}
@@ -470,12 +471,12 @@ control and bigger views are presented.
 
 As happens in Scenario 1, Imhotep does not cover the circumstances described 
 for this scenario through Table~\ref{tbl:scenario2}. However, it is possible to
-somehow represent this through the variables user profile. 
+somehow represent this through the user profile variables. 
 Listing~\ref{lst:scenario2_imhotep} shows an example of a modified user profile
 representing several limitations that, although they might not be true, they
 represent a practical situation in which the user is limited by external agents 
 (which would be the activity of driving). Thus, Imhotep considers that the user 
-is blind and suffers hearing loss. Consequently, the resulting user interface
+is blind and suffers from hearing loss. Consequently, the resulting user interface
 also increases the volume levels, uses \ac{tts} for reading the displayed
 information and changes the colour set.
 
@@ -486,12 +487,12 @@ Karen suffers from two disabilities which, combined with the current activity
 makes the interaction with her mobile device troublesome. In this scenario, 
 Karen is driving her car and intends to use a \ac{gps} guiding application to go to
 a certain location. AdaptUI covers this situation adapting the interaction 
-channel and through a few modifications in the displayed views. As this 
-interaction might be difficult, the Adaptation Polisher module explained in
-Section~\ref{sec:adaptation_polisher} takes great importance in this situation.
-
-On the contrary, to be able to represent a similar situation with Imhotep, the
-user variables profile has to be modified.
+channel and through a few modifications in the displayed views. On the contrary, 
+to be able to represent a similar situation with Imhotep, the user variables 
+profile has to be modified.
+% As this 
+% interaction might be difficult, the Adaptation Polisher module explained in
+% Section~\ref{sec:adaptation_polisher} takes great importance in this situation.
 
 The main differences between both solutions is shown when Karen interacts with
 the application and the results are not satisfactory. This means that, although
@@ -554,20 +555,20 @@ The last scenario introduces a situation in which the user suffers from a
 disability that impedes a proper interaction with the device. The scenario and 
 its main characteristics are described in the following lines.
 
-Patrick is a 25 years old boy who lives in London. He lost his eyesight when he
+Patrick is a 25 years old man who lives in London. He lost his eyesight when he
 was 10. He uses accessibility tools when he interacts with computers and home
 devices. His PC is equipped with an utility which reads from the screen so he
 can navigate and use it. The problem is that a similar feature in his mobile
-device usually is not enough depending on the context situation. Mostly traffic
-and street noise usually makes difficult to Patrick to hear the messages read by
+device is often not enough depending on the context situation. Mostly traffic
+and street noise usually make difficult for Patrick to hear the messages read by
 the device.
 
 Table~\ref{tbl:scenario3} shows the configuration of the first model for this
-scenario. As it can be seen in this table, Patrick needs from some adaptation to
+scenario. As can be seen in this table, Patrick needs from some adaptation to
 interact with his mobile device. Common accessibility tools cover this issue by
 reading the text in the screen. However, they do not consider context. This
-entails several obstacles during the interaction, as problems to hear the text
-read by the mobile device.
+entails several obstacles during the interaction, for example when there are
+problems to hear the text read by the mobile device.
 
 \begin{table}
  \caption{Scenario 3 situation summary.}
@@ -603,7 +604,7 @@ Patrick suffers from a sight disability. Besides, the profile is configured
 indicating that the Display is not applicable, and that its configuration 
 should not be adapted (because in this case it is not necessary, as Patrick is 
 blind). Therefore, the adaptation should result into a promotion of an 
-alternative channel, so the user would be able of interacting alternatively and 
+alternative channel, so the user would be able to interact alternatively and 
 perform the same tasks. The volume value configured by Patrick is defined as $4$. 
 This is because the user considers that this value is enough to clearly hear 
 the device's voice. Nevertheless, Patrick knows that this should not be an 
@@ -684,7 +685,7 @@ becomes the best choice for interacting with the device.
 \end{tabular}
 \end{table}
 
-Imhotep models user visual disabilities in its variables profile under the
+Imhotep models user visual disabilities in its profile under the
 \textit{problems.sight} variable. The problem comes when the user has to fill 
 the profile. In AdaptUI the Capabilities Collector allows blind users to 
 configure the interaction channels thanks to voice control. In any case, 
@@ -701,7 +702,7 @@ Listing~\ref{lst:scenario3_imhotep}.
 \captionof{listing}{The variables file, in which device characteristics and user 
 capabilities are described for the scenario 3.\label{lst:scenario3_imhotep}}
 
-Regarding the variables profile it is very difficult for Imhotep to make the 
+Regarding the profile it is very difficult for Imhotep to make the 
 proper decisions. The input file lacks of practical information about the user
 disability. In fact, the Imhotep's adapted user interface is the same as in the
 scenario 2.
@@ -711,7 +712,7 @@ scenario 2.
 \label{sec:scenario3_discussion}
 
 In this scenario we present a situation in which the adaptation should be lead
-regarding a concrete user disability. Here, context or activities are not as
+by a concrete user disability. Here, context or activities are not as
 important as in the other scenarios. Thus, the efforts of the AdaptUI platform
 are focused on avoiding any visual interface. 
 
@@ -735,17 +736,17 @@ adapted user interface will be more practical.
 As is shown in Table~\ref{tbl:user_profile_scenario3} Patrick has a sight
 disability. Imhotep takes sight and hearing disabilities into account for the
 adaptation process. Therefore, depending on the network range and on the server
-side programmed adaptations different UI would be available. The main setback is
-that Patrick has to indicate the concrete physiological problem. For example, he
-would have to configure a figure detailing the dioptres he has. Then, the 
-Imhotep server would act consequently. According to this, if the concrete 
-figure has not been considered in the adaptation process, the resulting UI 
-might not be adequate. Another issue is that, the network dependency would make 
-the adaptation process too long. AdaptUI covers this problem as it runs 100 \% 
-in the mobile device.
+side programmed adaptations different \ac{ui} configuration will be available. 
+The main setback is that Patrick has to indicate the concrete physiological 
+problem. For example, he would have to specify a figure detailing the dioptres 
+he has. Then, the Imhotep server would act consequently. According to this, if 
+the concrete figure has not been considered in the adaptation process, the 
+resulting \ac{ui} might not be adequate. Another issue is that, the network 
+dependency would make the adaptation process too long. AdaptUI covers this problem 
+as it runs 100 \% in the mobile device.
 
 The main differences when dealing with the user, context and device models in
-this scenario is shown in Table~\ref{tbl:adaptui_vs_imhotep_scenario3_user} and 
+this scenario are shown in Table~\ref{tbl:adaptui_vs_imhotep_scenario3_user} and 
 Table~\ref{tbl:adaptui_vs_imhotep_scenario3_context_device}. 
 
 
