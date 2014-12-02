@@ -10,7 +10,7 @@ Android development and semantics are involved.
 
 As AdaptUI provides an \ac{api} conceptually divided in two (see 
 Section~\ref{sec:application_layer}), this experiment has been fragmented 
-accordingly. The experiment, consisting in 6 steps and with a 20 minutes duration
+accordingly. The experiment, consisting in 6 steps and with a 20 minutes duration,
 has been carried out as follows:
 
 \begin{enumerate}
@@ -20,15 +20,15 @@ has been carried out as follows:
   printed version, as they appear in Table~\ref{tbl:api_adaptation} and
   Table~\ref{tbl:api_knowledge}.
   
-  \item Next, a Java project built in Eclipse \ac{ide} is presented. This project
-  uses the AdaptUI framework as an imported library. The main class of this Java
-  application instantiates AdaptUI and initializes the environment. Besides,
-  several \textit{TODO} tasks with the corresponding instructions are given for
-  the developer to complete. This class is summarized through
-  Listing~\ref{lst:default_knowledge_experiment}. The tasks include:
+  \item Secondly, a Java project built with the Eclipse \acs{ide} is presented. 
+  This project uses the AdaptUI framework as an imported library. The main class 
+  of this Java application instantiates AdaptUI and initializes the environment. 
+  Besides, several \textit{TODO} tasks with the corresponding instructions are 
+  given for the developer to complete. This class is summarized through
+  Listing~\ref{lst:default_knowledge_experiment}. These tasks include:
   \begin{itemize}
     \item The creation of a new class.
-    \item The creation of a new instance of the created class.
+    \item The creation of a new instance of the previously created class.
     \item Adding a new datatype property with the corresponding value to the
     new instance.
     \item Adding a new object property to the new instance, involving several
@@ -42,12 +42,13 @@ has been carried out as follows:
   \captionof{listing}{The default main class with the corresponding tasks to
   be accomplished by the developer.\label{lst:default_knowledge_experiment}}
 
-  \item Once the corresponding knowledge modification are made, the resulting
-  ontology is stored and shown to developers using Protégé. Figure~\ref{fig:protege}
-  shows an example of a modified ontology by a participating developer. Hence,
-  the developer is allowed to check if the changes made in the Java main class
-  using the AdaptUI framework have been correctly represented in the ontology.
-  If any errors are found, the process is revised.
+  \item Once the corresponding knowledge modifications are made, the resulting
+  ontology is stored. Developers are requested to check the changes in the ontology
+  using Protégé. Figure~\ref{fig:protege} shows an example of a modified ontology 
+  by a participating developer. Hence, the developer is allowed to check if the 
+  changes made in the Java main class using the AdaptUI framework have been 
+  correctly represented in the ontology. If any errors are found, the process is 
+  revised.
 
   \begin{figure}
   \centering
@@ -61,12 +62,13 @@ has been carried out as follows:
   
   \item After the modification of the ontology, the AdaptUIDemo Android project 
   is presented to the developer. This project's main activity shows a text edit, 
-  an edit text and a button, and its goal is to dynamically modify these views 
-  using the changes in the ontology performed by the developer in the previous
-  steps. In order to make this application to use the new modified version of 
-  the ontology, an \ac{adb} command is needed. This command pushes the required 
-  file from the current computer disk to the desired Android folder. 
-  Listing~\ref{lst:adb_push} shows the mentioned command.
+  an edit text and a button. The goal of this part of the experiment is to evaluate
+  how the developer uses the adaptation \ac{api} to dynamically modify these views.
+  The changes performed in the ontology in the previous steps are taken into account. 
+  In order to make this application to use the new modified version of the ontology, 
+  an \acs{adb} command is needed. This command pushes the required file from the 
+  current computer disk to the desired Android folder. Listing~\ref{lst:adb_push} 
+  shows how the command \acs{adb} push command works.
   
   \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/adb_push.java}
   \captionof{listing}{The \ac{adb} push command. The first parameter specifies  
@@ -169,9 +171,60 @@ has been carried out as follows:
 % \end{figure}
 
 
-
-
-
 \subsubsection{Results and Conclusions}
 \label{sec:api_results}
 
+The resulting experiences with the provided \acp{api} have been collected through
+a simple questionnaire. Its purpose is to find out if the participating developers
+miss any possible feature and to gather their feedback about AdaptUI. The 
+questionnaire is formed by the following questions:
+
+\begin{enumerate}
+ \item \#Q1: How useful do you find the AdaptUI framework for developing adaptive user
+ interfaces?\footnote{This question requires the user to select a value from
+ a 1 to 5 scale, 1 meaning \textit{not much} and 5 meaning \textit{very much}.}
+ \item \#Q2: Do you miss any additional functionality?
+ \item \#Q3: If so, please specify the functionality you would add to the framework/\ac{api}.
+ \item \#Q4: Would you improve any \ac{api} feature?
+ \item \#Q5: If so, which one and how?
+ \item \#Q6: Would you make AdaptUI part of your future applications (if you plan to
+ use adaptive interfaces)?
+ \item \#Q7: Comments.
+\end{enumerate}
+
+The developers' responses are gathered in Table~\ref{tbl:developers_responses}
+and Table~\ref{tbl:developers_responses_2}.
+
+\begin{table}
+  \caption{Developers' responses to the questionnaire. As responses for questions 
+  \#Q3, \#Q5 and \#Q7 might be too long, their details are given in 
+  Table~\ref{tbl:developers_responses_2}. If a response for any of these questions
+  is given by the developer an asterisk symbol(*) is shown in the corresponding
+  cell.}
+ \label{tbl:developers_responses}
+\footnotesize
+\centering
+ \begin{tabular}{l l l l l l l l}
+  \hline 
+  \textbf{\#Developer} 	& \textbf{\#Q1} & \textbf{\#Q2} & \textbf{\#Q3} & \textbf{\#Q4} & \textbf{\#Q5} & \textbf{\#Q6} & \textbf{\#Q7} \\
+  \hline
+  $\#1$			& 4		& Yes		& * 		& No	 	& - 	& Yes 		& - \\
+  $\#2$			& 5		& No		& - 		& Yes		& *	& Yes		& - \\
+  \hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+  \caption{Developers' responses to questions \#Q3, \#Q5 and \#Q7.}
+ \label{tbl:developers_responses_2}
+\footnotesize
+\centering
+ \begin{tabular}{l l l l l l l l}
+  \hline 
+  \textbf{\#Developer} 	& \textbf{\#Q3} 	& \textbf{\#Q5} 	& \textbf{\#Q7}\\
+  \hline
+  $\#1$			& \\
+  $\#2$			& \\
+  \hline
+\end{tabular}
+\end{table}
