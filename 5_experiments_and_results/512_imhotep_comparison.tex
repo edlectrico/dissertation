@@ -14,36 +14,15 @@ a discussion and several conclusions are presented.
 \subsubsection{Imhotep}
 \label{sec:imhotep_vs_adaptui}
 
+As mentioned in Section~\ref{sec:background_imhotep}, 
 Imhotep~\citep{almeida_imhotep_2011} is a framework developed and maintained at
 the University of Deusto which aims to ease the development of adaptable and 
-more accessible user interfaces. Designed by developers and for developers, this
-framework allows to write their applications in a way in which they do not
-have to worry about the adaptation of the user interface. This is possible 
-through the definition of a series of preprocessor directives. These 
-directives take into account both the user capabilities and the device 
-characteristics. The developed applications are then uploaded to a public 
-repository. Thus, the users can download them through an application download 
-tool which sends to a server the user's and device's profile so the server 
-compiles the best user interface for the current situation.
+more accessible user interfaces. The framework allows to develop applications 
+without considering a specific design for the user interface, as it is built
+from the definition of a series of preprocessor directives which evaluate a
+user's and device's profile.
 
-One of the benefits of Imhotep is the level of expression of the preprocessor
-directives. Developers can establish their own variables and rules.
-Listing~\ref{lst:imhotep_pseudocode} shows a piece of pseudo-code where the
-developer defines new variables.
-
-\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{5_experiments_and_results/imhotep_pseudocode.txt}
-\captionof{listing}{Imhotep pseudo-code defining variables~\citep{imhotep_website}.\label{lst:imhotep_pseudocode}}
-
-
-These variables, rules and possible values are defined by the developer using a
-web based wizard. Furthermore, the concepts, such as \textit{``resolution is 
-big''}
-are created by the system taking into account the information of the mobile
-devices (provided by \ac{wurfl}~\citep{wurfl}) and pondering it with their popularity
-(with Google Trends~\citep{trends} data).
-
-In order to fully understand how Imhotep works, 
-Figure~\ref{fig:imhotep_architecture}
+In order to fully understand how Imhotep works, Figure~\ref{fig:imhotep_architecture}
 illustrates its architecture design. As can be seen in the figure, Imhotep is
 divided into 4 modules:
 
