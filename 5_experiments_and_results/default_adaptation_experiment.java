@@ -4,10 +4,10 @@ public class ActivityExample extends Activity {
   private Button button;
   private EditText editText;
 
-  private static final String ONTOLOGY_FILE = "test.owl";
+  private static final String ONTOLOGY_FILE = "adaptui.owl";
   private static final String ONT_PATH = "/sdcard/ontologies/";
   private static final String ADAPTUI_NAMESPACE = 
-	"http://www.morelab.deusto.es/ontologies/test.owl#";
+	"http://www.morelab.deusto.es/ontologies/adaptui.owl#";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -24,17 +24,17 @@ public class ActivityExample extends Activity {
     button.setOnClickListener(new OnClickListener() {
     @Override
     public void onClick(View v) {
-      // TODO: Change layout color (the name of the class 
-      // is "Background")
+      // TODO: Change layout color (the name of the  
+      // class is "Background")
 			
-      // TODO: Change button size (text size), and background 
-      // and text color
+      // TODO: Change button size (text size), and  
+      // background and text color
 			
-      // TODO: Change edit text size (text size), and background 
-      // and text color
+      // TODO: Change edit text size (text size), and  
+      // background and text color
 			
-      // TODO: Change text view size (text size), and background 
-      // and text color
+      // TODO: Change text view size (text size), and  
+      // background and text color
       }
     });
 	

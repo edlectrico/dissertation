@@ -1,14 +1,14 @@
 public class Main {
-  private final static String ADAPTUI = "original/test.owl";
+  private final static String ADAPTUI = "original/adaptui.owl";
   private static final String NAMESPACE = 
-		"http://www.morelab.deusto.es/ontologies/test.owl#";
+		"http://www.morelab.deusto.es/ontologies/adaptui.owl#";
 
   public static void main(String[] args) {
     AdaptUI adaptUI = new AdaptUI();
 
     // Loading the ontology through the ontology manager
     adaptUI.loadOntologyFromFile(new FileInputStream(
-    new File(ADAPTUI)));
+    	new File(ADAPTUI)));
     // TODO: create a new class
 
     // TODO: create a new individual of the created class
