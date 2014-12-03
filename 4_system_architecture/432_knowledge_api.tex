@@ -45,54 +45,39 @@ domain where the platform might not behave properly.
 \begin{center}
 \footnotesize
 \begin{longtable}{l l}
-  \caption{Knowledge related AdaptUI \ac{api} methods.}\\
+  \caption{Knowledge related AdaptUI \ac{api} methods.}				\\
   \label{tbl:api_knowledge} \\
-  \hline 
-  \textbf{Method}		& \textbf{Description}\\
   \hline
-  addClass(namespace, className)	& Inserts a new class.		\\
-  removeClass(namespace, className)	& Erases an existing class, its	\\
-					& individuals, attributes and	\\
-					& relationships with other 	\\
-					& classes.			\\
-%   editClass(namespace, newClassName)	& Changes the name of the class.\\
-% 					& Internally it deletes the 	\\
-% 					& class passed as parameter 	\\
-% 					& and creates a new one.	\\
-  \hline 
-  addObjectProperty	(namespace, indName1,& Inserts a new object\\
-  indName2, objectPropName)	& property connecting two individuals.\\
-  removeObjectProperty(namespace, objectPropName)& Erases an existing datatype\\
- 					& property.			\\
-%   editObjectProperty(namespace, objectPropName)& Changes the name of the\\
-% 					& datatype property. Internally \\
-% 					& it deletes the property 	\\
-% 					& passed as parameter and 	\\
-% 					& creates a new one.		\\
-  \hline 
-  addDatatypeProperty(namespace, individual,& Inserts a new datatype\\
-  dataPropName)				& property assigning a value to \\
- 					& a class.			\\
-					& If it does not exist, it is	\\
-					& created.			\\
-  removeDatatypeProperty(namespace, dataTypeName)& Erases an existing datatype\\
- 					& property.			\\
-%   editDatatypeProperty(namespace, dataTypeName)	& Changes the name of the \\
-% 					& datatype property. Internally \\
-% 					& it deletes the property passed\\
-% 					& as parameter and creates 	\\
-%  					& a new one.			\\
-  \hline 
-  addIndividualMembership(namespace, indName,& Inserts a new individual of a \\
-  className)				& concrete class.		\\
-  removeIndividual(name)	 	& Removes an individual.	\\
-
-  \hline 
-  addSWRLRule(name, ant\_classes, 	& Inserts a new rule, including	\\
-  ant\_dataprop, ant\_objectprop, cons\_classes,& the set of antecedent and\\
-  cons\_dataprop, cons\_objprop)	& consequent classes and properties.\\
-  removeSWRLRule(name)	 		& Removes a rule if the rule 	\\
-					& has a name associated to it.	\\
+  \textbf{Method}		& \textbf{Description}				\\
+  \hline
+  createClass(namespace, className)	& Inserts a new class.			\\
+  removeClass(namespace, className)	& Erases an existing class, its		\\
+					& individuals, attributes and		\\
+					& relationships with other 		\\
+					& classes.				\\
+  \hline
+  createObjectProperty	(namespace, indName1,& Inserts a new object		\\
+  indName2, objectPropName)	& property connecting two individuals.		\\
+  removeObjectProperty(namespace, objectPropName)& Erases an existing datatype	\\
+ 					& property.				\\
+  \hline
+  createDatatypeProperty(namespace, individual,& Inserts a new datatype		\\
+  dataPropName)				& property assigning a value to 	\\
+ 					& a class.				\\
+					& If it does not exist, it is		\\
+					& created.				\\
+  removeDatatypeProperty(namespace, dataTypeName)& Erases an existing datatype	\\
+ 					& property.				\\
+  \hline
+  createIndividualMembership(namespace, indName,& Inserts a new individual of a \\
+  className)				& concrete class.			\\
+  removeIndividual(name)	 	& Removes an individual.		\\
+  \hline
+  createSWRLRule(name, ant\_classes, 	& Inserts a new rule, including		\\
+  ant\_dataprop, ant\_objectprop, cons\_classes,& the set of antecedent and	\\
+  cons\_dataprop, cons\_objprop)	& consequent classes and properties.	\\
+  removeSWRLRule(name)	 		& Removes a rule if the rule 		\\
+					& has a name associated to it.		\\
   \hline
 \end{longtable}
 \end{center}

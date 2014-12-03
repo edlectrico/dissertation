@@ -17,7 +17,7 @@ public class Main {
 
     // TODO: create a new object property for the individual
 
-    // TODO: create a new rule
+    // TODO: create a new SWRL rule
 
     // TODO: modify a Button instance background color
 
