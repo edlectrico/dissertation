@@ -24,7 +24,7 @@ representing the two axis on the screen, and a single button.}
 But the concept of \ac{hci} is not relegated to the past evolution of computers 
 and industry. It has kept evolving and improving from the invention of the first
 computer mouse (see Figure~\ref{fig:mouse}) by Douglas Engelbart during the 
-sixties to nowadays interaction advances (see Figure~\ref{fig:google_glasses}).
+sixties to nowadays interaction advances (see Figure~\ref{fig:google_glasses}\footnote{\url{http://www.google.com/glass/start/}}).
 This is thanks to emerging mobile and ubiquitous devices' capabilities, which
 have opened new research domains and their power have outstripped the last
 decades machines' computational capabilities. Besides, the \textit{mobile device}
@@ -35,7 +35,7 @@ operative system and more connectivity and computing capabilities.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.70\textwidth]{google_glasses.jpg}
-\caption{Google Glasses navigation interface~\citep{google_glasses}.}
+\caption{Google Glasses navigation interface.}
 \label{fig:google_glasses}
 \end{figure}
 
@@ -124,7 +124,7 @@ presented user interfaces
   \end{mdframed}
 \end{description}  
   
-This cite by \citeauthor{nelson1977home} introduced the problems that designing 
+\citeauthor{nelson1977home} introduced the problems that designing 
 a product entails. One of the most significant issues to face during this process 
 is the usability. According to the \acs{iso}/\acs{iec} 9126 standard~\citep{isoiec1}, 
 quality represents a property of the software product defined in terms of a set 
@@ -232,9 +232,8 @@ as appears in~\citep{heckmann_ubiquitous_2005}.}
 \end{figure}
 
 Figure~\ref{fig:heckmann} represents a conceptual view of the theory of user 
-modelling with integrated context-awareness. In it there are a model acquisition
-and model application information flows. From an \ac{ai} perspective, 
-\citeauthor{heckmann_ubiquitous_2005} considers that the input data concerning 
+modelling with integrated context-awareness. The figure presents model acquisition 
+and model application information flows. From an \ac{ai} perspective, \citeauthor{heckmann_ubiquitous_2005} considers that the input data concerning 
 the user and input data concerning the context are processed upward, as an 
 inference step. This is what the author calls model acquisition. On the contrary,
 the model application works downward, calculating a new hypothesis about the user
@@ -250,17 +249,20 @@ would be impossible to reach in natural conditions.
 \subsection{Definitions}
 \label{sec:definitions}
 
-In this section several significant definitions related to AdaptUI and user 
-interface adaptation are given. Thus, the reading of the dissertation will be 
-easier to understand.
+During this dissertation several concepts are often named and referenced. Thus,
+in this section these concepts, related to AdaptUI and user interface adaptation,
+are defined. 
+% As Chapter~\ref{cha:state_of_the_art} introduces other remarkable
+% concepts a complete list of definitions is given in Chapter~\ref{cha:list_of_definitions}.
 
 \begin{description}
   \item[\Defi{User}] \hfill \\
   \begin{mdframed}[hidealllines=true,backgroundcolor=gray!20]
-  As the main entity of the AdaptUI ecosystem, users are understood as individuals
-  who have a set of interaction based characteristics. These characteristics might
-  represent capabilities or even disabilities, but trough a semantic model which
-  avoids the explicit representation of such concepts. 
+  As the main entity of the AdaptUI ecosystem, a user is understood as an individual
+  who has a set of characteristics which define the interaction. These characteristics 
+  might represent \textit{capabilities} or \textit{disabilities}. AdaptUI represents 
+  a user entity trough a semantic model which avoids the explicit representation 
+  of such concepts. 
   \end{mdframed}
 
   \item[\Defi{Context (I), by~\citet{dey_understanding_2001}}] \hfill \\
@@ -269,16 +271,16 @@ easier to understand.
   situation of an entity. An entity is a person, place, or object that is 
   considered relevant to the interaction between a user and an application, 
   including the user and applications themselves''}. Context represents the 
-  second main entity in the AdaptUI environment. In this dissertation we take
-  this definition, as we believe it is the most popular definition regarding 
-  the literature. As users and devices, context is semantically represented as 
-  a set of characteristics which defines the current situation.
+  second main entity in the AdaptUI environment. In this dissertation this 
+  definition of context is considered, as it is the most popular definition 
+  regarding the literature. As the user and the device, context is semantically 
+  represented as a set of characteristics which defines the current situation.
   \end{mdframed}
   
   \item[\Defi{Device}] \hfill \\
   \begin{mdframed}[hidealllines=true,backgroundcolor=gray!20]
-  As the third entity in the AdaptUI ecosystem, devices represent the Android 
-  based devices that users manipulate within the AdaptUI context. Devices are
+  As the third entity in the AdaptUI ecosystem, the device represents the Android 
+  based device that the user manipulates within the AdaptUI context. Devices are
   also understood as a series of characteristics which identify them, including
   both software and hardware related.
   \end{mdframed}
@@ -296,10 +298,10 @@ easier to understand.
   dissertation several adaptable approaches and solutions are analysed (more
   concretely in Chapter~\ref{cha:state_of_the_art}), the final goal of the 
   presented framework is to be adaptive.}. Hence, two definitions remarking the 
-  differences between these two concepts are given by \citeauthor{fischer_user_2001}:
+  differences between these two concepts are given by~\citeauthor{fischer_user_2001}:
   
   % \mydef{Environment}
-  \item[\Defi{Adaptable user interface}] \hfill \\
+  \item[\Defi{Adaptable user interface, by~\citep{fischer_user_2001}}] \hfill \\
   \begin{mdframed}[hidealllines=true,backgroundcolor=gray!20]
   In this dissertation we assume that adaptable user interfaces, as 
   as~\citet{fischer_user_2001} defines them, are those that change due to the 
@@ -307,7 +309,7 @@ easier to understand.
   shape or behaviour without the explicit user specification.
   \end{mdframed}
 
-  \item[\Defi{Adaptive user interface}] \hfill \\
+  \item[\Defi{Adaptive user interface, by~\citep{fischer_user_2001}}] \hfill \\
   \begin{mdframed}[hidealllines=true,backgroundcolor=gray!20]
   On the contrary, related to the previous definition, adaptive user interfaces
   have the ability to dynamically adapt themselves to the current task and user,
