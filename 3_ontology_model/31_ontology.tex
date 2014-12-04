@@ -186,7 +186,7 @@ called \textit{Entities Model}, and it is detailed in Section~\ref{sec:entities_
 
 \begin{figure}
 \centering
-\includegraphics[width=0.75\textwidth]{../figures/PDF/entities_characteristics}
+\includegraphics[width=0.90\textwidth]{../figures/PDF/entities_characteristics}
 \caption{\textit{User},
 \textit{Context} and \textit{Device} classes (in yellow) and their main object
 relationships. As is shown, these classes are defined by their corresponding
@@ -274,9 +274,9 @@ Model, which is a conceptual group within the whole AdaptUIOnt model.
 Figure~\ref{fig:entities_characteristics} shows the set of classes which form
 the Entities Model.
 
-\begin{figure}[H]
+\begin{figure}
 \centering
-\includegraphics[width=1.0\textwidth]{../figures/PDF/user_characteristics_class.pdf}
+\includegraphics[width=0.85\textwidth]{../figures/PDF/user_characteristics_class.pdf}
 \caption{The \textit{User} and the \textit{UserCharacteristics} classes.}
 \label{fig:user_characteristics_class}
 \end{figure}
@@ -376,49 +376,40 @@ represented through the following classes:
   \hline 
   \textbf{Subclass} 	& \textbf{Property name} 	& \textbf{Description}							\\
   \hline
-  \textit{Interface}	& \textit{interfaceHasInput}	& This property models the possible input				\\
-			& 				& methods for the user with the following		 		\\
-			& 				& possibilities: \textit{gestures}, \textit{haptic}, \textit{voice\_control},\\
-			&				& \textit{sensory}, \textit{only\_haptic}, \textit{only\_voice\_control}.\\
+  \textit{Interface}	& \textit{interfaceHasInput}	& This property models the possible input methods for the		\\
+			& 				& user with the following possibilities: \textit{gestures}, \textit{haptic},\\
+			& 				& \textit{voice\_control}, \textit{sensory}, \textit{only\_haptic}, \textit{only\_voice\_control}.\\
 			& \textit{interfaceHasLanguage}	& Describes to define the desired language. 				\\
-			& \textit{interfaceHasOutput}	& This property models the possible output  				\\
-			& 				& methods for the user with the following 				\\
-			& 				& possibilities: \textit{standard} (images, text, video  		\\
-			&				& and sound), \textit{only\_audio}, \textit{only\_text}. 		\\
+			& \textit{interfaceHasOutput}	& This property models the possible output  methods for 		\\
+			& 				& the user with the following possibilities: \textit{standard}  	\\
+			& 				& (images, text, video and sound), \textit{only\_audio}, \textit{only\_text}.	\\
   
-  \textit{Audio}	& \textit{audioHasApplicable}	& Describes if audio interaction is applicable				\\ 
-			& 				& for the user. If \textit{false}, we infer that the user		\\
-  			& 				&  might suffer from some hearing problems.				\\
+  \textit{Audio}	& \textit{audioHasApplicable}	& Describes if audio interaction is applicable for the user. 		\\ 
+			& 				& If \textit{false}, we infer that the user might suffer from		\\
+  			& 				& some hearing problems.						\\
   			& \textit{audioHasFrequency}	& Represents the preferred audio frequency. 				\\
   			& \textit{audioHasPitch}	& Describes the preferred pitch. 					\\
-  			& \textit{audioHasVolume}	& Represents value which points out the 				\\
-  			&				& desired audio volume.							\\
+  			& \textit{audioHasVolume}	& Represents value which points out the desired audio 			\\
+  			&				& volume.								\\
   			
-  \textit{Display}	& \textit{displayHasApplicable}	& Describes the capability of the user to 				\\
-			& 				& interact with the display. If \textit{false} we might 		\\
-			& 				& understand that the user suffers from a 	 			\\
-			&				& sight disability.							\\
-			& \textit{displayHasBrightness}	& Represents value representing the 	 				\\
-			&				& brightness value.							\\
+  \textit{Display}	& \textit{displayHasApplicable}	& Describes the capability of the user to interact with			\\
+			& 				& the display. If \textit{false} we might understand that the user 	\\
+			& 				& suffers from a sight disability.		 			\\
+			& \textit{displayHasBrightness}	& Represents value representing the brightness value.			\\
 			& \textit{displayHasContrast}	& Describes indicating the contrast value.				\\
-			& \textit{displayHasMagnification}& Represents value which represents the 		 		\\ 
-			&				& magnification degree needed for the user	 			\\
-			&				& to properly see the display.						\\
+			& \textit{displayHasMagnification}& Represents value which represents the magnification			\\ 
+			&				& degree needed for the user to properly see the display.		\\
 			& \textit{displayHasOrientation}& Describes two options: \textit{landscape} or \textit{portrait}.  	\\
-			& 				& This parameter indicates the preferred display 		 	\\
+			& 				& This parameter indicates the preferred display 	 		\\
 			&				& orientation for the user.						\\
   
-  \textit{Experience}	& \textit{userHasExperience}	& A set of possible values to describe user’s 		 		\\
-			& 				& experience with technology: \textit{standard}, 		 	\\
-			&				& \textit{advanced}, \textit{not\_applicable}.				\\
+  \textit{Experience}	& \textit{userHasExperience}	& A set of possible values to describe user's experience 		\\
+			& 				& qith technology: \textit{standard}, \textit{advanced}, \textit{not\_applicable}.\\
   
-  \textit{View}		& \textit{viewHasColor}		& Describes the colour for the view 					\\
-			& 				& background.								\\
-			& \textit{viewHasWidth}		& Represents value to determine the width of 				\\
-			&				& the view.								\\
+  \textit{View}		& \textit{viewHasColor}		& Describes the colour for the view background.				\\
+			& \textit{viewHasWidth}		& Represents value to determine the width of the view.			\\
 			& \textit{viewHasHeight}	& Describes the height of the view.					\\
-			& \textit{viewHasTextColor}	& Represents value representing the colour 				\\
-			&				& for the text.								\\
+			& \textit{viewHasTextColor}	& Represents value representing the colour for the text.		\\
 			& \textit{viewHasTextSize}	& Represents value representing the text size.				\\
   \hline 
 \caption{UserCharacteristics data properties}
