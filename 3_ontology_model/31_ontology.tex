@@ -348,7 +348,7 @@ represented through the following classes:
   
   \item \textit{View}: User interfaces are composed of different views (\acs{gui} 
   elements) that are combined for representing different applications and services. 
-  For each of these views (e.g., a Button) the model considers several properties 
+  For each of these views (e.g., a button) the model considers several properties 
   that the user can configure (i.e., size and colours). For example, users with 
   colour blindness can change the colours of the components before any adaptation 
   to specify the set of colours they are able to distinguish, or adjust a 
@@ -470,16 +470,16 @@ of the \textit{ContextCharacteristics} class.
 \centering
  \begin{tabular}{l l l}
   \hline 
-  \textbf{Subclass} 	& \textbf{Property name} 	& \textbf{Description}					\\
+  \textbf{Subclass} 	& \textbf{Property name} 	& \textbf{Description}		\\
   \hline
-  \textit{Location}	& \textit{hasRelativeLocation}	& Represents relative locations.			\\
-			& \textit{hasAbsoluteLocation}	& Describes \textit{longitude} and \textit{latitude}.	\\
-  \textit{Light}	& \textit{contextHasLight}	& Describes the amount of \ac{lx} 		\\
-			& 				& in the environment.						\\
-  \textit{Noise}	& \textit{contextHasNoise}	& Represents the amount of \acp{db}  		\\
-			& 				& in the environment.					\\
-  \textit{Time}		& \textit{hasTimeValue}		& The current time.					\\
-  \textit{LimitingConditions}& \textit{hasMovementRestriction}&							\\
+  \textit{Location}	& \textit{hasRelativeLocation}	& Represents relative locations.\\
+			& \textit{hasAbsoluteLocation}	& Describes \textit{longitude} and \textit{latitude}.\\
+  \textit{Light}	& \textit{contextHasLight}	& Describes the amount of \ac{lx}\\
+			& 				& in the environment.		\\
+  \textit{Noise}	& \textit{contextHasNoise}	& Represents the amount of \acp{db}\\
+			& 				& in the environment.		\\
+  \textit{Time}		& \textit{hasTimeValue}		& The current time.		\\
+  \textit{LimitingConditions}& \textit{hasMovementRestriction}&				\\
   \hline
   
 \end{tabular}
@@ -520,13 +520,13 @@ of the \textit{DeviceCharacteristics} class.
   \textbf{Subclass} 	& \textbf{Property name} 	& \textbf{Description}		\\
   \hline
   \textit{Brightness}	& \textit{deviceHasBrightness}	& Describes the current		\\
-			& 				& device’s brightness.		\\
+			& 				& device's brightness.		\\
   \textit{Contrast}	& \textit{deviceHasContrast}	& Represents the current 	\\
-  			& 				& device’s contrast.		\\
+  			& 				& device's contrast.		\\
   \textit{Volume}	& \textit{deviceHasVolume}	& Describes the current		\\
-   			& 				& device’s volume.		\\
+   			& 				& device's volume.		\\
   \textit{Processor}	& \textit{deviceHasHWCores}	& Models the number 		\\
-			& 				& of the device’s cores.	\\
+			& 				& of the device's cores.	\\
   \textit{OS}		& \textit{deviceOSHasVersion}	& Indicates the current		\\
 			& 				& \ac{os} version.		\\
   \textit{Acceleration}	& \textit{deviceHasAcceleration}& Represents the current 	\\
@@ -571,22 +571,22 @@ Table~\ref{tbl:adaptation_properties} shows the datatype properties of the
 						& configured in the device. 			\\
   \textit{adaptationVolumeHasValue}		& Represents the final volume value to be 	\\
 						& configured in the device. 			\\
-  \textit{adaptationButtonHasSize}		& Describes the final size value for a Button. 	\\
+  \textit{adaptationButtonHasSize}		& Describes the final size value for a button. 	\\
   \textit{adaptationButtonHasBackgroundColor}	& Represents the final background colour for 	\\
-						& a Button.					\\
-  \textit{adaptationButtonHasTextSize}		& Describes the final text size for a Button.	\\
-  \textit{adaptationButtonHasTextColor}		& Represents the final text colour for a Button.\\
-  \textit{adaptationEditTextHasSize}		& Describes the final size value for a EditText.\\
+						& a button.					\\
+  \textit{adaptationButtonHasTextSize}		& Describes the final text size for a button.	\\
+  \textit{adaptationButtonHasTextColor}		& Represents the final text colour for a button.\\
+  \textit{adaptationEditTextHasSize}		& Describes the final size value for a edit text.\\
   \textit{adaptationEditTextHasBackgroundColor}	& Represents the final background colour for 	\\ 
-						& a EditText.					\\
-  \textit{adaptationEditTextHasTextSize}	& Describes the final text size for a EditText.	\\
-  \textit{adaptationEditTextHasTextColor}	& Represents the final text colour for a EditText.\\
-  \textit{adaptationTextViewHasSize}		& Describes the final size value for a TextView.\\
+						& a edit text.					\\
+  \textit{adaptationEditTextHasTextSize}	& Describes the final text size for a edit text.\\
+  \textit{adaptationEditTextHasTextColor}	& Represents the final text colour for a edit text.\\
+  \textit{adaptationTextViewHasSize}		& Describes the final size value for a text view.\\
   \textit{adaptationTextViewHasBackgroundColor}	& Represents the final background colour for 	\\
-						& a TextView.					\\
-  \textit{adaptationTextViewHasTextSize}	& Represents the final text size for a TextView.\\
+						& a text view.					\\
+  \textit{adaptationTextViewHasTextSize}	& Represents the final text size for a text view.\\
   \textit{adaptationTextViewHasTextColor}	& Describes the final text colour for 		\\
-						& a TextView.		 			\\
+						& a text view.		 			\\
   \hline
   
 \end{tabular}
@@ -636,7 +636,7 @@ Thus, several hypothetical scenarios were studied:
  library, a hospital or in an exam), an audio interaction based communication
  could not be appropriate. 
  
- \item A user who sees perfectly well interacts with the application’s
+ \item A user who sees perfectly well interacts with the application's
  default user interface. If we avoid a situation in which the user is driving
  a visual/touch based adaptation could put the user in risk, as he/she would
  need to look at the display and use his/her hands.
@@ -719,57 +719,44 @@ is discussed in the Future Work section (see Section~\ref{sec:future_work}).
 \begin{longtable}{l l l}
   \label{tbl:aux_classes_data_properties} \\
   \hline 
-  \textbf{Class} 	& \textbf{Property name} 		& \textbf{Description}			\\
+  \textbf{Class} 	& \textbf{Property name} 		& \textbf{Description}					\\
   \hline
-  \textit{UserAux}	& \textit{userAuxDIsplayHasApplicable}	& Models the applicability of display 	\\
-			& 					& adaptations for the user. There are 	\\
-			& 					& two different scenarios: 1) in the 	\\
-			& 					& first one, the user might suffer  	\\
-			&					& from a disability that makes 		\\
-			&					& impossible for him/her to interact 	\\
-			&					& with a display. In this case Display 	\\
-			& 					& is not applicable for this user; 2)	\\
-			& 					& on the contrary, the user can specify	\\
-			&					& that he/she does not want the display	\\
-			& 					& to be adapted. In any case the value 	\\
-			&					& of this property will determine if  	\\	
-			& 					& the rules need to consider Display.	\\
-			& \textit{userAuxAudioHasApplicable}	& Similar to the previous property, 	\\
-			& 					& this one has the same effect for 	\\
-			&					& audio adaptations.			\\
-			& \textit{userAuxHasDisplayBrightness}	& Depending on the value of the 	\\
-			&					& \textit{UserCharacteristics}:		\\
-			& 					& \textit{userDisplayBrightnessIsStatic}\\
-			&					& property, the corresponding rule 	\\
-			& 					& will update this value indicating if 	\\
-			& 					& the brightness should be considered 	\\
-			&					& for the adaptation process.		\\
-			& \textit{userAuxHasExperience}		& Represents user’s experience with 	\\
-			& 					& technology: \textit{easy}, \textit{expert}, \textit{not\_possible}, 	\\
-			&					& \textit{standard}.			\\
-			& \textit{userAuxHasRestriction}	& User's activities are considered for	\\
-			&					&  adaptation. Hence, a Boolean	\\
-			& 					& value is modelled in this property 	\\
-			& 					& to indicate so.			\\
-  \textit{ContextAux}	& \textit{contextAuxHasLightLevel}	& Represents several light classifications: 				\\
-			& 					& \textit{clear\_night}, \textit{dark\_overcast}, \textit{daylight}, 	\\
-			& 					& \textit{direct\_sunlight}, \textit{living\_room},  			\\
-			& 					& \textit{moonless\_clear}, \textit{moonless\_overcast},  		\\ 
-			& 					& \textit{office\_hallway}, \textit{office\_lightning}, 		\\
-			&					& \textit{overcast\_day}, \textit{sunrise}, \textit{twilight} 		\\
-			& \textit{contextAuxHasNoiseLevel}	& Represents several noise 		\\
-			&					& classifications:			\\
-			&					& \textit{absolute\_threshold\_of\_hearing}, 				\\
-			& 					& \textit{breathing}, \textit{building\_work}, \textit{conversation}, 	\\
-			& 					& \textit{factory}, \textit{gig}, \textit{jackhammer}, 			\\ 
-			& 					& \textit{leaves\_murmuring}, \textit{library}, \textit{office}, 	\\
-			&					& \textit{traffic}, \textit{train}, \textit{truck}, \textit{whispering}.\\
-  \textit{DeviceAux}	& \textit{deviceAuxBatteryIsSufficient}& Based in Table~\ref{tbl:batteries}, indicates \\
-  			& 					& whether the adaptation should be   	\\
-  			& 					& performed considering the current 	\\
-  			&					& battery level.			\\
-  			& \textit{deviceAuxHasBrightness}	& Describes the current brightness 	\\
-  			& 					& level of the device’s screen.		\\
+  \textit{UserAux}	& \textit{userAuxDIsplayHasApplicable}	& Models the applicability of display adaptations for	\\
+			& 					& the user. There are two different scenarios: 1) in 	\\
+			& 					& the first one, the user might suffer from a 	\\
+			&					& disability that makes impossible for him/her to	\\
+			&					& interact with a display. In this case \textit{Display}\\
+			& 					& is not applicable for this user; 2) on the contrary,	\\
+			& 					& the user can specify that he/she does not want the 	\\
+			& 					& display to be adapted. In any case the value of this	\\
+			&					& property will determine if the rules need to consider	\\	
+			& 					& \textit{Display}.					\\
+			& \textit{userAuxAudioHasApplicable}	& Similar to the previous property, this one has the	\\
+			& 					& same effect for audio adaptations.			\\
+			& \textit{userAuxHasDisplayBrightness}	& Depending on the value of the \textit{UserCharacteristics}:\\
+			& 					& \textit{userDisplayBrightnessIsStatic} property, the 	\\
+			&					& corresponding rule will update this value indicating 	\\
+			& 					& if the brightness should be considered for the 	\\
+			&					& adaptation process.					\\
+			& \textit{userAuxHasExperience}		& Represents user's experience with technology: \textit{easy},\\
+			& 					& \textit{expert}, \textit{not\_possible}, \textit{standard}.\\
+			& \textit{userAuxHasRestriction}	& User's activities are considered for adaptation. 	\\
+			&					& Hence, a Boolean value is modelled in this property 	\\
+			& 					& to indicate so.					\\
+  \textit{ContextAux}	& \textit{contextAuxHasLightLevel}	& Represents several light classifications: \textit{clear\_night},				\\
+			& 					& \textit{dark\_overcast}, \textit{daylight}, \textit{direct\_sunlight}, \textit{living\_room}, \\
+			& 					& \textit{moonless\_clear}, \textit{moonless\_overcast}, \textit{office\_hallway}, 		\\ 
+			& 					& \textit{office\_lightning}, \textit{overcast\_day}, \textit{sunrise}, \textit{twilight}.	\\
+			& \textit{contextAuxHasNoiseLevel}	& Represents several noise classifications:							\\
+			&					& \textit{absolute\_threshold\_of\_hearing}, \textit{breathing}, 				\\
+			& 					& \textit{building\_work}, \textit{conversation}, \textit{factory},  				\\ 
+			& 					& \textit{gig}, \textit{jackhammer}, \textit{leaves\_murmuring}, \textit{library},  		\\
+			&					& \textit{office},  \textit{traffic}, \textit{train}, \textit{truck}, \textit{whispering}.	\\
+  \textit{DeviceAux}	& \textit{deviceAuxBatteryIsSufficient}	& Based in Table~\ref{tbl:batteries}, indicates whether the \\
+  			& 					& adaptation should be performed considering the 	\\
+  			&					& current battery level.				\\
+  			& \textit{deviceAuxHasBrightness}	& Describes the current brightness level of the device's\\
+  			& 					&  screen.						\\
   \hline
 \caption{Auxiliary classes' data properties.}\\
 \end{longtable}
