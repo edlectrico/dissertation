@@ -51,19 +51,7 @@ def autolabel(rects):
 autolabel(rects1)
 autolabel(rects2)
 autolabel(rects3)
-"""
-for t, a in zip(x, minor_50):
-    plt.plot([t], [a], 'b',)
-    plt.annotate(round(a, 3), xy=(t, a), xytext=(t + 0.01, a + 0.01), color='black')
 
-for t, a in zip(x, from_50_to_70):
-    plt.plot([t], [a], 'b',)
-    plt.annotate(round(a, 3), xy=(t, a), xytext=(t + 0.01, a + 0.01), color='black')
-
-for t, a in zip(x, bigger_70):
-    plt.plot([t], [a], 'b',)
-    plt.annotate(round(a, 3), xy=(t, a), xytext=(t + 0.01, a + 0.01), color='black')
-"""
 #save plot
 plt.savefig('sus_developers.pdf')
 
