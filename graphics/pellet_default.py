@@ -6,7 +6,7 @@ import numpy as np
 
 
 #define some data
-x = [1, 2, 3, 4]
+x = [1]
 pc_mean = [0.946] 
 s3mini_mean = [2.764] 
 s3_mean = [1.649] 
@@ -19,7 +19,7 @@ s3_error = [0.076]
 nexus10_error = [0.205]
 
 ind = np.arange(1)  # the x locations for the groups
-width = 0.15        # the width of the bars
+width = 0.25        # the width of the bars
 
 fig, ax = plt.subplots()
 #plot data

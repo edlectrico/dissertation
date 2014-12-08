@@ -62,7 +62,7 @@ John is going home after work. He lives and works in Rovaniemi, one of the
 northernmost and coldest regions in Finland. As can be seen in 
 Table~\ref{tbl:scenario1}, John does not suffer from any disability. He removes
 his gloves and then he proceeds to send a \ac{sms} to his wife. The current 
-temperature is $-10$~ºC.
+temperature is -10~ºC.
 
 \begin{table}
  \caption{Scenario 1 situation summary.}
@@ -74,19 +74,19 @@ temperature is $-10$~ºC.
 				& \textbf{Scenario 1} 		\\
   \hline
   User \\
-  \qquad - Personal data 	& John, $36$ years old, Finnish 	\\
+  \qquad - Personal data 	& John, 36 years old, Finnish 	\\
   \qquad - Activity	 	& Sending a \ac{sms}		 	\\
   \qquad - Known disabilities 	& None			 	\\
 %   \hline
   Context \\
   \qquad - Location 		& Relative: Rovaniemi, Finland	\\
-				& Absolute: $66.497109$, $25.724977$\\
-  \qquad - Time			& $18$:$35$				\\
-  \qquad - Brightness		& $600$ \ac{lx}			\\
-  \qquad - Temperature		& $-10$ ºC			\\
+				& Absolute: 66.497109, 25.724977\\
+  \qquad - Time			& 18:35				\\
+  \qquad - Brightness		& 600 \ac{lx}			\\
+  \qquad - Temperature		& -10 ºC			\\
 %   \hline
   Device 			& Samsung Galaxy SIII		\\
-				& Battery: $85$\%			\\
+				& Battery: 85\%			\\
   \hline
 \end{tabular}
 \end{table}
@@ -113,7 +113,7 @@ model, carried out by the Semantic Modeller, that fits John’s profile.
   \textit{Audio}  & \textit{userDisplayApplicableIsStatic}  & false	\\
 		  & \textit{userAudioHasApplicable} 	    & true 	\\
 		  & \textit{userAudioApplicableIsStatic}    & false 	\\
-		  & \textit{userAudioHasVolume}  	    & $4$ 	\\
+		  & \textit{userAudioHasVolume}  	    & 4 	\\
   \textit{Interface}& \textit{userInterfaceInput}	    & haptic	\\
 		  & \textit{userInterfaceOutput} 	    & default	\\
   \textit{Experience}& \textit{userHasExperience} 	    & high	\\
@@ -191,7 +191,7 @@ adaptation is shown in Table~\ref{tbl:final_adaptation_scenario1}:
   \hline
   \textit{hasBrightness}& -		\\
   \textit{hasColourSet}	& -		\\
-  \textit{hasViewSize}	& $10$		\\
+  \textit{hasViewSize}	& 10		\\
   \textit{hasResponse}	& vibration	\\
   \hline
 \end{tabular}
@@ -203,7 +203,7 @@ enough or if another adaptation should be triggered. There are also a few rules
 which take into account the device’s dynamic capabilities. The remaining 
 memory, available processor and battery are monitored in order to avoid 
 adaptations that could freeze the device or consume the remaining power. As is 
-shown in Table~\ref{tbl:battery}, battery levels under $10$\% are considered too 
+shown in Table~\ref{tbl:battery}, battery levels under 10\% are considered too 
 low to perform an adaptation.
 
 \begin{table}
@@ -215,9 +215,9 @@ low to perform an adaptation.
   \hline 
   \textbf{Battery (\%)} & \textbf{Ontology values}	\\
   \hline
-  $ x \leq 10 $		& \textit{not\_sufficient}	\\
-  $ x 10 < x \leq 50 $	& \textit{sufficient} 		\\
-  $ x 50 < x \leq 100 $	& \textit{optimal}		\\
+   $x \leq$ 10 		& \textit{not\_sufficient}	\\
+   $x$ 10 $< x \leq$ 50 	& \textit{sufficient} 		\\
+   $x$ 50 $< x \leq$ 100 	& \textit{optimal}		\\
   \hline
 \end{tabular}
 \end{table}
@@ -329,7 +329,7 @@ summarized in Table~\ref{tbl:scenario2}.
 				& \textbf{Scenario 2}		\\
   \hline
   User \\
-  \qquad - Personal data 	& Karen, $60$ years old, German \\
+  \qquad - Personal data 	& Karen, 60 years old, German \\
   \qquad - Activity	 	& Driving 			\\
   \qquad - Known disabilities 	& Colour blindness 		\\
 				& Hearing loss 			\\
@@ -337,9 +337,9 @@ summarized in Table~\ref{tbl:scenario2}.
   Context \\
   \qquad - Location 		& Relative: Berlin, Germany  	\\
 				& 				\\
-  \qquad - Time			& $11$:$10$ 			\\
-  \qquad - Brightness		& $1,100$ \ac{lx} 		\\
-  \qquad - Temperature		& $15$ ºC 			\\
+  \qquad - Time			& 11:10 			\\
+  \qquad - Brightness		& 1,100 \ac{lx} 		\\
+  \qquad - Temperature		& 15 ºC 			\\
 %   \hline
   Device 			& Samsung Galaxy Tab 	 	\\
 % 				& 				\\	
@@ -367,7 +367,7 @@ Table~\ref{tbl:user_profile_scenario2}.
   Audio   & \textit{userDisplayApplicableIsStatic}& true		\\
 	  & \textit{userAudioHasApplicable} 	   & true		\\
 	  & \textit{userAudioApplicableIsStatic}   & false		\\
-	  & \textit{userAudioHasVolume}  	   & $4$ 		\\
+	  & \textit{userAudioHasVolume}  	   & 4 		\\
  Interface& \textit{userInterfaceInput}		   & default		\\
 	  & \textit{userInterfaceOutput} 	   & default		\\
 Experience& \textit{userHasExperience} 		   & low		\\
@@ -427,10 +427,10 @@ Table~\ref{tbl:final_adaptation_scenario2}:
     \textbf{Adaptation} 	& \textbf{Value} 	\\
     \hline
     \textit{hasColourSet}	& Colour blindness 	\\
-    \textit{hasViewSize}	& $20$ 			\\
+    \textit{hasViewSize}	& 20 			\\
     \textit{hasInput}		& Voice and haptic	\\
     \textit{hasOutput}		& Visual and audio	\\
-    \textit{hasVolume}		& $7$ (max) 		\\
+    \textit{hasVolume}		& 7 (max) 		\\
   \hline
 \end{tabular}
 \end{table}
@@ -580,18 +580,18 @@ problems to hear the text read by the mobile device.
 				& \textbf{Scenario 3}		\\
   \hline
   User \\
-  \qquad - Personal data 	& Patrick, $25$ years old, British\\
+  \qquad - Personal data 	& Patrick, 25 years old, British\\
   \qquad - Activity	 	& 				\\
   \qquad - Known disabilities 	& Sight disability		\\
 %   \hline
   Context \\
   \qquad - Location 		& Relative: London, United Kingdom\\
-  \qquad - Time			& $12$:$00$			\\
-  \qquad - Brightness		& $20,000$ \ac{lx}		\\
-  \qquad - Temperature		& $14$ ºC			\\
+  \qquad - Time			& 12:00			\\
+  \qquad - Brightness		& 20,000 \ac{lx}		\\
+  \qquad - Temperature		& 14 ºC			\\
 %   \hline
   Device 			& Samsung Galaxy Ace		\\
-				&  Battery: $55$\%		\\	
+				&  Battery: 55\%		\\	
   \hline
 \end{tabular}
 \end{table}
@@ -605,7 +605,7 @@ indicating that the Display is not applicable, and that its configuration
 should not be adapted (because in this case it is not necessary, as Patrick is 
 blind). Therefore, the adaptation should result into a promotion of an 
 alternative channel, so the user would be able to interact alternatively and 
-perform the same tasks. The volume value configured by Patrick is defined as $4$. 
+perform the same tasks. The volume value configured by Patrick is defined as 4. 
 This is because the user considers that this value is enough to clearly hear 
 the device's voice. Nevertheless, Patrick knows that this should not be an 
 static value, as when he is in the street sometimes that value does not allow 
@@ -627,7 +627,7 @@ property is modelled as false.
   Audio 	& \textit{userDisplayApplicableIsStatic}& true	\\
 		& \textit{userAudioHasApplicable} 	& true	\\
 		& \textit{userAudioApplicableIsStatic} 	& false	\\
-		& \textit{userAudioHasVolume}  		& $4$ 	\\
+		& \textit{userAudioHasVolume}  		& 4 	\\
   Interface 	& \textit{userInterfaceInput}		& voice\_control\\
 		& \textit{userInterfaceOutput} 		& audio \\
   Experience	& \textit{userHasExperience} 		& default\\
@@ -680,7 +680,7 @@ becomes the best choice for interacting with the device.
   \textit{hasBrightness}& false		\\
   \textit{hasInput}	& voice 	\\
   \textit{hasResponse}	& vibration	\\
-  \textit{hasVolume}	& $7$ (max) 	\\
+  \textit{hasVolume}	& 7 (max) 	\\
   \hline
 \end{tabular}
 \end{table}

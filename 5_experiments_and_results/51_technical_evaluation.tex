@@ -5,7 +5,8 @@ The technical evaluation of this chapter includes several experiments that are
 carried out aiming to test the performance of the adaptation process. One of 
 the most important developed modules of AdaptUI is the Pellet reasoning 
 engine port for Android. This module requires special emphasis in the evaluation, 
-as leads the whole adaptation process. Besides, several other experiments are 
+as leads the whole adaptation process and manages the knowledge represented 
+through the AdaptUIOnt ontology. Besides, several other experiments are 
 presented. Thus, in the following sections these experiments and their results 
 are detailed:
 
@@ -20,7 +21,7 @@ are detailed:
   of the axioms sets. For more details of the \textit{Pellet4Android} mobile 
   reasoning engine see Section~\ref{sec:pellet4android}.
   
-  \item Second, AdaptUI is compared to another user adaptation solution: 
+  \item Secondly, AdaptUI is compared to another user adaptation solution: 
   Imhotep. This is detailed in Section~\ref{sec:imhotep_comparison}.
   
   \item Next, several scenarios are presented to evaluate the adaptation 
@@ -173,7 +174,7 @@ seconds, which is just approximately 0.7 slower than Pellet for Java.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.75\textwidth]{pellet_default.pdf}
+\includegraphics[width=0.80\textwidth]{pellet_default.pdf}
 \caption{Pellet and \textit{Pellet4Android} performance comparison using the
 default AdaptUIOnt ontology.}
 \label{fig:pellet_default}
@@ -242,7 +243,7 @@ and the Nexus 10 not more than 32.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\textwidth]{pellet_abox.pdf}
+\includegraphics[width=0.80\textwidth]{pellet_abox.pdf}
 \caption{Pellet and \textit{Pellet4Android} performance comparison using the
 AdaptUIOnt ontology increasing the ABox axioms set.}
 \label{fig:pellet_abox}
@@ -304,7 +305,7 @@ less than 200 seconds.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\textwidth]{pellet_swrl.pdf}
+\includegraphics[width=0.80\textwidth]{pellet_swrl.pdf}
 \caption{Pellet and \textit{Pellet4Android} performance comparison using the
 AdaptUIOnt ontology increasing the \ac{swrl} axioms set.}
 \label{fig:pellet_swrl}

@@ -24,9 +24,10 @@ semantics and reasoning, supported by an ontology which models user's
 characteristics, context current conditions and device's hardware and software 
 characteristics. In this chapter an evaluation of the designed ontology and the 
 semantic based platform which manages it is performed. This evaluation is 
-addressed through several experiments, regarding system performance with specific 
-operations (e.g., reasoning over a controlled set of rules), other alternatives 
-and, finally, analysing users' acceptance and feedback.
+addressed through several quantitative experiments regarding system performance 
+with specific operations (e.g., reasoning over a controlled set of rules), other 
+alternatives to adaptive user interfacing and, finally, analysing users' 
+acceptance and feedback.
 
 Consequently, this chapter is divided in two different parts considering the 
 experiments' goals. On one hand, an evaluation of the technical performance
@@ -35,17 +36,20 @@ qualitative experiments. It has been developed as follows:
 
 \begin{enumerate}[label=\alph*)]
   \item First, the developed mobile adaptation of the Pellet reasoning engine 
-  is tested through several scenarios. In these scenarios different   
-  modifications of the AdaptUIOnt ontology are presented in order to evaluate 
-  the performance differences of \textit{Pellet4Android} and Pellet.
+  is tested through several scenarios. In these scenarios different modifications 
+  of the AdaptUIOnt ontology are presented in order to evaluate the performance 
+  differences of \textit{Pellet4Android} and Pellet when dealing with different
+  designed ontologies.
   
-  \item Next, as the system goal is to adapt the user interface, a comparison 
+  \item Secondly, as the system's goal is to adapt the user interface, a comparison 
   with another user interface adaptation solution has been performed: the 
   Imhotep framework. Imhotep is a user interface adaptation framework which 
-  aims to ease the development of adaptable and more accessible user 
-  interfaces.
+  aims to ease the development of adaptable and more accessible user interfaces.
+%   ,
+%   and it is also the beginning of the experience we have in the user interface
+%   adaptation field.
   
-  \item Finally, several scenarios are presented in which the adaptation process
+  \item Next, several scenarios are presented in which the adaptation process
   of the AdaptUI system is described step by step, from the scenario conditions
   to the adaptation results. These scenarios have been divided into three 
   different groups, each group aiming to cover different types of adaptation 
@@ -60,12 +64,18 @@ qualitative experiments. It has been developed as follows:
     \item A final case in which several disabilities imped the user to interact 
     properly with the user interface.
   \end{itemize}
+  
+  \item Finally, the \acp{api} that AdaptUI provides are tested with Android
+  developers. The participating developers have to deal with the twofold purpose
+  of the AdaptUI \ac{api}. On the one hand, developers are requested to modify
+  the knowledge represented in a test version of the AdaptUIOnt ontology. On the
+  other hand, they have to implement an adaptive user interface in Android.
 \end{enumerate}
 
-On the other hand, an evaluation including actual users, without technical knowledge
+Besides, an evaluation including actual users, without technical knowledge
 requisites, is performed. This part of the evaluation is based on their user
 satisfaction when using AdaptUI. The scenario for this experiment includes the
-user and an Android based tutorial through which the user indicates several 
+user and an Android based tutorial through which the user calibrates several 
 interaction parameters. Taking into account different context situations, several 
 applications are adapted consequently. After the adaptation, the user is 
 requested to complete a questionnaire of usability. More concretely, the \ac{sus} 
