@@ -8,8 +8,8 @@ import numpy as np
 x = [1]
 #Developer   	Yes
 minor_50 = 	[0] 
-from_50_to_70 = [18.18181818] 
-bigger_70 = 	[72.72727273] 
+from_50_to_70 = [16.66666667] 
+bigger_70 = 	[75] 
 
 #error data
 #no error data
@@ -39,7 +39,7 @@ plt.ylabel('% of users' + '\n')
 plt.title('SUS results considering users being developers' + '\n')
 
 ax.set_xticklabels(  ('Developer users', '' ,'')  )
-ax.legend( (rects1[0], rects2[0], rects3[0]), ('<50', '>=50<x<70', '>=70') )
+ax.legend( (rects1[0], rects2[0], rects3[0]), ('SUS punctuation under 50 points', 'SUS punctuation between 50 and 70 points', 'SUS punctuation over or equal 70 points') )
 
 def autolabel(rects):
     # attach some text labels
