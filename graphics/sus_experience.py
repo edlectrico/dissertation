@@ -6,10 +6,10 @@ import numpy as np
 
 #data
 x = [1, 2, 3]
-#Experience	low,  	medium,  high
-minor_50 = 	[0, 		8.695652174,	   	0] 
-from_50_to_70 = [13.04347826,     0, 	  	8.695652174] 
-bigger_70 = 	[8.695652174,    13.04347826, 	  43.47826087] 
+#Experience	low,  		medium,  	high
+minor_50 = 	[0, 		6.666666667,	   	0] 
+from_50_to_70 = [20,     	3.333333333, 	  6.666666667] 
+bigger_70 = 	[10,	    	10, 	  		40] 
 #no_cached = [15.125, 15.115, 15.094] 
 
 #error data
@@ -40,7 +40,7 @@ plt.xlabel('Experience with technology' + '\n')
 plt.title('SUS results considering the user experience with technology' + '\n')
 
 ax.set_xticklabels(  ('low', 'medium', 'high')  )
-ax.legend( (rects1[0], rects2[0], rects3[0]), ('<50', '>=50<x<70', '>=70') )
+ax.legend( (rects1[0], rects2[0], rects3[0]), ('SUS punctuation under 50 points', 'SUS punctuation between 50 and 70 points', 'SUS punctuation over or equal 70 points') )
 
 def autolabel(rects):
     # attach some text labels
