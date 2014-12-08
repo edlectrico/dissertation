@@ -7,9 +7,9 @@ import numpy as np
 #data
 x = [1, 2]
 #Experience   visual, hearing
-minor_50 = 	[9.090909091, 	14.28571429] 
-from_50_to_70 = [27.27272727,   28.57142857] 
-bigger_70 = 	[63.63636364,   57.14285714] 
+minor_50 = 	[5.882352941, 	10] 
+from_50_to_70 = [41.17647059,   50] 
+bigger_70 = 	[52.94117647,   40] 
 
 #error data
 #no error data
@@ -39,7 +39,7 @@ plt.xlabel('User disabilities' + '\n')
 plt.title('SUS results considering possible disabilities indicated by the user' + '\n')
 
 ax.set_xticklabels(  ('visual', 'hearing')  )
-ax.legend( (rects1[0], rects2[0], rects3[0]), ('<50', '>=50<x<70', '>=70') )
+ax.legend( (rects1[0], rects2[0], rects3[0]), ('SUS punctuation under 50 points', 'SUS punctuation between 50 and 70 points', 'SUS punctuation over or equal 70 points') )
 
 def autolabel(rects):
     # attach some text labels
