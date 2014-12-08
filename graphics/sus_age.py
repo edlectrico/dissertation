@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #data
-x = [1, 2, 3, 4, 5]
+x = [1, 2, 3, 4]
 #Ages		>20,  	20-35,  		35-50, 		50-65, 		>65
-minor_50 = 	[0, 		0,	  4.347826087,	   	0, 	4.347826087] 
-from_50_to_70 = [0,    8.695652174, 	  4.347826087,	 4.347826087, 	4.347826087] 
-bigger_70 = 	[0,    43.47826087, 	  4.347826087,   17.39130435,	0] 
+minor_50 = 	[ 		0,	  3.333333333,	   	0, 	3.333333333] 
+from_50_to_70 = [    6.666666667, 	  3.333333333,	 6.666666667, 	13.33333333] 
+bigger_70 = 	[    36.66666667, 	  6.666666667,   16.66666667,	0] 
 #no_cached = [15.125, 15.115, 15.094] 
 
 #error data
@@ -17,7 +17,7 @@ bigger_70 = 	[0,    43.47826087, 	  4.347826087,   17.39130435,	0]
 #no_cached_err = [0.445, 0.492, 0.501]
 
 
-ind = np.arange(5)  # the x locations for the groups
+ind = np.arange(4)  # the x locations for the groups
 width = 0.25       # the width of the bars
 
 fig, ax = plt.subplots()
@@ -29,7 +29,7 @@ rects2 = ax.bar(ind+width, from_50_to_70, width, color='y')
 rects3 = ax.bar(ind+width+width, bigger_70, width, color='r')
 
 #configure  X axes
-plt.xlim(0, 5)
+plt.xlim(0, 4)
 plt.xticks(ind+width)
 
 #configure  Y axes
@@ -43,8 +43,8 @@ plt.xlabel('Age ranges' + '\n')
 #title
 plt.title('SUS results per age' + '\n')
 
-ax.set_xticklabels(  ('<20', '20-35', '35-50', '50-65', '>65')  )
-ax.legend( (rects1[0], rects2[0], rects3[0]), ('<50', '>=50<x<70', '>=70') )
+ax.set_xticklabels(  ('20-35', '35-50', '50-65', '>65')  )
+ax.legend( (rects1[0], rects2[0], rects3[0]), ('SUS punctuation under 50 points', 'SUS punctuation between 50 and 70 points', 'SUS punctuation over or equal 70 points') )
 
 def autolabel(rects):
     # attach some text labels
