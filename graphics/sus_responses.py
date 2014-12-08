@@ -6,8 +6,8 @@ figure(1, figsize=(6,6))
 ax = axes([0.1, 0.1, 0.8, 0.8])
 
 # The slices will be ordered and plotted counter-clockwise.
-labels = ['x<50', '50<=x<70', 'x>=70']
-fracs = [8.695652174, 21.73913043, 69.56521739]
+labels = ['SUS punctuation under 50 points', 'SUS punctuation between 50 and 70 points', 'SUS punctuation over or equal 70 points']
+fracs = [6.666666667, 30, 63.33333333]
 explode=(0.05, 0.05, 0.05)
 colors = ['yellowgreen', 'gold', 'lightskyblue']
 
@@ -18,7 +18,7 @@ patches = pie(fracs, explode=explode, autopct='%1.1f%%', colors=colors, startang
 
 #plt.pie(sizes, colors=colors, shadow=True)
 plt.axis('equal')
-plt.legend(labels, loc=(-0.05, 0.05), shadow=True)
+plt.legend(labels, loc=(-0.1, -0.1), shadow=False)
 #plt.savefig(name)
 
 plt.savefig('sus_responses.pdf')
