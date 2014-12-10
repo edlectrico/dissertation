@@ -5,9 +5,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #data
-x = [1, 2, 3, 4]
-#define some data
 x = [5000, 10000, 15000, 20000]
+#define some data
 pc_mean = [3.014, 3.903, 4.228, 4.539] 
 s3mini_mean = [59.412, 30.321, 86.975, 183.882] 
 s3_mean = [36.336, 16.471, 45.387, 97.151] 
@@ -20,7 +19,7 @@ s3_error = [0.668, 0.288, 0.729, 1.208]
 nexus10_error = [0.525, 0.291, 0.496, 0.588]
 
 ind = np.arange(4)  # the x locations for the groups
-width = 0.15       # the width of the bars
+width = 0.20       # the width of the bars
 
 fig, ax = plt.subplots()
 #plot data
@@ -45,7 +44,7 @@ plt.xlabel('Number of instances' + '\n')
 #plt.title('Resulting means by increasing the number of ABox axioms using Pellet and Pellet4Android' + '\n')
 
 ax.set_xticklabels( ('5,000', '10,000', '15,000', '20,000') )
-ax.legend( (rects1[0], rects2[0], rects3[0], rects4[0]), ('PC', 'Samsung Galaxy SIII Mini', 'Samsung Galaxy SIII', 'Nexus 10') )
+#ax.legend( (rects1[0], rects2[0], rects3[0], rects4[0]), ('PC (Pellet)', 'Samsung Galaxy SIII Mini', 'Samsung Galaxy SIII', 'Nexus 10') )
 
 def autolabel(rects):
     # attach some text labels
@@ -77,6 +76,6 @@ for t, a in zip(x, nexus10_mean):
 
 
 #save plot
-plt.savefig('pellet_abox.pdf')
+plt.savefig('pellet_abox_2.pdf')
 
 plt.show()

@@ -15,7 +15,7 @@ bigger_70 = 	[52.94117647,   40]
 #no error data
 
 ind = np.arange(2)  # the x locations for the groups
-width = 0.25       # the width of the bars
+width = 0.30       # the width of the bars
 
 fig, ax = plt.subplots()
 #plot data

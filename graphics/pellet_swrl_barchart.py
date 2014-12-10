@@ -20,7 +20,7 @@ s3_error = [0.869, 0.250, 1.699, 1.202]
 nexus10_error = [0.333, 1.312, 5.490, 2.749]
 
 ind = np.arange(4)  # the x locations for the groups
-width = 0.15       # the width of the bars
+width = 0.20       # the width of the bars
 
 fig, ax = plt.subplots()
 #plot data
