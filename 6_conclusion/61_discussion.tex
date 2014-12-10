@@ -1,48 +1,52 @@
 \section{Discussion}
 \label{sec:discussion}
 
-This thesis arises from a series of problems identified in 2010, when Imhotep
-was developed as a response to the observed demand of adaptive user interfaces 
-solutions for people with disabilities. Dealing with the available technology
-and analysed approaches a solution in which developers were given an \ac{api}
-for developing adaptive interfaces was designed. Based on preprocessor primitives,
-developers were able to include pieces of source code in which user interface
-configuration were completed with a user and a device profile. Those profiles
-were given by the potential users through another application.
+This thesis arises as remarked in the introduction from a series of problems 
+identified in 2010, when Imhotep was developed as a response to the observed 
+demand of adaptive user interfaces solutions for people with disabilities. 
+Dealing with the available technology and analysed approaches a solution in which 
+developers were given an \ac{api} for developing adaptive interfaces was designed. 
+Based on preprocessor primitives, developers were able to include pieces of source 
+code in which user interface configuration were completed with a user and a device 
+profile. Those profiles were given by the potential users through another 
+application.
 
-Imhotep was highly accepted by the scientific community. Several publications
+Imhotep was well accepted by the scientific community. Several publications
 were produced (as shown in Section~\ref{sec:publications}) and an award was 
 given based on the AssistedCity developed use case.
 
 However, in spite of the success of Imhotep, technology improvements regarding
-mobile devices bring new challenges and possibilities. Thus, from the weaknesses
-of Imhotep new solutions arose. These challenges were which conceived AdaptUI.
+mobile devices have brought new challenges and opportunities. Thus, from the 
+weaknesses of Imhotep new solutions arose. These challenges motivated and led
+this dissertation.
+
 
 First, a further analysis of the literature and state of the art in user 
 interface adaptation solutions was needed. The lack of mobile based user 
 interface adaptive solutions was identified. Besides, the current ongoing 
-software and hardware mobile devices improvements enhanced the design of a 
+software and hardware mobile devices' improvements enhanced the design of a 
 mobile platform.
 
 After taking the decision of using a mobile centred platform, the challenge of
-what and how to model arose. Based on our previous experience and on the reviewed
-literature a semantic model based on three entities was conceived. This model
-mainly combines user's interaction characteristics, a current context situation
-description, and different device's characteristics. As one of the identified
-problems in the analysed user adaptation platforms in the literature is their
-lack of independence from the considered domain, a semantic based design determined.
-This allows an easy method to represent the knowledge of the domain, extend it,
-share it, and adapt it to any desired sub-domain by just combining different 
-ontologies with the provided AdaptUIOnt.
+what and how to model interface adaptations arose. Based on our previous 
+experience and on the reviewed literature, a semantic model based on three 
+entities was designed. This model combines user's interaction characteristics, 
+the current context situation description, and different device's characteristics. 
+As one of the identified problems in the analysed user adaptation platforms in 
+the literature is their lack of independence from the considered domain, a 
+semantic based design was done. This allows an easy method to represent the 
+knowledge of the domain, extend it, share it, and adapt it to any desired 
+sub-domain by just combining different ontologies with the provided AdaptUIOnt.
 
 The combination of the two previous mentioned decisions brought a significant
-problem: the lack of available mobile based semantic reasoning engines. Therefore,
-as a technical contribution AdaptUI provides a mobile reasoning engine based on
-Pellet and compatible with Android. It is called \textit{Pellet4Android}, it is
-open source, and it provides support for \ac{owl} 2 and \ac{swrl} rules in Android.
+problem: the lack of readily available mobile-based semantic reasoning engines. 
+Therefore, as a technical contribution, AdaptUI provides a mobile reasoning engine 
+based on Pellet and compatible with Android. It is called \textit{Pellet4Android}, 
+it is open source, and it provides support for \ac{owl} 2 and \ac{swrl} rules in 
+Android.
 
 Once the semantic models and the mobile semantic infrastructure for reasoning
-were operative, the required architecture was design, as is shown in Figure~\ref{fig:architecture_discussion}.
+were operative, the required architecture was designed, as shown in Figure~\ref{fig:architecture_discussion}.
 
 \begin{figure}[H]
 \centering
@@ -52,8 +56,8 @@ were operative, the required architecture was design, as is shown in Figure~\ref
 \end{figure}
 
 Besides, in order to make AdaptUI accessible for developers, two main \acp{api}
-are provided. These \acp{api} aim to allow developers not only to adapt the
-user interfaces of their application, but also to adapt the whole AdaptUI platform
+are provided. These \acp{api} aim to allow developers not only to adapt their
+application's user interface, but also to adapt the whole AdaptUI platform
 to the domain they work with.
 
 % In this thesis several contributions have been provided: First, in 
@@ -151,20 +155,19 @@ Although AdaptUI has several benefits and it contributes with the mentioned
 completed goals, the presented platform has also several constraints:
 
 \begin{itemize}
-  \item Depending on the hardware of the used devices might lead into 
-  performance penalization if such devices have not the necessary computing
-  capabilities. Although the results presented in 
-  Chapter~\ref{cha:evaluation} brought promising references regarding device's 
-  processing capabilities, the less powered device is a Samsung Galaxy SIII Mini.
+  \item Depending on the hardware of the used devices performance penalties might
+  be identified if such devices have not the necessary computing capabilities.
+  However, the results presented in Chapter~\ref{cha:evaluation} brought promising 
+  results regarding device's common processing capabilities.
   
-  \item Although we have demonstrated that several temporary context 
+  \item Off-the-shelf, although we have demonstrated that several temporary context 
   disabilities and limitations are considerably reduced, people with 
   disabilities might still suffer several interaction problems. Thus, further 
   efforts are needed to improve and finalise the whole system. This issue is 
-  described in Section~\ref{sec:future_work}.
+  detailed in Section~\ref{sec:future_work}.
   
   \item Another limitation is that AdaptUI mostly considers disabilities based
-  on visual and hearing constraints. Although others have been studied (as motor
+  on visual and hearing constraints. Although others have been studied (e.g., motor
   disabilities), the experiments are difficult to carry out. This is also 
   detailed in Section~\ref{sec:future_work}, as we aim to cover more limitations 
   and experiment with such contexts.
