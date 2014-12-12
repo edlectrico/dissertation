@@ -72,16 +72,16 @@ that bound to each other.
 Android applications have to declare a Main activity. This activity is always
 presented to the user when launching the application for the first time. Besides,
 activities can start other activities storing their current status (if needed).
-An activity lifecycle is illustrated in Figure~\ref{fig:activity_lifecycle}.
+An activity lifecycle is illustrated in Figure~\ref{fig:activity_lifecycle}\footnote{\label{activities}http://developer.android.com/guide/components/activities.html}.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.55\textwidth]{activity_lifecycle.png}
-\caption{The activity lifecycle~\citep{activities}.}
+\caption{The activity lifecycle.}
 \label{fig:activity_lifecycle}
 \end{figure}
 
-Creating activities is easy. Extending the Activity class~\citep{activities},
+Creating activities is easy. Extending the Activity class\textsuperscript{\ref{activities}},
 a main callback method is needed to be implemented: the onCreate() method. The
 system always calls this method when creating an activity. In it, the essential
 components of the activity should be initialized. Besides, and before any
