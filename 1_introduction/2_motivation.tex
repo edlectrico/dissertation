@@ -100,7 +100,7 @@ presented in Chapter~\ref{cha:state_of_the_art} are strongly domain dependent.
 They rarely represent, for example, the influence of context variables in 
 the current domain to perform adaptations. 
 
-Therefore, there is a necessity of a solution for modelling every entity that
+Therefore, there is a necessity for a solution for modelling every entity that
 participates in an adaptive user interface environment and a methodology which
 permits dynamic adaptations of these entities based on their mutually affecting
 capabilities. This methodology will have to take into account several user
@@ -132,8 +132,8 @@ of interdependent attributes (i.e., usability, security, reliability, performanc
 complexity, readability, reusability) expressed at different levels of detail 
 and also taken into account the particular context of software use. At this 
 point, the \acs{iso} 9241-11 standard states that usability is the extent to 
-which a product can be used by specified users to achieve specified goals with 
-effectiveness, efficiency and satisfaction in a specified context of 
+which a product can be used by the specified set of users to achieve specified 
+goals with effectiveness, efficiency and satisfaction in a specified context of 
 use~\citep{iso9241}.
 
 The interaction with devices needs to be satisfactory for the users. The 
@@ -141,7 +141,7 @@ The interaction with devices needs to be satisfactory for the users. The
 for software product quality:
 
 \begin{enumerate}
-  \item Internal and external quality (see Figure~\ref{fig:ie_q_model}):
+  \item \textit{Internal and external quality} (see Figure~\ref{fig:ie_q_model}):
   Internal Quality is the totality of attributes of the software product from an
   internal view (e.g., spent resources, analysability). It is measured and
   improved during the code implementation, reviewing and testing. External 
@@ -156,7 +156,7 @@ for software product quality:
 \label{fig:ie_q_model}
 \end{figure}
   
-  \item Quality in use (see Figure~\ref{fig:qu_model}): It is the capability of
+  \item \textit{Quality in use} (see Figure~\ref{fig:qu_model}): It is the capability of
   the software product to enable specified users to achieve specified goals with
   effectiveness, productivity, safety and satisfaction in specified contexts of
   use.
@@ -172,7 +172,7 @@ for software product quality:
 
 However, the designing process becomes troublesome because of the nature of each
 user. Users are very different from each others. They like different things and they
-sense and perceive different. Moreover, they have different capabilities.
+sense and perceive differently. Moreover, they have different capabilities.
 Besides, there are several groups which suffer these differences more deeply:
 people with disabilities and the elderly. People with disabilities suffer from 
 different impairments which are responsible for limiting several capabilities 
@@ -204,22 +204,22 @@ disabilities feel like if they had one. Using our smartphone when it is raining
 or with direct sunlight might affect our interaction with the device. These 
 situations limit users' capabilities. They are examples of what context is and 
 what it is capable of during an interaction process~\citep{dey_understanding_2001}. 
-Desktop equipment are less prone to suffer from context conditions (obviously 
-certain situations are impossible to avoid, like infrastructure problems). On 
-the other hand, mobile devices are predisposed to experience problems due to 
-current context situation. 
+Desktops are less prone to suffer from context conditions (obviously certain 
+situations are impossible to avoid, like infrastructure problems). On the other 
+hand, mobile devices are predisposed to experience problems due to current context 
+situation. 
 %[EXPLICAR O APUNTAR A OTRA SECCIÓN DONDE SE EXPLIQUE].
 
-Context is essentially characterized by its capability of change. Besides, as it
-is detailed in this dissertation context characteristics can affect several 
-user's capabilities. Furthermore, it can change users' capabilities usually
+Context is essentially characterized by its capability to change. Besides, as is 
+detailed in this dissertation context characteristics can affect several user's 
+capabilities. Furthermore, it can change users' capabilities usually
 reducing them as they have temporary disabilities. For example, direct sunlight
-on a mobile phone screen reduce our sight capability; traffic or crowded streets
-reduce our attention and hearing capabilities; several activities (e.g., driving
+on a mobile phone screen reduces our sight capability; traffic or crowded streets
+reduces our attention and hearing capabilities; several activities (e.g., driving
 and cooking) and weather conditions (e.g., raining) affect our attention and
 mobility. These are examples of \textit{user's context disabilities}. The first
-approximation of this idea was conceived by reviewing the literature. More
-specifically, and as it is shown in Chapter~\ref{cha:state_of_the_art}, the
+approximation to this idea was conceived by reviewing the literature. More
+specifically, and as is shown in Chapter~\ref{cha:state_of_the_art}, the
 thesis by~\citet{heckmann_ubiquitous_2005} presents the following illustration.
 
 \begin{figure}[H]
@@ -233,7 +233,8 @@ as appears in~\citep{heckmann_ubiquitous_2005}.}
 
 Figure~\ref{fig:heckmann} represents a conceptual view of the theory of user 
 modelling with integrated context-awareness. The figure presents model acquisition 
-and model application information flows. From an \ac{ai} perspective, \citeauthor{heckmann_ubiquitous_2005} considers that the input data concerning 
+and model application information flows. From an \ac{ai} perspective, 
+\citeauthor{heckmann_ubiquitous_2005} considers that the input data concerning 
 the user and input data concerning the context are processed upward, as an 
 inference step. This is what the author calls model acquisition. On the contrary,
 the model application works downward, calculating a new hypothesis about the user
@@ -250,8 +251,8 @@ would be impossible to reach in natural conditions.
 \label{sec:definitions}
 
 During this dissertation several concepts are often named and referenced. Thus,
-in this section these concepts, related to AdaptUI and user interface adaptation,
-are defined. 
+in this section these concepts, related to user interface adaptation, the main
+discipline tackled by this dissertation, are given. 
 % As Chapter~\ref{cha:state_of_the_art} introduces other remarkable
 % concepts a complete list of definitions is given in Chapter~\ref{cha:list_of_definitions}.
 
@@ -261,7 +262,7 @@ are defined.
   As the main entity of the AdaptUI ecosystem, a user is understood as an individual
   who has a set of characteristics which define the interaction. These characteristics 
   might represent \textit{capabilities} or \textit{disabilities}. AdaptUI represents 
-  a user entity trough a semantic model which avoids the explicit representation 
+  a user entity through a semantic model which avoids the explicit representation 
   of such concepts. 
   \end{mdframed}
 
@@ -272,22 +273,23 @@ are defined.
   considered relevant to the interaction between a user and an application, 
   including the user and applications themselves''}. Context represents the 
   second main entity in the AdaptUI environment. In this dissertation this 
-  definition of context is considered, as it is the most popular definition 
-  regarding the literature. As the user and the device, context is semantically 
-  represented as a set of characteristics which defines the current situation.
+  definition of context is considered, as we believe that is the most popular 
+  definition regarding the literature. As the user and the device, context is 
+  semantically represented as a set of characteristics which defines the current 
+  situation.
   \end{mdframed}
   
   \item[\Defi{Device}] \hfill \\
   \begin{mdframed}[hidealllines=true,backgroundcolor=gray!20]
-  As the third entity in the AdaptUI ecosystem, the device represents the Android 
-  based device that the user manipulates within the AdaptUI context. Devices are
+  As the third entity included in the studied ecosystem, the device represents 
+  the device that the user manipulates within the current context. Devices are
   also understood as a series of characteristics which identify them, including
   both software and hardware related.
   \end{mdframed}
   
   \item[\Defi{Context-aware, by~\citet{schilit_disseminating_1994}}] \hfill \\
   \begin{mdframed}[hidealllines=true,backgroundcolor=gray!20]
-  \textit{``Context-aware computing is the ability of mobile user's application 
+  \textit{``Context-aware computing is the ability of mobile user's applications 
   to discover and react to changes in the environment they are situated in.''} 
   In this dissertation several references to context-aware systems are made, 
   specially in Chapter~\ref{cha:state_of_the_art}.
@@ -303,7 +305,7 @@ are defined.
   % \mydef{Environment}
   \item[\Defi{Adaptable user interface, by~\citep{fischer_user_2001}}] \hfill \\
   \begin{mdframed}[hidealllines=true,backgroundcolor=gray!20]
-  In this dissertation we assume that adaptable user interfaces, as 
+  In this dissertation we assume that adaptable user interfaces,
   as~\citet{fischer_user_2001} defines them, are those that change due to the 
   user intervention. In other words, not any user interface component adapts its
   shape or behaviour without the explicit user specification.
@@ -314,15 +316,15 @@ are defined.
   On the contrary, related to the previous definition, adaptive user interfaces
   have the ability to dynamically adapt themselves to the current task and user,
   not needing the user intervention~\citep{fischer_user_2001}. In the following
-  chapters the reader will easily understand the differences between adaptable 
+  chapters, the reader will easily understand the differences between adaptable 
   and adaptive through several examples and the AdaptUI's architecture detail.
   \end{mdframed}
 
   \item[\Defi{User disability}] \hfill \\
   \begin{mdframed}[hidealllines=true,backgroundcolor=gray!20]
   This dissertation tries to reduce the possible (or temporary) disabilities 
-  that the users might suffer when using their devices. To this end, a formal 
-  definition of what a disability is is needed. As the \ac{icf} document defines, 
+  that users might suffer when using their devices. To this end, a formal 
+  definition of what a disability is, it is needed. As the \ac{icf} document defines, 
   disability \textit{``serves as an umbrella term for impairments, activity 
   limitations or participation restrictions.''}
   \end{mdframed}
