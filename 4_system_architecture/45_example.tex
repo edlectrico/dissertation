@@ -23,7 +23,7 @@ in Table~\ref{tbl:example_scenario}.
 				& \textbf{Scenario}	\\
   \hline
   User \\
-  \qquad - Personal data 	& Molly, $39$ years old, United States\\
+  \qquad - Personal data 	& Molly, 39 years old, United States\\
   \qquad - Activity	 	& Phone call		\\
   \qquad - Known disabilities 	& - 			\\
 % 				& Hearing loss 		\\
@@ -31,13 +31,13 @@ in Table~\ref{tbl:example_scenario}.
   Context \\
   \qquad - Location 		& Relative: Plentzia, Spain\\
 				& 			\\
-  \qquad - Time			& $14$:$35$ 		\\
-  \qquad - Brightness		& $30,000$ \ac{lx}	\\
-  \qquad - Noise		& $80$ \acp{db}		\\
-  \qquad - Temperature		& $28$ ºC 		\\
+  \qquad - Time			& 14:35 		\\
+  \qquad - Brightness		& 30,000 \ac{lx}	\\
+  \qquad - Noise		& 80 \acp{db}		\\
+  \qquad - Temperature		& 28ºC 			\\
 %   \hline
   Device 			& Samsung Galaxy SII 	\\
-				& Battery: $55$\%	\\
+				& Battery: 55\%	\\
   \hline
 \end{tabular}
 \end{table}
@@ -90,11 +90,11 @@ shows.
   \hline 
   \textbf{Class(*)}& \textbf{Key} & \textbf{Value}		\\
   \hline
-  \ac{os}	& \textit{osVersion}		& $4.1.2$	\\
-  Battery	& \textit{battery}		& $55$		\\
-  Volume	& \textit{maxVolume}		& $12$		\\
-  Brightness	& \textit{maxBrightness}	& $15$		\\
-  DeviceScreenResolution & \textit{resolution}	& $480×800$	\\	
+  \ac{os}	& \textit{osVersion}		& 4.1.2	\\
+  Battery	& \textit{battery}		& 55		\\
+  Volume	& \textit{maxVolume}		& 12		\\
+  Brightness	& \textit{maxBrightness}	& 15		\\
+  DeviceScreenResolution & \textit{resolution}	& 480×800	\\	
   \hline
 \end{tabular}
 \end{table}
@@ -123,9 +123,9 @@ represent the gathered information as shown in Table~\ref{tbl:user}.
   Interface 	& \textit{input}		& default	\\
 		& \textit{output} 		& default	\\
   View		& \textit{colourSet(*)}		& default	\\
-  Display 	& \textit{minBrightness}	& $9$		\\ 
+  Display 	& \textit{minBrightness}	& 9		\\ 
  		& \textit{maxBrightness}	& max		\\
-  Audio 	& \textit{minVolume}		& $4$		\\
+  Audio 	& \textit{minVolume}		& 4		\\
  		& \textit{maxVolume} 		& max		\\
   Other 	& \textit{language}		& English	\\
  		& \textit{vibration} 		& true 		\\	
@@ -133,11 +133,11 @@ represent the gathered information as shown in Table~\ref{tbl:user}.
 \end{tabular}
 \end{table}
 
-Due to the context situation Molly specifies a minimum brightness value of $9$.
-Taking into account that the maximum available value is $15$, it represents a
+Due to the context situation Molly specifies a minimum brightness value of 9.
+Taking into account that the maximum available value is 15, it represents a
 high value within the brightness range. This is due to the context brightness 
 that she is suffering, which impedes a proper use of the display. More concretely,
-the current amount of luxes ($30,000$ \ac{lx}) causes trouble when using the
+the current amount of luxes (30,000 \ac{lx}) causes trouble when using the
 display. The described context situation is detailed in Table~\ref{tbl:context}.
 
 \begin{table}
@@ -149,13 +149,13 @@ display. The described context situation is detailed in Table~\ref{tbl:context}.
   \hline 
   \textbf{Class(*)}& \textbf{Key} & \textbf{Value}		\\
   \hline
-  Brightness	& \textit{brightness}		& $30,000$	\\
-  Noise		& \textit{noise}		& $80$		\\
-  Time		& \textit{time}			& $14$:$35$	\\
+  Brightness	& \textit{brightness}		& 30,000	\\
+  Noise		& \textit{noise}		& 80		\\
+  Time		& \textit{time}			& 14:35	\\
   Location	& \textit{city}			& Plentzia	\\
 		& \textit{country}		& Spain		\\
-		& \textit{longitude}		& $43.414353$	\\
-		& \textit{latitude} 		& $-2.944183$	\\	
+		& \textit{longitude}		& 43.414353	\\
+		& \textit{latitude} 		& -2.944183	\\	
   \hline
 \end{tabular}
 \end{table}
@@ -196,24 +196,24 @@ Table~\ref{tbl:context} is shown in Table~\ref{tbl:capabilities_collector_scenar
 		& Audio 	& \textit{userDisplayApplicableIsStatic}& false		\\
 		& 		& \textit{userAudioHasApplicable} 	& true		\\
 		& 		& \textit{userAudioApplicableIsStatic} 	& false		\\
-		& 		& \textit{userAudioHasVolume}  		& $4$ 		\\
+		& 		& \textit{userAudioHasVolume}  		& 4 		\\
 		& Interface 	& \textit{userInterfaceInput}		& default	\\
 		& 		& \textit{userInterfaceOutput} 		& default	\\
 % 		& Experience	& \textit{userHasExperience} 		& high		\\
 		& View		& \textit{userViewIsStatic}		& false		\\
 		& Other 	& \textit{userHasLanguage}		& English	\\
 		& 		& \textit{vibration} 			& true 		\\
-  Context	& Brightness	& \textit{contextHasBrightness}		& $30,000$	\\
-		& Noise		& \textit{contextHasNoise}		& $80$		\\
-		& Time		& \textit{contextHasTime}		& $14$:$35$	\\
+  Context	& Brightness	& \textit{contextHasBrightness}		& 30,000	\\
+		& Noise		& \textit{contextHasNoise}		& 80		\\
+		& Time		& \textit{contextHasTime}		& 14:35	\\
 		& Location	& \textit{contextHasRelativeLocationCity}& Plentzia	\\
 		&		& \textit{contextHasRelativeLocationCountry}& Spain	\\
-		&		& \textit{contextHasAbsoluteLocationLongitude}& $43.414353$\\
-		&		& \textit{contextHasAbsoluteLocationLatitude} & $-2.944183$\\
-  Device	& Software (\ac{os})& \textit{deviceHasOSVersion}	& $4.1.2$	\\
-		& Hardware (Battery)& \textit{deviceHasBattery}		& $55$		\\
-		& (Volume)	& \textit{deviceHasMaxVolume}		& $12$		\\
-		& (DeviceScreenResolution) & \textit{deviceHasResolution}& $480×800$	\\	
+		&		& \textit{contextHasAbsoluteLocationLongitude}& 43.414353\\
+		&		& \textit{contextHasAbsoluteLocationLatitude} & -2.944183\\
+  Device	& Software (\ac{os})& \textit{deviceHasOSVersion}	& 4.1.2	\\
+		& Hardware (Battery)& \textit{deviceHasBattery}		& 55		\\
+		& (Volume)	& \textit{deviceHasMaxVolume}		& 12		\\
+		& (DeviceScreenResolution) & \textit{deviceHasResolution}& 480×800	\\	
   \hline
 \end{tabular}
 \end{table}

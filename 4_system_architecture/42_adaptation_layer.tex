@@ -33,21 +33,22 @@ the user's configured profile through the Capabilities Collector and adapts the
 components of the activity accordingly. Every activity overwrites this method
 (and others), as they extend from a parent abstract class called
 \textit{AbstractActivity}. This class mainly manages the services initialization
-(e.g., TextToSpeech) and the ontology. Listing~\ref{lst:abstract_activity} shows
-part of the AdaptUI source code where the ontology is initialized.
+(e.g., TextToSpeech) and the ontology. 
+% Listing~\ref{lst:abstract_activity} shows
+% part of the AdaptUI source code where the ontology is initialized.
 
 
 \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/redraw.java}
 \captionof{listing}{Example of the creation and adaptation of an activity. In this case 
 the example is centred in the adaptation of a button.\label{lst:redraw}}
 
-\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/abstract_activity.java}
-\captionof{listing}{The AbstractActivity class ontology related methods.\label{lst:abstract_activity}}
+% \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/abstract_activity.java}
+% \captionof{listing}{The AbstractActivity class ontology related methods.\label{lst:abstract_activity}}
 
-Listing~\ref{lst:store_in_ontology} shows a piece of code where the developer
+Listing~\ref{lst:store_in_ontology} shows a piece of source code where the developer
 uses the \ac{owl}-\ac{api} to store the user profile in the AdaptUIOnt model. 
-The methods called in this example are part of the Turambar framework~\citep{david_ausin_probabilistic_2014}. 
-This framework provides a high-level \ac{api} for managing the \ac{owl}-\ac{api}.
+% The methods called in this example are part of the Turambar framework~\citep{david_ausin_probabilistic_2014}. 
+% This framework provides a high-level \ac{api} for managing the \ac{owl}-\ac{api}.
 
 \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/store_in_ontology.java}
 \captionof{listing}{Inserting values in the corresponding classes of the AdaptUIOnt 
@@ -372,20 +373,20 @@ for both the default and the adapted interaction models.
   \textbf{Metric} 	& \textbf{Value for the default}& \textbf{Value for the adapted}\\
 			& \textbf{interaction model} 	& \textbf{interaction model}	\\
   \hline
-  Task effectiveness	& $0.7$				& $0.350$	\\
+  Task effectiveness	& 0.7				& 0.350	\\
   ($M1=|1-\Sigma A_{i}|$)\\
-  Task completion	& $1$				& $0$		\\
+  Task completion	& 1				& 0	\\
   ($X=A/B$)\\
-  Error frequency 	& $0.2$				& $0.562$	\\	%3/15, 18/32 
+  Error frequency 	& 0.2				& 0.562	\\	%3/15, 18/32 
   ($X=A/T$)\\
   \hline
-  Task time		& $15$				& $32$		\\
+  Task time		& 15				& 32	\\
   ($X=Ta$)\\
-  Task efficiency 	& $0.046$			& $0.010$	\\
+  Task efficiency 	& 0.046				& 0.010	\\
   ($X=M1/T$)\\
 %   Productive proportion\\
 %   ($X=Ta/Tb$)\\
-  Relative user efficiency & $1.0$			& $0.5$		\\
+  Relative user efficiency & 1.0			& 0.5	\\
   ($X=A/B$)\\
   \hline
 \end{tabular}
