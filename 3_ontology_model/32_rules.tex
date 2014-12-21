@@ -13,7 +13,7 @@ In AdaptUI the adaptation process is understood as a three step procedure:
  \item First, the knowledge of the main entities needs to be collected. Once it
  is gathered, a normalization process needs to be performed. This process classifies
  the collected information so it can be easily read. For example, a noise sensor
- might sense a $100$~\acp{db} sound. Initially, we may not understand this value. Thus,
+ might sense a 100~\acp{db} sound. Initially, we may not understand this value. Thus,
  using several ranges explained during this chapter (see Table~\ref{tbl:luminance},
  Table~\ref{tbl:sounds} and Table~\ref{tbl:batteries}) a high level classification
  is carried out.
@@ -33,16 +33,16 @@ set of different rules, which are detailed below.
 This group of rules are designed to check those values which come from each entity 
 of the Entities Model in order to translate them to the auxiliary models (see 
 the primary model in Figure~\ref{fig:entities_characteristics}). For example, a 
-context brightness value of $35,000$ indicates the amount of \ac{lx} of the 
+context brightness value of 35,000 indicates the amount of \ac{lx} of the 
 current environment. This value is then classified to a more verbose subgroup 
-(in this case, to \textit{direct\_sunlight}); a device battery value of $10$ 
+(in this case, to \textit{direct\_sunlight}); a device battery value of 10 
 implies the percentage of the remaining battery. This is translated as a 
 \textit{non\_sufficient} battery level in the auxiliary device class. Thus,
 the corresponding adaptation rule checks these new parameters and decides whether
-the adaptation should follow one path or the other. Here we consider that $10$\%
+the adaptation should follow one path or the other. Here we consider that 10\%
 of the total battery levels for a device might not be enough to run an adaptation
 process. Of course this is not accurate. The user might be able to use a nearby 
-power adaptor. Besides, a $20$\% battery level might not be enough if the user 
+power adaptor. Besides, a 20\% battery level might not be enough if the user 
 aims to browse the web, make a video call, and so forth. This means that these 
 values are established by us regarding the just the adaptation, but they directly 
 depend on the user context. This set of rules directly affects the 
@@ -267,18 +267,18 @@ usability level is insufficient, these rules are triggered changing the user mod
 				& \textbf{and classes} 		& 				\\
   \hline
   \textit{incrementBrightness}	& \textit{adaptui:UserAux}	& It increments the brightness of\\
-				& \textit{adaptui:Polisher}	& the device in $1$F.		\\
+				& \textit{adaptui:Polisher}	& the device in 1F.		\\
   \textit{decrementBrightness}	& \textit{adaptui:Adaptation}	& It decrements the brightness of\\
-				& 				& the device in $1$F.		\\
+				& 				& the device in 1F.		\\
   \textit{incrementVolume}	& 				& It increments the volume of	\\
-				& 				& the device in $1$ unit.	\\
+				& 				& the device in 1 unit.	\\
   \textit{decrementVolume}	& 				& It decrements the volume of	\\
-				& 				& the device in $1$ unit.	\\
+				& 				& the device in 1 unit.	\\
   \hline
   \textit{incrementButtonSize}	& \textit{adaptui:UserAux}	& It increments the size of the \\
-				& \textit{adaptui:Polisher}	& button adding $10$ dpis. 	\\
+				& \textit{adaptui:Polisher}	& button adding 10 dpis. 	\\
   \textit{decrementButtonSize}	& \textit{adaptui:Adaptation}	& It decrements the size of the \\
-				& 				& button in $10$ dpis.		\\
+				& 				& button in 10 dpis.		\\
   \textit{darkenButtonBackgroundColor}&				& It darkens the colour.	\\
   \textit{lightenButtonBackgroundColor}&			& It lightens the colour.	\\
   \textit{darkenButtonTextColor}&				& It darkens the text colour.	\\
