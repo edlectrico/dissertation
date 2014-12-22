@@ -43,20 +43,21 @@ Table~\ref{tbl:fischer} shows a representation of these concepts.
 \end{tabular}
 \end{table}
 
-As it is shown in Table~\ref{tbl:fischer}, an adaptive system is able to 
-dynamically change due to certain situation. Adaptable systems, however, require 
-the user intervention. Current smartphones provide a set of tools to allow users
-to adapt several elements of the user interface. For example, font sizes, colour 
-combinations, screen magnification and dictation are several adaptable 
-functionalities available in such devices~\citep{android_accessibility}~\citep{ios_accessibility},
+As is shown in Table~\ref{tbl:fischer}, an adaptive system is able to dynamically 
+change due if a certain situation is met. This situation might act as a trigger
+for the adaptation. Adaptable systems, however, require the user intervention. 
+Current smartphones provide a set of tools to allow users to adapt several 
+elements of the user interface. For example, font sizes, colour combinations, 
+screen magnification and dictation are several adaptable functionalities available 
+in such devices\footnote{http://developer.android.com/guide/topics/ui/accessibility/index.html}\footnote{https://www.apple.com/accessibility/ios/},
 known as accessibility tools. Figure~\ref{fig:accessibility_ios} shows an example 
-of several accessibility tools in iOS.
+of several accessibility tools in iOS, including VoiceOver\footnote{https://www.apple.com/accessibility/ios/voiceover/}
+on the left and Siri\footnote{https://www.apple.com/ios/siri/} on the right.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth]{accessibility_ios.pdf}
-\caption{Several iOS accessibility tools~\citep{ios_accessibility}. On the left, 
-VoiceOver~\citep{ios_voiceover}. On the right, Siri~\citep{ios_siri}.}
+\caption{iOS VoiceOver and Siri.}
 \label{fig:accessibility_ios}
 \end{figure}
 
@@ -67,24 +68,29 @@ adaptable user interfaces needs the user to change the corresponding adaptable
 characteristic (e.g., the font size) while an adaptive user interface would 
 adapt without it.
 
-Thus, once \textit{adaptable} and \textit{adaptive} concepts have been defined,
-\textit{adaptivity} and \textit{adaptability} are introduced. \textit{adaptivity}
-is related to the fact that a system or a service is able to learn somehow to 
-change itself to increase the user satisfaction in the interaction process. 
-On the other hand, \textit{adaptability} deals with the property of the system
-or service to be customized by the user~\citep{jameson_modelling_2001}.
+Subsequently, \textit{adaptivity} and \textit{adaptability} are introduced. 
+\textit{Adaptivity} is related to the fact that a system or a service is able to 
+learn somehow to change itself to increase the user satisfaction in the interaction 
+process. On the other hand, \textit{adaptability} deals with the property of the 
+system or service to be customized by the user~\citep{jameson_modelling_2001}.
 
 Now that we have defined what adaptivity means, several significant adaptive 
 systems are presented in the following lines.
 
-User interface adaptation has evolved through \ac{hci} history. First, and dealing with
-the concept of adaptability (and not adaptivity), user interfaces start to be malleable. 
-Colour palettes and screen resolution tools were given to the user. Nowadays, regarding
-our portable devices, even automatic brightness control systems are available (dealing
-with adaptivity). Since many years, developers have attempted to offer customization
-tools to the end user. These tools have grown in complexity, covering a wider range of
-functionalities and also users. What is more, a few years ago the context was taken
-into account as the set of characteristics that define a situation.
+\subsection{Significant Adaptation Models}
+\label{sec:significant_adaptation_models}
+
+User interface adaptation has evolved through \ac{hci} history. First, and 
+dealing with the concept of adaptability (and not adaptivity), user interfaces 
+start to be malleable. Colour palettes and screen resolution tools were given to 
+the user. Nowadays, regarding our portable devices, even automatic brightness 
+control systems are available. Since many years, developers have attempted to 
+offer customization tools to the end user. These tools have grown in complexity, 
+covering a wider range of functionalities and also users. What is more, a few 
+years ago the context was taken into account as the set of characteristics that 
+define a situation (the context definition which is adopted in this dissertation
+is given by \citet{dey_understanding_2001}, and its definition is introduced
+in Section~\ref{sec:definitions}).
 
 Systems personalization and environment components adaptation has been demonstrated
 to benefit both users and service providers~\citep{kobsa_generic_2001}. However, for
@@ -102,16 +108,16 @@ small and interaction mechanisms are very different from a desktop system). Besi
 these devices are usually used in dynamic environments (i.e., variations in the
 context). 
 
-In the literature several context based user interface adaptation solutions can 
-be found. Before reviewing them, it is necessary to first formally define context.
-According to \citet{weerawarana_bean_2001} and \citet{dey_understanding_2001} 
-context is defined as any situation that can be used to characterize the situation 
-of an entity, taking an entity as a person, a place, or an object that is considered
-relevant to the interaction between the user and the application (see
-Section~\ref{sec:context}). The definition of \textit{use context} inherits from
-the context definition itself as the set of variables values which models the
-used device, so as the physical and social environment where the interaction is
-being performed.
+% In the literature several context based user interface adaptation solutions can 
+% be found. Before reviewing them, it is necessary to first formally define context.
+% According to \citet{weerawarana_bean_2001} and \citet{dey_understanding_2001} 
+% context is defined as any situation that can be used to characterize the situation 
+% of an entity, taking an entity as a person, a place, or an object that is considered
+% relevant to the interaction between the user and the application (see
+% Section~\ref{sec:context}). The definition of \textit{use context} inherits from
+% the context definition itself as the set of variables values which models the
+% used device, so as the physical and social environment where the interaction is
+% being performed.
 
 \citet{calvary_plasticity_2002} stated in 2002 that a user interface is \textit{plastic}
 if it is capable to adapt itself taking into account context changes keeping
@@ -134,19 +140,19 @@ store the user preferences. The user interfaces are designed with Bean Markup
 Language~\citep{weerawarana_bean_2001} (a language focused on user interfaces)
 and Java Beans.
 
-Three \textit{middleware} based solutions are highlighted in the following lines.
-\citet{repo_facilitating_2004} introduced in 2004 a model that allows the use 
-of Web-based user interfaces (as well as the creation of new ones) that covers 
-the environment adaptability requirements and context in the best possible way. 
-The main problem is given by the range of devices that users typically employ, 
-which have different capabilities and run different platforms. This situation 
-causes the need of more flexible applications and devices. Repo identified a lack 
-of attention in the initial adaptation process (e.g., when the capabilities of the
-mobile device are identified). This approach was based on a \textit{middleware}
-architecture, and it was capable of detecting new devices in the current environment
-(context changes). It allowed services to query for devices' capabilities through 
-a middleware architecture. Once a service identified a certain device, it sent 
-the corresponding user interface. 
+Following a \textit{middleware} based approach, four remarkable solutions are
+highlighted in the following lines. \citet{repo_facilitating_2004} introduced in 
+2004 a model that allows the use of Web-based user interfaces (as well as the 
+creation of new ones) that covers the environment adaptability requirements and 
+context in the best possible way. The main problem is given by the range of 
+devices that users typically employ, which have different capabilities and run 
+different platforms. This situation causes the need of more flexible applications 
+and devices. Repo identified a lack of attention in the initial adaptation process 
+(e.g., when the capabilities of the mobile device are identified). This approach 
+was based on a \textit{middleware} architecture, and it was capable of detecting 
+new devices in the current environment (context changes). It allowed services to 
+query for devices' capabilities through a middleware architecture. Once a service 
+identified a certain device, it sent the corresponding user interface. 
 
 \citet{nilsson_model_based_2006} introduced a \textit{middleware} solution
 which was able to build auto-adaptable systems. In this case, the middleware 
@@ -184,24 +190,29 @@ A \textit{framework} based approach is presented by~\citet{almeida_imhotep_2011}
 in 2011. Imhotep is a framework for user interface adaptation based on inserting
 preprocessor primitives within the source code. Thus, at compilation time
 different versions of the final application are generated due to the corresponding
-user and device parameters. A \ac{wurfl}~\citep{wurfl} database was used for modelling
-devices and their capabilities. \ac{wurfl} is a \ac{ddr}, a catalogue of mobile 
-device information and a framework for adaptation of mobile user interfaces.
-By using it, authors ensure to have the latest devices with their capabilities.
-As configuration files, the platform checks both user and device capabilities and
-uses them to compile the corresponding solution. This approach has the limitation
-of being static. This means that each change in the user capabilities needs a new
-compilation of the whole application.
+user and device parameters. A \ac{wurfl}\footnote{http://wurfl.sourceforge.net/} 
+database was used for modelling devices and their capabilities. \ac{wurfl} is a 
+\ac{ddr}, a catalogue of mobile device information and a framework for adaptation 
+of mobile user interfaces. By using it, authors ensure to have the latest devices 
+with their capabilities. As configuration files, the platform checks both user 
+and device capabilities and uses them to compile the corresponding solution. This 
+approach has the limitation of being static. This means that each change in the 
+user capabilities needs a new compilation of the whole application. As this
+framework has supposed our first incursion in the field of \acp{aui}, further
+details of its main characteristics and architecture are given in Section~\ref{sec:background_imhotep}
+and Section~\ref{sec:imhotep_comparison}. Besides, several experiments are
+carried out comparing Imhotep and the proposed solution, which will be depicted
+in the following chapters.
 
-A work in progress by~\citet{evers_achieving_2012} et al. tackles the problem of
-the need of user interaction in the adaptation process. Their work, centred in
-users, discusses about adaptation versus usability defining different types of
-adaptation (i.e., forward and backward) and different user ways of interaction
-(i.e., implicit versus explicit). This perspective helps developers to take into
-account not only technical characteristics (users models, devices capabilities,
-context parameters, adaptation engines and so on) but also some psychology to be 
-aware of user mood or stress. In stressful situations users may not be comfortable 
-with an adaptation engine which asks questions about the process.
+\citet{evers_achieving_2012} tackle the problem of the need of user interaction 
+in the adaptation process. Centred in users, authors discuss about adaptation 
+and usability defining different types of adaptation (i.e., forward and backward) 
+and different user ways of interaction (i.e., implicit and explicit). This 
+perspective helps developers to take into account not only technical 
+characteristics (e.g., users models, devices capabilities, context parameters, 
+adaptation engines, and so on) but also some psychology to be aware of user mood 
+or stress. In stressful situations users may not be comfortable with an adaptation 
+engine which asks questions about the process.
 
 Several ideas of the reviewed works are taken into account for the proposed user 
 model in combination with the~\citet{casas_user_2008} research. For instance,
@@ -222,8 +233,8 @@ physical buttons into a flat touch screen, depending on the current task. For ex
 if the user needs to send an email, the keyboard emerges from the screen
 as a physical interface. This interface is supported by the combination of
 small fluid channels which are routed throughout the Tactile Layer. This layer
-enables fluid to expand the top polymer layer to create the physical buttons (see
-Figure~\ref{fig:tactus}).
+enables fluid to expand the top polymer layer to create the physical buttons\footnote{https://www.youtube.com/watch?v=t4eh-Cn3Pzk} 
+(see Figure~\ref{fig:tactus}).
 
 \begin{figure}[H]
 \centering
@@ -237,12 +248,12 @@ are examples of physical user interfaces adaptation all around us. One of the mo
 common and spread example is shown in cars. The cars companies deal with adaptivity
 for the current driver not just inside the car, but also outside. Some models
 adapt the driving wheel in depth and height depending on the driver who unlocks
-the door. Displays and controller brightness, even radio volume can be also
+the door. Displays and controller brightness, and radio volume can be also
 adapted considering context light or noise. Even the car lights system adapts
 to the road conditions.
 
-Again, these are just a few examples of what adaptation technologies might
-be pointing to for the near future.
+These are just a few examples of what adaptation technologies might be pointing 
+at for the near future.
 
 % ----------------------------------------------------------------------
 
