@@ -6,14 +6,13 @@ In this section we describe our user modelling requirements nurtured by the
 earlier works described. As mentioned before, there are several perspectives 
 regarding the user modelling requirements. In this dissertation the \ac{hci} 
 perspective is taken. This means, as~\citet{pohl_logic_based_1999} states, 
-that the user model refers to user characteristics using a certain system (see 
-Section~\ref{sec:chronological_review}). In Chapter~\ref{cha:ontology_model}
-the AdaptUI models for user, context and device are described. These models
+that the user model refers to user characteristics using a certain system. 
+In Chapter~\ref{cha:ontology_model} the proposed models for user, context and device are described. These models
 have been designed considering each of these entities as a set of characteristics
 that define them. Hence, the adaptation platform is able to evaluate the
 combination of these characteristics and perform the corresponding adaptation.
-Thus, the \ac{hci} interpretation of user modelling suits the goal pursued
-by AdaptUI.
+Thus, the \ac{hci} interpretation of user modelling suits the main objective 
+remarked in Section~\ref{sec:hypothesis}.
 
 % Now that the \ac{hci} viewpoint has been remarked, we emphasize the amount of 
 % different domains that are addressed in the literature considering user 
@@ -24,13 +23,13 @@ are highlighted. From product design to multimedia and user interfaces adaptatio
 every approach follows the same purpose: to consider several user characteristics 
 to improve the system and user's satisfaction and product or service usability. 
 However, although these solutions share the same objectives, the considered 
-characteristics differ a lot. For ubiquitous and more context-aware domains, 
-activities are taken into account. For example,
-~\citet{razmerita_ontology_based_2003} discuss an ontology based architecture, 
-which aims to be generic by collecting user data through two different ways 
-(explicitly and implicitly).~\citet{golemati_creating_2007} also take an 
-ontological point of view to avoid the problem of domain dependency (among 
-others) by designing a more general, comprehensive and extensible ontology. 
+characteristics differ. For ubiquitous and more context-aware domains, activities 
+are taken into account. For example, ~\citet{razmerita_ontology_based_2003} 
+discuss an ontology based architecture, which aims to be generic by collecting 
+user data through two different ways (\textit{explicitly} and \textit{implicitly}).
+\citet{golemati_creating_2007} also take an ontological point of view to avoid 
+the problem of domain dependency (among others) by designing a more general, 
+comprehensive and extensible ontology. 
 
 \citet{gauch_ontology_based_2003} remark in the presented ontology the 
 importance of time. Regarding the studied domain (web browsing) time is 
@@ -45,17 +44,17 @@ literature. The first example is the Doppelgänger
 system~\citep{orwant_doppelgangeruser_1991} (1991), which uses activities for 
 sharing relevant user information to different applications. In the same 
 way,~\citet{persad_characterising_2007},~\citet{heckmann_gumogeneral_2005}
-and~\citet{skillen2012ontological} modelled activities to take user's behaviour
+and~\citet{skillen2012ontological} model activities to take user's behaviour
 and interaction into account for the proposed classifications and systems. For
 ~\citet{hatala_ontology_based_2005} activities are also vital within 
 context-aware environments.
 
-As occurs with context modelling (see Section~\ref{sec:context_model_comparison})
-many different techniques are available for the model representation. This usually
-depends either on the developer, because of his/her experience, or in the system's
-technical characteristics. For example, if the system is able to performs inference
-with the user data an ontology based representation could be more helpful than
-an object based one.~\citet{strang_context_2004} demonstrated that ontological
+As occurs with context modelling (see Section~\ref{sec:context}) many different 
+techniques are available for the model representation. This usually depends either 
+on the developer, because of his/her experience, or in the system's technical 
+characteristics. For example, if the system is able to performs inference with 
+the user data an ontology based representation could be more helpful than an 
+object based one.~\citet{strang_context_2004} demonstrated that ontological
 modelling is more appropriate for ubiquitous computing environments.
 
 It is also common to model physiological related characteristics of the user.
@@ -80,28 +79,26 @@ model user capabilities as a set of abilities which allow users to perform some
 task or activities. Although this perspective covers many user capabilities, it
 still needs a deeper understanding of physiological user capabilities.
 
-On the other hand,~\citet{fischer_user_2001} comments that it not only is 
+On the other hand,~\citet{fischer_user_2001} states that it not only is 
 difficult to model users because of the wide range of different types of people 
 that exist. He also considers that each individual changes with experience and 
 through time. For example, old people's capabilities decrease with ageing. This
 idea is shared with~\citet{gregor_designing_2002}, whose work is centred around
-the elderly. \citet{heckmann_ubiquitous_2005} not only considers that users 
+the elderly. \citet{heckmann_gumogeneral_2005} not only consider that users 
 might evolve (from an \ac{ai} perspective), but he also takes new context 
 information from the inference process. This also opens a new point of view 
 that we address in Section~\ref{sec:context_disabilities} and it is about taking 
 context as a significant user's environment entity that might directly influence 
-the user's capabilities. In other words, users change through experience, time 
-and, in concrete situations, due to the current context characteristics. For 
+the user's capabilities. In other words, \textit{users change through experience, 
+time and, in concrete situations, due to the current context characteristics}. For 
 example, an individual might not suffer from any mobility disability, but in a 
 crowded street would be difficult to perform several daily activities (just 
-walking could be difficult).~\citet{razmerita_ontology_based_2003} also address 
-this issue when they talk about the implicit user information collecting 
-process. This, of course, deals with the concept of dynamism.
-
-\citet{evers_achieving_2012} consider that respecting user's interactive 
-behaviour with applications needs to be taken into account. On the other hand,
-~\citet{pereira_triple_2005} analyses the differences between emotional and
-perceptional user characteristics. 
+walking could be difficult).~\citet{razmerita_ontology_based_2003} address 
+this issue considering an implicit user information collecting process. This, 
+of course, deals with the concept of dynamism. Finally, \citet{evers_achieving_2012} 
+consider that respecting user's interactive behaviour with applications needs to 
+be taken into account. On the other hand, \citet{pereira_triple_2005} analyses 
+the differences between emotional and perceptional user characteristics. 
 
 % Several authors have also noticed the importance of tolerating the management of
 % non-trustworthy data. Ambiguity and uncertainty mean working with data which might
