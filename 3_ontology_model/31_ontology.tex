@@ -1,11 +1,11 @@
 \section{The AdaptUIOnt Ontology}
 \label{sec:adaptui_model}
 
-As said before, the AdaptUI platform is supported by two pillars: an ontology
-that models several significant concepts of the domain, and a set of rules
-that trigger several modifications of these concepts. In this section the
-AdaptUIOnt ontology, which represents the existing concepts in the user
-interface adaptation domain, is presented.
+As said before, the proposed adaptation platform is supported by two pillars: an 
+ontology that models several significant concepts of the domain, and a set of 
+rules that trigger several modifications of these concepts. In this section the
+AdaptUIOnt ontology, which represents the existing concepts in the user interface 
+adaptation domain, is presented.
   
 The AdaptUIOnt ontology arises from the need of an adaptation model which gathers
 knowledge of the \textit{user} capabilities, the \textit{context} that surrounds
@@ -34,32 +34,30 @@ different actions (see Section~\ref{sec:adaptui_rules}).
 The literature analysis made in Chapter~\ref{cha:state_of_the_art} exposes
 several possibilities regarding the problem of choosing the best technique
 to model a user interface adaptation process and all the required knowledge
-around it. As it will be explained later in the conclusions of this chapter, we
-found that using ontologies would bring several benefits to our proposal. In 
-this section we explain \textit{how} and \textit{why} the AdaptUIOnt ontology 
-has been designed.
+around it. As it will be explained later in the conclusions of this chapter, 
+using ontologies brings several benefits to the adaptation platform. In this 
+section \textit{how} and \textit{why} the AdaptUIOnt ontology has been designed
+is explained.
 
 Many ontology based solutions take users as entities described by their physiological
-capabilities~\citep{gregor_designing_2002}~\citep{razmerita_ontology_based_2003}
-\citep{pereira_triple_2005}~\citep{persad_characterising_2007}~\citep{persad_cognitive_2007}
-and~\citep{skillen2012ontological}. Moreover, facing adaptation or personalization
-problems these solutions aim to cover not only capabilities but also disabilities.
-When AdaptUIOnt was conceived, we found that modelling physiological abilities
-was not practical. Although many users may have similar preferences and capabilities,
-their tastes may differ. Besides, their reactions facing several problems may not
-be the same. In addition, we realised how difficult it is to model each user
-physiological characteristics without an expert's support. As scientists in the
-computing domain we lack of this kind of physiological knowledge about individuals.
-Thus, we believe we cannot face modelling user capabilities and also contemplating
-and analysing their behaviour and responses.
+capabilities
+\citep{gregor_designing_2002}\citep{razmerita_ontology_based_2003}\citep{pereira_triple_2005}\citep{persad_characterising_2007}\citep{persad_cognitive_2007}\citep{skillen2012ontological}. Moreover, facing adaptation or personalization problems, these solutions 
+aim to cover not only capabilities but also disabilities. When AdaptUIOnt was 
+conceived, we realised that modelling physiological abilities was not practical. 
+Although many users may have similar preferences and capabilities, their tastes 
+may differ. Besides, their reactions facing several problems may not be the same. 
+In addition, we realised how difficult it is to model each user physiological 
+characteristics without an expert's knowledge and background in the field. As 
+scientists in the computing domain we lack this kind of physiological knowledge 
+about individuals. Thus, we believe we cannot face modelling user capabilities 
+and also contemplating and analysing their behaviour and responses.
 
 Nevertheless,~\citet{casas_user_2008} described a taxonomy where user disabilities
-are not explicitly contemplated. Instead of that, user preferences are classified
-under several concepts, as is shown in Figure~\ref{fig:casas}. Through the taxonomy
-represented by this figure it is shown how the authors avoid the modelling of
-physiological capabilities of the user, centring the model in several preferences.
-More information about the considerations of Casas et al. are given in
-Section~\ref{sec:casas}.
+are not explicitly included. Instead of that, user preferences are classified
+under several concepts, as is shown in Figure~\ref{fig:casas}. Through this 
+taxonomy is shown how the authors avoid the modelling of physiological capabilities 
+of the user, centring the model in several preferences. More information about 
+the considerations of Casas et al. are given in Section~\ref{sec:casas}.
 
 
 \begin{figure}
@@ -71,22 +69,22 @@ Section~\ref{sec:casas}.
 
 AdaptUIOnt is built under this idea, extending it and avoiding the modelling of
 any explicit physiological characteristics. As it will be depicted in this chapter
-several concepts changed in our proposal. Besides, several remarkable ontologies
-from other authors are also used to enrich the AdaptUIOnt knowledge. For example,
-the \ac{foaf} ontology~\citep{foaf} has been linked to complete the information 
-of the user. The same happens with the \ac{gumo}~\citep{heckmann_gumogeneral_2005}, 
-which also models information about the user. Although not all classes are 
-included, several have been imported in the final version of the AdaptUIOnt 
-model, as they might represent significant concepts for other developers. 
-For example, in the \ac{gumo} ontology there is a class which models the user 
-emotional state (\textit{Basic User Dimensions} $\rightarrow$ 
+several concepts have been changed in the AdaptUIOnt models. Besides, several 
+remarkable ontologies from other authors are also used to enrich the AdaptUIOnt 
+knowledge. For example, the \ac{foaf}\footnote{http://xmlns.com/foaf/spec/} ontology 
+has been linked to complete the information of the user. The same happens with 
+the \ac{gumo}~\citep{heckmann_gumogeneral_2005}, which also models information 
+about the user. Although not all classes are included, several have been imported 
+in the final version of the AdaptUIOnt model, as they might represent significant
+concepts for other developers. For example, in the \ac{gumo} ontology there is a
+class which models the user emotional state (\textit{Basic User Dimensions} $\rightarrow$ 
 \textit{Emotional State}) through five basic emotions. In  the current AdaptUIOnt 
 version these emotions are not considered for the adaptations. However, we believe
 that other developers may consider that being under an \textit{anxiety} condition
 might change or modify the result or the adaptation process. Every ontology that
 has been used to complete the AdaptUIOnt ontology is shown in Table~\ref{tbl:used_ontologies}.
 
-\begin{table}[H]
+\begin{table}
   \caption{Imported ontologies to complete several concepts of the AdaptUIOnt
   ontology: \ac{gumo}, \ac{foaf} and \ac{cobra}.}
  \label{tbl:used_ontologies}
@@ -108,14 +106,14 @@ has been used to complete the AdaptUIOnt ontology is shown in Table~\ref{tbl:use
   				& \textit{Context Information}	& It represents several		& \textit{Location} and \textit{Physical}\\
   				&				& concepts related to 		& \textit{Environment} and \textit{Social}\\
   				&				& the environment.		& \textit{Environment}.			\\
-  \ac{foaf}~\citep{foaf}	& \textit{Document}		&  	 			& \textit{Image} and 			\\  
+  \ac{foaf}			& \textit{Document}		&  	 			& \textit{Image} and 			\\  
 				& 				&				& \textit{PersonalProfileDocument}.	\\
 				& \textit{SocialInstitution}	& 				& 					\\
 				& \textit{OnlineAccount}	& 				& \textit{Online Chat Account},		\\
 				& 				&				& \textit{Online E-commerce} 		\\
 				& 				&				& \textit{Account} and \textit{Online} 	\\
 				& 				&				& \textit{Gaming Account}.		\\
-  \ac{cobra}~\citep{cobra}	& \textit{DeviceMemory}		& 				& 					\\
+  \ac{cobra}\footnote{http://cobra.umbc.edu/ontologies.html}	& \textit{DeviceMemory}		& 				& 					\\
 				& \textit{DisplayScreen}	& 				& 					\\
 				& \textit{DisplayScreenResolution}& 				& 					\\
 				& \textit{MemoryUsageType}	& 				& 					\\
@@ -131,26 +129,26 @@ evolve and their capabilities might change not just because of their experience
 but because of the context influence. For Gregor et al. elderly's capabilities
 decrease due to their ageing. In this dissertation, this evolution of the user
 capabilities is considered to be based on the context conditions and experience.
-This is explained in Section~\ref{sec:adaptation_polisher}, in which a concrete
-module of the AdaptUI architecture is introduced.
+% This is explained in Section~\ref{sec:adaptation_polisher}, in which a concrete
+% module of the AdaptUI architecture is introduced.
 
-Through the AdaptUIOnt's user model we also aim to allow users to configure
-the adaptation process through the cited perspective, which is, without any required
+Through the AdaptUIOnt's user model we also aim to allow users to configure the 
+adaptation process through the mentioned perspective, which is, without any required
 physiological knowledge. During this configuration the user interacts with a
 module called Capabilities Collector indicating several interaction requirements.
-This module translates the user indications into a capabilities module. The
+This module translates the user indications into a capabilities model. The
 Capabilities Collector and all its features are detailed in
 Section~\ref{sec:capabilities_collector}.
 
-Regarding the context, several considerations were also discussed during the design
-process. Context is mainly defined by its physiological conditions. Besides,
-the \ac{gumo}~\citep{heckmann_gumogeneral_2005} ontology has been used to enrich the
-model. The context model is extended in two different ways: on the one hand,
-there is the sensors information and the combination of their measures (environment
-data); on the other hand, a high-level information category built from the
-combination of context and external pieces of information.
+Regarding the context, several considerations were also discussed during the 
+design process. Context is mainly defined by its physiological conditions. 
+Besides, the \ac{gumo} ontology has been used 
+to enrich the model. The context model is extended in two different ways: on the 
+one hand, there is the information collected from sensors and the combination of 
+their measures (environment data); on the other hand, a high-level information 
+category built from the combination of context and external pieces of information.
 
-Devices are also modelled using different \ac{cobra}~\citep{cobra} classes. These
+Devices are also modelled using different \ac{cobra} classes. These
 classes represent static and dynamic concepts of the device. Device's screen
 resolution (\textit{DisplayScreenResolution}) is one of the static features of a
 mobile device. On the contrary, the battery of the device changes with the use.
@@ -170,7 +168,7 @@ First, taking into account that useful and practical (and non physiological)
 capabilities of the user, context and device need to be represented in the model.
 This is carried out by reviewing the literature models and making several
 adaptations, modifications and contributions. For example, regarding the user
-model, we use \ac{foaf}~\citep{foaf} and \ac{gumo}~\citep{heckmann_gumogeneral_2005} to
+model, we use \ac{foaf} and \ac{gumo} to
 model the user most personal characteristics. Nevertheless, the user model is
 not based on these ontologies. It is built under several assumptions made by
 \citet{casas_user_2008} in their user profile taxonomy, with several modifications.
@@ -214,12 +212,12 @@ and it is explained in Section~\ref{sec:dynamic_model}.
 \label{fig:auxiliary_classes}
 \end{figure}
 
-As said before, AdaptUI allows users to manage the adaptation model through the
-Capabilities Collector module. This idea, based on the work by~\citet{razmerita_ontology_based_2003},
-allows users to participate during the model personalization and adaptation process. 
-To this end, several classes have an \textit{isStatic} data property. This property
-enables or disables the adaptation for the corresponding class depending on its
-value (\textit{true} or \textit{false}). For example, the user might not want the
+As said before, the proposed adaptation engine allows users to manage the 
+adaptation model through the Capabilities Collector module. This idea allows users to participate 
+during the model personalization and adaptation process. To this end, several 
+classes have an \textit{isStatic} data property. This property enables or 
+disables the adaptation for the corresponding class depending on its value 
+(\textit{true} or \textit{false}). For example, the user might not want the
 display brightness to be changed. A user profile where the brightness is configured
 as static with the corresponding boolean value (\textit{adaptui:userdisplayBrightnessIsStatic})
 means that during the adaptation process the corresponding rule (see the adaptation
@@ -264,11 +262,10 @@ After reviewing the literature in Chapter~\ref{cha:state_of_the_art} we found
 that, for an appropriate adaptation of a user interface, there are three main
 entities which must be represented in the domain: the user, the context and the
 device. These concepts are semantically represented through the \textit{User},
-\textit{Context} and \textit{Device} classes in the AdaptUIOnt ontology. But 
-these three classes do not represent these entities alone. They are defined by 
-their corresponding characteristics. These characteristics are represented through 
-the \textit{UserCharacteristics}, \textit{ContextCharacteristics} and
-\textit{DeviceCharacteristics} classes (see Figure~\ref{fig:user_characteristics_class}).
+\textit{Context} and \textit{Device} classes in the AdaptUIOnt ontology. These
+classes are defined by their corresponding characteristics. These characteristics 
+are represented through the \textit{UserCharacteristics}, \textit{ContextCharacteristics} 
+and \textit{DeviceCharacteristics} classes (see Figure~\ref{fig:user_characteristics_class}).
 Together with the \textit{Adaptation} class, these seven classes form the Entities
 Model, which is a conceptual group within the whole AdaptUIOnt model.
 Figure~\ref{fig:entities_characteristics} shows the set of classes which form
@@ -296,22 +293,21 @@ class is detailed in Section~\ref{sec:adaptation_class}.
 The \textit{UserCharacteristics} class is one of the seven classes included in
 the conceptual Entities Model. This class includes a series of subclasses which
 build the knowledge about the user. Several user modelling ontologies are used
-(i.e., \ac{foaf}~\citep{foaf} and \ac{gumo}~\citep{heckmann_gumogeneral_2005}). 
-However, the strength of this class lies not on the representable knowledge 
-through these classes, but in the way the knowledge about the user capabilities
-(and disabilities) is represented. As explained in the introduction of this 
-chapter, modelling physiological capabilities of users is troublesome and not 
-practical. Several authors have tried to model user physiological characteristics~\citep{gregor_designing_2002}
-\citep{razmerita_ontology_based_2003}~\citep{pereira_triple_2005}~\citep{persad_characterising_2007}
-\citep{persad_cognitive_2007} and~\citep{skillen2012ontological}. Although their
-systems may behave properly, there is still the issue of facing a coherent user
-modelling process including user's capabilities. Not only because we lack
-physiological background in the area, but also because different users may behave
-in different ways even if they suffer from the same disability. 
+(i.e., \ac{foaf} and \ac{gumo}). However, the strength of this class lies not on
+the representable knowledge through these classes, but in the way the knowledge
+about the user capabilities (and disabilities) is represented. As explained in 
+the introduction of this chapter, modelling physiological capabilities of users
+is troublesome and not practical. Several authors have tried to model user 
+physiological characteristics
+\citep{gregor_designing_2002}\citep{razmerita_ontology_based_2003}\citep{pereira_triple_2005}\citep{persad_characterising_2007}\citep{persad_cognitive_2007}\citep{skillen2012ontological}. Although their systems may behave properly, there is still the issue of 
+facing a coherent user modelling process including user's capabilities. Not only 
+because we lack physiological background in the area, but also because different
+users may behave in different ways even if they suffer from the same disability. 
 
 To avoid this problem and to provide an ontology able to model user's 
 capabilities, AdaptUIOnt's user's capabilities and disabilities knowledge is 
-represented through the following classes:
+represented through the following classes (see the details of each class
+given in Table~\ref{tbl:user_characteristics_ontology}):
 
 \begin{itemize}
   \item \textit{Interface}: This category gathers input and output information
@@ -321,21 +317,19 @@ represented through the following classes:
   with a sight problem will not have to model a specific sight disability. This
   would require to consider several sight conditions and, for each one, different
   measures, ranges and classifications. Instead of that, there is the possibility
-  for the user to model the Input/Output as voice and audio based interaction
-  (by default the interaction is established as \textit{haptic}). This means that,
-  by specifying these parameters, the system will understand that the user might
-  suffer from a hearing loss condition or a sight disability.
-  Table~\ref{tbl:user_characteristics_ontology} shows the interaction channels
-  modelled by default in AdaptUIOnt.
+  for the user to model the Input/Output as voice and audio based interaction. 
+  This means that, by specifying these parameters, the system will understand 
+  that the user might suffer from a hearing loss condition or a sight disability.
+%   Table~\ref{tbl:user_characteristics_ontology} shows the interaction channels
+%   modelled by default in AdaptUIOnt.
 
   \item \textit{Audio} and \textit{Display}: These two classes model aspects
   about the use of the audio commands and volume controls, as well as different
   presentation parameters for the display, as brightness, contrast, orientation
-  and magnification (see all the properties in Table~\ref{tbl:user_characteristics_ontology}).
-  Thus, sight disabilities or, simply, sight problems due to context conditions
-  (e.g., direct sunlight on the device screen) and hearing problems are faced by
-  allowing the user to establish the default (or minimum) brightness, magnification,
-  contrast, pitch, frequency and volume of the adaptation.
+  and magnification. Thus, sight disabilities or, simply, sight problems due to 
+  context conditions (e.g., direct sunlight on the device screen) and hearing 
+  problems are faced by allowing the user to establish the default (or minimum)
+  brightness, magnification, contrast, pitch, frequency and volume of the adaptation.
     
   \item \textit{Experience}: User experience with technology might be useful when
   executing adaptation rules. For examples, inexperienced users may need more
@@ -356,13 +350,13 @@ represented through the following classes:
   the future adaptations, the adaptation rules will be aware of this user 
   particular need.
   
-  \item \textit{Basic User Dimensions}: Extracted from the \ac{gumo} ontology
-  \citep{heckmann_gumogeneral_2005}, this class models information about the user
-  contact information. See Table~\ref{tbl:used_ontologies} in order to see the
-  whole set of classes included under this class.
+  \item \textit{Basic User Dimensions}: Extracted from the \ac{gumo} ontology,
+  this class models information about the user contact information. See 
+  Table~\ref{tbl:used_ontologies} in order to see the whole set of classes 
+  included under this class.
   
   \item \textit{Document}, \textit{SocialInstitution} and \textit{OnlineAccount}:
-  Extracted from \ac{foaf}~\citep{foaf}, these classes complete several personal 
+  Extracted from \ac{foaf}, these classes complete several personal 
   and social characteristics of the user.
 \end{itemize}
 
@@ -425,7 +419,7 @@ enough to characterize it. In AdaptUIOnt this kind of context is also modelled,
 since sensor information is significantly relevant for being aware of the context
 environment conditions. Thus, the information collected by sensors is represented
 under the \textit{PhysicalEnvironment} and \textit{Location} classes, which are
-classes from the \ac{gumo}~\citep{heckmann_gumogeneral_2005} ontology. Nevertheless,
+classes from the \ac{gumo} ontology. Nevertheless,
 the AdaptUIOnt ontology does not only model sensor related knowledge. There are
 three extra classes which aim modelling high-level information about the
 environment: \textit{LimitingConditions}, \textit{VirtualEnvironment} and
@@ -444,7 +438,7 @@ is presented:
  \item \textit{LimitingConditions}: Instead of modelling a set of particular
  activities we consider several context situations that might impede the interaction
  with the user. These situations are modelled as different groups regarding the
- capabilities that they might affect.
+ capabilities that they might affect (see Section~\ref{sec:incoherence}).
  
  \item \textit{VirtualEnvironment}: Combining the knowledge of the categories
  above, it is possible to extract high-level information. For example, sensing
@@ -456,14 +450,16 @@ is presented:
  sensors. A sensor can provide information about the temperature (23 ºC). But
  this information by itself is poor in a context-aware system. Environment metadata
  can describe and enrich this knowledge, providing time and location data. For
- example, ``the current temperature at 12:00 AM in Bilbao is 13 ºC''.
+ example, ``the current temperature at 12:00 AM in Bilbao is 13 ºC''. This information
+ contains small pieces of low level information which, combined, form a high level
+ information about the current environment situation.
 \end{itemize}
 
 
 Table~\ref{tbl:context_characteristics_ontology} shows the main datatype properties
 of the \textit{ContextCharacteristics} class.
 
-\begin{table}[H]
+\begin{table}
   \caption{ContextCharacteristics data properties}
  \label{tbl:context_characteristics_ontology}
 \footnotesize
@@ -479,12 +475,11 @@ of the \textit{ContextCharacteristics} class.
   \textit{Noise}	& \textit{contextHasNoise}	& Represents the amount of \acp{db}\\
 			& 				& in the environment.		\\
   \textit{Time}		& \textit{hasTimeValue}		& The current time.		\\
-  \textit{LimitingConditions}& \textit{hasMovementRestriction}&				\\
+  \textit{LimitingConditions}& \textit{hasMovementRestriction}&	Includes several abstract activities.\\
   \hline
   
 \end{tabular}
 \end{table}
-
 
 
 \subsubsection{The \textit{DeviceCharacteristics} Class}
@@ -493,7 +488,7 @@ of the \textit{ContextCharacteristics} class.
 The device model is also built over several useful classes from other ontologies.
 The most important characteristic of this class consists in modelling dynamic
 information about the device regarding the adaptation. For example, low battery
-levels might be considered risky by the AdaptUI system, as there is the possibility
+levels might be considered risky by the adaptation engine, as there is the possibility
 that the device turns off during the process. Device capabilities are categorized
 as follows:
 
@@ -547,9 +542,9 @@ of the \textit{DeviceCharacteristics} class.
 The last class included in the Entities Model is the \textit{Adaptation} class.
 This class represents the final stage of the whole adaptation process. This means
 that, after the adaptation process the results will be represented through an
-individual (or instance) of this class. Therefore, the AdaptUI platform will
-semantically request the corresponding adaptation for the user interface to this
-class. As can be seen in Figure~\ref{fig:entities_characteristics}, the
+individual (or instance) of this class. Therefore, the proposed adaptation platform 
+will semantically request the corresponding adaptation for the user interface to 
+this class. As can be seen in Figure~\ref{fig:entities_characteristics}, the
 \textit{Adaptation} class is linked to the other classes of the Entities Model
 (\textit{User}, \textit{Context} and \textit{User}) through the \textit{adaptationIsDefinedBy}
 object property. Thus, future semantic requests are allowed searching for a
@@ -599,14 +594,15 @@ Table~\ref{tbl:adaptation_properties} shows the datatype properties of the
 \subsection{Incoherence and Activities}
 \label{sec:incoherence}
 
-During the design of the AdaptUI ontology we have considered how the three
-main entities (user, context and device) interact with each other. Modelling
-these entities and being aware of the interactions that occur among them help
-us to deduce the best adaptation for the user in each case. However, there are
-several situations where the adaptation process is not so obvious. These situations
-are defined by the activities that are being carried out within the environment.
+During the design of the AdaptUIOnt ontology several considerations were studied
+in order to fully understand how the three main entities (user, context and device) 
+interact with each other. Modelling these entities and being aware of their interactions
+among them lead the platform to deduce the best adaptation for the user in each case.
+However, there are several situations where the adaptation process is not so obvious.
+These situations are defined by the activities that are being carried out within
+the environment.
 
-\citet{persad_characterising_2007}~\citep{persad_cognitive_2007}
+\citet{persad_characterising_2007}\citep{persad_cognitive_2007}
 consider that activities need to be taken into account. They describe Human
 Factors and Ergonomic theory as four components: the user, the product, the context
 and the activities over time that constitutes the interaction.
@@ -622,15 +618,15 @@ and the activities over time that constitutes the interaction.
  but having the same context situation may also result in context conflict.
 \end{itemize}
 
-During the designing process of AdaptUI, we asked ourselves if it would be enough
-to consider just the user and his/her capabilities within the current context.
-Thus, several hypothetical scenarios were studied:
+During the designing process of the adaptation platform, we asked ourselves if 
+it would be enough to consider just the user and his/her capabilities within the
+current context. Thus, several hypothetical scenarios were studied:
 
 \begin{itemize}
  \item A user suffers from a visual impairment. This disability obstructs
  the user from seeing the application content properly. Then the adaptation
- will intercede to facilitate another interaction channel for the user, e.g.,
- by voice recognition and control. The problem is that there are situations
+ engine will intercede to facilitate another interaction channel for the user,
+ e.g., by voice recognition and control. The problem is that there are situations
  in which a common adaptation from the system will not be appropriate.
  For example, if the user is in a place where silence is essential (i.e., a
  library, a hospital or in an exam), an audio interaction based communication
@@ -648,25 +644,25 @@ Thus, several hypothetical scenarios were studied:
  he/she is manipulating knives.
 \end{itemize}
 
-These examples show several situations where users are involved in tasks that
-contradict the current context and user capabilities. Adaptation incoherence is
-defined by several environment parameters that induce the platform to perform a
+These examples present several situations where users are involved in tasks that
+contradict the current context and user capabilities. An \textit{adaptation incoherence} 
+is defined by several environment parameters that induce the platform to perform a
 certain adaptation for the current conditions. However, the result of this
 adaptation, although it can be aligned with the context characteristics, can be
 incoherent.
 
 Therefore, we need something more to characterize the current situation that
-involves these three entities: activities. Activities help us to understand the
+involves these three entities: activities. Activities help to understand the
 current user, context and device situation. In other words, it enriches the
 environment information.
 
-Requiring the use of the hands, being at a certain location (like a library, where
-people has to be in silence), or demanding the user attention are several examples
-of situations which may represent some risks that we have to take into account
-when we face a context modelling problem. For example, driving or cooking restricts
-user capabilities momentarily. Hence, we can state that these activities impede
-the user. As is difficult to model every possible activity that the user performs,
-in AdaptUI we present a class (\textit{LimitingConditions}) that models abstract
+Requiring the use of the hands, being at a certain location (like a library), or 
+demanding the user attention are several examples of situations which may 
+represent some risks that have to be taken into account when dealing with a 
+context modelling problem. For example, driving or cooking restricts
+user capabilities momentarily. Hence, there are activities that impede the user. 
+As is difficult to model every possible activity that the user performs,
+AdaptUIOnt includes a class (\textit{LimitingConditions}) that models abstract
 groups of activities:
 
 \begin{itemize}
@@ -682,28 +678,29 @@ groups of activities:
 \label{sec:dynamic_model}
 
 The proposed solution addresses several issues of several modelling approaches
-found in the literature. Following the perspective of~\citet{fischer_user_2001}
-we consider that the modelled entities are not static at all. They change through
-time due to their interaction. To express this concept of \textit{dynamic model}
-we have implemented several auxiliary classes:
+found in the literature. Following the perspective of~\citet{fischer_user_2001},
+the adaptation platform and the presented ontology consider that the modelled 
+entities are not static. They change through time due to their interaction. To 
+express this concept of \textit{dynamic model} several auxiliary classes have been
+included:
 
 \begin{itemize}
  \item \textit{UserAux}: This class is helpful when a certain context situation
- impedes a user capability. Updated by the pre-adaptation rules this class is used
- as intermediary between the \textit{Adaptation} class and the \textit{ContextAux}
- class, where the classification of the context collected information is modelled.
- As is shown in Table~\ref{tbl:aux_classes_data_properties}, it models several user
+ impedes a user capability. Updated by the pre-adaptation rules (explained
+ in Section~\ref{sec:preadaptation_rules}) this class is used as intermediary 
+ between the \textit{Adaptation} class and the \textit{ContextAux} class, where 
+ the classification of the context collected information is modelled. As is 
+ shown in Table~\ref{tbl:aux_classes_data_properties}, it models several user
  dynamic capabilities.
  
  \item \textit{ContextAux}: Context is considered in a different way. As context
- information comes from sensors, we have to translate the different incoming data
+ information comes from sensors, the different incoming data needs to be translated
  to a more descriptive language. Thus, if a value of 35,000 lux is collected (as
- a brightness value of the \textit{ContextCharacteristics} class) we modify the
- contextAuxHasLightLevel data property with the \textit{direct\_sunlight} value (see
- Table~\ref{tbl:aux_classes_data_properties}). Therefore, it is possible to work
- with more meaningful data. The same occurs with the contextAuxHasNoiseLevel
- data property. Table~\ref{tbl:luminance} and Table~\ref{tbl:sounds} show the
- different classifications for light and noise levels used for AdaptUI.
+ a brightness value of the \textit{ContextCharacteristics} class) the
+ \textit{contextAuxHasLightLevel} data property is modified with the \textit{direct\_sunlight} 
+ value (see Table~\ref{tbl:aux_classes_data_properties}). Therefore, it is possible to work
+ with more meaningful data. Table~\ref{tbl:luminance} and Table~\ref{tbl:sounds} 
+ show the different classifications for light and noise levels.
  
  \item \textit{DeviceAux}: Following the same approach, this class deals with the
  dynamic capabilities of the device.
@@ -722,11 +719,11 @@ is discussed in the Future Work section (see Section~\ref{sec:future_work}).
   \textbf{Class} 	& \textbf{Property name} 		& \textbf{Description}					\\
   \hline
   \textit{UserAux}	& \textit{userAuxDIsplayHasApplicable}	& Models the applicability of display adaptations for	\\
-			& 					& the user. There are two different scenarios: 1) in 	\\
-			& 					& the first one, the user might suffer from a 	\\
+			& 					& the user. There are two different scenarios: in 	\\
+			& 					& the first one, the user might suffer from a 		\\
 			&					& disability that makes impossible for him/her to	\\
 			&					& interact with a display. In this case \textit{Display}\\
-			& 					& is not applicable for this user; 2) on the contrary,	\\
+			& 					& is not applicable for this user; on the contrary,	\\
 			& 					& the user can specify that he/she does not want the 	\\
 			& 					& display to be adapted. In any case the value of this	\\
 			&					& property will determine if the rules need to consider	\\	
@@ -764,7 +761,7 @@ is discussed in the Future Work section (see Section~\ref{sec:future_work}).
 
 
 
-\begin{table}
+\begin{table}[H]
   \caption{Luminance provided under various conditions~\citep{luminance}.}
  \label{tbl:luminance}
 \footnotesize
@@ -816,19 +813,19 @@ a new result is generated.
   \hline 
   \textbf{Ontology value}	& \textbf{\ac{db}}\\
   \hline
-  Absolute threshold of hearing	& 0	\\
-  Breathing			& 10 	\\
-  Leaves murmuring		& 20	\\
-  Library			& 40	\\
-  Office			& 50	\\
-  Conversation			& 60	\\
-  Traffic			& 70	\\
-  Factory			& 80	\\
-  Truck				& 90	\\
-  Train				& 100	\\
-  Construction			& 110	\\
-  Rock gig			& 120	\\
-  Jackhammer			& 130	\\
+  \textit{absolute\_threshold\_of\_hearing}& 0	\\
+  \textit{breathing}		& 10 	\\
+  \textit{leaves\_murmuring}	& 20	\\
+  \textit{library}		& 40	\\
+  \textit{office}		& 50	\\
+  \textit{conversation}		& 60	\\
+  \textit{traffic}		& 70	\\
+  \textit{factory}		& 80	\\
+  \textit{truck}		& 90	\\
+  \textit{train}		& 100	\\
+  \textit{construction}		& 110	\\
+  \textit{rock\_gig}		& 120	\\
+  \textit{jackhammer}		& 130	\\
   \hline
 
 \end{tabular}
@@ -844,40 +841,38 @@ a new result is generated.
   \hline 
   \textbf{Battery (\%)} 	& \textbf{Ontology value}	\\
   \hline  
-  $x\leq$15			& Not sufficient		\\
-  15$<x\leq$50			& Sufficient			\\
-  50$<x\leq$100			& Optimal			\\
+  $x\leq$15			& \textit{not\_sufficient}	\\
+  15$<x\leq$50			& \textit{sufficient}		\\
+  50$<x\leq$100			& \textit{optimal}		\\
   \hline
-
 \end{tabular}
 \end{table}
-
 
 
 \subsection{Conclusions}
 \label{sec:model_conclusions}
 
 During the previous sections the AdaptUIOnt ontology, which forms part of the two
-main bases of the AdaptUI platform, has been described. The most significant
-characteristic of the ontology is that allows the representation of the knowledge
-about what we consider the three main entities in a user interface adaptation
-domain: the user, the context, and the device. 
+main bases of the adaptation platform (detailed in Chapter~\ref{cha:architecture}), 
+has been described. The most significant characteristic of the ontology is that
+allows the representation of the knowledge about what we consider the three main
+entities in a user interface adaptation domain: the user, the context, and the device. 
 
 The first trouble when designing the ontology appeared when the user capabilities
 modelling was needed. As we lack the required physiological knowledge in this area,
 we believe that using physiological information of the user capabilities would
-not be practical. Thus, an abstraction of the conceptualization of the model was
-performed. Instead of consider the physiological factors that allow a user to
+not be practical. Consequently, an abstraction of the conceptualization of the model was
+performed. Instead of considering the physiological factors that allow a user to
 perform several interactions, the AdaptUIOnt model centres its focus in the needs
 of the user to carry out these interactions. This is significant, as it allows
-us to avoid these capabilities explicitly. Besides, the presented ontologies
-uses several extendedly used ontologies to enrich the information about the three
+to avoid modelling these capabilities explicitly. Besides, the presented ontologies
+use several extendedly used ontologies to enrich the information about the three
 entities. Table~\ref{tbl:used_ontologies} details the most important classes
 imported in AdaptUIOnt.
 
 The ontology has been conceptually divided into two different parts. The first
 one gathers the main classes, those which directly represent knowledge about
-the main entities. In this case, this part of the ontology has been called
+the main entities. In this case, this part of the ontology has been called the
 Entities Model, and its composed by the \textit{User}, \textit{Context},
 \textit{Device}, \textit{UserCharacteristics}, \textit{ContextCharacteristics},
 \textit{DeviceCharacteristics} and \textit{Adaptation}. Each main entity is
@@ -886,5 +881,8 @@ class is directly related to the \textit{UserCharacteristics} class through a
 \textit{isDefinedBy} object property. The same procedure is followed by the other
 two main entities. The \textit{Adaptation} class, however, just represents the
 final stage of the whole adaptation process. Therefore, after the corresponding
-reasoning (detailed in the following sections) the AdaptUI platform will
-semantically requests the adaptation information represented by it.
+reasoning (detailed in the following sections) the adaptation platform will
+semantically requests the adaptation information represented by it. The second part
+of the ontology encompasses the classes used for adding a dynamic characteristic
+to the model. The \textit{UserAux}, \textit{ContextAux} and \textit{DeviceAux}
+are part of this Dynamic Model.
