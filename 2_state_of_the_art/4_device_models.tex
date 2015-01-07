@@ -14,7 +14,7 @@ transformation guides, devices \acp{api} and \ac{ccpp} systems help developers
 to optimize the user experience. These modelling techniques are analysed in the 
 following section. 
 
-\subsubsection{Composite Capabilities/Preference Profiles}
+\subsection{Composite Capabilities/Preference Profiles}
 \label{sec:ccpp}
 \ac{ccpp}~\citep{ccpp_status} is a \ac{w3c} standard system to express user and 
 device capabilities. Using \ac{ccpp} a user will be able to show a specific 
@@ -32,10 +32,10 @@ based on content management. This approach considers different presentation
 alternatives. Depending on the client device, a presentation configuration is 
 served. Hence, in the content serving process there are two options: the 
 server chooses which is the best configuration for the device, and the client 
-decides what to do with the content. This approach is very easy to be performed 
+decides what to do with the content. This approach is very easy to implement, 
 since every device identifies itself against the server.
 
-\ac{ccpp} is based on profiles. A profile contains components and attributes.
+\ac{ccpp} is based on \textit{profiles}. A profile contains components and attributes.
 Each component has, at least, one attribute, and each profile has at least one
 component. The main components are: the hardware platform, the software platform
 and single applications (e.g., a browser). Attributes can contain one or many 
@@ -70,16 +70,14 @@ approach.
 \end{tabular}
 \end{table}
 
-\subsubsection{\ac{uaprof}}
+\subsection{\ac{uaprof}}
 \label{sec:uaprof}
 \ac{uaprof}~\citep{uaprof} is concerned with collecting wireless devices 
 capabilities and preferences. This information is provided to content servers 
-to easy the content format selection process. 
-
-\ac{uaprof} is directly related to the \ac{w3c} \ac{ccpp} specification and it 
-is also based on \ac{rdf}. Hence, the document schema is 
-extensible~\citep{butler_implementing_2001}~\citep{butler_ccpp_2002}. These 
-files, usually served as application/xml mimetype, describe several mobile 
+to easy the content format selection process. \ac{uaprof} is directly related to 
+the \ac{w3c} \ac{ccpp} specification and it is also based on \ac{rdf}. Hence, 
+the document schema is extensible~\citep{butler_implementing_2001}\citep{butler_ccpp_2002}. 
+These files, usually served as application/\ac{xml} mimetype, describe several mobile 
 devices capabilities (e.g., vendor, model, screen size, multimedia capabilities, 
 and so forth). Most recent versions have also information about \ac{mms}, video streaming 
 and more multimedia features. \ac{uaprof} profiles are voluntarily built by the 
@@ -101,8 +99,8 @@ The system works as follows:
 However, this approach has several drawbacks:
 
 \begin{itemize}
- \item Not every device have a \ac{uaprof}.
- \item Not every \ac{uaprof} are available.
+ \item Not every device has a \ac{uaprof}.
+ \item Not every \ac{uaprof} profile is available.
  \item \ac{uaprof} data can contain schema or data errors.
  \item There is no industry-wide data quality standard for the data within each
  field in an \ac{uaprof}.
@@ -132,7 +130,7 @@ However, this approach has several drawbacks:
 }
 % \lstinputlisting[language=XML, frame=single]{2_state_of_the_art/device/uaprof_example.xml}
 
-\subsubsection{Device Description Repository}
+\subsection{Device Description Repository}
 \label{sec:ddr}
 \ac{ddr} is a concept proposed by the \ac{ddwg}, an organization within the 
 \ac{w3c}. The \ac{ddr} is supported by a standard interface and an initial 
@@ -140,42 +138,40 @@ vocabulary core about devices' properties. Web content authors will use these
 repositories to adapt their content to these devices. Thus, the Web content 
 interaction with different devices will be easier. Screen size, input mechanisms, 
 supported colour sets, known limitations, special features, and so forth are 
-stored in these repositories.
+stored in these repositories. In the following lines two of the most popular
+\ac{ddr} systems are introduced.
 
-Here we present three of the most popular \ac{ddr} systems:
+\subsubsection{\ac{wurfl}} 
 
-\myparagraph{\ac{wurfl}} 
-
-\ac{wurfl} is an \ac{xml} based
+\ac{wurfl}\footnote{http://wurfl.sourceforge.net/} is an \ac{xml} based
 open source database which contains the characteristics and capabilities of a 
 wide range of devices. These capabilities are classified into several groups. 
-These groups are just a simple way to understand \ac{wurfl} and its data. Its 
-\ac{api} is very easy to use and it has the advantage of providing a hierarchy 
-able to \textit{infer} several capabilities for devices which are still not 
-present in the file.
+These groups represent a simple way to understand \ac{wurfl} and its data. Its 
+\ac{api} is very easy to use and it provides a hierarchy able to infer several 
+capabilities for devices which are still not present in the file.
 
 The following are several capabilities used by~\citet{almeida_imhotep_2011} for
 Imhotep, a framework which aims to ease the development of accessible and adaptable
 user interfaces:
 
 \begin{itemize}
- \item display: It contains information about the device screen, as the resolution,
- number of columns, orientation, and so on.
- \item image\_format: Supported image formats.
- \item playback: Supported video codec.
- \item streaming: Available streaming capabilities.
- \item sound\_format: Supported audio formats.
+ \item \textit{display}: It contains information about the device's screen (e.g.,
+ the resolution, number of columns, orientation, and so on).
+ \item \textit{image\_format}: Supported image formats.
+ \item \textit{playback}: Supported video codec.
+ \item \textit{streaming}: Available streaming capabilities.
+ \item \textit{sound\_format}: Supported audio formats.
 \end{itemize}
 
 \ac{wurfl} has become the de-facto standard for mobile capabilities. Nevertheless,
 there are several free and open source alternatives that are growing within the
 community very fast.
 
-\myparagraph{OpenDDR}
+\subsubsection{OpenDDR}
 
-One of the previously cited open alternatives is OpenDDR\footnote{http://www.openddr.org/}.
-This \ac{ddr} also provides an \ac{api} to access \ac{ddr}s about devices
-capabilities. It has two main advantages:
+OpenDDR\footnote{https://github.com/OpenDDRdotORG/OpenDDR-Resources} is an open 
+\ac{ddr} alternative which also provides an \ac{api} to access \ac{ddr}s about 
+devices capabilities. It has two main advantages:
 
 \begin{itemize}
  \item The conviction that the application will work with any \ac{w3c} \ac{ddr} 
@@ -188,24 +184,25 @@ Nevertheless, the OpenDDR \ac{api} is complex. It does not provide an architectu
 approach like \ac{wurfl}. Thus, it assumes default values for unknown parameters
 (e.g., \textit{displayWidth} $= 800$ pixels).
 
-\myparagraph{51Degrees.mobi}
-
-It works similar to OpenDDR, with the difference that 51Degrees.mobi~\citep{51degrees}
-has two versions. The first one (Lite) is free to use and it gathers several 
-devices capabilities. The second one (Premium) is not free, but it has more data 
-about devices and automatic updates for the stored information. 
+% \subsubsection{51Degrees}
+% 
+% It works similar to OpenDDR, with the difference that 51Degrees\footnote{http://51degrees.codeplex.com/}
+% has two versions. The first one (Lite) is free to use and it gathers several 
+% devices capabilities. The second one (Premium) is not free, but it has more data 
+% about devices and automatic updates for the stored information. 
 
 
 \subsubsection{\ac{ddr} Solution Comparison}
 \label{sec:ddr_comparison}
 
 The main problem with these solutions is their inability to provide all the
-information developers usually need. Many fields are empty (which means that
-default values are used) or with error data. Another disadvantage is that, for
-the interface adaptation domain, sometimes we may need dynamic information about
-the device. For example, the battery levels, or the available memory, can be
-crucial pieces of information before making any adaptation process. Table~\ref{tbl:ddr_comparison}
-depicts each solution's drawbacks and advantages.
+information developers usually need. For instance, in \ac{wurfl} many significant 
+fields are empty (which means that default values are used) or with error data. 
+Another disadvantage is that, for the interface adaptation domain, sometimes we 
+may need dynamic information about the device. For example, the battery levels, 
+or the available memory, can be crucial pieces of information before making any 
+adaptation process. Table~\ref{tbl:ddr_comparison} depicts each solution's drawbacks 
+and advantages, extracted from our experience with these \ac{ddr} solutions.
 
 
 \begin{table}
@@ -226,42 +223,41 @@ depicts each solution's drawbacks and advantages.
 		&		 				& capabilities		\\
 		& Growing community 				& Default values for 	\\
 		& 						& unknown data 		\\
-  51Degrees.mobi& A Lite version, free to use 			& Limited number of 	\\
-		& even commercially 				& capabilities		\\
-		& Easy to install and use 			&			\\
+%   51Degrees.mobi& A Lite version, free to use 			& Limited number of 	\\
+% 		& even commercially 				& capabilities		\\
+% 		& Easy to install and use 			&			\\
 \hline
 \end{tabular}
 \end{table}
 
-\subsubsection{Ontologies}
+\subsection{Ontologies}
 
-There are other alternatives for modelling devices. As occurs with users and 
-context ontologies allow us to give some meaning to the modelled concepts and 
-the collected information. From the reviewed ontologies we remark the \ac{soupa} 
-ontology which, in addition to consider context information, it models many 
-different aspects of static mobile capabilities and characteristics~\citep{chen_soupa_2004}. 
-Another significant ontology is the one presented by~\citet{hervas_context_2010} 
-as part of the \ac{pivon} ontology. The Device Model Ontology describes not only 
-the device's capabilities but its relationships with the service and user ontologies, 
-dependencies and other features.
+There are other alternatives for modelling devices. Ontologies has the ability to
+give some meaning to the modelled concepts and the collected information. From the 
+reviewed ontologies we remark the \ac{soupa} ontology which, in addition to consider 
+context information, it models many different aspects of static mobile capabilities 
+and characteristics~\citep{chen_soupa_2004}. Another significant ontology is the 
+one presented by~\citet{hervas_context_2010} as part of the \ac{pivon} ontology. 
+The Device Model Ontology describes not only the device's capabilities but its 
+relationships with the service and user ontologies, dependencies and other features.
 
-\subsubsection{Device Discussion}
+\subsection{Device Discussion}
 \label{sec:device_discussion}
 
-Apart from all the cited techniques for considering devices and their capabilities,
-we need to remark how technology evolves in a way that makes difficult to predict
-how we will work with smart devices in the near future. A few years ago context 
-was understood as the result of the mixture of every physical sensor deployed in 
-the environment. Temperature, light, noise and so forth all these context variables have 
-been historically collected through several sensors located strategically. Now 
-these sensors (and more) are also embedded in these smart devices. They have 
-become wearable, and using their capabilities of the devices they area embedded 
-in they have improved their performance. Touchable screens, network capabilities,
-parallel computing resources and high storage space embedded in small devices 
-have changed the way context and smart devices interact. This situation makes 
-us contemplate how this interaction channel would be in the near future. Smart 
-watches, glasses and other wearable devices are, undoubtedly, changing the way 
-smart environments will sense, behave and react.
+Apart from all the mentioned techniques and solutions for considering devices and 
+their capabilities, it is necessary to remark how technology evolves in a way that 
+makes difficult to predict how we will work with smart devices in the near future. 
+A few years ago context was understood as the result of the mixture of every 
+physical sensor deployed in the environment. Temperature, light, noise and so 
+forth. All these context variables have been historically collected through several 
+sensors located strategically. Now these sensors (and more) are also embedded in 
+these smart devices. They have become wearable, and using their capabilities of 
+the devices they area embedded in they have improved their performance. Touchable 
+screens, network capabilities, parallel computing resources and high storage space 
+embedded in small devices have changed the way context and smart devices interact. 
+This situation makes us contemplate how this interaction channel would be in the 
+near future. Smart watches, glasses and other wearable devices are, undoubtedly, 
+changing the way smart environments will sense, behave and react.
 
 % 
 % \subsection{Related Standardization Work}
