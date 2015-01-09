@@ -1,55 +1,54 @@
 \section{The AdaptUI Rules Set}
 \label{sec:adaptui_rules}
 
-As said in the introduction of this chapter, the AdaptUI platform is supported
-by two bases. The first one, the AdaptUIOnt ontology, described in the previous
-sections. The second one, a set of rules that uses the knowledge represented
-by the ontology and triggers several actions aiming the user interface adaptation.
-
-
-In AdaptUI the adaptation process is understood as a three step procedure: 
+As said in the introduction of this chapter, the developed adaptation platform is 
+supported by two bases. The first one, the AdaptUIOnt ontology, described in the 
+previous sections. The second one, a set of rules that uses the knowledge represented
+by the ontology and triggers several actions aiming the user interface adaptation. 
+In this dissertation the adaptation process is understood as a three step procedure: 
 
 \begin{itemize}
  \item First, the knowledge of the main entities needs to be collected. Once it
- is gathered, a normalization process needs to be performed. This process classifies
- the collected information so it can be easily read. For example, a noise sensor
- might sense a 100~\acp{db} sound. Initially, we may not understand this value. Thus,
- using several ranges explained during this chapter (see Table~\ref{tbl:luminance},
- Table~\ref{tbl:sounds} and Table~\ref{tbl:batteries}) a high level classification
- is carried out.
+ is gathered, a normalization process is performed. This process classifies the 
+ collected information so it can be easily read. For example, a noise sensor
+ might sense a 100~\acp{db} sound. Initially, the platform might not understand
+ this value. Thus, using several ranges explained during this chapter (see 
+ Table~\ref{tbl:luminance}, Table~\ref{tbl:sounds} and Table~\ref{tbl:batteries})
+ a high level classification is carried out.
  
- \item Second, and taking into account the transformed knowledge in the previous
- step, several actions need to be performed to adapt the user interface to the
- current situation (represented through the ontology in the previous stage).
+ \item Secondly, and taking into account the transformed knowledge in the previous
+ step, several actions are performed to adapt the user interface to the current 
+ situation (represented through the ontology in the previous stage).
  
- \item Finally, as we believe the whole process should be iterative, a refinement
- of the adapted user interface is available to improve the final results.
+ \item Finally, a refinement of the adapted user interface is available to improve
+ the final results.
 \end{itemize}
 
-This conceptual division of the adaptation process in AdaptUI results in a three
-set of different rules, which are detailed below.
+This conceptual division of the adaptation process in the adaptation platform 
+results in a three set of different rules, which are detailed below.
+
 
 \subsection{The Pre-adaptation Rules}
 \label{sec:preadaptation_rules}
+
 This group of rules are designed to check those values which come from each entity 
-of the Entities Model in order to translate them to the auxiliary models (see 
-the primary model in Figure~\ref{fig:entities_characteristics}). For example, a 
-context brightness value of 35,000 indicates the amount of \ac{lx} of the 
+of the Entities Model in order to translate them to the auxiliary models. For 
+example, a 35,000 \ac{lx} context brightness indicates the amount of \ac{lx} of the 
 current environment. This value is then classified to a more verbose subgroup 
-(in this case, to \textit{direct\_sunlight}); a device battery value of 10 
-implies the percentage of the remaining battery. This is translated as a 
-\textit{non\_sufficient} battery level in the auxiliary device class. Thus,
-the corresponding adaptation rule checks these new parameters and decides whether
-the adaptation should follow one path or the other. Here we consider that 10\%
-of the total battery levels for a device might not be enough to run an adaptation
-process. Of course this is not accurate. The user might be able to use a nearby 
-power adaptor. Besides, a 20\% battery level might not be enough if the user 
-aims to browse the web, make a video call, and so forth. This means that these 
-values are established by us regarding the just the adaptation, but they directly 
-depend on the user context. This set of rules directly affects the 
-\textit{UserAux}, \textit{ContextAux} and \textit{DeviceAux} classes, being the 
-main reason for these classes to belong to the Dynamic Model introduced in 
-Section~\ref{sec:dynamic_model}.
+(in this case, \textit{direct\_sunlight}); a 10 device battery value represents 
+the percentage of the remaining battery. This is translated as a 
+\textit{non\_sufficient} battery level in the auxiliary device class. Thus, the
+corresponding adaptation rule checks these new parameters and decides whether the
+adaptation should follow one path or the other. In this dissertation we consider
+that 10\% of the total battery levels for a device might not be enough to run an
+adaptation process. Of course this is not accurate. The user might be able to
+use a nearby power adaptor. Besides, 10\% battery level might not be enough if
+the user aims to browse the web, make a video call, and so forth, but it might be
+sufficient carrying out one adaptation. This means that these values are established
+by the developer regarding the just the adaptation, but they directly depend on
+the user context. This set of rules directly affects the \textit{UserAux},
+\textit{ContextAux} and \textit{DeviceAux} classes, being the main reason for
+these classes to belong to the Dynamic Model introduced in Section~\ref{sec:dynamic_model}.
 
 Table~\ref{tbl:pre_adaptation_rules} describe the default pre-adaptation rules
 included in AdaptUIOnt.
@@ -126,11 +125,10 @@ Equation~\ref{ec:pre_adaptation_rule} shows an example of the
 
 \subsection{The Adaptation Rules}
 Depending on the checked rules and the auxiliary classes’ status, different 
-rules are triggered. These rules result in different values for the Adaptation 
+rules are triggered. These rules result in different values for the \textit{Adaptation} 
 class, which is the class queried in the device platform for bringing the final 
-adaptation to the device. These rules affect the \textit{Adaptation} class.
-Table~\ref{tbl:adaptation_rules} details the default adaptation rules within
-the AdaptUIOnt ontology.
+adaptation to the device. Table~\ref{tbl:adaptation_rules} details the default
+adaptation rules in the AdaptUIOnt ontology.
 
 \begin{table}
   \caption{The AdaptUIOnt adaptation rules.}
@@ -193,7 +191,7 @@ adaptation rule.
 
 \subsection{The Usability Rules}
 In order to check the usability satisfaction of the user with the provided
-adapted user interface, the usability rules set is provided. By checking several
+adapted user interface, a usability rules set is provided. By checking several
 usability metrics (detailed in Section~\ref{sec:usability_metrics}) these rules
 determine if the interaction with the adapted user interface might be considered
 enough. Table~\ref{tbl:usability_rules} introduced the usability rules included
@@ -251,10 +249,10 @@ adaptation rule.
 
 \subsection{The Post-adaptation Rules}
 Once the user interface is adapted, a concrete architecture module (see 
-Section~\ref{sec:adaptation_polisher}) monitors the user activity. Hence, 
-through a series of usability metrics (see Section~\ref{sec:usability_metrics}) 
-the the adaptation is considered satisfactory by AdaptUI. If it detects that the 
-usability level is insufficient, these rules are triggered changing the user model.
+Section~\ref{sec:adaptation_polisher}) monitors the user activity. Hence, through
+a series of usability metrics the the adaptation is considered satisfactory by
+the adaptation platform. If it detects that the usability level is inadequate,
+these rules are triggered, changing the user model.
 
 \begin{table}
   \caption{The AdaptUIOnt post-adaptation rules. For edit texts and text views
@@ -307,18 +305,18 @@ post-adaptation rule.
 
 
 
-The given set of rules by AdaptUI have been included as they are understood as
-vital for a precise adaptation. Nevertheless, and as it will be explained in
-Chapter~\ref{cha:architecture}, these rules are not final. This means that they
-are modifiable. To this end, AdaptUI provides a series of tools for developers
-that allow them to change the knowledge managed by the platform.
+The given set of rules by the adaptation platform have been included as they are
+understood as vital for a precise adaptation. Nevertheless, and as it will be
+explained in Chapter~\ref{cha:architecture}, these rules are not final. This
+means that they are modifiable. To this end, a series of tools for developers
+that allow them to change the knowledge managed by the platform are provided.
 
 
 \subsection{Conclusions}
 \label{sec:rules_conclusions}
 
-In this second part of the chapter the second main basis of the AdaptUI platform
-has been presented: the AdaptUI set of rules. Divided into three different groups
+In this second part of the chapter the second main basis of the adaptation platform
+has been presented: the set of rules. Divided into three different groups
 (considering that the adaptation process is understood as a three step procedure)
 these rules aim to finally generate a user interface adaptation under the following
 steps:
