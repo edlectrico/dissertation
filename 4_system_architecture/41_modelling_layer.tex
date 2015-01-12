@@ -23,16 +23,16 @@ presented in Section~\ref{sec:semantic_modeller}.
 \subsection{The Capabilities Collector}
 \label{sec:capabilities_collector}
 
-As cited in the literature, \citet{fischer_user_2001} defended that the user
+As mentioned in the literature, \citet{fischer_user_2001} defended that the user
 evolves through time. More concretely, time and experience are two of the 
-reasons for the cited evolution of user's characteristics. In AdaptUI users 
+reasons for the  evolution of user's characteristics. In AdaptUI users 
 evolve, but under different assumptions. Fischer considered long terms 
 parameters as the keys for the evolution of the user. On the contrary, AdaptUI 
 takes into account temporary and concrete context conditions, limited to a 
 specific momentum. Consequently, the user model is built contemplating a dynamic 
 user whose capabilities change due to context conditions.
 
-Considering this dynamic user perspective, based in several aspects related to
+Considering this dynamic user perspective based in several aspects related to
 context terms, we discussed how this could be applicable to mobile devices. 
 Mobile devices have several characteristics that make them susceptible to change 
 (i.e., battery consumption, location awareness, preferences of the screen or 
@@ -46,11 +46,10 @@ designed: the Capabilities Collector.
 The Capabilities Collector is a software module that allows the system gathering 
 non physiological capabilities of the user, collect different variables of the 
 current environment situation, and identify several device characteristics in 
-order to be aware of the whole domain limitations.
-
-Figure~\ref{fig:capabilities_collector_flow} illustrates how the Capabilities 
-Collector uses several activities to collect the information about the three 
-entities. Next this information is transferred to the Semantic Modeller.
+order to be aware of the whole domain limitations. Figure~\ref{fig:capabilities_collector_flow}
+illustrates how the Capabilities Collector uses several activities to collect
+the information about the three entities. This information is transferred to the
+Semantic Modeller.
 
 \begin{figure}
 \centering
@@ -64,15 +63,15 @@ three main entities in AdaptUI.}
 \subsubsection{Android Activity}
 \label{sec:activities}
 
-In Android, activities are application components that provide a screen with
-which the user can interact. Each activity is given a window in which to draw
-its user interface. Android applications usually consist of multiple activities 
-that bound to each other. 
+In Android, activities\footnote{\url{http://developer.android.com/guide/components/activities.html}}
+are application components that provide a screen with which the user can interact.
+Each activity is given a window in which to draw its user interface. Android
+applications usually consist of multiple activities that bound to each other. 
 
 Android applications have to declare a Main activity. This activity is always
 presented to the user when launching the application for the first time. Besides,
 activities can start other activities storing their current status (if needed).
-An activity lifecycle is illustrated in Figure~\ref{fig:activity_lifecycle}\footnote{\label{activities}http://developer.android.com/guide/components/activities.html}.
+An activity lifecycle is illustrated in Figure~\ref{fig:activity_lifecycle}.
 
 \begin{figure}
 \centering
@@ -81,13 +80,13 @@ An activity lifecycle is illustrated in Figure~\ref{fig:activity_lifecycle}\foot
 \label{fig:activity_lifecycle}
 \end{figure}
 
-Creating activities is easy. Extending the Activity class\textsuperscript{\ref{activities}},
-a main callback method is needed to be implemented: the onCreate() method. The
-system always calls this method when creating an activity. In it, the essential
-components of the activity should be initialized. Besides, and before any
-initialization, the setContentView() method has to be called. This method defines
-the layout for the activity's user interface, which is defined as an \ac{xml}
-file in the \textit{layout} folder of the Android project.
+To create an activity the developer has to extend the Activity class. A main
+callback method is needed to be implemented: the \textit{onCreate()} method.
+The system always calls this method when creating an activity. In it, the
+essential components of the activity should be initialized. Besides, and before
+any initialization, the \textit{setContentView()} method has to be called. This
+method defines the layout for the activity's user interface, which is defined as
+an \ac{xml} file in the \textit{layout} folder of the Android project.
 
 Listing~\ref{lst:android_activity} shows an example of an activity initialization.
 The layout of the activity is shown in Listing~\ref{lst:activity_layout}. Next,
@@ -102,8 +101,8 @@ Figure~\ref{fig:android_activity} illustrates the result of such activity.
 \begin{figure}
 \centering
 \includegraphics[width=0.35\textwidth]{android_activity.png}
-\caption{The resulting activity from the combination of Listing~\ref{lst:android_activity} and
-Listing~\ref{lst:activity_layout}.}
+\caption{The resulting activity from the combination of Listing~\ref{lst:android_activity},
+Listing~\ref{lst:activity_layout} and Listing~\ref{lst:android_manifest}.}
 \label{fig:android_activity}
 \end{figure}
 
@@ -132,7 +131,7 @@ not reduce it in any future adaptation. Thus, we avoid modelling specific
 physiological problems related to the user's hearing capability. To collect this
 kind of information about the user, the Capabilities Collector shows several
 screens (known as activities in Android) to the user in which different
-interactions are required. Android activities are explained in Section~\ref{sec:activities}.
+interactions are required. 
 
 The first capability that the Capabilities Collector deals with is the input
 method or type of interaction. In the AdaptUIOnt ontology this is represented
@@ -153,11 +152,11 @@ the user makes is stored in the mobile phone as a profile for a future
 \end{figure}
 
 Once the input interaction type has been determined the output is configured 
-accordingly. Next activities show several Android view~\citep{android_view} 
+accordingly. Next activities show several Android view\footnote{\url{http://developer.android.com/reference/android/view/View.html}} 
 components which are configurable by the user. Views represent the basic 
 building block for user interface components in Android. A view occupies a 
 particular area on the screen and is responsible for drawing and event 
-handling~\citep{android_view}. In this case, a button, a text view and an 
+handling. In this case, a button, a text view and an 
 edit text (which is a particular case of a text view) are presented (see 
 Figure~\ref{fig:views_activity}). The Capabilities Collector allows the user to 
 modify their size, component colour, and also the text size and colour.
@@ -166,14 +165,15 @@ modify their size, component colour, and also the text size and colour.
 \centering
 \includegraphics[width=0.50\textwidth]{views_activity.pdf}
 \caption{Different Android view components
-personalization: on the left, Button; on the right, TextView and EditText.}
+personalization: on the left, button; on the right, text view and edit text.}
 \label{fig:views_activity}
 \end{figure}
 
 Finally, the display brightness and the system volume are also allowed to be
-customized. The surrounding light and noise are monitored. Thus, AdaptUI is
-aware of the context conditions and is able to adjust these parameters to 
-the user's preferences.
+customized. The surrounding light and noise are monitored using the available
+device sensors, which are listed by the Capabilities Collector when it is first
+launched. Thus, AdaptUI is aware of the context conditions and is able to adjust
+these parameters to the user's preferences.
 
  
 \subsubsection{The Context Situation}
@@ -189,7 +189,7 @@ Light conditions and noise are classified by the Capabilities Collector as follo
 
 \begin{itemize}
  \item Light conditions are measured in \ac{lx}, which is the \ac{si} unit of 
- luminance.
+ luminance\footnote{\url{http://physics.nist.gov/cuu/Units/units.html}}.
  
  \item The current noise is collected using the mobile available microphones. It
  is measured in \ac{db}, which is a logarithmic unit that expresses the ratio
@@ -198,13 +198,14 @@ Light conditions and noise are classified by the Capabilities Collector as follo
 
 Once all this features have been collected, the profile is temporarily stored in 
 the device. This storage is carried out using the Android 
-SharedPreferences~\citep{shared_preferences}. This class provides a general 
-persistence framework for developers to save and retrieve key-value pairs of 
-primitive data types. After this temporary storage in the device, the Semantic 
-Modeller is the module which deals with the task of the semantic representation 
-of the model. Listing~\ref{lst:shared_preferences} shows how developers deal 
-with the SharedPreferences to store and retrieve data in Android. If complex
-objects need to be stored, the process is different (see Listing~\ref{lst:shared_preferences_complex}).
+SharedPreferences\footnote{\url{http://developer.android.com/reference/android/content/SharedPreferences.html}}.
+This class provides a general persistence framework for developers to save and
+retrieve key-value pairs of primitive data types. After this temporary storage
+in the device, the Semantic Modeller is the module which deals with the task of
+the semantic representation of the model. Listing~\ref{lst:shared_preferences}
+shows how developers deal with the SharedPreferences to store and retrieve data
+in Android. If complex objects are used, the process is different (see
+Listing~\ref{lst:shared_preferences_complex}).
 
 \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/shared_preferences.java}
 \captionof{listing}{Using Android SharedPreferences. By default SharedPreferences allows 
@@ -212,11 +213,11 @@ to store and retrieve primitive data. Implementing Parcelable allows complex
 objects to be persistent.\label{lst:shared_preferences}}
 
 \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/shared_preferences_complex.java}
-\captionof{listing}{Using Android SharedPreferences to store non primitive
+\captionof{listing}{Using Android SharedPreferences to store non-primitive
 objects.\label{lst:shared_preferences_complex}}
 
 Figure~\ref{fig:context_activity} shows how the brightness and the volume of
-the application is configured by an user which is aware of the light and noise
+the application is configured by a user which is aware of the light and noise
 of the environment.
 
 \begin{figure}
@@ -249,17 +250,18 @@ of $1F$.
 
 \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/device_settings_brightness.java}
 \captionof{listing}{Android NumberPicker initialization with a minimum value of 0 and a 
-maximum value requested to the Settings.System class.\label{lst:device_settings_brightness}}
+maximum value requested to the \textit{Settings.System class}.\label{lst:device_settings_brightness}}
 
 
 On the contrary, to get values related to audio, the \textit{AudioManager} class
-is required. Listing~\ref{lst:device_settings_volume} shows a piece of code with
-which the developer initializes a NumberPicker with the minimum and maximum
-volume levels available in the current device.
-
-\inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/device_settings_volume.java}
-\captionof{listing}{Android NumberPicker initialization with a minimum value of 0 and a 
-maximum value requested to the AudioManager class.\label{lst:device_settings_volume}}
+is required. 
+% Listing~\ref{lst:device_settings_volume} shows a piece of code with
+% which the developer initializes a NumberPicker with the minimum and maximum
+% volume levels available in the current device.
+% 
+% \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/device_settings_volume.java}
+% \captionof{listing}{Android NumberPicker initialization with a minimum value of 0 and a 
+% maximum value requested to the AudioManager class.\label{lst:device_settings_volume}}
 
 
 Before asking the user about the way of interaction, the Capabilities Collector
@@ -308,7 +310,11 @@ semantic representation of this knowledge through the AdaptUIOnt ontology and
 store it in the mobile device. This task requires from a semantic reasoner. 
 However, there are no available and remarkable reasoners written in Java and 
 compatible with Android. Thus, an Android port of the 
-Pellet~\citep{pellet} reasoning engine has been developed: \textit{Pellet4Android}.
+Pellet\footnote{\url{http://clarkparsia.com/pellet/}} reasoning engine has been
+developed: \textit{Pellet4Android}. As Pellet is available for open source
+applications under the terms of the \ac{agpl} version 3 license, the provided
+\textit{Pellet4Android} is also available in Github\footnote{\url{https://github.com/edlectrico/Pellet4Android}}
+under the same license regulations.
 
 During the following subsections both versions of the Pellet reasoning engine
 are presented. First, in Section~\ref{sec:pellet}, the Java based Pellet reasoning
@@ -338,14 +344,14 @@ Adaptation Layer, which is the next layer of the AdaptUI architecture.
 
 Developed by Clarkparsia, Pellet is a free and open source \ac{owl}-\ac{dl}
 reasoner written in Java. As a \ac{dl} reasoner, it provides several standard 
-inference services~\citep{pellet}:
+inference services:
 
 \begin{itemize}
   \item \textit{\ac{owl}-\ac{dl} consistency checking}: Pellet assures that the 
   knowledge represented in the ontology does not contain contradictory facts. 
-  \citet{carroll_owl_2004} define that \textit{an \ac{owl} consistency checker 
+  \citet{carroll_owl_2004} define that \textit{``an \ac{owl} consistency checker 
   takes a document as input, and returns one word being Consistent, Inconsistent, 
-  or Unknown.} In \ac{dl} terminology  this is the operation to check the 
+  or Unknown.''} In \ac{dl} terminology  this is the operation to check the 
   consistency of an ABox with respect to a TBox (see the description of this 
   \ac{dl} terminology in Table~\ref{tbl:dl_terms}).
   
@@ -354,7 +360,7 @@ inference services~\citep{pellet}:
   might define instances, which will cause the ontology to be inconsistent.
   
   \item \textit{Classification}: Pellet is able to create the complete class 
-  hierarchy from the the computation of the subclasses relations between every 
+  hierarchy from the computation of the subclasses relations between every 
   named class. This allows performing future queries (i.e., getting all the 
   direct subclasses of a class).
   
@@ -386,12 +392,13 @@ inference services~\citep{pellet}:
 \end{tabular}
 \end{table}
 
-The reasoning capabilities of Pellet are accessible through different 
-interfaces. For example, Pellet is directly integrated with the Protégé ontology 
-editor~\citep{protege}. Thus, reasoning capabilities are allowed through the 
-user interface of this editor. For developers, there are several tools provided 
-as \acsp{api} which allow the utilisation of Pellet. The most significant ones 
-are Apache Jena~\citep{jena} and Manchester \ac{owl}-\ac{api}~\citep{owlapi}:
+The reasoning capabilities of Pellet are accessible through different interfaces.
+For example, Pellet is directly integrated with the Protégé ontology 
+editor\footnote{\url{http://protege.stanford.edu/}}. Thus, reasoning capabilities
+are allowed through the user interface of this editor. For developers, there are
+several tools provided as \acsp{api} which allow the utilisation of Pellet. The
+most significant ones are Apache Jena\footnote{\url{https://jena.apache.org/}}
+and Manchester \ac{owl}-\ac{api}\footnote{\url{http://owlapi.sourceforge.net/}}:
 
 \begin{itemize}
   \item Jena: Apache Jena (or Jena) is a free and open source framework written
@@ -426,9 +433,9 @@ heavier processing, there are no remarkable efforts in the area.
 
 \citet{yus_android_2013} noticed this issue and made great efforts porting
 several Java based reasoners to Android. Although the authors do not provide the
-developed ports to the community, they do provide the instructions they followed
-to make these reasoners available for Android devices. Thus, following these
-directions a port of Pellet has been developed for AdaptUI: \textit{Pellet4Android}.
+developed ports to the community, they provide several instructions to make these
+reasoners available for Android devices. Thus, following these instructions a port
+of Pellet has been developed for AdaptUI: \textit{Pellet4Android}.
 
 As Pellet, \textit{Pellet4Android} also supports full \ac{owl} 2 and \ac{dl} 
 rules. To make Pellet run in Android the following steps were needed:
@@ -437,10 +444,10 @@ rules. To make Pellet run in Android the following steps were needed:
   \item Pellet uses Jena, which is a free and open source framework written in
   Java which allows building semantic web and Linked Data applications. However,
   Jena is not directly importable to Android. Thus, it is necessary to replace it
-  with Androjena~\citep{androjena}. Androjena is a porting of Hewlett-Packard's
-  Jena semantic web framework to Android. 
+  with Androjena\footnote{\url{https://code.google.com/p/androjena/}}. Androjena
+  is a porting of Hewlett-Packard's Jena semantic web framework to Android. 
   
-  \item Pellet also imports the \ac{jaxb} library~\citep{jaxb} for \ac{xml} 
+  \item Pellet also imports the \ac{jaxb} library\footnote{\url{http://docs.oracle.com/javase/tutorial/jaxb/intro/}} for \ac{xml} 
   parsing. \ac{jaxb} is able to translate \ac{xml} Schemas building a set of 
   classes that correspond to that schema. It originally comes with the Java 1.6 
   release, but its easily importable to previous Java version integrating the 
@@ -449,15 +456,15 @@ rules. To make Pellet run in Android the following steps were needed:
   
   \item As the official Oracle documentation states, the \textit{javax.xml.bind}
   package \textit{``provides a runtime binding framework for client applications
-  including unmarshalling, marshalling, and validation capabilities''}~\citep{javax_xml_bind}.
+  including unmarshalling, marshalling, and validation capabilities''}\footnote{\url{http://docs.oracle.com/javaee/5/api/javax/xml/bind/package-summary.html}}.
   Nevertheless, this package is also incompatible with Android, and we should
   remove it from the package list and the build path.
   
   \item Also related with the way Java manages \ac{xml} files, the 
-  \textit{org.apache.xerces}~\citep{xerces} package is used for the creation and 
-  maintenance of \ac{xml} parsers and related software components. Several 
-  classes under this package are not importable by Android, so the package has 
-  to be removed.
+  \textit{org.apache.xerces}\footnote{\url{http://xerces.apache.org/}} package
+  is used for the creation and maintenance of \ac{xml} parsers and related
+  software components. Several classes under this package are not importable by
+  Android, so the package has to be removed.
   
   \item Finally, under the \textit{com.clarkparsia.pellet} package there are several
   classes that are not directly importable by Android. Thus, without removing them,
@@ -492,6 +499,3 @@ the same (as the version by~\citet{yus_android_2013} was not available for testi
 Thus, in Chapter~\ref{cha:evaluation} an evaluation of \textit{Pellet4Android} is 
 included.
 
-As Pellet is available for open source applications under the terms of the \ac{agpl}
-version 3 license, the provided \textit{Pellet4Android} is also available in
-Github\footnote{\url{https://github.com/edlectrico/Pellet4Android}} under the same license regulations.

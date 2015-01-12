@@ -27,17 +27,18 @@ modelling (\textit{what} and \textit{how} to model, the \textit{depth} of the
 model and the \textit{required knowledge} in the domain) and the external 
 services and platforms dependency to perform computational complex operations. 
 Addressing these issues, this dissertation aims a fully operational mobile 
-platform. This chapter describes the three-layered architecture designed for 
-the AdaptUI platform. The architecture layers and their modules are depicted in 
+platform which also acts as a demonstrator of the models described in Chapter~\ref{cha:ontology_model}. 
+This chapter describes the three-layered architecture designed for AdaptUI, the
+adaptation platform. The architecture layers and their modules are depicted in 
 Figure~\ref{fig:architecture}.
 
-Each layer of the AdaptUI platform is composed of several modules; each module
-aiming to solve a concrete requisite. First, there is the Modelling Layer which
-collects information of the user's (non physiological) capabilities and context
-and device characteristics to finally build a semantic representation of this
-knowledge. Two main modules form the Modelling Layer: the Capabilities Collector
-and the Semantic Modeller. On the one hand, the Capabilities Collector's main
-goal is to obtain information about each entity. On the other hand, the Semantic
+Each layer of the AdaptUI adaptation platform is composed of several modules;
+each module aiming to solve a concrete requisite. First, there is the Modelling
+Layer which collects information of the user's (non physiological) capabilities
+and context and device characteristics to finally build a semantic representation
+of this knowledge. Two main modules form the Modelling Layer: the Capabilities
+Collector and the Semantic Modeller. On the one hand, the Capabilities Collector's
+main goal is to obtain information about each entity. On the other hand, the Semantic
 Modeller leads the semantic representation and storage of the information
 collected by the Capabilities Collector.
 
@@ -47,10 +48,10 @@ Adaptation Engine there is the Adaptation Polisher module. This module aims to
 refine the adapted user interface by analysing several usability metrics of the
 user interaction.
 
-Finally, there is the Application Layer. This layer provides several tools for
-developers to be able to use AdaptUI. Through the provided \ac{api} developers 
-are allowed not only to make their applications adaptive, but also to add, edit 
-and delete knowledge and rules.
+Finally, the Application Layer provides several tools for developers to be able
+to use AdaptUI. Through the provided \ac{api} developers are allowed not only to
+make their applications adaptive, but also to add, edit and delete knowledge and
+rules.
 
 \begin{figure}[H]
 \centering
@@ -60,7 +61,7 @@ and delete knowledge and rules.
 \end{figure}
 
 In the next sections of this chapter each layer and module is more concretely
-explained. First, in Section~\ref{sec:modelling_layer} the Modelling Layer and
+explained. In Section~\ref{sec:modelling_layer} the Modelling Layer and
 its two modules are introduced. The Capabilities Collector is described in
 Section~\ref{sec:capabilities_collector}, while the Semantic Modeller is 
 detailed in Section~\ref{sec:semantic_modeller}. The Adaptation Layer is 

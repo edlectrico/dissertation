@@ -4,7 +4,7 @@
 The second layer of the AdaptUI architecture is the Adaptation Layer. After the
 processes performed by the Modelling Layer, the Adaptation Layer aims to lead the
 dynamic adaptation of the elements presented in the user interface. It is formed
-by two different modules: The Adaptation Engine, which purpose is to adapt the
+by two different modules: The Adaptation Engine, whose purpose is to adapt the
 currently interface shown by the device, and the Adaptation Polisher, which aims
 the refinement of the user interface basing its task in several usability metrics.
 
@@ -58,7 +58,7 @@ ontology.\label{lst:store_in_ontology}}
 Finally, Figure~\ref{fig:adaptation_differences} shows two activities with the
 same user interface. The difference is that the activity on the left is showing
 the default user interface defined in the activity's layout. On the contrary,
-the activity on the right shows adapted components in its interface.
+the activity on the right shows adapted components.
 
 \begin{figure}[H]
 \centering
@@ -120,12 +120,11 @@ one.
 \subsubsection{The Usability Metrics}
 \label{sec:usability_metrics}
 For this module, several usability metrics have been studied and implemented.
-These metrics are classified into two different groups: effectiveness metrics
-and productivity metrics.
-
-Table~\ref{tbl:effectiveness_metrics} and Table~\ref{tbl:productivity_metrics}
-detail the usability metrics implemented in AdaptUI. The following information
-is given for each metric in the cited tables:
+These metrics are classified into two different groups: \textit{effectiveness}
+metrics and \textit{productivity} metrics. Table~\ref{tbl:effectiveness_metrics}
+and Table~\ref{tbl:productivity_metrics} detail the usability metrics implemented
+in AdaptUI. The following information is given for each metric in the cited
+tables:
 
 \begin{enumerate}[label=\alph*)]
   \item Purpose of the metric: Expresses the main goal of the current metric.
@@ -139,7 +138,7 @@ is given for each metric in the cited tables:
   types are: Size, Time and Count.
 \end{enumerate}
 
-In the original \ac{iso}document~\citep{ISOIEC9126} there are 4 extra columns that
+In the original \ac{iso} document~\citep{ISOIEC9126} there are 4 extra columns that
 have not been included in Table~\ref{tbl:effectiveness_metrics} and
 Table~\ref{tbl:productivity_metrics}. This is because the values for each metric
 under these columns are the same:
