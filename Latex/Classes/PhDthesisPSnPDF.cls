@@ -429,63 +429,127 @@
 %
 %
 % First cover front (external)
-\begin{alwayssingle}
-    \renewcommand{\footnotesize}{\small}
-    \renewcommand{\footnoterule}{\relax}
-    \thispagestyle{empty}
-  \begin{center}
-    { \Large {\bfseries {\@crest}} \par}
-	{\vspace*{0.5ex}
-    {{\textsc{\@university}} \par}}
-    % Title style
-    {\huge \vspace*{15mm} { \par} \textsc{\@title}\vspace*{15mm}\par} 
-{\normalsize 
-	\vspace*{1ex}
-    {\@degree \@author \par}
-	\vspace*{0.5ex}
-    {\@collegeordept \par}
-	\vspace*{1ex}
-    {\@textadvisor \@advisor \par}
-    %{\@textadvisor \@advisortwo \par}
-    {\@advisortwo \par}
-	\vspace*{4ex}
-}%end large
-  \end{center}
-  \null\vfill
-\end{alwayssingle}
-% Blank page
-\cleardoublepage
-% Second cover front (internal)
-\begin{alwayssingle}
-    \renewcommand{\footnotesize}{\small}
-    \renewcommand{\footnoterule}{\relax}
-    \thispagestyle{empty}
-  \begin{center}
-    { \Large {\bfseries {\@crest}} \par}
-	{\vspace*{0.5ex}
-    {{\textsc{\@university}} \par}}
-    % Title style
-    {\huge \vspace*{15mm} { \par} \textsc{\@title}\vspace*{15mm}\par} 
-{\normalsize 
-	\vspace*{1ex}
-    {\@degree \@author \par}
-	\vspace*{0.5ex}
-    {\@collegeordept \par}
-	\vspace*{1ex}
-    {\@textadvisor \@advisor \par}
-    %{\@textadvisor \@advisortwo \par}
-    {\@advisortwo \par}
-	\vspace*{4ex}
-    {\@textsignaturecandidate \hspace*{15ex}\@textsignatureadvisor \hspace*{15ex}\@textsignatureadvisor \par}
-	\vspace*{15ex}
-    {\@cityofbirth, \@degreedate}
-}%end large
-  \end{center}
-  \null\vfill
-\end{alwayssingle}
-%
-%
-}
+% \begin{alwayssingle}
+%     \renewcommand{\footnotesize}{\small}
+%     \renewcommand{\footnoterule}{\relax}
+%     \thispagestyle{empty}
+%   \begin{center}
+%     { \Large {\bfseries {\@crest}} \par}
+% 	{\vspace*{0.5ex}
+%     {{\textsc{\@university}} \par}}
+%     % Title style
+%     {\huge \vspace*{15mm} { \par} \textsc{\@title}\vspace*{15mm}\par} 
+% {\normalsize 
+% 	\vspace*{1ex}
+%     {\@degree \@author \par}
+% 	\vspace*{0.5ex}
+%     {\@collegeordept \par}
+% 	\vspace*{1ex}
+%     {\@textadvisor \@advisor \par}
+%     %{\@textadvisor \@advisortwo \par}
+%     {\@advisortwo \par}
+% 	\vspace*{4ex}
+% }%end large
+%   \end{center}
+%   \null\vfill
+% \end{alwayssingle}
+% % Blank page
+% \cleardoublepage
+% % Second cover front (internal)
+% \begin{alwayssingle}
+%     \renewcommand{\footnotesize}{\small}
+%     \renewcommand{\footnoterule}{\relax}
+%     \thispagestyle{empty}
+%   \begin{center}
+%     { \Large {\bfseries {\@crest}} \par}
+% 	{\vspace*{0.5ex}
+%     {{\textsc{\@university}} \par}}
+%     % Title style
+%     {\huge \vspace*{15mm} { \par} \textsc{\@title}\vspace*{15mm}\par} 
+% {\normalsize 
+% 	\vspace*{1ex}
+%     {\@degree \@author \par}
+% 	\vspace*{0.5ex}
+%     {\@collegeordept \par}
+% 	\vspace*{1ex}
+%     {\@textadvisor \@advisor \par}
+%     %{\@textadvisor \@advisortwo \par}
+%     {\@advisortwo \par}
+% 	\vspace*{4ex}
+%     {\@textsignaturecandidate \hspace*{15ex}\@textsignatureadvisor \hspace*{15ex}\@textsignatureadvisor \par}
+% 	\vspace*{15ex}
+%     {\@cityofbirth, \@degreedate}
+% }%end large
+%   \end{center}
+%   \null\vfill
+% \end{alwayssingle}
+% %
+% %
+% }
+
+
+% First cover front (external)
+    \begin{alwayssingle}
+        \renewcommand{\footnotesize}{\small}
+        \renewcommand{\footnoterule}{\relax}
+        \thispagestyle{empty}
+      \begin{center}
+        { \Large {\bfseries {\@crest}} \par}
+    	{\vspace*{0.5ex}
+        {{\textsc{\@university}} \par}}
+        % Title style
+        {\huge \vspace*{15mm} { \par} \textsc{\@title}\vspace*{15mm}\par} 
+    {\normalsize 
+    %	\vspace*{1ex}
+    	\vspace*{7em}
+        {\Large{\@degree \@author \par}}
+    %	\vspace*{0.5ex}
+    	\vspace*{1.5em}
+    %    {\Large{\@collegeordept \par}}
+    	\vspace*{1ex}
+        {\Large{\@textadvisor \@advisor \par}}
+        {\Large{\@advisortwo \par}}
+%         {\@advisortwo \par}
+    %	\vspace*{4ex}
+    	\vspace*{5em}
+        {\large{\@cityofbirth, \@degreedate}}
+    }%end large
+      \end{center}
+      \null\vfill
+    \end{alwayssingle}
+    % Blank page
+    \cleardoublepage
+    % Second cover front (internal)
+    \begin{alwayssingle}
+        \renewcommand{\footnotesize}{\small}
+        \renewcommand{\footnoterule}{\relax}
+        \thispagestyle{empty}
+      \begin{center}
+        { \Large {\bfseries {\@crest}} \par}
+    	{\vspace*{0.5ex}
+        {{\textsc{\@university}} \par}}
+        % Title style
+        {\huge \vspace*{15mm} { \par} \textsc{\@title}\vspace*{15mm}\par} 
+    {\normalsize 
+    	\vspace*{1ex}
+        {\@degree \@author \par}
+    	\vspace*{0.5ex}
+        {\@collegeordept \par}
+    	\vspace*{1ex}
+        {\@textadvisor \@advisor \par}
+%         {\@textadvisor \@advisortwo \par}
+        {\@advisortwo \par}
+    	\vspace*{4ex}
+        {\@textsignaturecandidate \hspace*{15ex}\@textsignatureadvisor \hspace*{15ex}\@textsignatureadvisor \par}
+   \vspace*{15ex}
+   {\@cityofbirth, \@degreedate}
+   }%end large
+   \end{center}
+   \null\vfill
+   \end{alwayssingle}
+   %
+   %
+   }
 
 % page number for cover back side should have page number blanked
 
