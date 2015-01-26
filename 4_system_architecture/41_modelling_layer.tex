@@ -63,7 +63,7 @@ three main entities in AdaptUI.}
 \subsubsection{Android Activity}
 \label{sec:activities}
 
-In Android, activities\footnote{\url{http://developer.android.com/guide/components/activities.html}}
+In Android, activities~\citep{activities}
 are application components that provide a screen with which the user can interact.
 Each activity is given a window in which to draw its user interface. Android
 applications usually consist of multiple activities that bound to each other. 
@@ -140,7 +140,7 @@ through the \textit{Interface} class. Through several basic instructions
 input and output preferences. For example, Figure~\ref{fig:input_activity} shows
 the first activity of the Capabilities Collector module. The instructions shown
 in this activity can be read by the user and by the application itself (for
-example, by using the Android \ac{tts}\footnote{\url{http://developer.android.com/reference/android/speech/tts/TextToSpeech.html}} service). Every decision
+example, by using the Android \ac{tts}~\citep{tts} service). Every decision
 the user makes is stored in the mobile phone as a profile for a future
 \textit{semantization} by the Semantic Modeller.
 
@@ -152,7 +152,7 @@ the user makes is stored in the mobile phone as a profile for a future
 \end{figure}
 
 Once the input interaction type has been determined the output is configured 
-accordingly. Next activities show several Android view\footnote{\url{http://developer.android.com/reference/android/view/View.html}} 
+accordingly. Next activities show several Android view~\citep{android_view} 
 components which are configurable by the user. Views represent the basic 
 building block for user interface components in Android. A view occupies a 
 particular area on the screen and is responsible for drawing and event 
@@ -189,7 +189,7 @@ Light conditions and noise are classified by the Capabilities Collector as follo
 
 \begin{itemize}
  \item Light conditions are measured in \ac{lx}, which is the \ac{si} unit of 
- luminance\footnote{\url{http://physics.nist.gov/cuu/Units/units.html}}.
+ luminance~\citep{lux}.
  
  \item The current noise is collected using the mobile available microphones. It
  is measured in \ac{db}, which is a logarithmic unit that expresses the ratio
@@ -198,7 +198,7 @@ Light conditions and noise are classified by the Capabilities Collector as follo
 
 Once all this features have been collected, the profile is temporarily stored in 
 the device. This storage is carried out using the Android 
-SharedPreferences\footnote{\url{http://developer.android.com/reference/android/content/SharedPreferences.html}}.
+SharedPreferences~\citep{shared_preferences}.
 This class provides a general persistence framework for developers to save and
 retrieve key-value pairs of primitive data types. After this temporary storage
 in the device, the Semantic Modeller is the module which deals with the task of
@@ -310,10 +310,10 @@ semantic representation of this knowledge through the AdaptUIOnt ontology and
 store it in the mobile device. This task requires from a semantic reasoner. 
 However, there are no available and remarkable reasoners written in Java and 
 compatible with Android. Thus, an Android port of the 
-Pellet\footnote{\url{http://clarkparsia.com/pellet/}} reasoning engine has been
+Pellet~\citep{pellet} reasoning engine has been
 developed: \textit{Pellet4Android}. As Pellet is available for open source
 applications under the terms of the \ac{agpl} version 3 license, the provided
-\textit{Pellet4Android} is also available in Github\footnote{\url{https://github.com/edlectrico/Pellet4Android}}
+\textit{Pellet4Android} is also available in Github~\citep{pellet4android}
 under the same license regulations.
 
 During the following subsections both versions of the Pellet reasoning engine
@@ -394,11 +394,11 @@ inference services:
 
 The reasoning capabilities of Pellet are accessible through different interfaces.
 For example, Pellet is directly integrated with the Protégé ontology 
-editor\footnote{\url{http://protege.stanford.edu/}}. Thus, reasoning capabilities
+editor~\citep{protege}. Thus, reasoning capabilities
 are allowed through the user interface of this editor. For developers, there are
 several tools provided as \acsp{api} which allow the utilisation of Pellet. The
-most significant ones are Apache Jena\footnote{\url{https://jena.apache.org/}}
-and Manchester \ac{owl}-\ac{api}\footnote{\url{http://owlapi.sourceforge.net/}}:
+most significant ones are Apache Jena~\citep{jena}
+and Manchester \ac{owl}-\ac{api}~\citep{owlapi}:
 
 \begin{itemize}
   \item Jena: Apache Jena (or Jena) is a free and open source framework written
@@ -444,10 +444,10 @@ rules. To make Pellet run in Android the following steps were needed:
   \item Pellet uses Jena, which is a free and open source framework written in
   Java which allows building semantic web and Linked Data applications. However,
   Jena is not directly importable to Android. Thus, it is necessary to replace it
-  with Androjena\footnote{\url{https://code.google.com/p/androjena/}}. Androjena
+  with Androjena~\citep{androjena}. Androjena
   is a porting of Hewlett-Packard's Jena semantic web framework to Android. 
   
-  \item Pellet also imports the \ac{jaxb} library\footnote{\url{http://docs.oracle.com/javase/tutorial/jaxb/intro/}} for \ac{xml} 
+  \item Pellet also imports the \ac{jaxb} library~\citep{jaxb} for \ac{xml} 
   parsing. \ac{jaxb} is able to translate \ac{xml} Schemas building a set of 
   classes that correspond to that schema. It originally comes with the Java 1.6 
   release, but its easily importable to previous Java version integrating the 
@@ -456,12 +456,12 @@ rules. To make Pellet run in Android the following steps were needed:
   
   \item As the official Oracle documentation states, the \textit{javax.xml.bind}
   package \textit{``provides a runtime binding framework for client applications
-  including unmarshalling, marshalling, and validation capabilities''}\footnote{\url{http://docs.oracle.com/javaee/5/api/javax/xml/bind/package-summary.html}}.
+  including unmarshalling, marshalling, and validation capabilities''}~\citep{javax_xml_bind}.
   Nevertheless, this package is also incompatible with Android, and we should
   remove it from the package list and the build path.
   
   \item Also related with the way Java manages \ac{xml} files, the 
-  \textit{org.apache.xerces}\footnote{\url{http://xerces.apache.org/}} package
+  \textit{org.apache.xerces}~\citep{xerces} package
   is used for the creation and maintenance of \ac{xml} parsers and related
   software components. Several classes under this package are not importable by
   Android, so the package has to be removed.
