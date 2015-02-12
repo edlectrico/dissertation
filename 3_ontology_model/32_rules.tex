@@ -108,15 +108,13 @@ included in AdaptUIOnt.
 \end{table}
 
 Equation~\ref{ec:pre_adaptation_rule} shows an example of the 
-\textit{checkNoiseLevelTraffic} pre-adaptation rule (the rules presented in this
-dissertation follow the \ac{swrl} specification implemented by
-Protégé\footnote{\url{http://protege.cim3.net/cgi-bin/wiki.pl?SWRLLanguageFAQ}}).
+\textit{checkNoiseLevelTraffic} pre-adaptation rule.
 
 \footnotesize
 \begin{equation} \label{ec:pre_adaptation_rule}
   \begin{align*} 
-  Context(?context) ∧ Noise(?noise) ∧ ContextAux(?caux) ∧ \\
-  contextHasNoise(?noise, ?value) ∧ lessThanOrEqual(?value, 70) ∧ \\
+  Context(?context) \& Noise(?noise) \& ContextAux(?caux) \& \\
+  contextHasNoise(?noise, ?value) \& lessThanOrEqual(?value, 70) \& \\
   greaterThan(?value, 60) \\
   \Rightarrow \\
   contextAuxHasNoiseLevel(?caux, "traffic")
@@ -143,9 +141,9 @@ adaptation rules in the AdaptUIOnt ontology.
 				& \textbf{and classes} 		& 				\\
   \hline
   \textit{adaptBrightness}	& \textit{adaptui:Adaptation}	& These rules consider the  	\\
-				& \textit{adaptui:DeviceAux}	& values stored in the 		\\
-				& \textit{adaptui:UserAux}	& \textit{UserAux} class to adapt the \\
-  \textit{adaptVolume}		& \textit{adaptui:Brightness}	& brightness and volume 	\\
+  and				& \textit{adaptui:DeviceAux}	& values stored in the 		\\
+  \textit{adaptVolume}		& \textit{adaptui:UserAux}	& \textit{UserAux} class to adapt the \\
+				& \textit{adaptui:Brightness}	& brightness and volume 	\\
 				& \textit{adaptui:Volume}	& accordingly. 			\\
 				& \textit{adaptui:Display}	& 				\\
   \hline 
@@ -175,17 +173,17 @@ adaptation rules in the AdaptUIOnt ontology.
 \end{tabular}
 \end{table}
 
-Equation~\ref{ec:adaptation_rule} shows an example of the \textit{adaptBrightness} 
+Equation~\ref{ec:adaptation_rule} shows an example of the \textit{adaptVolume} 
 adaptation rule.
 
 \footnotesize
 \begin{equation} \label{ec:adaptation_rule}
   \begin{align*} 
-  Adaptation(?adaptation) ∧ DeviceAux(?device) ∧ UserAux(?user) ∧ \\
-  deviceAuxBatteryIsSufficient(?device, ?battery) ∧ equal(?battery, true) ∧ \\
-  userAuxHasDisplayBrightness(?user, ?brightness) ∧ equal(?brightness, 255)\\ 
+  Adaptation(?adaptation) \& DeviceAux(?device) \& ContextAux(?context) \& \\
+  deviceAuxBatteryIsSufficient(?device, ?battery) \& equal(?battery, true) \& \\
+  contextAuxHasNoise(?context, ?noise) \& equal(?noise, ``traffic'')\\ 
   \Rightarrow \\
-  adaptationBrightnessHasValue(?adaptation, ?brightness)\\
+  adaptationVolumeHasValue(?adaptation, 7)\\
   \end{align*}
 \end{equation}
 \normalsize
@@ -239,10 +237,10 @@ adaptation rule.
 \footnotesize
 \begin{equation} \label{ec:usability_rule}
   \begin{align*} 
-  UserAux(?user) ∧ Productivity(?productivity) ∧ Polisher(?polisher) ∧\\ 
-  userAuxHasProductivityMetrics(?user, ?productivity) ∧ \\
-  hasRelativeEfficiency(?productivity, ?efficiency) ∧ \\
-  lessThanOrEqual(?efficiency, 0.5) ∧ \\
+  UserAux(?user) \& Productivity(?productivity) \& Polisher(?polisher) \&\\ 
+  userAuxHasProductivityMetrics(?user, ?productivity) \& \\
+  hasRelativeEfficiency(?productivity, ?efficiency) \& \\
+  lessThanOrEqual(?efficiency, 0.5) \& \\
   \Rightarrow \\
   launchPolisherRules(?polisher, true)
   \end{align*}
@@ -294,10 +292,10 @@ post-adaptation rule.
 \footnotesize
 \begin{equation} \label{ec:post_adaptation_rule}
   \begin{align*} 
-  Polisher(?polisher) ∧ launchPolisherRules(?polisher, true) ∧\\
-  UserAux(?user) ∧ userAuxHasEffectivenessMetrics(?user, ?effectiveness) ∧ \\
-  effectivenessMetricHasErrorFreequency(?effectiveness, ?freq?) ∧\\
-  greaterThan(?freq, 0.5) ∧ Adaptation(?adaptation) ∧\\
+  Polisher(?polisher) \& launchPolisherRules(?polisher, true) \&\\
+  UserAux(?user) \& userAuxHasEffectivenessMetrics(?user, ?effectiveness) \& \\
+  effectivenessMetricHasErrorFrequency(?effectiveness, ?freq?) \&\\
+  greaterThan(?freq, 0.5) \& Adaptation(?adaptation) \&\\
   adaptationHasButtonSize(?adaptation, ?size)
   \Rightarrow \\
   adaptationButtonHasSize(?adaptation, ?size + 10)
