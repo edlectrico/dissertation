@@ -406,10 +406,10 @@ user efficiency of the interaction model.
 \footnotesize
 \begin{equation} \label{ec:usability_rule}
   \begin{align*} 
-  UserAux(?user) ∧ Productivity(?productivity) ∧ Polisher(?polisher) ∧\\ 
-  userAuxHasProductivityMetrics(?user, ?productivity) ∧ \\
-  hasRelativeEfficiency(?productivity, ?efficiency) ∧ \\
-  lessThanOrEqual(?efficiency, 0.5) ∧ \\
+  UserAux(?user) \& Productivity(?productivity) \& Polisher(?polisher) \&\\ 
+  userAuxHasProductivityMetrics(?user, ?productivity) \& \\
+  hasRelativeEfficiency(?productivity, ?efficiency) \& \\
+  lessThanOrEqual(?efficiency, 0.5) \& \\
   \Rightarrow \\
   launchPolisherRules(?polisher, true)
   \end{align*}
@@ -426,9 +426,9 @@ interface.
 \footnotesize
 \begin{equation} \label{ec:polisher_rule}
   \begin{align*} 
-  Polisher(?polisher) ∧ launchPolisherRules(?polisher, true) ∧\\
-  UserAux(?user) ∧ userAuxHasEffectivenessMetrics(?user, ?effectiveness) ∧ \\
-  effectivenessMetricHasErrorFreequency(?effectiveness, ?freq?) ∧\\
+  Polisher(?polisher) \& launchPolisherRules(?polisher, true) \&\\
+  UserAux(?user) \& userAuxHasEffectivenessMetrics(?user, ?effectiveness) \& \\
+  effectivenessMetricHasErrorFreequency(?effectiveness, ?freq?) \&\\
   greaterThan(?freq, 0.5)\\
   \Rightarrow \\
   setViewSize(1.10)
