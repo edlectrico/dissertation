@@ -230,12 +230,12 @@ interacts with the Capabilities Collector in a \textit{default} manner.
 \footnotesize
 \begin{equation} \label{ec:pre_rule} 
 \begin{align*} 
-adaptui:UserAux(?uaux) ∧ adaptui:UserCharacteristics(?user) ∧ \\
-adaptui:Interface(?interf) ∧ adaptui:Input(?input) ∧ \\
-userHasInterface(?user, ?interf) ∧ interfaceHasInput(?interf, ?input) ∧\\
-swrlb:equal("default") \\    
+UserAux(?uaux) \; \&\; UserCharacteristics(?user) \; \&\; \\
+Interface(?interf) \; \&\; Input(?input) \; \&\; \\
+userHasInterface(?user, ?interf) \; \&\; interfaceHasInput(?interf, ?input) \; \&\;\\
+swrlb:equal(``default") \\    
 \Rightarrow \\
-adaptui:userAuxDisplayHasApplicable(?uaux, true)
+userAuxDisplayHasApplicable(?uaux, true)
 \end{align*}
 \end{equation}
 \normalsize
@@ -255,12 +255,12 @@ its appearance is shown in Figure~\ref{fig:example_scenario_default_vs_adapted}.
 \footnotesize
 \begin{equation} \label{ec:adap_rule} 
 \begin{align*} 
-adaptui:Button(?b) ∧ adaptui:ContextCharacteristics(?c) ∧ gumo:Light(?light) ∧ \\  
-gumo:PhysicalEnvironment(?pe) ∧ contextHasPhysicalEnvironment(?c, ?pe) ∧ \\ 
-lightHasBrightness(?light, ?value) ∧ physicalEnvironmentHasLight(?pe, ?light) ∧ \\
+Button(?b) \; \&\; ContextCharacteristics(?c) \; \&\; gumo:Light(?light) \; \&\; \\  
+gumo:PhysicalEnvironment(?pe) \; \&\; contextHasPhysicalEnvironment(?c, ?pe) \; \&\; \\ 
+lightHasBrightness(?light, ?value) \; \&\; physicalEnvironmentHasLight(?pe, ?light) \; \&\; \\
 swrlb:greaterThanOrEqual(?value, 20000) \\
 \Rightarrow \\
-adaptui:buttonHasBackgroundColor(?b, -16711936) %%This should be the Adaption class
+buttonHasBackgroundColor(?b, -16711936) %%This should be the Adaption class
 \end{align*}
 \end{equation}
 \normalsize
@@ -294,11 +294,11 @@ the Equation~\ref{ec:post_rule} updates polishes the button's text as follows:
 \footnotesize
 \begin{equation} \label{ec:post_rule} 
 \begin{align*} 
-adaptui:Button(?b) ∧ adaptui:Usability (?u) ∧ adaptui:EfficiencyMetric(?em) ∧ \\
-usabilityHasEfficiencyMetric(?u, ?em) ∧ swrlb:greaterThanOrEqual(?value, 0.5) ∧ \\
+Button(?b) \; \&\; Usability (?u) \; \&\; EfficiencyMetric(?em) \; \&\; \\
+usabilityHasEfficiencyMetric(?u, ?em) \; \&\; swrlb:greaterThanOrEqual(?value, 0.5) \; \&\; \\
 efficiencyMetricHasTaskEffectiveness(?em, ?value)\\
 \Rightarrow \\
-adaptui:buttonHasTextColor(?b, 16777215)
+buttonHasTextColor(?b, 16777215)
 \end{align*}
 \end{equation}
 \normalsize

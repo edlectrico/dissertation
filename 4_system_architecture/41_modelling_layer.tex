@@ -220,15 +220,6 @@ Figure~\ref{fig:context_activity} shows how the brightness and the volume of
 the application is configured by a user which is aware of the light and noise
 of the environment.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.50\textwidth]{context_activity.pdf}
-\caption{Brightness (left) and Volume (right) adjustment sensing the surrounding
-light and noise.}
-\label{fig:context_activity}
-\end{figure}
-
-
 \subsubsection{The Device Characteristics}
 \label{sec:device_characteristics}
 
@@ -251,6 +242,15 @@ of $1F$.
 \inputminted[linenos=true, fontsize=\footnotesize, frame=lines]{java}{4_system_architecture/device_settings_brightness.java}
 \captionof{listing}{Android NumberPicker initialization with a minimum value of 0 and a 
 maximum value requested to the \textit{Settings.System class}.\label{lst:device_settings_brightness}}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.50\textwidth]{context_activity.pdf}
+\caption{Brightness (left) and Volume (right) adjustment sensing the surrounding
+light and noise.}
+\label{fig:context_activity}
+\end{figure}
 
 
 On the contrary, to get values related to audio, the \textit{AudioManager} class
