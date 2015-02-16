@@ -1,7 +1,7 @@
 public class Main {
   private final static String ADAPTUI = "original/adaptui.owl";
   private static final String NAMESPACE = 
-		"http://www.morelab.deusto.es/ontologies/adaptui.owl#";
+	"http://www.morelab.deusto.es/ontologies/adaptui.owl#";
 
   public static void main(String[] args) {
     AdaptUI adaptUI = new AdaptUI();
