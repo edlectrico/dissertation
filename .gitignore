@@ -8,7 +8,7 @@
 *.toc
 *.def
 
-dissertation.pdf
+#dissertation.pdf
 *.tex.backup
 *.bib.backup
 *~
