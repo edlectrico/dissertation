@@ -14,8 +14,6 @@
 % An macro that you may use frequently is the figuremacro (see introduction.tex)
 \include{Latex/Macros/Macros}
 
-% \usepackage[toc,page]{appendix}
-
 \usepackage[numbers]{natbib}
 \usepackage{color}
 \usepackage[usenames,dvipsnames]{xcolor}
@@ -144,16 +142,16 @@ on grid
 
 % if output to PDF then put the following in PDF header
 \ifpdf  
-    \pdfinfo { /Title  (PhD)
-               /Creator (TeX)
-               /Producer (pdfTeX)
-               /Author (Eduardo Castillejo)
-               /CreationDate (D:YYYYMMDDhhmmss)  %format D:YYYYMMDDhhmmss
-               /ModDate (D:YYYYMMDDhhmm)
-               /Subject (xyz)
-               /Keywords (keyword1, keyword2, keyword3) }
-    \pdfcatalog { /PageMode (/UseOutlines)
-                  /OpenAction (fitbh)  }
+
+\hypersetup{pdfinfo={
+Title={Dynamic User Interface Adaptation Engine Through Semantic Modelling And
+Reasoning In Mobile Devices},
+Author={Eduardo Castillejo},
+CreationDate={D:20150201},  %format D:YYYYMMDDhhmmss
+Subject={Dynamic user interfaces},
+Keywords={Dynamic user interfaces, user modelling, context-awareness}
+}}
+
 \fi
 
 
